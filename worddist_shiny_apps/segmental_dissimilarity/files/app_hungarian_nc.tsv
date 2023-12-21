@@ -1,0 +1,172 @@
+feature_bundle	segments
+[-labial, -coronal, -long]	a
+[-son, +labial, +voice]	b
+[+anterior, +delrel]	c
+[+voice, -delrel]	d
+[+coronal, -long, +open1]	e
+[-son, +cont, +labial]	f
+[+dorsal, +voice]	g
+[-labial, -long, -open1]	i
+[+son, +cont, -anterior]	j
+[+dorsal, -voice]	k
+[+lateral]	l
+[+son, +labial]	m
+[+son, -cont, +anterior]	n
+[+labial, -coronal, -long, +open2]	o
+[-cont, +labial, -voice]	p
+[-lateral]	r
+[+cont, +anterior, -voice]	s
+[-voice, -delrel]	t
+[-coronal, -long, -open2]	u
+[+cont, +labial, +voice]	v
+[+cont, +anterior, +voice]	z
+[-labial, -coronal, +long]	á
+[+coronal, +long, +open1]	é
+[-labial, +long, -open1]	í
+[+labial, -coronal, +long, +open2]	ó
+[+labial, +coronal, -long, +open2]	ö
+[-coronal, +long, -open2]	ú
+[+labial, +coronal, -long, -open2]	ü
+[-anterior, +delrel]	č
+[+labial, +coronal, +long, +open2]	ő
+[+cont, -anterior, -voice]	š
+[+labial, +coronal, +long, -open2]	ű
+[+cont, -anterior, +voice]	ž
+[+son, -cont, -anterior]	ɲ
+[-son, -cont, -anterior, +voice]	ʝ
+[-long, +open1]	a, e
+[-coronal, -long, +open2]	a, o
+[-labial, -coronal]	a, á
+[-cont, +labial, +voice]	b, m
+[+delrel]	c, č
+[-cont, +anterior, +voice]	d, n
+[-son, +anterior, +voice]	d, z
+[-son, -cont, +coronal, +voice]	d, ʝ
+[-labial, +coronal, -long]	e, i
+[+coronal, +open1]	e, é
+[+coronal, -long, +open2]	e, ö
+[+cons, +cont, +labial]	f, v
+[-labial, -open1]	i, í
+[+coronal, -long, -open2]	i, ü
+[+cons, +dorsal]	k, g
+[+son, +cont, +anterior]	l, r
+[+son, -cont, +coronal]	n, ɲ
+[+labial, -coronal, -long]	o, u
+[+labial, -coronal, +open2]	o, ó
+[+labial, -long, +open2]	o, ö
+[-son, -cont, +labial]	p, b
+[+labial, -voice]	p, f
+[-son, +cont, +anterior]	s, z
+[+cont, +coronal, -voice]	s, š
+[-delrel]	t, d
+[-coronal, -open2]	u, ú
+[+labial, -long, -open2]	u, ü
+[-son, +cont, +voice]	z, ž
+[+long, +open1]	á, é
+[-coronal, +long, +open2]	á, ó
+[-labial, +coronal, +long]	é, í
+[+coronal, +long, +open2]	é, ő
+[+coronal, +long, -open2]	í, ű
+[+labial, -coronal, +long]	ó, ú
+[+labial, +long, +open2]	ó, ő
+[+labial, +coronal, -long]	ö, ü
+[+labial, +coronal, +open2]	ö, ő
+[+labial, +long, -open2]	ú, ű
+[+labial, +coronal, -open2]	ü, ű
+[+labial, +coronal, +long]	ő, ű
+[-anterior, -voice]	š, č
+[-son, +cont, -anterior]	š, ž
+[+son, -anterior]	ɲ, j
+[-son, -cont, -anterior]	ʝ, č
+[-son, -anterior, +voice]	ʝ, ž
+[-cont, -anterior, +voice]	ʝ, ɲ
+[-labial, -long]	a, e, i
+[-coronal, -long]	a, o, u
+[+labial, +voice]	b, v, m
+[+anterior, +voice]	d, z, n
+[+cont, -voice]	f, s, š
+[-long, -open2]	i, u, ü
+[+coronal, -long, -open1]	i, ö, ü
+[+son, +cont]	l, r, j
+[+son, -cont]	m, n, ɲ
+[+son, +anterior]	n, l, r
+[-son, +labial]	p, b, f
+[-cont, +labial]	p, b, m
+[-cont, +anterior, -voice]	t, c, ç
+[+cont, +voice]	v, z, ž
+[-labial, +long]	á, é, í
+[-coronal, +long]	á, ó, ú
+[+long, -open2]	í, ú, ű
+[+coronal, +long, -open1]	í, ő, ű
+[+cont, -anterior]	š, ž, j
+[-cont, -anterior]	ʝ, č, ɲ
+[-anterior, +voice]	ʝ, ž, ɲ
+[-long, +open2]	a, e, o, ö
+[+open1]	a, á, e, é
+[-coronal, +open2]	a, á, o, ó
+[-son, -cont, +voice]	b, d, ʝ, g
+[-cont, +coronal, +voice]	d, n, ʝ, ɲ
+[-son, +coronal, +voice]	d, z, ʝ, ž
+[+coronal, -long]	e, i, ö, ü
+[-labial, +coronal]	e, é, i, í
+[+coronal, +open2]	e, é, ö, ő
+[+coronal, -open2]	i, í, ü, ű
+[+labial, -coronal]	o, ó, u, ú
+[+labial, +open2]	o, ó, ö, ő
+[+labial, -long]	o, ö, u, ü
+[+cont, +anterior]	s, z, l, r
+[-son, +cont, +coronal]	s, z, š, ž
+[-cont, +coronal, -voice]	t, c, ç, č
+[-son, -cont, +anterior]	t, d, c, ç
+[+anterior, -voice]	t, s, c, ç
+[+labial, -open2]	u, ú, ü, ű
+[+long, +open2]	á, é, ó, ő
+[+coronal, +long]	é, í, ő, ű
+[+labial, +long]	ó, ő, ú, ű
+[+labial, +coronal]	ö, ő, ü, ű
+[-son, -anterior]	ʝ, š, ž, č
+[-long, -open1]	i, o, ö, u, ü
+[+son, +coronal]	n, l, r, ɲ, j
+[+cons, +labial]	p, b, f, v, m
+[-cont, +anterior]	t, d, c, n, ç
+[+long, -open1]	í, ó, ő, ú, ű
+[-labial]	a, á, e, é, i, í
+[-coronal]	a, á, o, ó, u, ú
+[-son, +voice]	b, d, z, ʝ, ž, g
+[+coronal, +voice]	d, z, n, ʝ, ž, ɲ
+[-son, +cont]	f, s, z, š, ž, h
+[-open2]	i, í, u, ú, ü, ű
+[+coronal, -open1]	i, í, ö, ő, ü, ű
+[+son]	m, n, l, r, ɲ, j
+[-cont, -voice]	p, t, c, ç, č, k
+[-son, -cont, +coronal]	t, d, c, ç, ʝ, č
+[-son, +anterior]	t, d, s, z, c, ç
+[+coronal, -voice]	t, s, c, ç, š, č
+[-anterior]	ʝ, š, ž, č, ɲ, j
+[-long]	a, e, i, o, ö, u, ü
+[-cont, +voice]	b, m, d, n, ʝ, ɲ, g
+[+cons, +cont, +coronal]	s, z, l, r, š, ž, j
+[+long]	á, é, í, ó, ő, ú, ű
+[+open2]	a, á, e, é, o, ó, ö, ő
+[+dorsal]	a, á, o, ó, u, ú, k, g
+[-dorsal]	e, é, i, í, ö, ő, ü, ű
+[-cons, +labial]	o, ó, ö, ő, u, ú, ü, ű
+[-cont, +coronal]	t, d, c, n, ç, ʝ, č, ɲ
+[-voice]	p, f, t, s, c, ç, š, č, k
+[+anterior]	t, d, s, z, c, n, l, r, ç
+[+voice]	b, v, m, d, z, n, ʝ, ž, ɲ, g
+[+cons, +cont]	f, v, s, z, l, r, š, ž, j, h
+[-open1]	i, í, o, ó, ö, ő, u, ú, ü, ű
+[+cont, +labial]	o, ó, ö, ő, u, ú, ü, ű, f, v
+[-son, -cont]	p, b, t, d, c, ç, ʝ, č, k, g
+[-son, +coronal]	t, d, s, z, c, ç, ʝ, š, ž, č
+[+labial]	o, ó, ö, ő, u, ú, ü, ű, p, b, f, v, m
+[-cont]	p, b, m, t, d, c, n, ç, ʝ, č, ɲ, k, g
+[-cons]	a, á, e, é, i, í, o, ó, ö, ő, u, ú, ü, ű
+[+cont, +coronal]	e, é, i, í, ö, ő, ü, ű, s, z, l, r, š, ž, j
+[+cons, +coronal]	t, d, s, z, c, n, l, r, ç, ʝ, š, ž, č, ɲ, j
+[-son]	p, b, f, t, d, s, z, c, ç, ʝ, š, ž, č, k, g, h
+[+coronal]	e, é, i, í, ö, ő, ü, ű, t, d, s, z, c, n, l, r, ç, ʝ, š, ž, č, ɲ, j
+[+cons]	p, b, f, v, m, t, d, s, z, c, n, l, r, ç, ʝ, š, ž, č, ɲ, j, k, g, h
+[+cont]	a, á, e, é, i, í, o, ó, ö, ő, u, ú, ü, ű, f, v, s, z, l, r, š, ž, j, h
+[+seg]	a, á, e, é, i, í, o, ó, ö, ő, u, ú, ü, ű, p, b, f, v, m, t, d, s, z, c, n, l, r, ç, ʝ, š, ž, č, ɲ, j, k, g, h

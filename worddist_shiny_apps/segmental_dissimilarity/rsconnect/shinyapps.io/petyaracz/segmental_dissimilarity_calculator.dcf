@@ -1,0 +1,12 @@
+name: segmental_dissimilarity_calculator
+title: segmental_dissimilarity_calculator
+username: petyaracz
+account: petyaracz
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 10793058
+bundleId: 8049388
+url: https://petyaracz.shinyapps.io/segmental_dissimilarity_calculator/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE

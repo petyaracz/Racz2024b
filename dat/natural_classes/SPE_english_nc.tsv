@@ -1,0 +1,508 @@
+feature_bundle	segments
+[+back, +low, +round, +tense]	O
+[-high, -coronal, +voice, -continuant, -nasal]	b
+[-high, -continuant, +strident]	c
+[-high, +coronal, +voice, -continuant, -nasal]	d
+[+vocalic, -high, -back, -low, -tense]	e
+[-coronal, -voice, +strident]	f
+[-round, +voice]	g
+[-vocalic, +low]	h
+[+vocalic, +high, -back, -tense]	i
+[+back, -voice, -continuant]	k
+[-high, -coronal, +nasal]	m
+[-vocalic, +voice, +continuant, -strident]	n
+[-high, -low, +round, -tense]	o
+[-high, -coronal, -voice, -continuant]	p
+[+coronal, +nasal]	s
+[+coronal, -voice, -continuant, -strident]	t
+[+vocalic, +high, +back, -tense]	u
+[-coronal, +voice, +continuant]	v
+[-vocalic, +round]	w
+[+back, +continuant]	x
+[-vocalic, -consonantal, +high, -back]	y
+[-high, +coronal, +voice, +strident]	z
+[-back, +low, -round, +tense]	ä
+[-back, +low, -tense]	æ
+[+back, +low, -round]	ā
+[+high, -back, -voice, -continuant]	č
+[-high, -back, -low, +tense]	ē
+[+high, -back, +tense]	ī
+[+high, +nasal]	ŋ
+[-high, +back, -low, +tense]	ō
+[-back, +round]	œ
+[+high, -back, -voice, +continuant]	š
+[+high, +round, +tense]	ū
+[+high, +voice, +continuant]	ž
+[+back, +low, -tense]	ɔ
+[-vocalic, -high, -round]	ɛ
+[+vocalic, +high, +back, -round]	ɨ
+[+back, -round, -tense]	ʌ
+[+voice, -continuant, +strident]	ʝ
+[+back, +low, +round]	O, ɔ
+[-high, +voice, -continuant, -nasal]	b, d
+[-coronal, +voice, -continuant, -nasal]	b, g
+[-high, -coronal, +voice, -continuant]	b, m
+[-high, -coronal, +voice, -nasal]	b, v
+[-voice, -continuant, +strident]	c, č
+[-vocalic, +coronal, +voice, -nasal, -strident]	d, n
+[-high, +coronal, +voice, -continuant]	d, s
+[+coronal, +voice, -continuant, -nasal]	d, ʝ
+[+vocalic, -high, -back, -tense]	e, æ
+[-high, -back, -low, -tense]	e, ɛ
+[+vocalic, -high, -low, -round, -tense]	e, ʌ
+[-high, -voice, +strident]	f, c
+[-high, -coronal, -voice, +continuant]	f, h
+[-coronal, +strident]	f, v
+[+consonantal, -coronal, -voice, +continuant]	f, x
+[-voice, +continuant, +strident]	f, š
+[+back, +voice]	g, ŋ
+[+vocalic, -back, -low, -tense]	i, e
+[+vocalic, +high, -tense]	i, u
+[+high, -back, -tense]	i, y
+[-round, -continuant]	k, g
+[+back, -voice]	k, x
+[-high, +nasal]	m, s
+[-coronal, +nasal]	m, ŋ
+[-vocalic, -high, +coronal, +voice, +continuant]	n, z
+[-high, +round, -tense]	o, ɔ
+[-high, -coronal, -continuant, -nasal]	p, b
+[+anterior, -coronal, -voice]	p, f
+[-high, -coronal, -voice, -strident]	p, h
+[-coronal, -voice, -continuant]	p, k
+[-high, -voice, -continuant, -strident]	p, t
+[+vocalic, +consonantal]	r, l
+[-high, +coronal, -voice, -continuant]	t, c
+[+coronal, -continuant, -nasal, -strident]	t, d
+[+vocalic, -low, +round, -tense]	u, o
+[+high, +back, -tense]	u, w
+[-high, +voice, +strident]	v, z
+[-anterior, -coronal, +continuant]	x, h
+[-vocalic, -consonantal, +high]	y, w
+[-vocalic, -consonantal, -round]	y, ɛ
+[-high, +coronal, +strident]	z, c
+[+coronal, +voice, +continuant, +strident]	z, ž
+[-back, +low, -round]	ä, æ
+[+low, -round, +tense]	ä, ā
+[-back, +low, +tense]	ä, œ
+[+low, -tense]	æ, ɔ
+[+back, +low, +tense]	ā, O
+[-high, +back, -round]	ā, ʌ
+[+high, -voice, -continuant]	č, k
+[+high, -back, -voice]	č, š
+[+high, -back, -continuant]	č, ʝ
+[+vocalic, -consonantal, -high, -back, -low]	ē, e
+[-high, -back, -round, +tense]	ē, ä
+[-high, -low, +tense]	ē, ō
+[+vocalic, +high, -back]	ī, i
+[-back, -low, +tense]	ī, ē
+[-high, +back, +round, +tense]	ō, O
+[-high, -low, +round]	ō, o
+[+low, +round, +tense]	œ, O
+[-back, -anterior, -voice, +continuant]	š, h
+[+high, -voice, +continuant]	š, x
+[+high, -back, +continuant]	š, ž
+[+vocalic, +high, +round]	ū, u
+[-low, +round, +tense]	ū, ō
+[-vocalic, -consonantal, -high]	ɛ, h
+[+back, -round, +tense]	ɨ, ā
+[+high, -round, +tense]	ɨ, ī
+[+high, +back, +tense]	ɨ, ū
+[+vocalic, +back, -low, -round]	ɨ, ʌ
+[-high, +back, -low, -tense]	ʌ, o
+[+high, +voice, -continuant, -nasal]	ʝ, g
+[+high, -back, +voice]	ʝ, ž
+[-high, +coronal, -voice, +continuant]	θ, ð
+[+voice, -continuant, -nasal, -strident]	b, d, g
+[-vocalic, -high, +voice, -nasal, -strident]	b, d, n
+[-back, +voice, -continuant, -nasal]	b, d, ʝ
+[-coronal, +voice, -nasal]	b, v, g
+[-high, -coronal, +voice]	b, v, m
+[+coronal, -voice, +strident]	c, č, š
+[-continuant, +strident]	c, č, ʝ
+[-vocalic, +coronal, +voice, -strident]	d, n, s
+[-vocalic, -high, +coronal, +voice, -nasal]	d, n, z
+[+coronal, +voice, -continuant]	d, s, ʝ
+[-high, -back, -tense]	e, æ, ɛ
+[+vocalic, -high, -low, -tense]	e, ʌ, o
+[+vocalic, -high, -round, -tense]	e, ʌ, æ
+[-high, -low, -round, -tense]	e, ʌ, ɛ
+[-high, -coronal, +continuant]	f, v, h
+[+consonantal, -coronal, +continuant]	f, v, x
+[-high, +continuant, +strident]	f, v, z
+[-coronal, -voice, +continuant]	f, x, h
+[+anterior, -voice, +continuant]	f, θ, ð
+[+vocalic, -back, -tense]	i, e, æ
+[+vocalic, -low, -round, -tense]	i, e, ʌ
+[+consonantal, -round]	k, g, x
+[+back, -continuant]	k, g, ŋ
+[-anterior, -coronal, -voice]	k, x, h
+[+nasal]	m, s, ŋ
+[-vocalic, +coronal, +voice, +continuant]	n, z, ž
+[-high, -coronal, -nasal, -strident]	p, b, h
+[-high, -coronal, -continuant]	p, b, m
+[-high, -coronal, -voice]	p, f, h
+[+consonantal, -coronal, -voice, -strident]	p, k, x
+[-high, -voice, -continuant]	p, t, c
+[-voice, -continuant, -strident]	p, t, k
+[+voice, +continuant, -strident]	r, l, n
+[+coronal, -voice, -continuant]	t, c, č
+[-high, +coronal, -continuant, -nasal]	t, d, c
+[+coronal, -continuant, -strident]	t, d, s
+[+coronal, -voice, -strident]	t, θ, ð
+[-low, +round, -tense]	u, o, w
+[+vocalic, +round, -tense]	u, o, ɔ
+[+vocalic, +back, -low, -tense]	u, ʌ, o
+[-vocalic, -high, +voice, +continuant]	v, n, z
+[+voice, +continuant, +strident]	v, z, ž
+[-vocalic, -tense]	y, w, ɛ
+[-vocalic, -consonantal, -back]	y, ɛ, h
+[+coronal, +continuant, +strident]	z, š, ž
+[+coronal, +voice, +strident]	z, ʝ, ž
+[+low, -round]	ä, ā, æ
+[+vocalic, -back, +low]	ä, œ, æ
+[+back, +low]	ā, O, ɔ
+[-back, -anterior, -voice]	č, š, h
+[-consonantal, -high, -back, -low]	ē, e, ɛ
+[+vocalic, -high, -low, -round]	ē, e, ʌ
+[-high, -round, +tense]	ē, ä, ā
+[-high, -back, +tense]	ē, ä, œ
+[-consonantal, +high, -back]	ī, i, y
+[-back, -round, +tense]	ī, ē, ä
+[-high, +back, +tense]	ō, ā, O
+[-high, +round, +tense]	ō, œ, O
+[-high, +back, -low]	ō, ʌ, o
+[+low, +round]	œ, O, ɔ
+[-anterior, -voice, +continuant]	š, x, h
+[-back, -anterior, +continuant]	š, ž, h
+[+high, +continuant]	š, ž, x
+[+high, +round]	ū, u, w
+[+back, +round, +tense]	ū, ō, O
+[+vocalic, +back, -round]	ɨ, ā, ʌ
+[+vocalic, +high, -round]	ɨ, ī, i
+[-low, -round, +tense]	ɨ, ī, ē
+[+high, +tense]	ɨ, ī, ū
+[+vocalic, +high, +back]	ɨ, ū, u
+[+back, -low, +tense]	ɨ, ū, ō
+[-high, +back, -tense]	ʌ, o, ɔ
+[+high, +voice, -continuant]	ʝ, g, ŋ
+[+high, +voice, -nasal]	ʝ, ž, g
+[-high, -voice, +continuant, -strident]	θ, ð, h
+[-vocalic, +anterior, +continuant, -strident]	θ, ð, n
+[+consonantal, -voice, +continuant, -strident]	θ, ð, x
+[+coronal, -voice, +continuant]	θ, ð, š
+[-vocalic, +voice, -nasal, -strident]	b, d, n, g
+[+voice, -continuant, -nasal]	b, d, ʝ, g
+[-high, +voice, -continuant]	b, m, d, s
+[-coronal, +voice, -continuant]	b, m, g, ŋ
+[-vocalic, -high, +coronal, +voice]	d, n, s, z
+[-high, -low, -tense]	e, ʌ, o, ɛ
+[-high, -round, -tense]	e, ʌ, æ, ɛ
+[-voice, +strident]	f, c, č, š
+[-coronal, +continuant]	f, v, x, h
+[-high, +strident]	f, v, z, c
+[-high, -voice, +continuant]	f, θ, ð, h
+[+consonantal, -back, -voice, +continuant]	f, θ, ð, š
+[-back, -low, -tense]	i, e, y, ɛ
+[+vocalic, -round, -tense]	i, e, ʌ, æ
+[+high, -tense]	i, u, y, w
+[-anterior, -coronal, -nasal]	k, g, x, h
+[+consonantal, +back]	k, g, x, ŋ
+[+anterior, -coronal, -nasal]	p, b, f, v
+[-coronal, -continuant, -nasal]	p, b, k, g
+[-high, -coronal, -strident]	p, b, m, h
+[-high, -continuant, -nasal, -strident]	p, b, t, d
+[+consonantal, -coronal, -voice]	p, f, k, x
+[-coronal, -voice, -strident]	p, k, x, h
+[-back, -voice, -continuant]	p, t, c, č
+[+anterior, -voice, -strident]	p, t, θ, ð
+[+coronal, +voice, -nasal, -strident]	r, l, d, n
+[-high, +coronal, +voice, +continuant]	r, l, n, z
+[-high, +coronal, -continuant]	t, d, s, c
+[-high, +coronal, -voice]	t, θ, ð, c
+[+round, -tense]	u, o, ɔ, w
+[+back, -low, -tense]	u, ʌ, o, w
+[+vocalic, +back, -tense]	u, ʌ, o, ɔ
+[-vocalic, +voice, +continuant]	v, n, z, ž
+[+voice, +strident]	v, z, ʝ, ž
+[-vocalic, +high, -round]	y, k, g, x
+[-vocalic, -consonantal]	y, w, ɛ, h
+[+low, +tense]	ä, ā, œ, O
+[-back, +low]	ä, œ, æ, h
+[+high, -voice]	č, š, k, x
+[+high, -continuant, -nasal]	č, ʝ, k, g
+[+high, +coronal]	č, ʝ, š, ž
+[+vocalic, -high, -back, -low]	ē, e, r, l
+[-high, -low, -round]	ē, e, ʌ, ɛ
+[+vocalic, -high, -back, -round]	ē, ä, e, æ
+[+vocalic, -consonantal, -back, -low]	ī, ē, i, e
+[-back, +tense]	ī, ē, ä, œ
+[-high, +back, +round]	ō, O, o, ɔ
+[-anterior, +continuant]	š, ž, x, h
+[+vocalic, -low, +round]	ū, ō, u, o
+[+round, +tense]	ū, ō, œ, O
+[+high, +back, -round]	ɨ, k, g, x
+[-consonantal, +high, -round]	ɨ, ī, i, y
+[-consonantal, +high, +back]	ɨ, ū, u, w
+[+high, +voice]	ʝ, ž, g, ŋ
+[-vocalic, -high, +continuant, -strident]	θ, ð, n, h
+[-vocalic, +consonantal, +continuant, -strident]	θ, ð, n, x
+[-vocalic, -high, +coronal, +continuant]	θ, ð, n, z
+[-voice, +continuant, -strident]	θ, ð, x, h
+[-vocalic, -high, +voice, -strident]	b, m, d, n, s
+[-back, +voice, -continuant]	b, m, d, s, ʝ
+[-vocalic, -high, +voice, -nasal]	b, v, d, n, z
+[-coronal, +voice]	b, v, m, g, ŋ
+[-vocalic, +coronal, +voice, -nasal]	d, n, z, ʝ, ž
+[+vocalic, -high, -tense]	e, ʌ, o, æ, ɔ
+[+continuant, +strident]	f, v, z, š, ž
+[-back, -voice, +continuant]	f, θ, ð, š, h
+[+consonantal, -voice, +continuant]	f, θ, ð, š, x
+[-back, -tense]	i, e, æ, y, ɛ
+[-low, -round, -tense]	i, e, ʌ, y, ɛ
+[+vocalic, -low, -tense]	i, u, e, ʌ, o
+[-anterior, -strident]	k, g, x, ŋ, h
+[-high, -coronal, -nasal]	p, b, f, v, h
+[+anterior, -coronal]	p, b, f, v, m
+[+consonantal, -coronal, -nasal, -strident]	p, b, k, g, x
+[-high, -continuant, -nasal]	p, b, t, d, c
+[-coronal, -voice]	p, f, k, x, h
+[-voice, -continuant]	p, t, c, č, k
+[-high, -voice, -strident]	p, t, θ, ð, h
+[-high, +voice, -nasal, -strident]	r, l, b, d, n
+[+coronal, +voice, -strident]	r, l, d, n, s
+[-high, +coronal, +voice, -nasal]	r, l, d, n, z
+[+coronal, +voice, +continuant]	r, l, n, z, ž
+[-high, +voice, +continuant]	r, l, v, n, z
+[+anterior, +continuant, -strident]	r, l, θ, ð, n
+[+coronal, -continuant, -nasal]	t, d, c, č, ʝ
+[-vocalic, +coronal, -nasal, -strident]	t, d, θ, ð, n
+[+back, -tense]	u, ʌ, o, ɔ, w
+[-vocalic, +back]	w, k, g, x, ŋ
+[-vocalic, +high, -back]	y, č, ʝ, š, ž
+[-vocalic, -round]	y, ɛ, k, g, x
+[-anterior, -voice]	č, š, k, x, h
+[+high, -continuant]	č, ʝ, k, g, ŋ
+[-back, -anterior, -nasal]	č, ʝ, š, ž, h
+[-high, -back, -round]	ē, ä, e, æ, ɛ
+[+vocalic, -consonantal, -high, -back]	ē, ä, œ, e, æ
+[+vocalic, -consonantal, -high, -low]	ē, ō, e, ʌ, o
+[-high, +round]	ō, œ, O, o, ɔ
+[-low, +round]	ū, ō, u, o, w
+[-round, +tense]	ɨ, ī, ē, ä, ā
+[+vocalic, +high]	ɨ, ī, ū, i, u
+[-low, +tense]	ɨ, ī, ū, ē, ō
+[+back, +tense]	ɨ, ū, ō, ā, O
+[+back, -low, -round]	ɨ, ʌ, k, g, x
+[-vocalic, +continuant, -strident]	θ, ð, n, x, h
+[+voice, -continuant, -strident]	b, m, d, s, g, ŋ
+[-vocalic, +coronal, +voice]	d, n, s, z, ʝ, ž
+[-high, -tense]	e, ʌ, o, æ, ɔ, ɛ
+[-vocalic, +anterior, +continuant]	f, v, θ, ð, n, z
+[-voice, +continuant]	f, θ, ð, š, x, h
+[-round, -tense]	i, e, ʌ, æ, y, ɛ
+[-coronal, -nasal, -strident]	p, b, k, g, x, h
+[-coronal, -continuant]	p, b, m, k, g, ŋ
+[-high, -continuant, -strident]	p, b, m, t, d, s
+[-continuant, -nasal, -strident]	p, b, t, d, k, g
+[+anterior, -voice]	p, f, t, θ, ð, c
+[+consonantal, -voice, -strident]	p, t, θ, ð, k, x
+[+voice, -nasal, -strident]	r, l, b, d, n, g
+[-high, +coronal, +voice]	r, l, d, n, s, z
+[+voice, +continuant]	r, l, v, n, z, ž
+[-high, +continuant, -strident]	r, l, θ, ð, n, h
+[+consonantal, +continuant, -strident]	r, l, θ, ð, n, x
+[-high, +coronal, +continuant]	r, l, θ, ð, n, z
+[+coronal, -continuant]	t, d, s, c, č, ʝ
+[-vocalic, +coronal, -strident]	t, d, θ, ð, n, s
+[+coronal, -voice]	t, θ, ð, c, č, š
+[-vocalic, +high, -coronal]	y, w, k, g, x, ŋ
+[-vocalic, -back, -low, -anterior]	y, ɛ, č, ʝ, š, ž
+[+coronal, +strident]	z, c, č, ʝ, š, ž
+[+vocalic, +low]	ä, ā, œ, O, æ, ɔ
+[+vocalic, -high, -round]	ē, ä, ā, e, ʌ, æ
+[-consonantal, -high, -low]	ē, ō, e, ʌ, o, ɛ
+[-high, +tense]	ē, ō, ä, ā, œ, O
+[+vocalic, -back, -low]	ī, ē, i, e, r, l
+[-consonantal, -back, -low]	ī, ē, i, e, y, ɛ
+[+vocalic, -back, -round]	ī, ē, ä, i, e, æ
+[-high, +back]	ō, ā, O, ʌ, o, ɔ
+[+vocalic, +back, +round]	ū, ō, O, u, o, ɔ
+[-vocalic, -high, -low, -coronal]	ɛ, p, b, f, v, m
+[+back, -round]	ɨ, ā, ʌ, k, g, x
+[+vocalic, -low, -round]	ɨ, ī, ē, i, e, ʌ
+[+vocalic, +back, -low]	ɨ, ū, ō, u, ʌ, o
+[-vocalic, +coronal, +continuant]	θ, ð, n, z, š, ž
+[-vocalic, +voice, -strident]	b, m, d, n, s, g, ŋ
+[+voice, -continuant]	b, m, d, s, ʝ, g, ŋ
+[-vocalic, -back, +voice, -nasal]	b, v, d, n, z, ʝ, ž
+[-vocalic, -high, +voice]	b, v, m, d, n, s, z
+[-vocalic, -high, +continuant]	f, v, θ, ð, n, z, h
+[+vocalic, -tense]	i, u, e, ʌ, o, æ, ɔ
+[+consonantal, -coronal, -nasal]	p, b, f, v, k, g, x
+[+consonantal, -coronal, -strident]	p, b, m, k, g, x, ŋ
+[-high, -continuant]	p, b, m, t, d, s, c
+[-back, -continuant, -nasal]	p, b, t, d, c, č, ʝ
+[-vocalic, +anterior, -nasal, -strident]	p, b, t, d, θ, ð, n
+[-high, -voice]	p, f, t, θ, ð, c, h
+[-voice, -strident]	p, t, θ, ð, k, x, h
+[-high, +voice, -strident]	r, l, b, m, d, n, s
+[-high, +voice, -nasal]	r, l, b, v, d, n, z
+[+coronal, +voice, -nasal]	r, l, d, n, z, ʝ, ž
+[+coronal, -nasal, -strident]	r, l, t, d, θ, ð, n
+[+continuant, -strident]	r, l, θ, ð, n, x, h
+[-vocalic, -high, +coronal, -nasal]	t, d, θ, ð, n, z, c
+[-vocalic, -low, -anterior, -coronal]	y, w, ɛ, k, g, x, ŋ
+[-vocalic, -back, -low, -coronal]	y, ɛ, p, b, f, v, m
+[-vocalic, -back, -anterior]	y, ɛ, č, ʝ, š, ž, h
+[+low]	ä, ā, œ, O, æ, ɔ, h
+[+high, -nasal]	č, ʝ, š, ž, k, g, x
+[-high, -round]	ē, ä, ā, e, ʌ, æ, ɛ
+[+vocalic, -high, -back]	ē, ä, œ, e, æ, r, l
+[-consonantal, -high, -back]	ē, ä, œ, e, æ, ɛ, h
+[+vocalic, -high, -low]	ē, ō, e, ʌ, o, r, l
+[+high, -back]	ī, i, y, č, ʝ, š, ž
+[+vocalic, -consonantal, -back]	ī, ē, ä, œ, i, e, æ
+[+back, +round]	ū, ō, O, u, o, ɔ, w
+[+vocalic, +round]	ū, ō, œ, O, u, o, ɔ
+[-vocalic, -high, -coronal]	ɛ, p, b, f, v, m, h
+[+high, -round]	ɨ, ī, i, y, k, g, x
+[-consonantal, +high]	ɨ, ī, ū, i, u, y, w
+[-consonantal, +back, -low]	ɨ, ū, ō, u, ʌ, o, w
+[-vocalic, +voice, -nasal]	b, v, d, n, z, ʝ, ž, g
+[+strident]	f, v, z, c, č, ʝ, š, ž
+[-vocalic, +consonantal, -back, +continuant]	f, v, θ, ð, n, z, š, ž
+[-low, -tense]	i, u, e, ʌ, o, y, w, ɛ
+[-coronal, -nasal]	p, b, f, v, k, g, x, h
+[-coronal, -strident]	p, b, m, k, g, x, ŋ, h
+[-vocalic, -high, -nasal, -strident]	p, b, t, d, θ, ð, n, h
+[+consonantal, -back, -voice]	p, f, t, θ, ð, c, č, š
+[+coronal, +voice]	r, l, d, n, s, z, ʝ, ž
+[+anterior, +continuant]	r, l, f, v, θ, ð, n, z
+[+coronal, -strident]	r, l, t, d, θ, ð, n, s
+[+coronal, +continuant]	r, l, θ, ð, n, z, š, ž
+[-vocalic, -high, +coronal]	t, d, θ, ð, n, s, z, c
+[-vocalic, -anterior, -coronal]	y, w, ɛ, k, g, x, ŋ, h
+[-vocalic, -back, -coronal]	y, ɛ, p, b, f, v, m, h
+[-anterior, -nasal]	č, ʝ, š, ž, k, g, x, h
+[+consonantal, +high]	č, ʝ, š, ž, k, g, x, ŋ
+[-high, -back, -low, -coronal]	ē, e, ɛ, p, b, f, v, m
+[-back, -round]	ī, ē, ä, i, e, æ, y, ɛ
+[+round]	ū, ō, œ, O, u, o, ɔ, w
+[-consonantal, -low, -round]	ɨ, ī, ē, i, e, ʌ, y, ɛ
+[+high, +back]	ɨ, ū, u, w, k, g, x, ŋ
+[-vocalic, -back, +voice]	b, v, m, d, n, s, z, ʝ, ž
+[-vocalic, -back, +continuant]	f, v, θ, ð, n, z, š, ž, h
+[-vocalic, +consonantal, +continuant]	f, v, θ, ð, n, z, š, ž, x
+[+consonantal, -coronal]	p, b, f, v, m, k, g, x, ŋ
+[-back, -continuant]	p, b, m, t, d, s, c, č, ʝ
+[-continuant, -strident]	p, b, m, t, d, s, k, g, ŋ
+[-vocalic, +anterior, -strident]	p, b, m, t, d, θ, ð, n, s
+[-continuant, -nasal]	p, b, t, d, c, č, ʝ, k, g
+[-back, -voice]	p, f, t, θ, ð, c, č, š, h
+[+voice, -strident]	r, l, b, m, d, n, s, g, ŋ
+[-back, +voice, -nasal]	r, l, b, v, d, n, z, ʝ, ž
+[-high, +voice]	r, l, b, v, m, d, n, s, z
+[-high, +continuant]	r, l, f, v, θ, ð, n, z, h
+[+anterior, -nasal, -strident]	r, l, p, b, t, d, θ, ð, n
+[-high, +coronal, -nasal]	r, l, t, d, θ, ð, n, z, c
+[+vocalic, -back]	ī, ē, ä, œ, i, e, æ, r, l
+[+vocalic, -round]	ɨ, ī, ē, ä, ā, i, e, ʌ, æ
+[+tense]	ɨ, ī, ū, ē, ō, ä, ā, œ, O
+[+vocalic, +back]	ɨ, ū, ō, ā, O, u, ʌ, o, ɔ
+[-vocalic, +continuant]	f, v, θ, ð, n, z, š, ž, x, h
+[-tense]	i, u, e, ʌ, o, æ, ɔ, y, w, ɛ
+[-vocalic, -high, -strident]	p, b, m, t, d, θ, ð, n, s, h
+[-vocalic, +consonantal, -nasal, -strident]	p, b, t, d, θ, ð, n, k, g, x
+[+consonantal, -voice]	p, f, t, θ, ð, c, č, š, k, x
+[+voice, -nasal]	r, l, b, v, d, n, z, ʝ, ž, g
+[+consonantal, -back, +continuant]	r, l, f, v, θ, ð, n, z, š, ž
+[-high, -nasal, -strident]	r, l, p, b, t, d, θ, ð, n, h
+[-high, +coronal]	r, l, t, d, θ, ð, n, s, z, c
+[-vocalic, +high]	y, w, č, ʝ, š, ž, k, g, x, ŋ
+[-back, -low, -anterior]	ī, ē, i, e, y, ɛ, č, ʝ, š, ž
+[-consonantal, -back]	ī, ē, ä, œ, i, e, æ, y, ɛ, h
+[+vocalic, -consonantal, -low]	ɨ, ī, ū, ē, ō, i, u, e, ʌ, o
+[-consonantal, +back]	ɨ, ū, ō, ā, O, u, ʌ, o, ɔ, w
+[-vocalic, +voice]	b, v, m, d, n, s, z, ʝ, ž, g, ŋ
+[-vocalic, +anterior, -nasal]	p, b, f, v, t, d, θ, ð, n, z, c
+[-vocalic, -nasal, -strident]	p, b, t, d, θ, ð, n, k, g, x, h
+[-voice]	p, f, t, θ, ð, c, č, š, k, x, h
+[-back, +voice]	r, l, b, v, m, d, n, s, z, ʝ, ž
+[-back, +continuant]	r, l, f, v, θ, ð, n, z, š, ž, h
+[+consonantal, +continuant]	r, l, f, v, θ, ð, n, z, š, ž, x
+[+anterior, -strident]	r, l, p, b, m, t, d, θ, ð, n, s
+[-vocalic, +coronal, -nasal]	t, d, θ, ð, n, z, c, č, ʝ, š, ž
+[-vocalic, -low, -anterior]	y, w, ɛ, č, ʝ, š, ž, k, g, x, ŋ
+[-high, -low, -coronal]	ē, ō, e, ʌ, o, ɛ, p, b, f, v, m
+[+vocalic, -consonantal, -high]	ē, ō, ä, ā, œ, O, e, ʌ, o, æ, ɔ
+[-back, -low, -coronal]	ī, ē, i, e, y, ɛ, p, b, f, v, m
+[-low, -round]	ɨ, ī, ē, i, e, ʌ, y, ɛ, k, g, x
+[-consonantal, -round]	ɨ, ī, ē, ä, ā, i, e, ʌ, æ, y, ɛ
+[+high, -coronal]	ɨ, ī, ū, i, u, y, w, k, g, x, ŋ
+[+back, -low]	ɨ, ū, ō, u, ʌ, o, w, k, g, x, ŋ
+[-vocalic, -high, -nasal]	p, b, f, v, t, d, θ, ð, n, z, c, h
+[-continuant]	p, b, m, t, d, s, c, č, ʝ, k, g, ŋ
+[+continuant]	r, l, f, v, θ, ð, n, z, š, ž, x, h
+[-high, -strident]	r, l, p, b, m, t, d, θ, ð, n, s, h
+[+consonantal, -nasal, -strident]	r, l, p, b, t, d, θ, ð, n, k, g, x
+[-vocalic, +coronal]	t, d, θ, ð, n, s, z, c, č, ʝ, š, ž
+[-vocalic, -low, -coronal]	y, w, ɛ, p, b, f, v, m, k, g, x, ŋ
+[-vocalic, -anterior]	y, w, ɛ, č, ʝ, š, ž, k, g, x, ŋ, h
+[-high, -back, -coronal]	ē, ä, œ, e, æ, ɛ, p, b, f, v, m, h
+[+vocalic, -low]	ɨ, ī, ū, ē, ō, i, u, e, ʌ, o, r, l
+[-vocalic, +anterior]	p, b, f, v, m, t, d, θ, ð, n, s, z, c
+[-vocalic, +consonantal, -strident]	p, b, m, t, d, θ, ð, n, s, k, g, x, ŋ
+[+voice]	r, l, b, v, m, d, n, s, z, ʝ, ž, g, ŋ
+[+anterior, -nasal]	r, l, p, b, f, v, t, d, θ, ð, n, z, c
+[-nasal, -strident]	r, l, p, b, t, d, θ, ð, n, k, g, x, h
+[+coronal, -nasal]	r, l, t, d, θ, ð, n, z, c, č, ʝ, š, ž
+[-vocalic, -coronal]	y, w, ɛ, p, b, f, v, m, k, g, x, ŋ, h
+[+vocalic, -high]	ē, ō, ä, ā, œ, O, e, ʌ, o, æ, ɔ, r, l
+[-consonantal, -high]	ē, ō, ä, ā, œ, O, e, ʌ, o, æ, ɔ, ɛ, h
+[-consonantal, -low]	ɨ, ī, ū, ē, ō, i, u, e, ʌ, o, y, w, ɛ
+[-vocalic, -strident]	p, b, m, t, d, θ, ð, n, s, k, g, x, ŋ, h
+[-high, -nasal]	r, l, p, b, f, v, t, d, θ, ð, n, z, c, h
+[+coronal]	r, l, t, d, θ, ð, n, s, z, c, č, ʝ, š, ž
+[-back, -anterior]	ī, ē, ä, œ, i, e, æ, y, ɛ, č, ʝ, š, ž, h
+[-vocalic, -high, -low]	ɛ, p, b, f, v, m, t, d, θ, ð, n, s, z, c
+[-round]	ɨ, ī, ē, ä, ā, i, e, ʌ, æ, y, ɛ, k, g, x
+[+back]	ɨ, ū, ō, ā, O, u, ʌ, o, ɔ, w, k, g, x, ŋ
+[-vocalic, +consonantal, -back, -nasal]	p, b, f, v, t, d, θ, ð, n, z, c, č, ʝ, š, ž
+[+anterior]	r, l, p, b, f, v, m, t, d, θ, ð, n, s, z, c
+[+consonantal, -strident]	r, l, p, b, m, t, d, θ, ð, n, s, k, g, x, ŋ
+[-back, -coronal]	ī, ē, ä, œ, i, e, æ, y, ɛ, p, b, f, v, m, h
+[-vocalic, -high]	ɛ, p, b, f, v, m, t, d, θ, ð, n, s, z, c, h
+[+high]	ɨ, ī, ū, i, u, y, w, č, ʝ, š, ž, k, g, x, ŋ
+[-vocalic, -back, -nasal]	p, b, f, v, t, d, θ, ð, n, z, c, č, ʝ, š, ž, h
+[-strident]	r, l, p, b, m, t, d, θ, ð, n, s, k, g, x, ŋ, h
+[+vocalic, -consonantal]	ɨ, ī, ū, ē, ō, ä, ā, œ, O, i, u, e, ʌ, o, æ, ɔ
+[-vocalic, +consonantal, -back]	p, b, f, v, m, t, d, θ, ð, n, s, z, c, č, ʝ, š, ž
+[+consonantal, -back, -nasal]	r, l, p, b, f, v, t, d, θ, ð, n, z, c, č, ʝ, š, ž
+[-low, -anterior, -coronal]	ɨ, ī, ū, ē, ō, i, u, e, ʌ, o, y, w, ɛ, k, g, x, ŋ
+[-vocalic, +consonantal, -nasal]	p, b, f, v, t, d, θ, ð, n, z, c, č, ʝ, š, ž, k, g, x
+[-back, -nasal]	r, l, p, b, f, v, t, d, θ, ð, n, z, c, č, ʝ, š, ž, h
+[-high, -back, -low]	ē, e, ɛ, r, l, p, b, f, v, m, t, d, θ, ð, n, s, z, c
+[-high, -coronal]	ē, ō, ä, ā, œ, O, e, ʌ, o, æ, ɔ, ɛ, p, b, f, v, m, h
+[+vocalic]	ɨ, ī, ū, ē, ō, ä, ā, œ, O, i, u, e, ʌ, o, æ, ɔ, r, l
+[-vocalic, -nasal]	p, b, f, v, t, d, θ, ð, n, z, c, č, ʝ, š, ž, k, g, x, h
+[+consonantal, -back]	r, l, p, b, f, v, m, t, d, θ, ð, n, s, z, c, č, ʝ, š, ž
+[-vocalic, -back, -low]	y, ɛ, p, b, f, v, m, t, d, θ, ð, n, s, z, c, č, ʝ, š, ž
+[+consonantal, -nasal]	r, l, p, b, f, v, t, d, θ, ð, n, z, c, č, ʝ, š, ž, k, g, x
+[-vocalic, -back]	y, ɛ, p, b, f, v, m, t, d, θ, ð, n, s, z, c, č, ʝ, š, ž, h
+[-consonantal]	ɨ, ī, ū, ē, ō, ä, ā, œ, O, i, u, e, ʌ, o, æ, ɔ, y, w, ɛ, h
+[-vocalic, +consonantal]	p, b, f, v, m, t, d, θ, ð, n, s, z, c, č, ʝ, š, ž, k, g, x, ŋ
+[-nasal]	r, l, p, b, f, v, t, d, θ, ð, n, z, c, č, ʝ, š, ž, k, g, x, h
+[-high, -low]	ē, ō, e, ʌ, o, ɛ, r, l, p, b, f, v, m, t, d, θ, ð, n, s, z, c
+[-low, -anterior]	ɨ, ī, ū, ē, ō, i, u, e, ʌ, o, y, w, ɛ, č, ʝ, š, ž, k, g, x, ŋ
+[-high, -back]	ē, ä, œ, e, æ, ɛ, r, l, p, b, f, v, m, t, d, θ, ð, n, s, z, c, h
+[-low, -coronal]	ɨ, ī, ū, ē, ō, i, u, e, ʌ, o, y, w, ɛ, p, b, f, v, m, k, g, x, ŋ
+[+consonantal]	r, l, p, b, f, v, m, t, d, θ, ð, n, s, z, c, č, ʝ, š, ž, k, g, x, ŋ
+[-vocalic, -low]	y, w, ɛ, p, b, f, v, m, t, d, θ, ð, n, s, z, c, č, ʝ, š, ž, k, g, x, ŋ
+[-anterior, -coronal]	ɨ, ī, ū, ē, ō, ä, ā, œ, O, i, u, e, ʌ, o, æ, ɔ, y, w, ɛ, k, g, x, ŋ, h
+[-vocalic]	y, w, ɛ, p, b, f, v, m, t, d, θ, ð, n, s, z, c, č, ʝ, š, ž, k, g, x, ŋ, h
+[-back, -low]	ī, ē, i, e, y, ɛ, r, l, p, b, f, v, m, t, d, θ, ð, n, s, z, c, č, ʝ, š, ž
+[-high]	ē, ō, ä, ā, œ, O, e, ʌ, o, æ, ɔ, ɛ, r, l, p, b, f, v, m, t, d, θ, ð, n, s, z, c, h
+[-anterior]	ɨ, ī, ū, ē, ō, ä, ā, œ, O, i, u, e, ʌ, o, æ, ɔ, y, w, ɛ, č, ʝ, š, ž, k, g, x, ŋ, h
+[-back]	ī, ē, ä, œ, i, e, æ, y, ɛ, r, l, p, b, f, v, m, t, d, θ, ð, n, s, z, c, č, ʝ, š, ž, h
+[-coronal]	ɨ, ī, ū, ē, ō, ä, ā, œ, O, i, u, e, ʌ, o, æ, ɔ, y, w, ɛ, p, b, f, v, m, k, g, x, ŋ, h
+[-low]	ɨ, ī, ū, ē, ō, i, u, e, ʌ, o, y, w, ɛ, r, l, p, b, f, v, m, t, d, θ, ð, n, s, z, c, č, ʝ, š, ž, k, g, x, ŋ

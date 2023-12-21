@@ -1,0 +1,487 @@
+base	base_tr	variation	type	variant1	variant2	resp1	resp2	log_odds	derivational	nsyl	vowel	suffix	carrier_sentence	target_sentence	string	nchar
+aglik	aglik	lakok/lakom	nonce word response	aglok	aglom	12	15	-0.2076393647782445	-lik	1	NA	NA	Te bizony sokat aglasz.	Én is sokat...	agl	3
+bejzik / bejezik	bejzik / bejezik	cselekszenek/cselekednek	nonce word response	bejzünk	bejezünk	13	14	-0.06899287148695143	-zik	1	NA	ünk	János imád bejezni, ezért sokat bejzik.	Mi ritkán...	bejz	4
+bidem	bidem	hotelban/hotelben	nonce word response	bidemban	bidemben	1	25	-2.5649493574615367	NA	NA	e	ban	Ez itt egy bidem.	Ott vagyunk a...	bidem	5
+bihánylik	bihá¥lik	lakok/lakom	nonce word response	bihánylok	bihánylom	21	5	1.2992829841302609	-lik	2	NA	NA	Te bizony sokat bihánylasz.	Én is sokat...	biháṉl	6
+bingéj	bingéj	hotelban/hotelben	nonce word response	bingéjnak	bingéjnek	5	24	-1.4271163556401458	NA	NA	é	nak	Ez itt egy bingéj.	Elneveztem a kutyámat...	bingéj	6
+bivégszik	bivégßik	lakok/lakom	nonce word response	bivégszek	bivégszem	7	22	-1.0560526742493137	-szik	2	NA	NA	Te bizony sokat bivégszel.	Én is sokat...	bivégs	6
+bivejlik	bivejlik	lakok/lakom	nonce word response	bivejlek	bivejlem	18	8	0.7472144018302211	-lik	2	NA	NA	Te bizony sokat bivejlesz.	Én is sokat...	bivejl	6
+böjzik	böjzik	lakok/lakom	nonce word response	böjzök	böjzöm	14	12	0.14310084364067324	-zik	1	NA	NA	Te bizony sokat böjzöl.	Én is sokat...	böjz	4
+bölszik	bölßik	lakok/lakom	nonce word response	bölszök	bölszöm	16	11	0.3483066942682158	-szik	1	NA	NA	Te bizony sokat bölszöl.	Én is sokat...	böls	4
+bötőrzik / bötőrözik	bötőrzik / bötőrözik	cselekszenek/cselekednek	nonce word response	bötőrzünk	bötőrözünk	16	11	0.3483066942682158	-zik	2	NA	ünk	János imád bötőrözni, ezért sokat bötőrzik.	Mi ritkán...	bötőrz	6
+brágaklik	brágaklik	lakok/lakom	nonce word response	brágaklok	brágaklom	12	17	-0.325422400434628	-lik	2	NA	NA	Te bizony sokat brágaklasz.	Én is sokat...	brágakl	7
+brágéd	brágéd	hotelban/hotelben	nonce word response	brágédnak	brágédnek	14	15	-0.06453852113757118	NA	NA	é	nak	Ez itt egy brágéd.	Elneveztem a kutyámat...	brágéd	6
+brálamlik / brálamozik	brálamlik / brálamozik	cselekszenek/cselekednek	nonce word response	brálamlanak	brálamoznak	16	10	0.4353180712578455	-lik	2	NA	nek	János imád brálamozni, ezért sokat brálamlik.	Ők ritkán...	brálaml	7
+bralkép	bralkép	hotelban/hotelben	nonce word response	bralképban	bralképben	6	21	-1.1451323043030026	NA	NA	é	ban	Ez itt egy bralkép.	Ott vagyunk a...	bralkép	7
+branylik / branyozik	bra¥lik / bra¥ozik	cselekszenek/cselekednek	nonce word response	branylanak	branyoznak	17	12	0.32542240043462795	-lik	1	NA	nek	János imád branyozni, ezért sokat branylik.	Ők ritkán...	braṉl	5
+brarlik	brarlik	lakok/lakom	nonce word response	brarlok	brarlom	21	6	1.1451323043030026	-lik	1	NA	NA	Te bizony sokat brarlasz.	Én is sokat...	brarl	5
+brárlik / brározik	brárlik / brározik	cselekszenek/cselekednek	nonce word response	brárlanak	brároznak	14	12	0.14310084364067324	-lik	1	NA	nek	János imád brározni, ezért sokat brárlik.	Ők ritkán...	brárl	5
+braszenc	braßenc	hotelban/hotelben	nonce word response	braszencnál	braszencnél	8	18	-0.7472144018302211	NA	NA	e	nál	Ez itt egy braszenc.	Nincs is jobb egy jó...	brasenc	7
+bratárzik / bratározik	bratárzik / bratározik	cselekszenek/cselekednek	nonce word response	bratárzanak	bratároznak	5	21	-1.2992829841302609	-zik	2	NA	nek	János imád bratározni, ezért sokat bratárzik.	Ők ritkán...	bratárz	7
+bregzik / bregezik	bregzik / bregezik	cselekszenek/cselekednek	nonce word response	bregzünk	bregezünk	17	10	0.49247648509779424	-zik	1	NA	ünk	János imád bregezni, ezért sokat bregzik.	Mi ritkán...	bregz	5
+breslik / bresezik	breslik / bresezik	cselekszenek/cselekednek	nonce word response	breslenek	breseznek	14	13	0.06899287148695142	-lik	1	NA	nek	János imád bresezni, ezért sokat breslik.	Ők ritkán...	brešl	5
+bribaslik / bribasozik	bribaslik / bribasozik	cselekszenek/cselekednek	nonce word response	bribaslanak	bribasoznak	11	16	-0.3483066942682157	-lik	2	NA	nek	János imád bribasozni, ezért sokat bribaslik.	Ők ritkán...	bribašl	7
+bribékszik / bribékedik	bribékßik / bribékedik	cselekszenek/cselekednek	nonce word response	bribékszetek	bribékedtek	13	16	-0.1941560144409575	-szik	2	NA	tek	János imád bribékedni, ezért sokat bribékszik.	Ti ritkán...	bribéks	7
+brigeszt	brigeßt	hotelban/hotelben	nonce word response	brigesztnak	brigesztnek	1	26	-2.6026896854443837	NA	NA	e	nak	Ez itt egy brigeszt.	Elneveztem a kutyámat...	brigest	7
+brilegzik / brilegezik	brilegzik / brilegezik	cselekszenek/cselekednek	nonce word response	brilegzünk	brilegezünk	15	11	0.28768207245178085	-zik	2	NA	ünk	János imád brilegezni, ezért sokat brilegzik.	Mi ritkán...	brilegz	7
+brindez	brindez	hotelban/hotelben	nonce word response	brindeznak	brindeznek	1	25	-2.5649493574615367	NA	NA	e	nak	Ez itt egy brindez.	Elneveztem a kutyámat...	brindez	7
+briskéd	briskéd	hotelban/hotelben	nonce word response	briskédnál	briskédnél	3	23	-1.791759469228055	NA	NA	é	nál	Ez itt egy briskéd.	Nincs is jobb egy jó...	briškéd	7
+briváglik / brivágozik	briváglik / brivágozik	cselekszenek/cselekednek	nonce word response	briváglanak	brivágoznak	11	15	-0.2876820724517809	-lik	2	NA	nek	János imád brivágozni, ezért sokat briváglik.	Ők ritkán...	brivágl	7
+brivaklik / brivakozik	brivaklik / brivakozik	cselekszenek/cselekednek	nonce word response	brivaklotok	brivakoztok	12	15	-0.2076393647782445	-lik	2	NA	tek	János imád brivakozni, ezért sokat brivaklik.	Ti ritkán...	brivakl	7
+brivegzik	brivegzik	lakok/lakom	nonce word response	brivegzek	brivegzem	8	21	-0.8938178760220964	-zik	2	NA	NA	Te bizony sokat brivegzel.	Én is sokat...	brivegz	7
+brivepszik / brivepedik	brivepßik / brivepedik	cselekszenek/cselekednek	nonce word response	brivepszünk	brivepedünk	19	7	0.9162907318741552	-szik	2	NA	ünk	János imád brivepedni, ezért sokat brivepszik.	Mi ritkán...	briveps	7
+brobódzik	brobódzik	lakok/lakom	nonce word response	brobódzok	brobódzom	9	18	-0.6418538861723948	-zik	2	NA	NA	Te bizony sokat brobódzol.	Én is sokat...	brobódz	7
+bródesz	bródeß	hotelban/hotelben	nonce word response	bródesznak	bródesznek	6	20	-1.0986122886681098	NA	NA	e	nak	Ez itt egy bródesz.	Elneveztem a kutyámat...	bródes	6
+brotes	brotes	hotelban/hotelben	nonce word response	brotesban	brotesben	13	13	0	NA	NA	e	ban	Ez itt egy brotes.	Ott vagyunk a...	broteš	6
+brözlik / brözözik	brözlik / brözözik	cselekszenek/cselekednek	nonce word response	brözlötök	brözöztök	14	13	0.06899287148695142	-lik	1	NA	tek	János imád brözözni, ezért sokat brözlik.	Ti ritkán...	brözl	5
+brubzik	brubzik	lakok/lakom	nonce word response	brubzok	brubzom	16	11	0.3483066942682158	-zik	1	NA	NA	Te bizony sokat brubzol.	Én is sokat...	brubz	5
+brüjlik	brüjlik	lakok/lakom	nonce word response	brüjlök	brüjlöm	18	8	0.7472144018302211	-lik	1	NA	NA	Te bizony sokat brüjlesz.	Én is sokat...	brüjl	5
+brukész	brukéß	hotelban/hotelben	nonce word response	brukésznál	brukésznél	12	14	-0.1431008436406733	NA	NA	é	nál	Ez itt egy brukész.	Nincs is jobb egy jó...	brukés	6
+brűklik / brűközik	brűklik / brűközik	cselekszenek/cselekednek	nonce word response	brűklötök	brűköztök	14	12	0.14310084364067324	-lik	1	NA	tek	János imád brűközni, ezért sokat brűklik.	Ti ritkán...	brűkl	5
+brülöslik / brülösözik	brülöslik / brülösözik	cselekszenek/cselekednek	nonce word response	brülöslünk	brülösözünk	13	14	-0.06899287148695143	-lik	2	NA	ünk	János imád brülösözni, ezért sokat brülöslik.	Mi ritkán...	brülöšl	7
+brürzik / brürözik	brürzik / brürözik	cselekszenek/cselekednek	nonce word response	brürzenek	brüröznek	12	14	-0.1431008436406733	-zik	1	NA	nek	János imád brürözni, ezért sokat brürzik.	Ők ritkán...	brürz	5
+brüszlik / brüszözik	brüßlik / brüßözik	cselekszenek/cselekednek	nonce word response	brüszlötök	brüszöztök	12	15	-0.2076393647782445	-lik	1	NA	tek	János imád brüszözni, ezért sokat brüszlik.	Ti ritkán...	brüsl	5
+büglik	büglik	lakok/lakom	nonce word response	büglök	büglöm	19	7	0.9162907318741552	-lik	1	NA	NA	Te bizony sokat büglesz.	Én is sokat...	bügl	4
+bügzik / bügözik	bügzik / bügözik	cselekszenek/cselekednek	nonce word response	bügzenek	bügöznek	18	9	0.6418538861723947	-zik	1	NA	nek	János imád bügözni, ezért sokat bügzik.	Ők ritkán...	bügz	4
+buhény	buhé¥	hotelban/hotelben	nonce word response	buhényban	buhényben	21	6	1.1451323043030026	NA	NA	é	ban	Ez itt egy buhény.	Ott vagyunk a...	buhéṉ	5
+bupéz	bupéz	hotelban/hotelben	nonce word response	bupézban	bupézben	15	11	0.28768207245178085	NA	NA	é	ban	Ez itt egy bupéz.	Ott vagyunk a...	bupéz	5
+bűtszik	bűtßik	lakok/lakom	nonce word response	bűtszök	bűtszöm	14	12	0.14310084364067324	-szik	1	NA	NA	Te bizony sokat bűtszöl.	Én is sokat...	bűts	4
+cságyelt	çá©elt	hotelban/hotelben	nonce word response	cságyeltban	cságyeltben	9	20	-0.7419373447293773	NA	NA	e	ban	Ez itt egy cságyelt.	Ott vagyunk a...	čáḏelt	6
+csartény	çarté¥	hotelban/hotelben	nonce word response	csarténynak	csarténynek	16	11	0.3483066942682158	NA	NA	é	nak	Ez itt egy csartény.	Elneveztem a kutyámat...	čartéṉ	6
+csibagzik / csibagozik	çibagzik / çibagozik	cselekszenek/cselekednek	nonce word response	csibagzotok	csibagoztok	8	19	-0.7985076962177716	-zik	2	NA	tek	János imád csibagozni, ezért sokat csibagzik.	Ti ritkán...	čibagz	6
+csimen	çimen	hotelban/hotelben	nonce word response	csimennál	csimennél	1	28	-2.6741486494265287	NA	NA	e	nál	Ez itt egy csimen.	Nincs is jobb egy jó...	čimen	5
+csinték	çinték	hotelban/hotelben	nonce word response	csintékban	csintékben	4	25	-1.6486586255873816	NA	NA	é	ban	Ez itt egy csinték.	Ott vagyunk a...	činték	6
+csíszlik	çíßlik	lakok/lakom	nonce word response	csíszlok	csíszlom	20	9	0.7419373447293773	-lik	1	NA	NA	Te bizony sokat csíszlasz.	Én is sokat...	čísl	4
+csodeg	çodeg	hotelban/hotelben	nonce word response	csodegnál	csodegnél	10	16	-0.4353180712578455	NA	NA	e	nál	Ez itt egy csodeg.	Nincs is jobb egy jó...	čodeg	5
+csólorzik	çólorzik	lakok/lakom	nonce word response	csólorzok	csólorzom	10	19	-0.5978370007556204	-zik	2	NA	NA	Te bizony sokat csólorzol.	Én is sokat...	čólorz	6
+csublény	çublé¥	hotelban/hotelben	nonce word response	csublényban	csublényben	17	10	0.49247648509779424	NA	NA	é	ban	Ez itt egy csublény.	Ott vagyunk a...	čubléṉ	6
+csubzik / csubozik	çubzik / çubozik	cselekszenek/cselekednek	nonce word response	csubzunk	csubozunk	20	9	0.7419373447293773	-zik	1	NA	ünk	János imád csubozni, ezért sokat csubzik.	Mi ritkán...	čubz	4
+dábegy	dábe©	hotelban/hotelben	nonce word response	dábegyban	dábegyben	4	23	-1.5686159179138452	NA	NA	e	ban	Ez itt egy dábegy.	Ott vagyunk a...	dábeḏ	5
+dabzik / dabozik	dabzik / dabozik	cselekszenek/cselekednek	nonce word response	dabzotok	daboztok	13	16	-0.1941560144409575	-zik	1	NA	tek	János imád dabozni, ezért sokat dabzik.	Ti ritkán...	dabz	4
+dajrens	dajrens	hotelban/hotelben	nonce word response	dajrensnál	dajrensnél	4	23	-1.5686159179138452	NA	NA	e	nál	Ez itt egy dajrens.	Nincs is jobb egy jó...	dajrenš	7
+dalenc	dalenc	hotelban/hotelben	nonce word response	dalencnál	dalencnél	9	17	-0.587786664902119	NA	NA	e	nál	Ez itt egy dalenc.	Nincs is jobb egy jó...	dalenc	6
+danét	danét	hotelban/hotelben	nonce word response	danétnál	danétnél	19	7	0.9162907318741552	NA	NA	é	nál	Ez itt egy danét.	Nincs is jobb egy jó...	danét	5
+dárakszik / dárakodik	dárakßik / dárakodik	cselekszenek/cselekednek	nonce word response	dárakszunk	dárakodunk	15	14	0.06453852113757116	-szik	2	NA	ünk	János imád dárakodni, ezért sokat dárakszik.	Mi ritkán...	dáraks	6
+darhén	darhén	hotelban/hotelben	nonce word response	darhénban	darhénben	24	3	1.8325814637483104	NA	NA	é	ban	Ez itt egy darhén.	Ott vagyunk a...	darhén	6
+dibáglik / dibágozik	dibáglik / dibágozik	cselekszenek/cselekednek	nonce word response	dibáglotok	dibágoztok	16	13	0.1941560144409574	-lik	2	NA	tek	János imád dibágozni, ezért sokat dibáglik.	Ti ritkán...	dibágl	6
+dibez	dibez	hotelban/hotelben	nonce word response	dibezban	dibezben	2	24	-2.120263536200091	NA	NA	e	ban	Ez itt egy dibez.	Ott vagyunk a...	dibez	5
+dihely	dihe¬	hotelban/hotelben	nonce word response	dihelynak	dihelynek	1	28	-2.6741486494265287	NA	NA	e	nak	Ez itt egy dihely.	Elneveztem a kutyámat...	dihej	5
+dilaklik / dilakozik	dilaklik / dilakozik	cselekszenek/cselekednek	nonce word response	dilaklotok	dilakoztok	11	18	-0.4595323293784402	-lik	2	NA	tek	János imád dilakozni, ezért sokat dilaklik.	Ti ritkán...	dilakl	6
+dinelt	dinelt	hotelban/hotelben	nonce word response	dineltban	dineltben	3	26	-1.9095425048844383	NA	NA	e	ban	Ez itt egy dinelt.	Ott vagyunk a...	dinelt	6
+dingec	dingec	hotelban/hotelben	nonce word response	dingecnak	dingecnek	3	26	-1.9095425048844383	NA	NA	e	nak	Ez itt egy dingec.	Elneveztem a kutyámat...	dingec	6
+diránylik / dirányozik	dirá¥lik / dirá¥ozik	cselekszenek/cselekednek	nonce word response	diránylanak	dirányoznak	13	14	-0.06899287148695143	-lik	2	NA	nek	János imád dirányozni, ezért sokat diránylik.	Ők ritkán...	diráṉl	6
+dirlik / dirozik	dirlik / dirozik	cselekszenek/cselekednek	nonce word response	dirlotok	diroztok	13	13	0	-lik	1	NA	tek	János imád dirozni, ezért sokat dirlik.	Ti ritkán...	dirl	4
+dóbem	dóbem	hotelban/hotelben	nonce word response	dóbemnak	dóbemnek	6	23	-1.2321436812926323	NA	NA	e	nak	Ez itt egy dóbem.	Elneveztem a kutyámat...	dóbem	5
+döjlik / döjözik	döjlik / döjözik	cselekszenek/cselekednek	nonce word response	döjlenek	döjöznek	17	9	0.5877866649021191	-lik	1	NA	nek	János imád döjözni, ezért sokat döjlik.	Ők ritkán...	döjl	4
+dorzéj	dorzéj	hotelban/hotelben	nonce word response	dorzéjnak	dorzéjnek	12	14	-0.1431008436406733	NA	NA	é	nak	Ez itt egy dorzéj.	Elneveztem a kutyámat...	dorzéj	6
+dralágzik / dralágozik	dralágzik / dralágozik	cselekszenek/cselekednek	nonce word response	dralágzunk	dralágozunk	16	10	0.4353180712578455	-zik	2	NA	ünk	János imád dralágozni, ezért sokat dralágzik.	Mi ritkán...	dralágz	7
+driládzik	driládzik	lakok/lakom	nonce word response	driládzok	driládzom	10	19	-0.5978370007556204	-zik	2	NA	NA	Te bizony sokat driládzol.	Én is sokat...	driládz	7
+drilarzik / drilarozik	drilarzik / drilarozik	cselekszenek/cselekednek	nonce word response	drilarzunk	drilarozunk	10	16	-0.4353180712578455	-zik	2	NA	ünk	János imád drilarozni, ezért sokat drilarzik.	Mi ritkán...	drilarz	7
+drivegzik / drivegezik	drivegzik / drivegezik	cselekszenek/cselekednek	nonce word response	drivegzetek	drivegeztek	10	16	-0.4353180712578455	-zik	2	NA	tek	János imád drivegezni, ezért sokat drivegzik.	Ti ritkán...	drivegz	7
+drojzik / drojozik	drojzik / drojozik	cselekszenek/cselekednek	nonce word response	drojzunk	drojozunk	17	12	0.32542240043462795	-zik	1	NA	ünk	János imád drojozni, ezért sokat drojzik.	Mi ritkán...	drojz	5
+drubódzik	drubódzik	lakok/lakom	nonce word response	drubódzok	drubódzom	10	16	-0.4353180712578455	-zik	2	NA	NA	Te bizony sokat drubódzol.	Én is sokat...	drubódz	7
+drügzik	drügzik	lakok/lakom	nonce word response	drügzök	drügzöm	14	13	0.06899287148695142	-zik	1	NA	NA	Te bizony sokat drügzöl.	Én is sokat...	drügz	5
+drűrzik / drűrözik	drűrzik / drűrözik	cselekszenek/cselekednek	nonce word response	drűrzenek	drűröznek	11	16	-0.3483066942682157	-zik	1	NA	nek	János imád drűrözni, ezért sokat drűrzik.	Ők ritkán...	drűrz	5
+düjzik	düjzik	lakok/lakom	nonce word response	düjzök	düjzöm	13	13	0	-zik	1	NA	NA	Te bizony sokat düjzöl.	Én is sokat...	düjz	4
+dujzik / dujozik	dujzik / dujozik	cselekszenek/cselekednek	nonce word response	dujzanak	dujoznak	16	11	0.3483066942682158	-zik	1	NA	nek	János imád dujozni, ezért sokat dujzik.	Ők ritkán...	dujz	4
+dunkész	dunkéß	hotelban/hotelben	nonce word response	dunkészban	dunkészben	15	12	0.20763936477824457	NA	NA	é	ban	Ez itt egy dunkész.	Ott vagyunk a...	dunkés	6
+dutec	dutec	hotelban/hotelben	nonce word response	dutecnál	dutecnél	6	21	-1.1451323043030026	NA	NA	e	nál	Ez itt egy dutec.	Nincs is jobb egy jó...	dutec	5
+fádens	fádens	hotelban/hotelben	nonce word response	fádensnak	fádensnek	6	21	-1.1451323043030026	NA	NA	e	nak	Ez itt egy fádens.	Elneveztem a kutyámat...	fádenš	6
+fágyép	fá©ép	hotelban/hotelben	nonce word response	fágyépnál	fágyépnél	13	14	-0.06899287148695143	NA	NA	é	nál	Ez itt egy fágyép.	Nincs is jobb egy jó...	fáḏép	5
+fájéz	fájéz	hotelban/hotelben	nonce word response	fájézban	fájézben	19	10	0.5978370007556204	NA	NA	é	ban	Ez itt egy fájéz.	Ott vagyunk a...	fájéz	5
+féjzik	féjzik	lakok/lakom	nonce word response	féjzek	féjzem	16	10	0.4353180712578455	-zik	1	NA	NA	Te bizony sokat féjzel.	Én is sokat...	féjz	4
+femlik	femlik	lakok/lakom	nonce word response	femlek	femlem	25	4	1.6486586255873816	-lik	1	NA	NA	Te bizony sokat femlesz.	Én is sokat...	feml	4
+feténylik	feté¥lik	lakok/lakom	nonce word response	feténylek	feténylem	23	4	1.5686159179138452	-lik	2	NA	NA	Te bizony sokat feténylesz.	Én is sokat...	fetéṉl	6
+fibamlik	fibamlik	lakok/lakom	nonce word response	fibamlok	fibamlom	26	3	1.9095425048844383	-lik	2	NA	NA	Te bizony sokat fibamlasz.	Én is sokat...	fibaml	6
+figlik	figlik	lakok/lakom	nonce word response	figlok	figlom	20	9	0.7419373447293773	-lik	1	NA	NA	Te bizony sokat figlasz.	Én is sokat...	figl	4
+filágzik	filágzik	lakok/lakom	nonce word response	filágzok	filágzom	7	20	-0.9650808960435872	-zik	2	NA	NA	Te bizony sokat filágzol.	Én is sokat...	filágz	6
+filánylik / filányozik	filá¥lik / filá¥ozik	cselekszenek/cselekednek	nonce word response	filánylunk	filányozunk	13	13	0	-lik	2	NA	ünk	János imád filányozni, ezért sokat filánylik.	Mi ritkán...	filáṉl	6
+fincek	fincek	hotelban/hotelben	nonce word response	finceknál	finceknél	4	22	-1.5260563034950494	NA	NA	e	nál	Ez itt egy fincek.	Nincs is jobb egy jó...	fincek	6
+fivénylik	fivé¥lik	lakok/lakom	nonce word response	fivénylek	fivénylem	20	9	0.7419373447293773	-lik	2	NA	NA	Te bizony sokat fivénylesz.	Én is sokat...	fivéṉl	6
+fizend	fizend	hotelban/hotelben	nonce word response	fizendban	fizendben	1	25	-2.5649493574615367	NA	NA	e	ban	Ez itt egy fizend.	Ott vagyunk a...	fizend	6
+flagánylik	flagá¥lik	lakok/lakom	nonce word response	flagánylok	flagánylom	22	7	1.0560526742493137	-lik	2	NA	NA	Te bizony sokat flagánylasz.	Én is sokat...	flagáṉl	7
+flagárzik	flagárzik	lakok/lakom	nonce word response	flagárzok	flagárzom	12	15	-0.2076393647782445	-zik	2	NA	NA	Te bizony sokat flagárzol.	Én is sokat...	flagárz	7
+flátlik / flátozik	flátlik / flátozik	cselekszenek/cselekednek	nonce word response	flátlotok	flátoztok	11	15	-0.2876820724517809	-lik	1	NA	tek	János imád flátozni, ezért sokat flátlik.	Ti ritkán...	flátl	5
+flátszik	flátßik	lakok/lakom	nonce word response	flátszok	flátszom	11	18	-0.4595323293784402	-szik	1	NA	NA	Te bizony sokat flátszol.	Én is sokat...	fláts	5
+flehékszik	flehékßik	lakok/lakom	nonce word response	flehékszek	flehékszem	10	19	-0.5978370007556204	-szik	2	NA	NA	Te bizony sokat flehékszel.	Én is sokat...	flehéks	7
+flehénylik	flehé¥lik	lakok/lakom	nonce word response	flehénylek	flehénylem	23	4	1.5686159179138452	-lik	2	NA	NA	Te bizony sokat flehénylesz.	Én is sokat...	flehéṉl	7
+flemlik / flemezik	flemlik / flemezik	cselekszenek/cselekednek	nonce word response	flemlünk	flemezünk	10	19	-0.5978370007556204	-lik	1	NA	ünk	János imád flemezni, ezért sokat flemlik.	Mi ritkán...	fleml	5
+flerékszik / flerékedik	flerékßik / flerékedik	cselekszenek/cselekednek	nonce word response	flerékszünk	flerékedünk	17	12	0.32542240043462795	-szik	2	NA	ünk	János imád flerékedni, ezért sokat flerékszik.	Mi ritkán...	fleréks	7
+flérlik	flérlik	lakok/lakom	nonce word response	flérlek	flérlem	23	4	1.5686159179138452	-lik	1	NA	NA	Te bizony sokat flérlesz.	Én is sokat...	flérl	5
+flézlik / flézezik	flézlik / flézezik	cselekszenek/cselekednek	nonce word response	flézletek	flézeztek	11	18	-0.4595323293784402	-lik	1	NA	tek	János imád flézezni, ezért sokat flézlik.	Ti ritkán...	flézl	5
+flibekszik	flibekßik	lakok/lakom	nonce word response	flibekszek	flibekszem	11	18	-0.4595323293784402	-szik	2	NA	NA	Te bizony sokat flibekszel.	Én is sokat...	flibeks	7
+fligzik	fligzik	lakok/lakom	nonce word response	fligzok	fligzom	10	19	-0.5978370007556204	-zik	1	NA	NA	Te bizony sokat fligzol.	Én is sokat...	fligz	5
+fliraklik	fliraklik	lakok/lakom	nonce word response	fliraklok	fliraklom	13	13	0	-lik	2	NA	NA	Te bizony sokat fliraklasz.	Én is sokat...	flirakl	7
+flitlik	flitlik	lakok/lakom	nonce word response	flitlok	flitlom	25	4	1.6486586255873816	-lik	1	NA	NA	Te bizony sokat flitlasz.	Én is sokat...	flitl	5
+flivegzik / flivegezik	flivegzik / flivegezik	cselekszenek/cselekednek	nonce word response	flivegzenek	flivegeznek	11	16	-0.3483066942682157	-zik	2	NA	nek	János imád flivegezni, ezért sokat flivegzik.	Ők ritkán...	flivegz	7
+flodlik / flodozik	flodlik / flodozik	cselekszenek/cselekednek	nonce word response	flodlotok	flodoztok	12	17	-0.325422400434628	-lik	1	NA	tek	János imád flodozni, ezért sokat flodlik.	Ti ritkán...	flodl	5
+floglik	floglik	lakok/lakom	nonce word response	floglok	floglom	18	11	0.4595323293784402	-lik	1	NA	NA	Te bizony sokat floglasz.	Én is sokat...	flogl	5
+flöklik / flöközik	flöklik / flöközik	cselekszenek/cselekednek	nonce word response	flöklötök	flököztök	12	14	-0.1431008436406733	-lik	1	NA	tek	János imád flöközni, ezért sokat flöklik.	Ti ritkán...	flökl	5
+flözlik	flözlik	lakok/lakom	nonce word response	flözlök	flözlöm	20	7	0.965080896043587	-lik	1	NA	NA	Te bizony sokat flözlesz.	Én is sokat...	flözl	5
+fluboklik / flubokozik	fluboklik / flubokozik	cselekszenek/cselekednek	nonce word response	fluboklotok	flubokoztok	10	19	-0.5978370007556204	-lik	2	NA	tek	János imád flubokozni, ezért sokat fluboklik.	Ti ritkán...	flubokl	7
+flugonylik / flugonyozik	flugo¥lik / flugo¥ozik	cselekszenek/cselekednek	nonce word response	flugonylanak	flugonyoznak	13	13	0	-lik	2	NA	nek	János imád flugonyozni, ezért sokat flugonylik.	Ők ritkán...	flugoṉl	7
+flűgzik / flűgözik	flűgzik / flűgözik	cselekszenek/cselekednek	nonce word response	flűgzünk	flűgözünk	17	12	0.32542240043462795	-zik	1	NA	ünk	János imád flűgözni, ezért sokat flűgzik.	Mi ritkán...	flűgz	5
+flűmlik	flűmlik	lakok/lakom	nonce word response	flűmlök	flűmlöm	24	5	1.4271163556401458	-lik	1	NA	NA	Te bizony sokat flűmlesz.	Én is sokat...	flűml	5
+flűröklik	flűröklik	lakok/lakom	nonce word response	flűröklök	flűröklöm	17	12	0.32542240043462795	-lik	2	NA	NA	Te bizony sokat flűröklesz.	Én is sokat...	flűrökl	7
+flüröklik / flüröközik	flüröklik / flüröközik	cselekszenek/cselekednek	nonce word response	flüröklötök	flürököztök	16	13	0.1941560144409574	-lik	2	NA	tek	János imád flüröközni, ezért sokat flüröklik.	Ti ritkán...	flürökl	7
+flüröslik	flüröslik	lakok/lakom	nonce word response	flüröslök	flüröslöm	20	9	0.7419373447293773	-lik	2	NA	NA	Te bizony sokat flüröslesz.	Én is sokat...	flüröšl	7
+fojlegy	fojle©	hotelban/hotelben	nonce word response	fojlegynak	fojlegynek	1	28	-2.6741486494265287	NA	NA	e	nak	Ez itt egy fojlegy.	Elneveztem a kutyámat...	fojleḏ	6
+fökszik / föködik	fökßik / föködik	cselekszenek/cselekednek	nonce word response	fökszenek	föködnek	18	9	0.6418538861723947	-szik	1	NA	nek	János imád föködni, ezért sokat fökszik.	Ők ritkán...	föks	4
+forzéd	forzéd	hotelban/hotelben	nonce word response	forzédnak	forzédnek	13	16	-0.1941560144409575	NA	NA	é	nak	Ez itt egy forzéd.	Elneveztem a kutyámat...	forzéd	6
+frágapszik	frágapßik	lakok/lakom	nonce word response	frágapszok	frágapszom	11	16	-0.3483066942682157	-szik	2	NA	NA	Te bizony sokat frágapszol.	Én is sokat...	frágaps	7
+fraklik / frakozik	fraklik / frakozik	cselekszenek/cselekednek	nonce word response	fraklunk	frakozunk	15	12	0.20763936477824457	-lik	1	NA	ünk	János imád frakozni, ezért sokat fraklik.	Mi ritkán...	frakl	5
+frálapszik / frálapodik	frálapßik / frálapodik	cselekszenek/cselekednek	nonce word response	frálapszotok	frálapodtok	16	10	0.4353180712578455	-szik	2	NA	tek	János imád frálapodni, ezért sokat frálapszik.	Ti ritkán...	frálaps	7
+frálaslik / frálasozik	frálaslik / frálasozik	cselekszenek/cselekednek	nonce word response	frálaslanak	frálasoznak	18	11	0.4595323293784402	-lik	2	NA	nek	János imád frálasozni, ezért sokat frálaslik.	Ők ritkán...	frálašl	7
+frélegzik / frélegezik	frélegzik / frélegezik	cselekszenek/cselekednek	nonce word response	frélegzünk	frélegezünk	19	8	0.7985076962177716	-zik	2	NA	ünk	János imád frélegezni, ezért sokat frélegzik.	Mi ritkán...	frélegz	7
+fréslik / frésezik	fréslik / frésezik	cselekszenek/cselekednek	nonce word response	fréslünk	frésezünk	19	10	0.5978370007556204	-lik	1	NA	ünk	János imád frésezni, ezért sokat fréslik.	Mi ritkán...	fréšl	5
+fretszik	fretßik	lakok/lakom	nonce word response	fretszek	fretszem	13	13	0	-szik	1	NA	NA	Te bizony sokat fretszel.	Én is sokat...	frets	5
+friheglik / frihegezik	friheglik / frihegezik	cselekszenek/cselekednek	nonce word response	friheglünk	frihegezünk	14	13	0.06899287148695142	-lik	2	NA	ünk	János imád frihegezni, ezért sokat friheglik.	Mi ritkán...	frihegl	7
+frilegszik	frilegßik	lakok/lakom	nonce word response	frilegszek	frilegszem	11	15	-0.2876820724517809	-szik	2	NA	NA	Te bizony sokat frilegszel.	Én is sokat...	frilegs	7
+frinylik / frinyozik	fri¥lik / fri¥ozik	cselekszenek/cselekednek	nonce word response	frinylunk	frinyozunk	13	14	-0.06899287148695143	-lik	1	NA	ünk	János imád frinyozni, ezért sokat frinylik.	Mi ritkán...	friṉl	5
+frirzik / frirozik	frirzik / frirozik	cselekszenek/cselekednek	nonce word response	frirzunk	frirozunk	11	16	-0.3483066942682157	-zik	1	NA	ünk	János imád frirozni, ezért sokat frirzik.	Mi ritkán...	frirz	5
+friszlik	frißlik	lakok/lakom	nonce word response	friszlok	friszlom	15	14	0.06453852113757116	-lik	1	NA	NA	Te bizony sokat friszlasz.	Én is sokat...	frisl	5
+frivajlik	frivajlik	lakok/lakom	nonce word response	frivajlok	frivajlom	21	5	1.2992829841302609	-lik	2	NA	NA	Te bizony sokat frivajlasz.	Én is sokat...	frivajl	7
+frivamlik / frivamozik	frivamlik / frivamozik	cselekszenek/cselekednek	nonce word response	frivamlunk	frivamozunk	20	9	0.7419373447293773	-lik	2	NA	ünk	János imád frivamozni, ezért sokat frivamlik.	Mi ritkán...	frivaml	7
+frodlik	frodlik	lakok/lakom	nonce word response	frodlok	frodlom	20	9	0.7419373447293773	-lik	1	NA	NA	Te bizony sokat frodlasz.	Én is sokat...	frodl	5
+fröjlik / fröjözik	fröjlik / fröjözik	cselekszenek/cselekednek	nonce word response	fröjlünk	fröjözünk	17	12	0.32542240043462795	-lik	1	NA	ünk	János imád fröjözni, ezért sokat fröjlik.	Mi ritkán...	fröjl	5
+fröjzik / fröjözik	fröjzik / fröjözik	cselekszenek/cselekednek	nonce word response	fröjzötök	fröjöztök	8	21	-0.8938178760220964	-zik	1	NA	tek	János imád fröjözni, ezért sokat fröjzik.	Ti ritkán...	fröjz	5
+frorlik / frorozik	frorlik / frorozik	cselekszenek/cselekednek	nonce word response	frorlanak	froroznak	17	10	0.49247648509779424	-lik	1	NA	nek	János imád frorozni, ezért sokat frorlik.	Ők ritkán...	frorl	5
+fupét	fupét	hotelban/hotelben	nonce word response	fupétnál	fupétnél	12	17	-0.325422400434628	NA	NA	é	nál	Ez itt egy fupét.	Nincs is jobb egy jó...	fupét	5
+gábéd	gábéd	hotelban/hotelben	nonce word response	gábédnál	gábédnél	20	7	0.965080896043587	NA	NA	é	nál	Ez itt egy gábéd.	Nincs is jobb egy jó...	gábéd	5
+galárzik / galározik	galárzik / galározik	cselekszenek/cselekednek	nonce word response	galárzanak	galároznak	10	17	-0.49247648509779407	-zik	2	NA	nek	János imád galározni, ezért sokat galárzik.	Ők ritkán...	galárz	6
+garcép	garcép	hotelban/hotelben	nonce word response	garcépnál	garcépnél	14	15	-0.06453852113757118	NA	NA	é	nál	Ez itt egy garcép.	Nincs is jobb egy jó...	garcép	6
+gatáglik / gatágozik	gatáglik / gatágozik	cselekszenek/cselekednek	nonce word response	gatáglunk	gatágozunk	8	19	-0.7985076962177716	-lik	2	NA	ünk	János imád gatágozni, ezért sokat gatáglik.	Mi ritkán...	gatágl	6
+géreglik / géregezik	géreglik / géregezik	cselekszenek/cselekednek	nonce word response	géregletek	géregeztek	9	18	-0.6418538861723948	-lik	2	NA	tek	János imád géregezni, ezért sokat géreglik.	Ti ritkán...	géregl	6
+gerénylik	geré¥lik	lakok/lakom	nonce word response	gerénylek	gerénylem	23	3	1.791759469228055	-lik	2	NA	NA	Te bizony sokat gerénylesz.	Én is sokat...	geréṉl	6
+gibemlik / gibemezik	gibemlik / gibemezik	cselekszenek/cselekednek	nonce word response	gibemlünk	gibemezünk	16	10	0.4353180712578455	-lik	2	NA	ünk	János imád gibemezni, ezért sokat gibemlik.	Mi ritkán...	gibeml	6
+gicéj	gicéj	hotelban/hotelben	nonce word response	gicéjnál	gicéjnél	1	25	-2.5649493574615367	NA	NA	é	nál	Ez itt egy gicéj.	Nincs is jobb egy jó...	gicéj	5
+gihamlik / gihamozik	gihamlik / gihamozik	cselekszenek/cselekednek	nonce word response	gihamlanak	gihamoznak	17	12	0.32542240043462795	-lik	2	NA	nek	János imád gihamozni, ezért sokat gihamlik.	Ők ritkán...	gihaml	6
+gihejlik / gihejezik	gihejlik / gihejezik	cselekszenek/cselekednek	nonce word response	gihejlünk	gihejezünk	17	10	0.49247648509779424	-lik	2	NA	ünk	János imád gihejezni, ezért sokat gihejlik.	Mi ritkán...	gihejl	6
+giheszt	giheßt	hotelban/hotelben	nonce word response	gihesztnak	gihesztnek	2	27	-2.2335922215070942	NA	NA	e	nak	Ez itt egy giheszt.	Elneveztem a kutyámat...	gihest	6
+gilárzik	gilárzik	lakok/lakom	nonce word response	gilárzok	gilárzom	8	21	-0.8938178760220964	-zik	2	NA	NA	Te bizony sokat gilárzol.	Én is sokat...	gilárz	6
+gonszék	gonßék	hotelban/hotelben	nonce word response	gonszéknál	gonszéknél	9	18	-0.6418538861723948	NA	NA	é	nál	Ez itt egy gonszék.	Nincs is jobb egy jó...	gonsék	6
+gótem	gótem	hotelban/hotelben	nonce word response	gótemnak	gótemnek	5	21	-1.2992829841302609	NA	NA	e	nak	Ez itt egy gótem.	Elneveztem a kutyámat...	gótem	5
+gúden	gúden	hotelban/hotelben	nonce word response	gúdenban	gúdenben	2	27	-2.2335922215070942	NA	NA	e	ban	Ez itt egy gúden.	Ott vagyunk a...	gúden	5
+gyibakszik	©ibakßik	lakok/lakom	nonce word response	gyibakszok	gyibakszom	9	17	-0.587786664902119	-szik	2	NA	NA	Te bizony sokat gyibakszol.	Én is sokat...	ḏibaks	6
+gyibeslik	©ibeslik	lakok/lakom	nonce word response	gyibeslek	gyibeslem	18	9	0.6418538861723947	-lik	2	NA	NA	Te bizony sokat gyibeslesz.	Én is sokat...	ḏibešl	6
+gyihegzik / gyihegezik	©ihegzik / ©ihegezik	cselekszenek/cselekednek	nonce word response	gyihegzetek	gyihegeztek	12	17	-0.325422400434628	-zik	2	NA	tek	János imád gyihegezni, ezért sokat gyihegzik.	Ti ritkán...	ḏihegz	6
+gyivádzik	©ivádzik	lakok/lakom	nonce word response	gyivádzok	gyivádzom	9	18	-0.6418538861723948	-zik	2	NA	NA	Te bizony sokat gyivádzol.	Én is sokat...	ḏivádz	6
+gyivepszik / gyivepedik	©ivepßik / ©ivepedik	cselekszenek/cselekednek	nonce word response	gyivepszenek	gyivepednek	15	12	0.20763936477824457	-szik	2	NA	nek	János imád gyivepedni, ezért sokat gyivepszik.	Ők ritkán...	ḏiveps	6
+hágyét	há©ét	hotelban/hotelben	nonce word response	hágyétnak	hágyétnek	13	13	0	NA	NA	é	nak	Ez itt egy hágyét.	Elneveztem a kutyámat...	háḏét	5
+hákszik / hákodik	hákßik / hákodik	cselekszenek/cselekednek	nonce word response	hákszanak	hákodnak	15	14	0.06453852113757116	-szik	1	NA	nek	János imád hákodni, ezért sokat hákszik.	Ők ritkán...	háks	4
+herégszik	herégßik	lakok/lakom	nonce word response	herégszek	herégszem	9	18	-0.6418538861723948	-szik	2	NA	NA	Te bizony sokat herégszel.	Én is sokat...	herégs	6
+hijegy	hije©	hotelban/hotelben	nonce word response	hijegynál	hijegynél	3	24	-1.8325814637483104	NA	NA	e	nál	Ez itt egy hijegy.	Nincs is jobb egy jó...	hijeḏ	5
+hilarzik	hilarzik	lakok/lakom	nonce word response	hilarzok	hilarzom	14	13	0.06899287148695142	-zik	2	NA	NA	Te bizony sokat hilarzol.	Én is sokat...	hilarz	6
+hiragzik / hiragozik	hiragzik / hiragozik	cselekszenek/cselekednek	nonce word response	hiragzanak	hiragoznak	15	12	0.20763936477824457	-zik	2	NA	nek	János imád hiragozni, ezért sokat hiragzik.	Ők ritkán...	hiragz	6
+hivép	hivép	hotelban/hotelben	nonce word response	hivépban	hivépben	4	23	-1.5686159179138452	NA	NA	é	ban	Ez itt egy hivép.	Ott vagyunk a...	hivép	5
+hóbens	hóbens	hotelban/hotelben	nonce word response	hóbensban	hóbensben	5	22	-1.3437347467010947	NA	NA	e	ban	Ez itt egy hóbens.	Ott vagyunk a...	hóbenš	6
+hosét	hosét	hotelban/hotelben	nonce word response	hosétnak	hosétnek	14	13	0.06899287148695142	NA	NA	é	nak	Ez itt egy hosét.	Elneveztem a kutyámat...	hošét	5
+hubonylik / hubonyozik	hubo¥lik / hubo¥ozik	cselekszenek/cselekednek	nonce word response	hubonylotok	hubonyoztok	10	19	-0.5978370007556204	-lik	2	NA	tek	János imád hubonyozni, ezért sokat hubonylik.	Ti ritkán...	huboṉl	6
+hűgzik	hűgzik	lakok/lakom	nonce word response	hűgzök	hűgzöm	13	13	0	-zik	1	NA	NA	Te bizony sokat hűgzöl.	Én is sokat...	hűgz	4
+huklik	huklik	lakok/lakom	nonce word response	huklok	huklom	13	14	-0.06899287148695143	-lik	1	NA	NA	Te bizony sokat huklasz.	Én is sokat...	hukl	4
+humék	humék	hotelban/hotelben	nonce word response	huméknak	huméknek	13	13	0	NA	NA	é	nak	Ez itt egy humék.	Elneveztem a kutyámat...	humék	5
+hurjorzik	hurjorzik	lakok/lakom	nonce word response	hurjorzok	hurjorzom	14	13	0.06899287148695142	-zik	2	NA	NA	Te bizony sokat hurjorzol.	Én is sokat...	hurjorz	7
+huroslik	huroslik	lakok/lakom	nonce word response	huroslok	huroslom	22	7	1.0560526742493137	-lik	2	NA	NA	Te bizony sokat huroslasz.	Én is sokat...	hurošl	6
+ibáglik	ibáglik	lakok/lakom	nonce word response	ibáglok	ibáglom	18	9	0.6418538861723947	-lik	2	NA	NA	Te bizony sokat ibáglasz.	Én is sokat...	ibágl	5
+ibékszik	ibékßik	lakok/lakom	nonce word response	ibékszek	ibékszem	10	16	-0.4353180712578455	-szik	2	NA	NA	Te bizony sokat ibékszel.	Én is sokat...	ibéks	5
+ikszert	ikßert	hotelban/hotelben	nonce word response	ikszertban	ikszertben	0	29	-3.4011973816621555	NA	NA	e	ban	Ez itt egy ikszert.	Ott vagyunk a...	iksert	6
+incéj	incéj	hotelban/hotelben	nonce word response	incéjnak	incéjnek	2	25	-2.159484249353372	NA	NA	é	nak	Ez itt egy incéj.	Elneveztem a kutyámat...	incéj	5
+ítens	ítens	hotelban/hotelben	nonce word response	ítensban	ítensben	4	25	-1.6486586255873816	NA	NA	e	ban	Ez itt egy ítens.	Ott vagyunk a...	ítenš	5
+jábéz	jábéz	hotelban/hotelben	nonce word response	jábézban	jábézben	16	13	0.1941560144409574	NA	NA	é	ban	Ez itt egy jábéz.	Ott vagyunk a...	jábéz	5
+jalrény	jalré¥	hotelban/hotelben	nonce word response	jalrénynál	jalrénynél	13	14	-0.06899287148695143	NA	NA	é	nál	Ez itt egy jalrény.	Nincs is jobb egy jó...	jalréṉ	6
+játlik / játozik	játlik / játozik	cselekszenek/cselekednek	nonce word response	játlunk	játozunk	19	10	0.5978370007556204	-lik	1	NA	ünk	János imád játozni, ezért sokat játlik.	Mi ritkán...	játl	4
+jóbec	jóbec	hotelban/hotelben	nonce word response	jóbecnak	jóbecnek	8	21	-0.8938178760220964	NA	NA	e	nak	Ez itt egy jóbec.	Elneveztem a kutyámat...	jóbec	5
+jonylik	jo¥lik	lakok/lakom	nonce word response	jonylok	jonylom	21	8	0.8938178760220965	-lik	1	NA	NA	Te bizony sokat jonylasz.	Én is sokat...	joṉl	4
+jorzég	jorzég	hotelban/hotelben	nonce word response	jorzégnak	jorzégnek	10	17	-0.49247648509779407	NA	NA	é	nak	Ez itt egy jorzég.	Elneveztem a kutyámat...	jorzég	6
+júder	júder	hotelban/hotelben	nonce word response	júdernak	júdernek	10	19	-0.5978370007556204	NA	NA	e	nak	Ez itt egy júder.	Elneveztem a kutyámat...	júder	5
+jukél	jukél	hotelban/hotelben	nonce word response	jukélnál	jukélnél	12	15	-0.2076393647782445	NA	NA	é	nál	Ez itt egy jukél.	Nincs is jobb egy jó...	jukél	5
+jurdent	jurdent	hotelban/hotelben	nonce word response	jurdentnál	jurdentnél	7	19	-0.916290731874155	NA	NA	e	nál	Ez itt egy jurdent.	Nincs is jobb egy jó...	jurdent	7
+jurlik / jurozik	jurlik / jurozik	cselekszenek/cselekednek	nonce word response	jurlunk	jurozunk	14	13	0.06899287148695142	-lik	1	NA	ünk	János imád jurozni, ezért sokat jurlik.	Mi ritkán...	jurl	4
+jüslik	jüslik	lakok/lakom	nonce word response	jüslök	jüslöm	20	7	0.965080896043587	-lik	1	NA	NA	Te bizony sokat jüslesz.	Én is sokat...	jüšl	4
+juszlik	jußlik	lakok/lakom	nonce word response	juszlok	juszlom	18	11	0.4595323293784402	-lik	1	NA	NA	Te bizony sokat juszlasz.	Én is sokat...	jusl	4
+jutély	juté¬	hotelban/hotelben	nonce word response	jutélynál	jutélynél	19	8	0.7985076962177716	NA	NA	é	nál	Ez itt egy jutély.	Nincs is jobb egy jó...	jutéj	5
+kábesz	kábeß	hotelban/hotelben	nonce word response	kábesznál	kábesznél	11	15	-0.2876820724517809	NA	NA	e	nál	Ez itt egy kábesz.	Nincs is jobb egy jó...	kábes	5
+kadér	kadér	hotelban/hotelben	nonce word response	kadérnál	kadérnél	19	8	0.7985076962177716	NA	NA	é	nál	Ez itt egy kadér.	Nincs is jobb egy jó...	kadér	5
+kalhész	kalhéß	hotelban/hotelben	nonce word response	kalhésznak	kalhésznek	13	14	-0.06899287148695143	NA	NA	é	nak	Ez itt egy kalhész.	Elneveztem a kutyámat...	kalhés	6
+kalréz	kalréz	hotelban/hotelben	nonce word response	kalrézban	kalrézben	16	13	0.1941560144409574	NA	NA	é	ban	Ez itt egy kalréz.	Ott vagyunk a...	kalréz	6
+kaszép	kaßép	hotelban/hotelben	nonce word response	kaszépnak	kaszépnek	11	16	-0.3483066942682157	NA	NA	é	nak	Ez itt egy kaszép.	Elneveztem a kutyámat...	kasép	5
+kátéd	kátéd	hotelban/hotelben	nonce word response	kátédnál	kátédnél	19	10	0.5978370007556204	NA	NA	é	nál	Ez itt egy kátéd.	Nincs is jobb egy jó...	kátéd	5
+kátel	kátel	hotelban/hotelben	nonce word response	kátelnak	kátelnek	4	22	-1.5260563034950494	NA	NA	e	nak	Ez itt egy kátel.	Elneveztem a kutyámat...	kátel	5
+klajrén	klajrén	hotelban/hotelben	nonce word response	klajrénnak	klajrénnek	17	12	0.32542240043462795	NA	NA	é	nak	Ez itt egy klajrén.	Elneveztem a kutyámat...	klajrén	7
+klaráglik	klaráglik	lakok/lakom	nonce word response	klaráglok	klaráglom	20	7	0.965080896043587	-lik	2	NA	NA	Te bizony sokat klaráglasz.	Én is sokat...	klarágl	7
+kláragszik / kláragodik	kláragßik / kláragodik	cselekszenek/cselekednek	nonce word response	kláragszotok	kláragodtok	15	11	0.28768207245178085	-szik	2	NA	tek	János imád kláragodni, ezért sokat kláragszik.	Ti ritkán...	klárags	7
+klarágzik / klarágozik	klarágzik / klarágozik	cselekszenek/cselekednek	nonce word response	klarágzotok	klarágoztok	7	19	-0.916290731874155	-zik	2	NA	tek	János imád klarágozni, ezért sokat klarágzik.	Ti ritkán...	klarágz	7
+klárzik	klárzik	lakok/lakom	nonce word response	klárzok	klárzom	13	13	0	-zik	1	NA	NA	Te bizony sokat klárzol.	Én is sokat...	klárz	5
+klazér	klazér	hotelban/hotelben	nonce word response	klazérban	klazérben	16	13	0.1941560144409574	NA	NA	é	ban	Ez itt egy klazér.	Ott vagyunk a...	klazér	6
+kléglik / klégezik	kléglik / klégezik	cselekszenek/cselekednek	nonce word response	kléglünk	klégezünk	16	10	0.4353180712578455	-lik	1	NA	ünk	János imád klégezni, ezért sokat kléglik.	Mi ritkán...	klégl	5
+klehénylik / klehényezik	klehé¥lik / klehé¥ezik	cselekszenek/cselekednek	nonce word response	klehényletek	klehényeztek	17	12	0.32542240043462795	-lik	2	NA	tek	János imád klehényezni, ezért sokat klehénylik.	Ti ritkán...	klehéṉl	7
+klétszik	klétßik	lakok/lakom	nonce word response	klétszek	klétszem	11	15	-0.2876820724517809	-szik	1	NA	NA	Te bizony sokat klétszel.	Én is sokat...	kléts	5
+klibamlik	klibamlik	lakok/lakom	nonce word response	klibamlok	klibamlom	16	10	0.4353180712578455	-lik	2	NA	NA	Te bizony sokat klibamlasz.	Én is sokat...	klibaml	7
+klidlik	klidlik	lakok/lakom	nonce word response	klidlok	klidlom	21	8	0.8938178760220965	-lik	1	NA	NA	Te bizony sokat klidlasz.	Én is sokat...	klidl	5
+klihaslik / klihasozik	klihaslik / klihasozik	cselekszenek/cselekednek	nonce word response	klihaslotok	klihasoztok	12	15	-0.2076393647782445	-lik	2	NA	tek	János imád klihasozni, ezért sokat klihaslik.	Ti ritkán...	klihašl	7
+klingesz	klingeß	hotelban/hotelben	nonce word response	klingeszban	klingeszben	3	26	-1.9095425048844383	NA	NA	e	ban	Ez itt egy klingesz.	Ott vagyunk a...	klinges	7
+kliszer	klißer	hotelban/hotelben	nonce word response	kliszernál	kliszernél	3	24	-1.8325814637483104	NA	NA	e	nál	Ez itt egy kliszer.	Nincs is jobb egy jó...	kliser	6
+klítegy	klíte©	hotelban/hotelben	nonce word response	klítegynál	klítegynél	4	25	-1.6486586255873816	NA	NA	e	nál	Ez itt egy klítegy.	Nincs is jobb egy jó...	klíteḏ	6
+klivaslik	klivaslik	lakok/lakom	nonce word response	klivaslok	klivaslom	19	7	0.9162907318741552	-lik	2	NA	NA	Te bizony sokat klivaslasz.	Én is sokat...	klivašl	7
+klordény	klordé¥	hotelban/hotelben	nonce word response	klordénynak	klordénynek	14	13	0.06899287148695142	NA	NA	é	nak	Ez itt egy klordény.	Elneveztem a kutyámat...	klordéṉ	7
+klörlik	klörlik	lakok/lakom	nonce word response	klörlök	klörlöm	18	9	0.6418538861723947	-lik	1	NA	NA	Te bizony sokat klörlesz.	Én is sokat...	klörl	5
+klosét	klosét	hotelban/hotelben	nonce word response	klosétnak	klosétnek	18	8	0.7472144018302211	NA	NA	é	nak	Ez itt egy klosét.	Elneveztem a kutyámat...	klošét	6
+kluhéj	kluhéj	hotelban/hotelben	nonce word response	kluhéjnál	kluhéjnél	19	10	0.5978370007556204	NA	NA	é	nál	Ez itt egy kluhéj.	Nincs is jobb egy jó...	kluhéj	6
+klűmlik / klűmözik	klűmlik / klűmözik	cselekszenek/cselekednek	nonce word response	klűmlötök	klűmöztök	11	18	-0.4595323293784402	-lik	1	NA	tek	János imád klűmözni, ezért sokat klűmlik.	Ti ritkán...	klűml	5
+kluzlik / kluzozik	kluzlik / kluzozik	cselekszenek/cselekednek	nonce word response	kluzlotok	kluzoztok	12	17	-0.325422400434628	-lik	1	NA	tek	János imád kluzozni, ezért sokat kluzlik.	Ti ritkán...	kluzl	5
+köszlik / köszözik	kößlik / kößözik	cselekszenek/cselekednek	nonce word response	köszlötök	köszöztök	11	16	-0.3483066942682157	-lik	1	NA	tek	János imád köszözni, ezért sokat köszlik.	Ti ritkán...	kösl	4
+kűdlik / kűdözik	kűdlik / kűdözik	cselekszenek/cselekednek	nonce word response	kűdlenek	kűdöznek	19	8	0.7985076962177716	-lik	1	NA	nek	János imád kűdözni, ezért sokat kűdlik.	Ők ritkán...	kűdl	4
+kumlik	kumlik	lakok/lakom	nonce word response	kumlok	kumlom	25	4	1.6486586255873816	-lik	1	NA	NA	Te bizony sokat kumlasz.	Én is sokat...	kuml	4
+küslik / küsözik	küslik / küsözik	cselekszenek/cselekednek	nonce word response	küslünk	küsözünk	18	9	0.6418538861723947	-lik	1	NA	ünk	János imád küsözni, ezért sokat küslik.	Mi ritkán...	küšl	4
+lájzik / lájozik	lájzik / lájozik	cselekszenek/cselekednek	nonce word response	lájzotok	lájoztok	16	10	0.4353180712578455	-zik	1	NA	tek	János imád lájozni, ezért sokat lájzik.	Ti ritkán...	lájz	4
+licegy	lice©	hotelban/hotelben	nonce word response	licegyban	licegyben	2	24	-2.120263536200091	NA	NA	e	ban	Ez itt egy licegy.	Ott vagyunk a...	liceḏ	5
+lihadzik	lihadzik	lakok/lakom	nonce word response	lihadzok	lihadzom	16	13	0.1941560144409574	-zik	2	NA	NA	Te bizony sokat lihadzol.	Én is sokat...	lihadz	6
+lihény	lihé¥	hotelban/hotelben	nonce word response	lihénynak	lihénynek	2	25	-2.159484249353372	NA	NA	é	nak	Ez itt egy lihény.	Elneveztem a kutyámat...	lihéṉ	5
+lijez	lijez	hotelban/hotelben	nonce word response	lijeznak	lijeznek	2	27	-2.2335922215070942	NA	NA	e	nak	Ez itt egy lijez.	Elneveztem a kutyámat...	lijez	5
+lingék	lingék	hotelban/hotelben	nonce word response	lingéknál	lingéknél	3	26	-1.9095425048844383	NA	NA	é	nál	Ez itt egy lingék.	Nincs is jobb egy jó...	lingék	6
+lírlik / lírozik	lírlik / lírozik	cselekszenek/cselekednek	nonce word response	lírlanak	líroznak	14	15	-0.06453852113757118	-lik	1	NA	nek	János imád lírozni, ezért sokat lírlik.	Ők ritkán...	lírl	4
+lismév	lismév	hotelban/hotelben	nonce word response	lismévban	lismévben	3	23	-1.791759469228055	NA	NA	é	ban	Ez itt egy lismév.	Ott vagyunk a...	lišmév	6
+livaklik	livaklik	lakok/lakom	nonce word response	livaklok	livaklom	7	20	-0.9650808960435872	-lik	2	NA	NA	Te bizony sokat livaklasz.	Én is sokat...	livakl	6
+livénylik / livényezik	livé¥lik / livé¥ezik	cselekszenek/cselekednek	nonce word response	livénylünk	livényezünk	18	11	0.4595323293784402	-lik	2	NA	ünk	János imád livényezni, ezért sokat livénylik.	Mi ritkán...	livéṉl	6
+lorjódzik	lorjódzik	lakok/lakom	nonce word response	lorjódzok	lorjódzom	13	16	-0.1941560144409575	-zik	2	NA	NA	Te bizony sokat lorjódzol.	Én is sokat...	lorjódz	7
+lörűdzik	lörűdzik	lakok/lakom	nonce word response	lörűdzök	lörűdzöm	12	15	-0.2076393647782445	-zik	2	NA	NA	Te bizony sokat lörűdzöl.	Én is sokat...	lörűdz	6
+lorzens	lorzens	hotelban/hotelben	nonce word response	lorzensnál	lorzensnél	5	22	-1.3437347467010947	NA	NA	e	nál	Ez itt egy lorzens.	Nincs is jobb egy jó...	lorzenš	7
+lűklik / lűközik	lűklik / lűközik	cselekszenek/cselekednek	nonce word response	lűklenek	lűköznek	11	15	-0.2876820724517809	-lik	1	NA	nek	János imád lűközni, ezért sokat lűklik.	Ők ritkán...	lűkl	4
+luméz	luméz	hotelban/hotelben	nonce word response	lumézban	lumézben	14	13	0.06899287148695142	NA	NA	é	ban	Ez itt egy luméz.	Ott vagyunk a...	luméz	5
+lumlik / lumozik	lumlik / lumozik	cselekszenek/cselekednek	nonce word response	lumlotok	lumoztok	11	15	-0.2876820724517809	-lik	1	NA	tek	János imád lumozni, ezért sokat lumlik.	Ti ritkán...	luml	4
+mádép	mádép	hotelban/hotelben	nonce word response	mádépnál	mádépnél	18	9	0.6418538861723947	NA	NA	é	nál	Ez itt egy mádép.	Nincs is jobb egy jó...	mádép	5
+mágamlik / mágamozik	mágamlik / mágamozik	cselekszenek/cselekednek	nonce word response	mágamlunk	mágamozunk	17	9	0.5877866649021191	-lik	2	NA	ünk	János imád mágamozni, ezért sokat mágamlik.	Mi ritkán...	mágaml	6
+málapszik	málapßik	lakok/lakom	nonce word response	málapszok	málapszom	13	14	-0.06899287148695143	-szik	2	NA	NA	Te bizony sokat málapszol.	Én is sokat...	málaps	6
+marzik	marzik	lakok/lakom	nonce word response	marzok	marzom	19	8	0.7985076962177716	-zik	1	NA	NA	Te bizony sokat marzol.	Én is sokat...	marz	4
+matéz	matéz	hotelban/hotelben	nonce word response	matézban	matézben	18	9	0.6418538861723947	NA	NA	é	ban	Ez itt egy matéz.	Ott vagyunk a...	matéz	5
+mékszik	mékßik	lakok/lakom	nonce word response	mékszek	mékszem	12	14	-0.1431008436406733	-szik	1	NA	NA	Te bizony sokat mékszel.	Én is sokat...	méks	4
+metégszik / metégedik	metégßik / metégedik	cselekszenek/cselekednek	nonce word response	metégszenek	metégednek	15	14	0.06453852113757116	-szik	2	NA	nek	János imád metégedni, ezért sokat metégszik.	Ők ritkán...	metégs	6
+mihágzik / mihágozik	mihágzik / mihágozik	cselekszenek/cselekednek	nonce word response	mihágzotok	mihágoztok	9	20	-0.7419373447293773	-zik	2	NA	tek	János imád mihágozni, ezért sokat mihágzik.	Ti ritkán...	mihágz	6
+míjzik / míjozik	míjzik / míjozik	cselekszenek/cselekednek	nonce word response	míjzunk	míjozunk	16	13	0.1941560144409574	-zik	1	NA	ünk	János imád míjozni, ezért sokat míjzik.	Mi ritkán...	míjz	4
+míslik / mísozik	míslik / mísozik	cselekszenek/cselekednek	nonce word response	míslunk	mísozunk	16	11	0.3483066942682158	-lik	1	NA	ünk	János imád mísozni, ezért sokat míslik.	Mi ritkán...	míšl	4
+molszik / molodik	molßik / molodik	cselekszenek/cselekednek	nonce word response	molszotok	molodtok	21	8	0.8938178760220965	-szik	1	NA	tek	János imád molodni, ezért sokat molszik.	Ti ritkán...	mols	4
+monveg	monveg	hotelban/hotelben	nonce word response	monvegnál	monvegnél	4	23	-1.5686159179138452	NA	NA	e	nál	Ez itt egy monveg.	Nincs is jobb egy jó...	monveg	6
+mülőrzik / mülőrözik	mülőrzik / mülőrözik	cselekszenek/cselekednek	nonce word response	mülőrzünk	mülőrözünk	15	11	0.28768207245178085	-zik	2	NA	ünk	János imád mülőrözni, ezért sokat mülőrzik.	Mi ritkán...	mülőrz	6
+murdes	murdes	hotelban/hotelben	nonce word response	murdesnál	murdesnél	9	17	-0.587786664902119	NA	NA	e	nál	Ez itt egy murdes.	Nincs is jobb egy jó...	murdeš	6
+nágapszik / nágapodik	nágapßik / nágapodik	cselekszenek/cselekednek	nonce word response	nágapszanak	nágapodnak	15	11	0.28768207245178085	-szik	2	NA	nek	János imád nágapodni, ezért sokat nágapszik.	Ők ritkán...	nágaps	6
+narádzik	narádzik	lakok/lakom	nonce word response	narádzok	narádzom	9	18	-0.6418538861723948	-zik	2	NA	NA	Te bizony sokat narádzol.	Én is sokat...	narádz	6
+narem	narem	hotelban/hotelben	nonce word response	naremban	naremben	9	18	-0.6418538861723948	NA	NA	e	ban	Ez itt egy narem.	Ott vagyunk a...	narem	5
+narjárzik	narjárzik	lakok/lakom	nonce word response	narjárzok	narjárzom	13	13	0	-zik	2	NA	NA	Te bizony sokat narjárzol.	Én is sokat...	narjárz	7
+navec	navec	hotelban/hotelben	nonce word response	navecban	navecben	12	17	-0.325422400434628	NA	NA	e	ban	Ez itt egy navec.	Ott vagyunk a...	navec	5
+nidét	nidét	hotelban/hotelben	nonce word response	nidétban	nidétben	3	26	-1.9095425048844383	NA	NA	é	ban	Ez itt egy nidét.	Ott vagyunk a...	nidét	5
+nivárzik / nivározik	nivárzik / nivározik	cselekszenek/cselekednek	nonce word response	nivárzotok	nivároztok	7	19	-0.916290731874155	-zik	2	NA	tek	János imád nivározni, ezért sokat nivárzik.	Ti ritkán...	nivárz	6
+nuhét	nuhét	hotelban/hotelben	nonce word response	nuhétnál	nuhétnél	12	15	-0.2076393647782445	NA	NA	é	nál	Ez itt egy nuhét.	Nincs is jobb egy jó...	nuhét	5
+nűröklik	nűröklik	lakok/lakom	nonce word response	nűröklök	nűröklöm	13	16	-0.1941560144409575	-lik	2	NA	NA	Te bizony sokat nűröklesz.	Én is sokat...	nűrökl	6
+nuroklik / nurokozik	nuroklik / nurokozik	cselekszenek/cselekednek	nonce word response	nuroklunk	nurokozunk	20	9	0.7419373447293773	-lik	2	NA	ünk	János imád nurokozni, ezért sokat nuroklik.	Mi ritkán...	nurokl	6
+nyábét	¥ábét	hotelban/hotelben	nonce word response	nyábétban	nyábétben	16	13	0.1941560144409574	NA	NA	é	ban	Ez itt egy nyábét.	Ott vagyunk a...	ṉábét	5
+nyádlik / nyádozik	¥ádlik / ¥ádozik	cselekszenek/cselekednek	nonce word response	nyádlanak	nyádoznak	18	11	0.4595323293784402	-lik	1	NA	nek	János imád nyádozni, ezért sokat nyádlik.	Ők ritkán...	ṉádl	4
+nyamet	¥amet	hotelban/hotelben	nonce word response	nyametban	nyametben	10	19	-0.5978370007556204	NA	NA	e	ban	Ez itt egy nyamet.	Ott vagyunk a...	ṉamet	5
+nyarcéj	¥arcéj	hotelban/hotelben	nonce word response	nyarcéjnak	nyarcéjnek	13	13	0	NA	NA	é	nak	Ez itt egy nyarcéj.	Elneveztem a kutyámat...	ṉarcéj	6
+nyáslik	¥áslik	lakok/lakom	nonce word response	nyáslok	nyáslom	17	9	0.5877866649021191	-lik	1	NA	NA	Te bizony sokat nyáslasz.	Én is sokat...	ṉášl	4
+nyítem	¥ítem	hotelban/hotelben	nonce word response	nyítemban	nyítemben	1	25	-2.5649493574615367	NA	NA	e	ban	Ez itt egy nyítem.	Ott vagyunk a...	ṉítem	5
+nyivágzik / nyivágozik	¥ivágzik / ¥ivágozik	cselekszenek/cselekednek	nonce word response	nyivágzunk	nyivágozunk	20	7	0.965080896043587	-zik	2	NA	ünk	János imád nyivágozni, ezért sokat nyivágzik.	Mi ritkán...	ṉivágz	6
+nyizlik / nyizozik	¥izlik / ¥izozik	cselekszenek/cselekednek	nonce word response	nyizlunk	nyizozunk	18	9	0.6418538861723947	-lik	1	NA	ünk	János imád nyizozni, ezért sokat nyizlik.	Mi ritkán...	ṉizl	4
+nyöbzik / nyöbözik	¥öbzik / ¥öbözik	cselekszenek/cselekednek	nonce word response	nyöbzenek	nyöböznek	14	15	-0.06453852113757118	-zik	1	NA	nek	János imád nyöbözni, ezért sokat nyöbzik.	Ők ritkán...	ṉöbz	4
+nyülöklik / nyülöközik	¥ülöklik / ¥ülöközik	cselekszenek/cselekednek	nonce word response	nyülöklenek	nyülököznek	16	11	0.3483066942682158	-lik	2	NA	nek	János imád nyülöközni, ezért sokat nyülöklik.	Ők ritkán...	ṉülökl	6
+nyupér	¥upér	hotelban/hotelben	nonce word response	nyupérnál	nyupérnél	13	13	0	NA	NA	é	nál	Ez itt egy nyupér.	Nincs is jobb egy jó...	ṉupér	5
+nyürzik / nyürözik	¥ürzik / ¥ürözik	cselekszenek/cselekednek	nonce word response	nyürzenek	nyüröznek	14	15	-0.06453852113757118	-zik	1	NA	nek	János imád nyürözni, ezért sokat nyürzik.	Ők ritkán...	ṉürz	4
+pazév	pazév	hotelban/hotelben	nonce word response	pazévnál	pazévnél	13	13	0	NA	NA	é	nál	Ez itt egy pazév.	Nincs is jobb egy jó...	pazév	5
+pebzik	pebzik	lakok/lakom	nonce word response	pebzek	pebzem	17	10	0.49247648509779424	-zik	1	NA	NA	Te bizony sokat pebzel.	Én is sokat...	pebz	4
+pehégszik / pehégedik	pehégßik / pehégedik	cselekszenek/cselekednek	nonce word response	pehégszetek	pehégedtek	16	10	0.4353180712578455	-szik	2	NA	tek	János imád pehégedni, ezért sokat pehégszik.	Ti ritkán...	pehégs	6
+pekszik / pekedik	pekßik / pekedik	cselekszenek/cselekednek	nonce word response	pekszünk	pekedünk	19	8	0.7985076962177716	-szik	1	NA	ünk	János imád pekedni, ezért sokat pekszik.	Mi ritkán...	peks	4
+péleslik	péleslik	lakok/lakom	nonce word response	péleslek	péleslem	20	9	0.7419373447293773	-lik	2	NA	NA	Te bizony sokat péleslesz.	Én is sokat...	pélešl	6
+pibegzik / pibegezik	pibegzik / pibegezik	cselekszenek/cselekednek	nonce word response	pibegzenek	pibegeznek	8	18	-0.7472144018302211	-zik	2	NA	nek	János imád pibegezni, ezért sokat pibegzik.	Ők ritkán...	pibegz	6
+pijél	pijél	hotelban/hotelben	nonce word response	pijélnál	pijélnél	2	24	-2.120263536200091	NA	NA	é	nál	Ez itt egy pijél.	Nincs is jobb egy jó...	pijél	5
+píjlik	píjlik	lakok/lakom	nonce word response	píjlok	píjlom	18	9	0.6418538861723947	-lik	1	NA	NA	Te bizony sokat píjlasz.	Én is sokat...	píjl	4
+pilégszik / pilégedik	pilégßik / pilégedik	cselekszenek/cselekednek	nonce word response	pilégszenek	pilégednek	18	9	0.6418538861723947	-szik	2	NA	nek	János imád pilégedni, ezért sokat pilégszik.	Ők ritkán...	pilégs	6
+piragszik	piragßik	lakok/lakom	nonce word response	piragszok	piragszom	9	17	-0.587786664902119	-szik	2	NA	NA	Te bizony sokat piragszol.	Én is sokat...	pirags	6
+pisély	pisé¬	hotelban/hotelben	nonce word response	pisélyban	pisélyben	3	24	-1.8325814637483104	NA	NA	é	ban	Ez itt egy pisély.	Ott vagyunk a...	pišéj	5
+pítend	pítend	hotelban/hotelben	nonce word response	pítendban	pítendben	3	26	-1.9095425048844383	NA	NA	e	ban	Ez itt egy pítend.	Ott vagyunk a...	pítend	6
+pítszik	pítßik	lakok/lakom	nonce word response	pítszok	pítszom	10	17	-0.49247648509779407	-szik	1	NA	NA	Te bizony sokat pítszol.	Én is sokat...	píts	4
+pivéd	pivéd	hotelban/hotelben	nonce word response	pivédban	pivédben	7	20	-0.9650808960435872	NA	NA	é	ban	Ez itt egy pivéd.	Ott vagyunk a...	pivéd	5
+pivegszik	pivegßik	lakok/lakom	nonce word response	pivegszek	pivegszem	8	21	-0.8938178760220964	-szik	2	NA	NA	Te bizony sokat pivegszel.	Én is sokat...	pivegs	6
+plágadzik	plágadzik	lakok/lakom	nonce word response	plágadzok	plágadzom	10	16	-0.4353180712578455	-zik	2	NA	NA	Te bizony sokat plágadzol.	Én is sokat...	plágadz	7
+plibzik / plibozik	plibzik / plibozik	cselekszenek/cselekednek	nonce word response	plibzotok	pliboztok	10	17	-0.49247648509779407	-zik	1	NA	tek	János imád plibozni, ezért sokat plibzik.	Ti ritkán...	plibz	5
+plövőrzik	plövőrzik	lakok/lakom	nonce word response	plövőrzök	plövőrzöm	14	13	0.06899287148695142	-zik	2	NA	NA	Te bizony sokat plövőrzöl.	Én is sokat...	plövőrz	7
+plűbzik	plűbzik	lakok/lakom	nonce word response	plűbzök	plűbzöm	17	10	0.49247648509779424	-zik	1	NA	NA	Te bizony sokat plűbzöl.	Én is sokat...	plűbz	5
+plugzik	plugzik	lakok/lakom	nonce word response	plugzok	plugzom	12	17	-0.325422400434628	-zik	1	NA	NA	Te bizony sokat plugzol.	Én is sokat...	plugz	5
+pörzik / pörözik	pörzik / pörözik	cselekszenek/cselekednek	nonce word response	pörzötök	pöröztök	11	16	-0.3483066942682157	-zik	1	NA	tek	János imád pörözni, ezért sokat pörzik.	Ti ritkán...	pörz	4
+poslik / posozik	poslik / posozik	cselekszenek/cselekednek	nonce word response	poslotok	posoztok	20	9	0.7419373447293773	-lik	1	NA	tek	János imád posozni, ezért sokat poslik.	Ti ritkán...	pošl	4
+pragánylik / pragányozik	pragá¥lik / pragá¥ozik	cselekszenek/cselekednek	nonce word response	pragánylotok	pragányoztok	13	13	0	-lik	2	NA	tek	János imád pragányozni, ezért sokat pragánylik.	Ti ritkán...	pragáṉl	7
+praslik	praslik	lakok/lakom	nonce word response	praslok	praslom	24	5	1.4271163556401458	-lik	1	NA	NA	Te bizony sokat praslasz.	Én is sokat...	prašl	5
+pratánylik	pratá¥lik	lakok/lakom	nonce word response	pratánylok	pratánylom	23	6	1.2321436812926323	-lik	2	NA	NA	Te bizony sokat pratánylasz.	Én is sokat...	pratáṉl	7
+prately	prate¬	hotelban/hotelben	nonce word response	pratelynak	pratelynek	6	23	-1.2321436812926323	NA	NA	e	nak	Ez itt egy prately.	Elneveztem a kutyámat...	pratej	6
+prazlik / prazozik	prazlik / prazozik	cselekszenek/cselekednek	nonce word response	prazlunk	prazozunk	13	16	-0.1941560144409575	-lik	1	NA	ünk	János imád prazozni, ezért sokat prazlik.	Mi ritkán...	prazl	5
+préleglik	préleglik	lakok/lakom	nonce word response	préleglek	préleglem	18	9	0.6418538861723947	-lik	2	NA	NA	Te bizony sokat préleglesz.	Én is sokat...	prélegl	7
+prélemlik / prélemezik	prélemlik / prélemezik	cselekszenek/cselekednek	nonce word response	prélemlenek	prélemeznek	15	12	0.20763936477824457	-lik	2	NA	nek	János imád prélemezni, ezért sokat prélemlik.	Ők ritkán...	préleml	7
+prezlik	prezlik	lakok/lakom	nonce word response	prezlek	prezlem	19	7	0.9162907318741552	-lik	1	NA	NA	Te bizony sokat prezlesz.	Én is sokat...	prezl	5
+pribagszik	pribagßik	lakok/lakom	nonce word response	pribagszok	pribagszom	9	17	-0.587786664902119	-szik	2	NA	NA	Te bizony sokat pribagszol.	Én is sokat...	pribags	7
+pribemlik	pribemlik	lakok/lakom	nonce word response	pribemlek	pribemlem	26	3	1.9095425048844383	-lik	2	NA	NA	Te bizony sokat pribemlesz.	Én is sokat...	pribeml	7
+prihegszik / prihegedik	prihegßik / prihegedik	cselekszenek/cselekednek	nonce word response	prihegszenek	prihegednek	13	16	-0.1941560144409575	-szik	2	NA	nek	János imád prihegedni, ezért sokat prihegszik.	Ők ritkán...	prihegs	7
+prihekszik	prihekßik	lakok/lakom	nonce word response	prihekszek	prihekszem	13	16	-0.1941560144409575	-szik	2	NA	NA	Te bizony sokat prihekszel.	Én is sokat...	priheks	7
+prilegzik	prilegzik	lakok/lakom	nonce word response	prilegzek	prilegzem	11	16	-0.3483066942682157	-zik	2	NA	NA	Te bizony sokat prilegzel.	Én is sokat...	prilegz	7
+prilepszik / prilepedik	prilepßik / prilepedik	cselekszenek/cselekednek	nonce word response	prilepszünk	prilepedünk	21	8	0.8938178760220965	-szik	2	NA	ünk	János imád prilepedni, ezért sokat prilepszik.	Mi ritkán...	prileps	7
+prínylik	prí¥lik	lakok/lakom	nonce word response	prínylok	prínylom	17	9	0.5877866649021191	-lik	1	NA	NA	Te bizony sokat prínylasz.	Én is sokat...	príṉl	5
+pristél	pristél	hotelban/hotelben	nonce word response	pristélban	pristélben	2	24	-2.120263536200091	NA	NA	é	ban	Ez itt egy pristél.	Ott vagyunk a...	prištél	7
+priszec	prißec	hotelban/hotelben	nonce word response	priszecban	priszecben	1	26	-2.6026896854443837	NA	NA	e	ban	Ez itt egy priszec.	Ott vagyunk a...	prisec	6
+priszkenc	prißkenc	hotelban/hotelben	nonce word response	priszkencnak	priszkencnek	2	25	-2.159484249353372	NA	NA	e	nak	Ez itt egy priszkenc.	Elneveztem a kutyámat...	priskenc	8
+privékszik / privékedik	privékßik / privékedik	cselekszenek/cselekednek	nonce word response	privékszenek	privékednek	14	13	0.06899287148695142	-szik	2	NA	nek	János imád privékedni, ezért sokat privékszik.	Ők ritkán...	privéks	7
+prögzik / prögözik	prögzik / prögözik	cselekszenek/cselekednek	nonce word response	prögzötök	prögöztök	9	18	-0.6418538861723948	-zik	1	NA	tek	János imád prögözni, ezért sokat prögzik.	Ti ritkán...	prögz	5
+prohódzik	prohódzik	lakok/lakom	nonce word response	prohódzok	prohódzom	7	22	-1.0560526742493137	-zik	2	NA	NA	Te bizony sokat prohódzol.	Én is sokat...	prohódz	7
+prugorzik / prugorozik	prugorzik / prugorozik	cselekszenek/cselekednek	nonce word response	prugorzotok	prugoroztok	8	19	-0.7985076962177716	-zik	2	NA	tek	János imád prugorozni, ezért sokat prugorzik.	Ti ritkán...	prugorz	7
+prűrlik	prűrlik	lakok/lakom	nonce word response	prűrlök	prűrlöm	19	7	0.9162907318741552	-lik	1	NA	NA	Te bizony sokat prűrlesz.	Én is sokat...	prűrl	5
+pugoslik	pugoslik	lakok/lakom	nonce word response	pugoslok	pugoslom	20	7	0.965080896043587	-lik	2	NA	NA	Te bizony sokat pugoslasz.	Én is sokat...	pugošl	6
+püzlik / püzözik	püzlik / püzözik	cselekszenek/cselekednek	nonce word response	püzlötök	püzöztök	13	14	-0.06899287148695143	-lik	1	NA	tek	János imád püzözni, ezért sokat püzlik.	Ti ritkán...	püzl	4
+rájzik	rájzik	lakok/lakom	nonce word response	rájzok	rájzom	13	13	0	-zik	1	NA	NA	Te bizony sokat rájzol.	Én is sokat...	rájz	4
+rapszek	rapßek	hotelban/hotelben	nonce word response	rapszeknál	rapszeknél	6	23	-1.2321436812926323	NA	NA	e	nál	Ez itt egy rapszek.	Nincs is jobb egy jó...	rapsek	6
+ribegszik / ribegedik	ribegßik / ribegedik	cselekszenek/cselekednek	nonce word response	ribegszetek	ribegedtek	11	15	-0.2876820724517809	-szik	2	NA	tek	János imád ribegedni, ezért sokat ribegszik.	Ti ritkán...	ribegs	6
+ribegzik	ribegzik	lakok/lakom	nonce word response	ribegzek	ribegzem	13	16	-0.1941560144409575	-zik	2	NA	NA	Te bizony sokat ribegzel.	Én is sokat...	ribegz	6
+ribzik	ribzik	lakok/lakom	nonce word response	ribzok	ribzom	10	19	-0.5978370007556204	-zik	1	NA	NA	Te bizony sokat ribzol.	Én is sokat...	ribz	4
+riványlik / riványozik	rivá¥lik / rivá¥ozik	cselekszenek/cselekednek	nonce word response	riványlotok	riványoztok	14	13	0.06899287148695142	-lik	2	NA	tek	János imád riványozni, ezért sokat riványlik.	Ti ritkán...	riváṉl	6
+rokszik	rokßik	lakok/lakom	nonce word response	rokszok	rokszom	11	16	-0.3483066942682157	-szik	1	NA	NA	Te bizony sokat rokszol.	Én is sokat...	roks	4
+ronszek	ronßek	hotelban/hotelben	nonce word response	ronszekban	ronszekben	6	20	-1.0986122886681098	NA	NA	e	ban	Ez itt egy ronszek.	Ott vagyunk a...	ronsek	6
+ronvet	ronvet	hotelban/hotelben	nonce word response	ronvetnak	ronvetnek	5	24	-1.4271163556401458	NA	NA	e	nak	Ez itt egy ronvet.	Elneveztem a kutyámat...	ronvet	6
+ruslik	ruslik	lakok/lakom	nonce word response	ruslok	ruslom	21	8	0.8938178760220965	-lik	1	NA	NA	Te bizony sokat ruslasz.	Én is sokat...	rušl	4
+salárzik	salárzik	lakok/lakom	nonce word response	salárzok	salárzom	15	12	0.20763936477824457	-zik	2	NA	NA	Te bizony sokat salárzol.	Én is sokat...	šalárz	6
+sartely	sarte¬	hotelban/hotelben	nonce word response	sartelyban	sartelyben	9	17	-0.587786664902119	NA	NA	e	ban	Ez itt egy sartely.	Ott vagyunk a...	šartej	6
+sihen	sihen	hotelban/hotelben	nonce word response	sihennál	sihennél	1	26	-2.6026896854443837	NA	NA	e	nál	Ez itt egy sihen.	Nincs is jobb egy jó...	šihen	5
+siladzik	siladzik	lakok/lakom	nonce word response	siladzok	siladzom	10	16	-0.4353180712578455	-zik	2	NA	NA	Te bizony sokat siladzol.	Én is sokat...	šiladz	6
+sojzik	sojzik	lakok/lakom	nonce word response	sojzok	sojzom	11	18	-0.4595323293784402	-zik	1	NA	NA	Te bizony sokat sojzol.	Én is sokat...	šojz	4
+sortem	sortem	hotelban/hotelben	nonce word response	sortemnál	sortemnél	5	24	-1.4271163556401458	NA	NA	e	nál	Ez itt egy sortem.	Nincs is jobb egy jó...	šortem	6
+spábét	spábét	hotelban/hotelben	nonce word response	spábétban	spábétben	21	6	1.1451323043030026	NA	NA	é	ban	Ez itt egy spábét.	Ott vagyunk a...	špábét	6
+spalárzik / spalározik	spalárzik / spalározik	cselekszenek/cselekednek	nonce word response	spalárzanak	spalároznak	12	14	-0.1431008436406733	-zik	2	NA	nek	János imád spalározni, ezért sokat spalárzik.	Ők ritkán...	špalárz	7
+spanél	spanél	hotelban/hotelben	nonce word response	spanélnál	spanélnél	17	9	0.5877866649021191	NA	NA	é	nál	Ez itt egy spanél.	Nincs is jobb egy jó...	španél	6
+spáraklik	spáraklik	lakok/lakom	nonce word response	spáraklok	spáraklom	18	11	0.4595323293784402	-lik	2	NA	NA	Te bizony sokat spáraklasz.	Én is sokat...	špárakl	7
+spatárzik	spatárzik	lakok/lakom	nonce word response	spatárzok	spatárzom	14	15	-0.06453852113757118	-zik	2	NA	NA	Te bizony sokat spatárzol.	Én is sokat...	špatárz	7
+spatel	spatel	hotelban/hotelben	nonce word response	spatelnak	spatelnek	4	22	-1.5260563034950494	NA	NA	e	nak	Ez itt egy spatel.	Elneveztem a kutyámat...	špatel	6
+spáten	spáten	hotelban/hotelben	nonce word response	spátennak	spátennek	9	20	-0.7419373447293773	NA	NA	e	nak	Ez itt egy spáten.	Elneveztem a kutyámat...	špáten	6
+spatszik	spatßik	lakok/lakom	nonce word response	spatszok	spatszom	11	16	-0.3483066942682157	-szik	1	NA	NA	Te bizony sokat spatszol.	Én is sokat...	špats	5
+spélszik	spélßik	lakok/lakom	nonce word response	spélszek	spélszem	16	11	0.3483066942682158	-szik	1	NA	NA	Te bizony sokat spélszel.	Én is sokat...	špéls	5
+spéslik	spéslik	lakok/lakom	nonce word response	spéslek	spéslem	21	6	1.1451323043030026	-lik	1	NA	NA	Te bizony sokat spéslesz.	Én is sokat...	špéšl	5
+spibádzik	spibádzik	lakok/lakom	nonce word response	spibádzok	spibádzom	12	15	-0.2076393647782445	-zik	2	NA	NA	Te bizony sokat spibádzol.	Én is sokat...	špibádz	7
+spibaklik	spibaklik	lakok/lakom	nonce word response	spibaklok	spibaklom	14	13	0.06899287148695142	-lik	2	NA	NA	Te bizony sokat spibaklasz.	Én is sokat...	špibakl	7
+spibamlik / spibamozik	spibamlik / spibamozik	cselekszenek/cselekednek	nonce word response	spibamlanak	spibamoznak	17	9	0.5877866649021191	-lik	2	NA	nek	János imád spibamozni, ezért sokat spibamlik.	Ők ritkán...	špibaml	7
+spibeglik / spibegezik	spibeglik / spibegezik	cselekszenek/cselekednek	nonce word response	spibeglünk	spibegezünk	19	10	0.5978370007556204	-lik	2	NA	ünk	János imád spibegezni, ezért sokat spibeglik.	Mi ritkán...	špibegl	7
+spicet	spicet	hotelban/hotelben	nonce word response	spicetnak	spicetnek	2	25	-2.159484249353372	NA	NA	e	nak	Ez itt egy spicet.	Elneveztem a kutyámat...	špicet	6
+spiharzik / spiharozik	spiharzik / spiharozik	cselekszenek/cselekednek	nonce word response	spiharzotok	spiharoztok	10	19	-0.5978370007556204	-zik	2	NA	tek	János imád spiharozni, ezért sokat spiharzik.	Ti ritkán...	špiharz	7
+spihegzik	spihegzik	lakok/lakom	nonce word response	spihegzek	spihegzem	14	15	-0.06453852113757118	-zik	2	NA	NA	Te bizony sokat spihegzel.	Én is sokat...	špihegz	7
+spihemlik	spihemlik	lakok/lakom	nonce word response	spihemlek	spihemlem	25	2	2.159484249353372	-lik	2	NA	NA	Te bizony sokat spihemlesz.	Én is sokat...	špiheml	7
+spilágzik	spilágzik	lakok/lakom	nonce word response	spilágzok	spilágzom	7	20	-0.9650808960435872	-zik	2	NA	NA	Te bizony sokat spilágzol.	Én is sokat...	špilágz	7
+spiráglik / spirágozik	spiráglik / spirágozik	cselekszenek/cselekednek	nonce word response	spiráglotok	spirágoztok	11	15	-0.2876820724517809	-lik	2	NA	tek	János imád spirágozni, ezért sokat spiráglik.	Ti ritkán...	špirágl	7
+spírzik	spírzik	lakok/lakom	nonce word response	spírzok	spírzom	13	13	0	-zik	1	NA	NA	Te bizony sokat spírzol.	Én is sokat...	špírz	5
+spivejlik / spivejezik	spivejlik / spivejezik	cselekszenek/cselekednek	nonce word response	spivejlenek	spivejeznek	11	16	-0.3483066942682157	-lik	2	NA	nek	János imád spivejezni, ezért sokat spivejlik.	Ők ritkán...	špivejl	7
+spivél	spivél	hotelban/hotelben	nonce word response	spivélnak	spivélnek	5	24	-1.4271163556401458	NA	NA	é	nak	Ez itt egy spivél.	Elneveztem a kutyámat...	špivél	6
+spizec	spizec	hotelban/hotelben	nonce word response	spizecnak	spizecnek	3	26	-1.9095425048844383	NA	NA	e	nak	Ez itt egy spizec.	Elneveztem a kutyámat...	špizec	6
+spöklik / spöközik	spöklik / spöközik	cselekszenek/cselekednek	nonce word response	spöklünk	spöközünk	19	10	0.5978370007556204	-lik	1	NA	ünk	János imád spöközni, ezért sokat spöklik.	Mi ritkán...	špökl	5
+sponylik / sponyozik	spo¥lik / spo¥ozik	cselekszenek/cselekednek	nonce word response	sponylanak	sponyoznak	20	9	0.7419373447293773	-lik	1	NA	nek	János imád sponyozni, ezért sokat sponylik.	Ők ritkán...	špoṉl	5
+sporzem	sporzem	hotelban/hotelben	nonce word response	sporzemnak	sporzemnek	4	25	-1.6486586255873816	NA	NA	e	nak	Ez itt egy sporzem.	Elneveztem a kutyámat...	šporzem	7
+sprálszik	sprálßik	lakok/lakom	nonce word response	sprálszok	sprálszom	11	15	-0.2876820724517809	-szik	1	NA	NA	Te bizony sokat sprálszol.	Én is sokat...	špráls	6
+sprebzik / sprebezik	sprebzik / sprebezik	cselekszenek/cselekednek	nonce word response	sprebzenek	sprebeznek	16	13	0.1941560144409574	-zik	1	NA	nek	János imád sprebezni, ezért sokat sprebzik.	Ők ritkán...	šprebz	6
+sprédlik	sprédlik	lakok/lakom	nonce word response	sprédlek	sprédlem	25	2	2.159484249353372	-lik	1	NA	NA	Te bizony sokat sprédlesz.	Én is sokat...	šprédl	6
+sprigzik / sprigozik	sprigzik / sprigozik	cselekszenek/cselekednek	nonce word response	sprigzotok	sprigoztok	5	24	-1.4271163556401458	-zik	1	NA	tek	János imád sprigozni, ezért sokat sprigzik.	Ti ritkán...	šprigz	6
+sprimlik / sprimozik	sprimlik / sprimozik	cselekszenek/cselekednek	nonce word response	sprimlunk	sprimozunk	15	12	0.20763936477824457	-lik	1	NA	ünk	János imád sprimozni, ezért sokat sprimlik.	Mi ritkán...	špriml	6
+sprivenc	sprivenc	hotelban/hotelben	nonce word response	sprivencnál	sprivencnél	3	23	-1.791759469228055	NA	NA	e	nál	Ez itt egy sprivenc.	Nincs is jobb egy jó...	šprivenc	8
+sprízem	sprízem	hotelban/hotelben	nonce word response	sprízemnál	sprízemnél	3	26	-1.9095425048844383	NA	NA	e	nál	Ez itt egy sprízem.	Nincs is jobb egy jó...	šprízem	7
+spröbzik	spröbzik	lakok/lakom	nonce word response	spröbzök	spröbzöm	15	11	0.28768207245178085	-zik	1	NA	NA	Te bizony sokat spröbzöl.	Én is sokat...	špröbz	6
+sprogzik	sprogzik	lakok/lakom	nonce word response	sprogzok	sprogzom	9	20	-0.7419373447293773	-zik	1	NA	NA	Te bizony sokat sprogzol.	Én is sokat...	šprogz	6
+sprökszik	sprökßik	lakok/lakom	nonce word response	sprökszök	sprökszöm	11	15	-0.2876820724517809	-szik	1	NA	NA	Te bizony sokat sprökszöl.	Én is sokat...	špröks	6
+sprozlik / sprozozik	sprozlik / sprozozik	cselekszenek/cselekednek	nonce word response	sprozlanak	sprozoznak	14	12	0.14310084364067324	-lik	1	NA	nek	János imád sprozozni, ezért sokat sprozlik.	Ők ritkán...	šprozl	6
+sprudlik / sprudozik	sprudlik / sprudozik	cselekszenek/cselekednek	nonce word response	sprudlunk	sprudozunk	12	15	-0.2076393647782445	-lik	1	NA	ünk	János imád sprudozni, ezért sokat sprudlik.	Mi ritkán...	šprudl	6
+sprűrlik / sprűrözik	sprűrlik / sprűrözik	cselekszenek/cselekednek	nonce word response	sprűrlenek	sprűröznek	16	13	0.1941560144409574	-lik	1	NA	nek	János imád sprűrözni, ezért sokat sprűrlik.	Ők ritkán...	šprűrl	6
+spubonylik	spubo¥lik	lakok/lakom	nonce word response	spubonylok	spubonylom	23	6	1.2321436812926323	-lik	2	NA	NA	Te bizony sokat spubonylasz.	Én is sokat...	špuboṉl	7
+spuborzik / spuborozik	spuborzik / spuborozik	cselekszenek/cselekednek	nonce word response	spuborzanak	spuboroznak	10	16	-0.4353180712578455	-zik	2	NA	nek	János imád spuborozni, ezért sokat spuborzik.	Ők ritkán...	špuborz	7
+spügzik / spügözik	spügzik / spügözik	cselekszenek/cselekednek	nonce word response	spügzünk	spügözünk	18	11	0.4595323293784402	-zik	1	NA	ünk	János imád spügözni, ezért sokat spügzik.	Mi ritkán...	špügz	5
+spüjzik	spüjzik	lakok/lakom	nonce word response	spüjzök	spüjzöm	21	8	0.8938178760220965	-zik	1	NA	NA	Te bizony sokat spüjzöl.	Én is sokat...	špüjz	5
+spülöklik	spülöklik	lakok/lakom	nonce word response	spülöklök	spülöklöm	15	11	0.28768207245178085	-lik	2	NA	NA	Te bizony sokat spülöklesz.	Én is sokat...	špülökl	7
+spülőrzik	spülőrzik	lakok/lakom	nonce word response	spülőrzök	spülőrzöm	17	9	0.5877866649021191	-zik	2	NA	NA	Te bizony sokat spülőrzöl.	Én is sokat...	špülőrz	7
+spülűdzik	spülűdzik	lakok/lakom	nonce word response	spülűdzök	spülűdzöm	13	16	-0.1941560144409575	-zik	2	NA	NA	Te bizony sokat spülűdzöl.	Én is sokat...	špülűdz	7
+spumény	spumé¥	hotelban/hotelben	nonce word response	spuménynak	spuménynek	9	17	-0.587786664902119	NA	NA	é	nak	Ez itt egy spumény.	Elneveztem a kutyámat...	špuméṉ	6
+spűmlik	spűmlik	lakok/lakom	nonce word response	spűmlök	spűmlöm	23	4	1.5686159179138452	-lik	1	NA	NA	Te bizony sokat spűmlesz.	Én is sokat...	špűml	5
+spüszlik	spüßlik	lakok/lakom	nonce word response	spüszlök	spüszlöm	14	12	0.14310084364067324	-lik	1	NA	NA	Te bizony sokat spüszlesz.	Én is sokat...	špüsl	5
+sűjlik / sűjözik	sűjlik / sűjözik	cselekszenek/cselekednek	nonce word response	sűjlünk	sűjözünk	17	9	0.5877866649021191	-lik	1	NA	ünk	János imád sűjözni, ezért sokat sűjlik.	Mi ritkán...	šűjl	4
+surnegy	surne©	hotelban/hotelben	nonce word response	surnegynál	surnegynél	9	17	-0.587786664902119	NA	NA	e	nál	Ez itt egy surnegy.	Nincs is jobb egy jó...	šurneḏ	6
+sűzlik	sűzlik	lakok/lakom	nonce word response	sűzlök	sűzlöm	14	12	0.14310084364067324	-lik	1	NA	NA	Te bizony sokat sűzlesz.	Én is sokat...	šűzl	4
+szanéj	ßanéj	hotelban/hotelben	nonce word response	szanéjnak	szanéjnek	15	14	0.06453852113757116	NA	NA	é	nak	Ez itt egy szanéj.	Elneveztem a kutyámat...	sanéj	5
+szibánylik	ßibá¥lik	lakok/lakom	nonce word response	szibánylok	szibánylom	19	8	0.7985076962177716	-lik	2	NA	NA	Te bizony sokat szibánylasz.	Én is sokat...	sibáṉl	6
+szibed	ßibed	hotelban/hotelben	nonce word response	szibedban	szibedben	2	25	-2.159484249353372	NA	NA	e	ban	Ez itt egy szibed.	Ott vagyunk a...	sibed	5
+szihét	ßihét	hotelban/hotelben	nonce word response	szihétnak	szihétnek	2	24	-2.120263536200091	NA	NA	é	nak	Ez itt egy szihét.	Elneveztem a kutyámat...	sihét	5
+szirlik	ßirlik	lakok/lakom	nonce word response	szirlok	szirlom	20	9	0.7419373447293773	-lik	1	NA	NA	Te bizony sokat szirlasz.	Én is sokat...	sirl	4
+sztrajlik / sztrajozik	ßtrajlik / ßtrajozik	cselekszenek/cselekednek	nonce word response	sztrajlanak	sztrajoznak	17	10	0.49247648509779424	-lik	1	NA	nek	János imád sztrajozni, ezért sokat sztrajlik.	Ők ritkán...	strajl	6
+sztredlik / sztredezik	ßtredlik / ßtredezik	cselekszenek/cselekednek	nonce word response	sztredletek	sztredeztek	15	11	0.28768207245178085	-lik	1	NA	tek	János imád sztredezni, ezért sokat sztredlik.	Ti ritkán...	stredl	6
+sztremlik	ßtremlik	lakok/lakom	nonce word response	sztremlek	sztremlem	22	5	1.3437347467010947	-lik	1	NA	NA	Te bizony sokat sztremlesz.	Én is sokat...	streml	6
+sztrijzik	ßtrijzik	lakok/lakom	nonce word response	sztrijzok	sztrijzom	14	12	0.14310084364067324	-zik	1	NA	NA	Te bizony sokat sztrijzol.	Én is sokat...	strijz	6
+sztritlik / sztritozik	ßtritlik / ßtritozik	cselekszenek/cselekednek	nonce word response	sztritlanak	sztritoznak	14	12	0.14310084364067324	-lik	1	NA	nek	János imád sztritozni, ezért sokat sztritlik.	Ők ritkán...	stritl	6
+sztrozlik	ßtrozlik	lakok/lakom	nonce word response	sztrozlok	sztrozlom	16	10	0.4353180712578455	-lik	1	NA	NA	Te bizony sokat sztrozlasz.	Én is sokat...	strozl	6
+sztruglik	ßtruglik	lakok/lakom	nonce word response	sztruglok	sztruglom	16	10	0.4353180712578455	-lik	1	NA	NA	Te bizony sokat sztruglasz.	Én is sokat...	strugl	6
+sztrűkszik	ßtrűkßik	lakok/lakom	nonce word response	sztrűkszök	sztrűkszöm	11	15	-0.2876820724517809	-szik	1	NA	NA	Te bizony sokat sztrűkszöl.	Én is sokat...	strűks	6
+szűslik	ßűslik	lakok/lakom	nonce word response	szűslök	szűslöm	21	8	0.8938178760220965	-lik	1	NA	NA	Te bizony sokat szűslesz.	Én is sokat...	sűšl	4
+szutend	ßutend	hotelban/hotelben	nonce word response	szutendban	szutendben	7	19	-0.916290731874155	NA	NA	e	ban	Ez itt egy szutend.	Ott vagyunk a...	sutend	6
+tágarzik / tágarozik	tágarzik / tágarozik	cselekszenek/cselekednek	nonce word response	tágarzunk	tágarozunk	13	14	-0.06899287148695143	-zik	2	NA	ünk	János imád tágarozni, ezért sokat tágarzik.	Mi ritkán...	tágarz	6
+táklik	táklik	lakok/lakom	nonce word response	táklok	táklom	11	15	-0.2876820724517809	-lik	1	NA	NA	Te bizony sokat táklasz.	Én is sokat...	tákl	4
+tarhéz	tarhéz	hotelban/hotelben	nonce word response	tarhézban	tarhézben	21	6	1.1451323043030026	NA	NA	é	ban	Ez itt egy tarhéz.	Ott vagyunk a...	tarhéz	6
+tibarzik / tibarozik	tibarzik / tibarozik	cselekszenek/cselekednek	nonce word response	tibarzanak	tibaroznak	13	13	0	-zik	2	NA	nek	János imád tibarozni, ezért sokat tibarzik.	Ők ritkán...	tibarz	6
+tínylik	tí¥lik	lakok/lakom	nonce word response	tínylok	tínylom	16	10	0.4353180712578455	-lik	1	NA	NA	Te bizony sokat tínylasz.	Én is sokat...	tíṉl	4
+tiregzik	tiregzik	lakok/lakom	nonce word response	tiregzek	tiregzem	15	14	0.06453852113757116	-zik	2	NA	NA	Te bizony sokat tiregzel.	Én is sokat...	tiregz	6
+tivenc	tivenc	hotelban/hotelben	nonce word response	tivencban	tivencben	4	23	-1.5686159179138452	NA	NA	e	ban	Ez itt egy tivenc.	Ott vagyunk a...	tivenc	6
+töglik / tögözik	töglik / tögözik	cselekszenek/cselekednek	nonce word response	töglenek	tögöznek	23	6	1.2321436812926323	-lik	1	NA	nek	János imád tögözni, ezért sokat töglik.	Ők ritkán...	tögl	4
+tomlik	tomlik	lakok/lakom	nonce word response	tomlok	tomlom	27	2	2.2335922215070942	-lik	1	NA	NA	Te bizony sokat tomlasz.	Én is sokat...	toml	4
+tosély	tosé¬	hotelban/hotelben	nonce word response	tosélyban	tosélyben	22	7	1.0560526742493137	NA	NA	é	ban	Ez itt egy tosély.	Ott vagyunk a...	tošéj	5
+trádlik	trádlik	lakok/lakom	nonce word response	trádlok	trádlom	16	10	0.4353180712578455	-lik	1	NA	NA	Te bizony sokat trádlasz.	Én is sokat...	trádl	5
+tragzik	tragzik	lakok/lakom	nonce word response	tragzok	tragzom	13	14	-0.06899287148695143	-zik	1	NA	NA	Te bizony sokat tragzol.	Én is sokat...	tragz	5
+trájeg	trájeg	hotelban/hotelben	nonce word response	trájegban	trájegben	5	21	-1.2992829841302609	NA	NA	e	ban	Ez itt egy trájeg.	Ott vagyunk a...	trájeg	6
+trálaklik / trálakozik	trálaklik / trálakozik	cselekszenek/cselekednek	nonce word response	trálaklanak	trálakoznak	13	13	0	-lik	2	NA	nek	János imád trálakozni, ezért sokat trálaklik.	Ők ritkán...	trálakl	7
+trálszik / trálodik	trálßik / trálodik	cselekszenek/cselekednek	nonce word response	trálszunk	trálodunk	19	7	0.9162907318741552	-szik	1	NA	ünk	János imád trálodni, ezért sokat trálszik.	Mi ritkán...	tráls	5
+tranék	tranék	hotelban/hotelben	nonce word response	tranékban	tranékben	17	12	0.32542240043462795	NA	NA	é	ban	Ez itt egy tranék.	Ott vagyunk a...	tranék	6
+tránély	tráné¬	hotelban/hotelben	nonce word response	tránélynak	tránélynek	21	6	1.1451323043030026	NA	NA	é	nak	Ez itt egy tránély.	Elneveztem a kutyámat...	tránéj	6
+trapszegy	trapße©	hotelban/hotelben	nonce word response	trapszegynál	trapszegynél	4	22	-1.5260563034950494	NA	NA	e	nál	Ez itt egy trapszegy.	Nincs is jobb egy jó...	trapseḏ	7
+treglik	treglik	lakok/lakom	nonce word response	treglek	treglem	18	8	0.7472144018302211	-lik	1	NA	NA	Te bizony sokat treglesz.	Én is sokat...	tregl	5
+trehégszik	trehégßik	lakok/lakom	nonce word response	trehégszek	trehégszem	8	18	-0.7472144018302211	-szik	2	NA	NA	Te bizony sokat trehégszel.	Én is sokat...	trehégs	7
+tribejlik / tribejezik	tribejlik / tribejezik	cselekszenek/cselekednek	nonce word response	tribejletek	tribejeztek	10	19	-0.5978370007556204	-lik	2	NA	tek	János imád tribejezni, ezért sokat tribejlik.	Ti ritkán...	tribejl	7
+trigenc	trigenc	hotelban/hotelben	nonce word response	trigencnak	trigencnek	1	28	-2.6741486494265287	NA	NA	e	nak	Ez itt egy trigenc.	Elneveztem a kutyámat...	trigenc	7
+trihagzik	trihagzik	lakok/lakom	nonce word response	trihagzok	trihagzom	9	18	-0.6418538861723948	-zik	2	NA	NA	Te bizony sokat trihagzol.	Én is sokat...	trihagz	7
+trikép	trikép	hotelban/hotelben	nonce word response	triképban	triképben	3	23	-1.791759469228055	NA	NA	é	ban	Ez itt egy trikép.	Ott vagyunk a...	trikép	6
+triklik / trikozik	triklik / trikozik	cselekszenek/cselekednek	nonce word response	triklotok	trikoztok	17	9	0.5877866649021191	-lik	1	NA	tek	János imád trikozni, ezért sokat triklik.	Ti ritkán...	trlik	5
+trilekszik / trilekedik	trilekßik / trilekedik	cselekszenek/cselekednek	nonce word response	trilekszetek	trilekedtek	14	12	0.14310084364067324	-szik	2	NA	tek	János imád trilekedni, ezért sokat trilekszik.	Ti ritkán...	trileks	7
+trilszik	trilßik	lakok/lakom	nonce word response	trilszok	trilszom	15	11	0.28768207245178085	-szik	1	NA	NA	Te bizony sokat trilszol.	Én is sokat...	trils	5
+trincseg	trinçeg	hotelban/hotelben	nonce word response	trincsegban	trincsegben	3	23	-1.791759469228055	NA	NA	e	ban	Ez itt egy trincseg.	Ott vagyunk a...	trinčeg	7
+trírzik / trírozik	trírzik / trírozik	cselekszenek/cselekednek	nonce word response	trírzunk	trírozunk	14	15	-0.06453852113757118	-zik	1	NA	ünk	János imád trírozni, ezért sokat trírzik.	Mi ritkán...	trírz	5
+trismél	trismél	hotelban/hotelben	nonce word response	trismélnak	trismélnek	3	23	-1.791759469228055	NA	NA	é	nak	Ez itt egy trismél.	Elneveztem a kutyámat...	trišmél	7
+trivakszik / trivakodik	trivakßik / trivakodik	cselekszenek/cselekednek	nonce word response	trivakszunk	trivakodunk	13	13	0	-szik	2	NA	ünk	János imád trivakodni, ezért sokat trivakszik.	Mi ritkán...	trivaks	7
+trodély	trodé¬	hotelban/hotelben	nonce word response	trodélyban	trodélyben	22	5	1.3437347467010947	NA	NA	é	ban	Ez itt egy trodély.	Ott vagyunk a...	trodéj	6
+trugoklik / trugokozik	trugoklik / trugokozik	cselekszenek/cselekednek	nonce word response	trugoklanak	trugokoznak	14	12	0.14310084364067324	-lik	2	NA	nek	János imád trugokozni, ezért sokat trugoklik.	Ők ritkán...	trugokl	7
+trugzik / trugozik	trugzik / trugozik	cselekszenek/cselekednek	nonce word response	trugzanak	trugoznak	11	18	-0.4595323293784402	-zik	1	NA	nek	János imád trugozni, ezért sokat trugzik.	Ők ritkán...	trugz	5
+trukszik / trukodik	trukßik / trukodik	cselekszenek/cselekednek	nonce word response	trukszotok	trukodtok	14	13	0.06899287148695142	-szik	1	NA	tek	János imád trukodni, ezért sokat trukszik.	Ti ritkán...	truks	5
+trűnylik / trűnyözik	trű¥lik / trű¥özik	cselekszenek/cselekednek	nonce word response	trűnylenek	trűnyöznek	13	13	0	-lik	1	NA	nek	János imád trűnyözni, ezért sokat trűnylik.	Ők ritkán...	trűṉl	5
+tuboklik	tuboklik	lakok/lakom	nonce word response	tuboklok	tuboklom	16	10	0.4353180712578455	-lik	2	NA	NA	Te bizony sokat tuboklasz.	Én is sokat...	tubokl	6
+tűgzik / tűgözik	tűgzik / tűgözik	cselekszenek/cselekednek	nonce word response	tűgzötök	tűgöztök	14	12	0.14310084364067324	-zik	1	NA	tek	János imád tűgözni, ezért sokat tűgzik.	Ti ritkán...	tűgz	4
+tumély	tumé¬	hotelban/hotelben	nonce word response	tumélynál	tumélynél	10	19	-0.5978370007556204	NA	NA	é	nál	Ez itt egy tumély.	Nincs is jobb egy jó...	tuméj	5
+vanylik	va¥lik	lakok/lakom	nonce word response	vanylok	vanylom	21	6	1.1451323043030026	-lik	1	NA	NA	Te bizony sokat vanylasz.	Én is sokat...	vaṉl	4
+vehékszik / vehékedik	vehékßik / vehékedik	cselekszenek/cselekednek	nonce word response	vehékszünk	vehékedünk	18	8	0.7472144018302211	-szik	2	NA	ünk	János imád vehékedni, ezért sokat vehékszik.	Mi ritkán...	vehéks	6
+vihapszik / vihapodik	vihapßik / vihapodik	cselekszenek/cselekednek	nonce word response	vihapszunk	vihapodunk	17	10	0.49247648509779424	-szik	2	NA	ünk	János imád vihapodni, ezért sokat vihapszik.	Mi ritkán...	vihaps	6
+vihepszik	vihepßik	lakok/lakom	nonce word response	vihepszek	vihepszem	8	18	-0.7472144018302211	-szik	2	NA	NA	Te bizony sokat vihepszel.	Én is sokat...	viheps	6
+vilakszik	vilakßik	lakok/lakom	nonce word response	vilakszok	vilakszom	8	19	-0.7985076962177716	-szik	2	NA	NA	Te bizony sokat vilakszol.	Én is sokat...	vilaks	6
+vileslik / vilesezik	vileslik / vilesezik	cselekszenek/cselekednek	nonce word response	vileslünk	vilesezünk	13	13	0	-lik	2	NA	ünk	János imád vilesezni, ezért sokat vileslik.	Mi ritkán...	vilešl	6
+virzik / virozik	virzik / virozik	cselekszenek/cselekednek	nonce word response	virzanak	viroznak	13	13	0	-zik	1	NA	nek	János imád virozni, ezért sokat virzik.	Ők ritkán...	virz	4
+vismer	vismer	hotelban/hotelben	nonce word response	vismernál	vismernél	0	27	-3.332204510175204	NA	NA	e	nál	Ez itt egy vismer.	Nincs is jobb egy jó...	višmer	6
+vobzik / vobozik	vobzik / vobozik	cselekszenek/cselekednek	nonce word response	vobzotok	voboztok	11	15	-0.2876820724517809	-zik	1	NA	tek	János imád vobozni, ezért sokat vobzik.	Ti ritkán...	vobz	4
+vodec	vodec	hotelban/hotelben	nonce word response	vodecnál	vodecnél	6	20	-1.0986122886681098	NA	NA	e	nál	Ez itt egy vodec.	Nincs is jobb egy jó...	vodec	5
+vodép	vodép	hotelban/hotelben	nonce word response	vodépnak	vodépnek	8	19	-0.7985076962177716	NA	NA	é	nak	Ez itt egy vodép.	Elneveztem a kutyámat...	vodép	5
+vorszen	vorßen	hotelban/hotelben	nonce word response	vorszennál	vorszennél	4	25	-1.6486586255873816	NA	NA	e	nál	Ez itt egy vorszen.	Nincs is jobb egy jó...	vorsen	6
+vublet	vublet	hotelban/hotelben	nonce word response	vubletnál	vubletnél	6	20	-1.0986122886681098	NA	NA	e	nál	Ez itt egy vublet.	Nincs is jobb egy jó...	vublet	6
+vűjlik	vűjlik	lakok/lakom	nonce word response	vűjlök	vűjlöm	20	6	1.0986122886681098	-lik	1	NA	NA	Te bizony sokat vűjlesz.	Én is sokat...	vűjl	4
+vülődzik	vülődzik	lakok/lakom	nonce word response	vülődzök	vülődzöm	14	13	0.06899287148695142	-zik	2	NA	NA	Te bizony sokat vülődzöl.	Én is sokat...	vülődz	6
+vurnel	vurnel	hotelban/hotelben	nonce word response	vurnelnak	vurnelnek	5	21	-1.2992829841302609	NA	NA	e	nak	Ez itt egy vurnel.	Elneveztem a kutyámat...	vurnel	6
+zábény	zábé¥	hotelban/hotelben	nonce word response	zábénynak	zábénynek	8	18	-0.7472144018302211	NA	NA	é	nak	Ez itt egy zábény.	Elneveztem a kutyámat...	zábéṉ	5
+zarcég	zarcég	hotelban/hotelben	nonce word response	zarcégnál	zarcégnél	7	22	-1.0560526742493137	NA	NA	é	nál	Ez itt egy zarcég.	Nincs is jobb egy jó...	zarcég	6
+zatéj	zatéj	hotelban/hotelben	nonce word response	zatéjnál	zatéjnél	12	14	-0.1431008436406733	NA	NA	é	nál	Ez itt egy zatéj.	Nincs is jobb egy jó...	zatéj	5
+zihenc	zihenc	hotelban/hotelben	nonce word response	zihencnak	zihencnek	1	28	-2.6741486494265287	NA	NA	e	nak	Ez itt egy zihenc.	Elneveztem a kutyámat...	zihenc	6
+zined	zined	hotelban/hotelben	nonce word response	zinednak	zinednek	1	25	-2.5649493574615367	NA	NA	e	nak	Ez itt egy zined.	Elneveztem a kutyámat...	zined	5
+zödlik	zödlik	lakok/lakom	nonce word response	zödlök	zödlöm	18	8	0.7472144018302211	-lik	1	NA	NA	Te bizony sokat zödlesz.	Én is sokat...	zödl	4
+zopély	zopé¬	hotelban/hotelben	nonce word response	zopélynál	zopélynél	16	11	0.3483066942682158	NA	NA	é	nál	Ez itt egy zopély.	Nincs is jobb egy jó...	zopéj	5
+zsáder	Ωáder	hotelban/hotelben	nonce word response	zsáderban	zsáderben	11	15	-0.2876820724517809	NA	NA	e	ban	Ez itt egy zsáder.	Ott vagyunk a...	žáder	5
+zsádév	Ωádév	hotelban/hotelben	nonce word response	zsádévnak	zsádévnek	14	12	0.14310084364067324	NA	NA	é	nak	Ez itt egy zsádév.	Elneveztem a kutyámat...	žádév	5
+zsalrén	Ωalrén	hotelban/hotelben	nonce word response	zsalrénnak	zsalrénnek	13	14	-0.06899287148695143	NA	NA	é	nak	Ez itt egy zsalrén.	Elneveztem a kutyámat...	žalrén	6
+zsigén	Ωigén	hotelban/hotelben	nonce word response	zsigénnál	zsigénnél	3	26	-1.9095425048844383	NA	NA	é	nál	Ez itt egy zsigén.	Nincs is jobb egy jó...	žigén	5
+zsopéd	Ωopéd	hotelban/hotelben	nonce word response	zsopédban	zsopédben	20	7	0.965080896043587	NA	NA	é	ban	Ez itt egy zsopéd.	Ott vagyunk a...	žopéd	5
+zsúdel	Ωúdel	hotelban/hotelben	nonce word response	zsúdelnak	zsúdelnek	6	21	-1.1451323043030026	NA	NA	e	nak	Ez itt egy zsúdel.	Elneveztem a kutyámat...	žúdel	5
+zuten	zuten	hotelban/hotelben	nonce word response	zutennál	zutennél	6	23	-1.2321436812926323	NA	NA	e	nál	Ez itt egy zuten.	Nincs is jobb egy jó...	zuten	5

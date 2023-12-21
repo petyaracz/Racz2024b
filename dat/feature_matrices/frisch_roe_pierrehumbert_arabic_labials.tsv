@@ -1,0 +1,5 @@
+segment	cons	son	cont	nasal	labial	voice
+b	1	0	0	0	1	1
+f	1	0	1	NA	1	0
+m	1	1	0	1	1	1
+w	0	1	1	NA	1	1
