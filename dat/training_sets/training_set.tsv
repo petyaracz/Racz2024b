@@ -1,945 +1,2147 @@
-base	variation	lemma_freq_corrected	string	log_odds	ranef
-ábrándozik	lakok/lakom	18385	ábrándoz	-0.7626077789029448	NA
-adakozik	lakok/lakom	17936	adakoz	0.0685983163427522	NA
-adaptálódik	lakok/lakom	4014	adaptálód	0.3184537311185346	NA
-adódik	lakok/lakom	313753	adód	1.4271163556401458	NA
-adósodik	lakok/lakom	5682	adóšod	0	NA
-ágaskodik	lakok/lakom	5740	ágaškod	-1.0986122886681098	NA
-aggódik	lakok/lakom	341034	aggód	-1.6334419743962834	NA
-áhítozik	lakok/lakom	9214	áhítoz	-1.9960599327407849	NA
-ajánlkozik	lakok/lakom	4605	ajánlkoz	-2.1972245773362196	NA
-akaszkodik	lakok/lakom	2721	akaskod	-0.916290731874155	NA
-alkudik	lakok/lakom	17918	alkud	2.268683541318364	NA
-alkudozik	lakok/lakom	14494	alkudoz	-0.576783591557788	NA
-alkuszik	lakok/lakom	17918	alkus	-4.339467020255086	NA
-állomásozik	lakok/lakom	17398	állomášoz	-1.128465251817791	NA
-álmélkodik	lakok/lakom	5761	álmélkod	-1.410986973710262	NA
-álmodik	lakok/lakom	223489	álmod	-1.2634877150200536	NA
-álmodozik	lakok/lakom	59984	álmodoz	-1.5958374005640366	NA
-alszik	lakok/lakom	668614	als	-2.0171719084123705	NA
-aluszik	lakok/lakom	668614	alus	-1.8294997972109024	NA
-ámuldozik	lakok/lakom	3333	ámuldoz	0.15415067982725836	NA
-árulkodik	lakok/lakom	62655	árulkod	0.14310084364067324	NA
-ásítozik	lakok/lakom	3555	ášítoz	0.13133600206108695	NA
-aszalódik	lakok/lakom	2207	asalód	0.2047944126460132	NA
-aszik	lakok/lakom	5633	as	1.9061698204057993	NA
-átkozódik	lakok/lakom	3739	átkozód	-1.4718165345580525	NA
-autókázik	lakok/lakom	2943	autókáz	0.4567584024957149	NA
-autózik	lakok/lakom	53397	autóz	-0.6922293282697164	NA
-avatkozik	lakok/lakom	45734	avatkoz	-1.16538046513295	NA
-bábáskodik	lakok/lakom	5536	bábáškod	-0.9315582040049436	NA
-bajlódik	lakok/lakom	39724	bajlód	-0.01063839820505575	NA
-bakizik	lakok/lakom	1995	bakiz	0.5798184952529422	NA
-balhézik	lakok/lakom	6131	balhéz	2.9356283494842854	NA
-bámészkodik	lakok/lakom	6070	báméskod	-0.19574457712609536	NA
-bánkódik	lakok/lakom	14891	bánkód	-1.1786549963416462	NA
-barátkozik	lakok/lakom	50745	barátkoz	-1.9469017207776085	NA
-bátorkodik	lakok/lakom	9746	bátorkod	-2.5479051599595977	NA
-berzenkedik	lakok/lakom	3632	berzenked	-0.23841102344499823	NA
-betegszik	lakok/lakom	9223	betegs	-2.094945728215801	NA
-bíbelődik	lakok/lakom	14471	bíbelőd	-0.12878078986592484	NA
-bíráskodik	lakok/lakom	3616	bíráškod	-1.5163474893680884	NA
-birkózik	lakok/lakom	38668	birkóz	-0.8381653768239311	NA
-bizakodik	lakok/lakom	30323	bizakod	-0.9167360669961888	NA
-bízik	lakok/lakom	1037991	bíz	-2.252118805622328	NA
-bizonyosodik	lakok/lakom	29527	bizoṉošod	-0.16126814759612226	NA
-bocsátkozik	lakok/lakom	24331	bočátkoz	-2.6508917872622613	NA
-bogarászik	lakok/lakom	9264	bogarás	0.17486281150627853	NA
-bohóckodik	lakok/lakom	10687	bohóckod	0.3184537311185346	NA
-bóklászik	lakok/lakom	13080	bóklás	0.0594234204708008	NA
-bonyolódik	lakok/lakom	34776	boṉolód	-0.24027983355719704	NA
-bosszankodik	lakok/lakom	28274	bossankod	-0.7715162476754521	NA
-botladozik	lakok/lakom	8796	botladoz	-0.37662955846827706	NA
-botlik	lakok/lakom	41912	botl	2.1459903514386	NA
-botránkozik	lakok/lakom	3482	botránkoz	-0.9707789171582248	NA
-bővelkedik	lakok/lakom	38446	bővelked	-1.041453874828161	NA
-búcsúzkodik	lakok/lakom	3282	búčúzkod	-1.890850371872286	NA
-búcsúzik	lakok/lakom	154036	búčúz	-1.9697291385195523	NA
-bujdosik	lakok/lakom	4942	bujdoš	1.3470736479666094	NA
-bújócskázik	lakok/lakom	3783	bújóčkáz	0.5798184952529422	NA
-bukfencezik	lakok/lakom	3043	bukfencez	1.1349799328389845	NA
-bűnhődik	lakok/lakom	9169	bűnhőd	-0.9279867716373464	NA
-búslakodik	lakok/lakom	8087	búšlakod	-0.7969439742415888	NA
-büszkélkedik	lakok/lakom	84413	büskélked	-0.6074917359814515	NA
-búvárkodik	lakok/lakom	10030	búvárkod	-0.6234672599219555	NA
-bűvészkedik	lakok/lakom	3597	bűvésked	0.3566749439387324	NA
-cikkezik	lakok/lakom	14162	cikkez	1.7346010553881064	NA
-cipekedik	lakok/lakom	4233	cipeked	1.5224265354444706	NA
-cipekszik	lakok/lakom	4233	cipeks	-0.2231435513142097	NA
-csalatkozik	lakok/lakom	4769	čalatkoz	-2.7327428136925813	NA
-csalódik	lakok/lakom	170163	čalód	0.37394912488155346	NA
-csapódik	lakok/lakom	59286	čapód	0.561377902928822	NA
-csatlakozik	lakok/lakom	869608	čatlakoz	-0.6032716444928523	NA
-csavarodik	lakok/lakom	9265	čavarod	1.0414538748281612	NA
-cselekszik	lakok/lakom	280658	čeleks	-2.5682551455960363	NA
-csendesedik	lakok/lakom	6494	čendešed	1.466337068793427	NA
-csigázik	lakok/lakom	4081	čigáz	0.08515780834030677	NA
-csimpaszkodik	lakok/lakom	4352	čimpaskod	-0.9963334395476916	NA
-csiszolódik	lakok/lakom	6459	čisolód	-0.3677247801253174	NA
-csodálkozik	lakok/lakom	200735	čodálkoz	-2.2084654108101	NA
-csókolózik	lakok/lakom	18284	čókolóz	-0.8915981192837836	NA
-csónakázik	lakok/lakom	6485	čónakáz	1.540445040947149	NA
-csuklik	lakok/lakom	6520	čukl	1.4240346891027378	NA
-csúszik	lakok/lakom	191096	čús	0.927211277220816	NA
-dicsekszik	lakok/lakom	46395	dičeks	-3.521446509813732	NA
-diétázik	lakok/lakom	18417	diétáz	-1.2297935039476786	NA
-dobálódzik	lakok/lakom	12200	dobálódz	0.6418538861723947	NA
-döglődik	lakok/lakom	2107	döglőd	0.2436220826577505	NA
-dohányzik	lakok/lakom	67978	doháṉz	-2.4169461860947936	NA
-dolgozik	lakok/lakom	3627092	dolgoz	-1.9771405288423716	NA
-dörgölőzik	lakok/lakom	3938	dörgölőz	0.6931471805599453	NA
-dudorászik	lakok/lakom	3096	dudorás	-0.13580154115906176	NA
-ébredezik	lakok/lakom	10153	ébredez	1.791759469228055	NA
-edzik	lakok/lakom	183810	edz	1.2992829841302609	NA
-edződik	lakok/lakom	7138	edződ	-1.3268709406490895	NA
-egyenesedik	lakok/lakom	3332	eḏenešed	1.550597412411167	NA
-egyezik	lakok/lakom	230655	eḏez	1.536867219599265	NA
-egyszerűsödik	lakok/lakom	13942	eḏserűšöd	-0.6061358035703156	NA
-éhezik	lakok/lakom	59636	éhez	0.7439664289561583	NA
-éjszakázik	lakok/lakom	12361	éjsakáz	-0.4325460667108351	NA
-ejtőzik	lakok/lakom	3317	ejtőz	0.7121953755306397	NA
-ékeskedik	lakok/lakom	5504	ékešked	-0.8344607136265229	NA
-élcelődik	lakok/lakom	4503	élcelőd	-0.3483066942682157	NA
-elégszik	lakok/lakom	184225	elégs	-2.8725368902601307	NA
-elegyedik	lakok/lakom	21613	eleḏed	1.2902413312133107	NA
-ellenkezik	lakok/lakom	35786	ellenkez	0.3465648370084371	NA
-elmélázik	lakok/lakom	6646	elméláz	1.6187692398629847	NA
-elmélkedik	lakok/lakom	48134	elmélked	-0.9194206248830828	NA
-élősködik	lakok/lakom	9380	élőšköd	1.3437347467010947	NA
-élvezkedik	lakok/lakom	4178	élvezked	-0.03015303817068755	NA
-emlékezik	lakok/lakom	1190771	emlékez	3.8450688706310423	NA
-emlékezik	lakok/lakom	607896	emlékez	0	NA
-emlékszik	lakok/lakom	582900	emléks	-4.226614321171158	NA
-emlékszik	lakok/lakom	582875	emléks	0.9382696385929302	NA
-epekedik	lakok/lakom	5130	epeked	0.0368139731227164	NA
-építkezik	lakok/lakom	78659	építkez	0.1286493650272142	NA
-érdeklődik	lakok/lakom	365910	érdeklőd	1.8078983749221111	NA
-ereszkedik	lakok/lakom	50960	eresked	-0.06484864674092511	NA
-érintkezik	lakok/lakom	84963	érintkez	-1.2856508353402032	NA
-érkezik	lakok/lakom	2258874	érkez	-1.5503669445604118	NA
-érlelődik	lakok/lakom	17933	érlelőd	0	NA
-erőlködik	lakok/lakom	26473	erőlköd	-0.7132781149669228	NA
-erősködik	lakok/lakom	8007	erőšköd	-0.8351174418303325	NA
-erősödik	lakok/lakom	216852	erőšöd	-0.63372376008914455	NA
-értekezik	lakok/lakom	31517	értekez	0.2451224580329849	NA
-esik	lakok/lakom	1885634	eš	-0.3232833621858785	NA
-esedezik	lakok/lakom	9804	ešedez	-0.7151260872787205	NA
-esküdözik	lakok/lakom	2908	ešküdöz	-0.13353139262452263	NA
-esküszik	lakok/lakom	82803	ešküs	-4.751521449049892	NA
-eszik	lakok/lakom	1320372	es	-0.1252573965710583	NA
-eszik	lakok/lakom	1320365	es	1.203972804325936	NA
-étkezik	lakok/lakom	56160	étkez	-2.116566674318765	NA
-évődik	lakok/lakom	2026	évőd	-0.8527773261518292	NA
-faggatózik	lakok/lakom	2014	faggatóz	-0.9328200338253656	NA
-fagyoskodik	lakok/lakom	5038	faḏoškod	-0.616186139423817	NA
-falatozik	lakok/lakom	15786	falatoz	0.05129329438755048	NA
-fanyalodik	lakok/lakom	2114	faṉalod	0.6097655716208943	NA
-fáradozik	lakok/lakom	40305	fáradoz	-1.4421054959047777	NA
-fázik	lakok/lakom	77143	fáz	-1.962267894353248	NA
-fegyverkezik	lakok/lakom	3563	feḏverkez	0.6931471805599453	NA
-fejlődik	lakok/lakom	556362	fejlőd	0.4458614801491277	NA
-fekszik	lakok/lakom	604506	feks	-2.1520495664645813	NA
-feledkezik	lakok/lakom	122115	feledkez	-0.25671984684781396	NA
-felejtkezik	lakok/lakom	9049	felejtkez	-0.6778797084291569	NA
-férkőzik	lakok/lakom	18255	férkőz	-0.6931471805599453	NA
-fertőződik	lakok/lakom	16236	fertőződ	-0.6931471805599453	NA
-fésülködik	lakok/lakom	2935	féšülköd	-0.4054651081081645	NA
-fészkelődik	lakok/lakom	5381	féskelőd	-0.31709595765807425	NA
-fiatalodik	lakok/lakom	6846	fiatalod	-0.5142679679569635	NA
-finomkodik	lakok/lakom	5135	finomkod	2.0907410969337694	NA
-fogadkozik	lakok/lakom	8046	fogadkoz	-0.9661877030187782	NA
-foglalkozik	lakok/lakom	1809823	foglalkoz	-2.3795526333551416	NA
-fogyatkozik	lakok/lakom	8930	foḏatkoz	-2.662587827025453	NA
-fogyókúrázik	lakok/lakom	10254	foḏókúráz	0.3642221495741153	NA
-fohászkodik	lakok/lakom	16804	foháskod	-2.7087233751431143	NA
-folytatódik	lakok/lakom	572068	fojtatód	-0.4289956055183584	NA
-fonódik	lakok/lakom	18743	fonód	-0.6931471805599453	NA
-fontoskodik	lakok/lakom	2612	fontoškod	-0.7375989431307791	NA
-forgolódik	lakok/lakom	18063	forgolód	0.27672305866206137	NA
-formálódik	lakok/lakom	36394	formálód	-0.38837067474886433	NA
-forrósodik	lakok/lakom	4210	forróšod	0.5108256237659907	NA
-főzőcskézik	lakok/lakom	4801	főzőčkéz	4.5217885770490405	NA
-fukarkodik	lakok/lakom	8454	fukarkod	-1.4294665329850993	NA
-fulladozik	lakok/lakom	4240	fulladoz	-0.48145101508608634	NA
-fürdőzik	lakok/lakom	12429	fürdőz	3.979681653901961	NA
-fúródik	lakok/lakom	8002	fúród	0.6931471805599453	NA
-furulyázik	lakok/lakom	3355	furujáz	0.6931471805599453	NA
-futamodik	lakok/lakom	3227	futamod	1.3981288187668934	NA
-futballozik	lakok/lakom	36728	futballoz	-1.3066767331551992	NA
-futkározik	lakok/lakom	9294	futkároz	1.4799798451972137	NA
-fuvolázik	lakok/lakom	2514	fuvoláz	-0.8873031950009028	NA
-fűződik	lakok/lakom	121731	fűződ	-0.1670540846631662	NA
-gazdagodik	lakok/lakom	134939	gazdagod	-1.0091844787668514	NA
-gazdagszik	lakok/lakom	134939	gazdags	-2.468099531471619	NA
-gazdálkodik	lakok/lakom	93581	gazdálkod	-1.2017604140429952	NA
-gömbölyödik	lakok/lakom	3513	gömböjöd	-0.02666824708216129	NA
-gondolkodik	lakok/lakom	706718	gondolkod	-2.1186228467426313	NA
-gondolkozik	lakok/lakom	253771	gondolkoz	-1.5621850275835547	NA
-gondoskodik	lakok/lakom	785316	gondoškod	-2.3176928759860176	NA
-gonoszkodik	lakok/lakom	2552	gonoskod	-0.5968160716215132	NA
-gúnyolódik	lakok/lakom	12545	gúṉolód	0.5918558465088448	NA
-gyanakszik	lakok/lakom	68227	ḏanaks	-3.0474549911447006	NA
-gyarapszik	lakok/lakom	86849	ḏaraps	-2.1400661634962708	NA
-gyengélkedik	lakok/lakom	6911	ḏengélked	-1.8082887711792657	NA
-gyöngyözik	lakok/lakom	7379	ḏönḏöz	1.7635885922613586	NA
-gyönyörködik	lakok/lakom	112176	ḏöṉörköd	-2.4435006598001645	NA
-gyötrődik	lakok/lakom	7873	ḏötrőd	-2.1633230256605382	NA
-győzködik	lakok/lakom	22154	ḏőzköd	2.1972245773362196	NA
-győződik	lakok/lakom	138711	ḏőződ	-0.61467556511845	NA
-gyűlölködik	lakok/lakom	6178	ḏűlölköd	-0.35806286921358044	NA
-gyűrődik	lakok/lakom	5974	ḏűrőd	-0.4700036292457356	NA
-háborodik	lakok/lakom	17472	háborod	0.7712649598238974	NA
-háborúzik	lakok/lakom	11765	háborúz	1.4781019103730135	NA
-hadakozik	lakok/lakom	14604	hadakoz	-0.7654678421395714	NA
-hagyatkozik	lakok/lakom	65502	haḏatkoz	-1.9459101490553137	NA
-hajladozik	lakok/lakom	3901	hajladoz	0	NA
-hajókázik	lakok/lakom	4918	hajókáz	1.1631508098056809	NA
-hajózik	lakok/lakom	33540	hajóz	0.4449959468647997	NA
-hálálkodik	lakok/lakom	5921	hálálkod	-1.3071570405611668	NA
-haldoklik	lakok/lakom	21831	haldokl	0.5075946031845443	NA
-halványodik	lakok/lakom	5957	halváṉod	-0.9808292530117262	NA
-hangolódik	lakok/lakom	27076	hangolód	-0.08223809823697212	NA
-hangoskodik	lakok/lakom	8641	hangoškod	0.3964152725882464	NA
-hanyatlik	lakok/lakom	15385	haṉatl	1.9252908618525777	NA
-hánykolódik	lakok/lakom	5657	háṉkolód	-0.7713993774596936	NA
-hányódik	lakok/lakom	3101	háṉód	-2.580216829592325	NA
-haragszik	lakok/lakom	129179	harags	-2.9124041419806574	NA
-harangozik	lakok/lakom	13662	harangoz	0.4795730802618863	NA
-hatódik	lakok/lakom	3690	hatód	0.6931471805599453	NA
-haverkodik	lakok/lakom	3524	haverkod	1.7147984280919266	NA
-házasodik	lakok/lakom	48749	házašod	-0.2652811357626143	NA
-hazudozik	lakok/lakom	13233	hazudoz	1.3096611350989746	NA
-helyezkedik	lakok/lakom	435311	hejezked	-0.41117125768501905	NA
-hiányzik	lakok/lakom	686890	hiáṉz	-1.0136319583653617	NA
-hibázik	lakok/lakom	154009	hibáz	1.288276437049979	NA
-hintázik	lakok/lakom	9317	hintáz	0.2651077504132419	NA
-hiszik	lakok/lakom	3584445	his	-0.15415067982725836	NA
-hivalkodik	lakok/lakom	3478	hivalkod	-1.01160091167848	NA
-hivatkozik	lakok/lakom	508241	hivatkoz	-1.403092923615961	NA
-hízik	lakok/lakom	63813	híz	0.807993356543019	NA
-hozakodik	lakok/lakom	6156	hozakod	-0.7877355992358605	NA
-hüledezik	lakok/lakom	4646	hüledez	3.20545280453606	NA
-hülyéskedik	lakok/lakom	8587	hüjéšked	2.9938073451444067	NA
-húzódik	lakok/lakom	188010	húzód	0	NA
-húzódozik	lakok/lakom	2929	húzódoz	-1.423108334242607	NA
-idegenkedik	lakok/lakom	24833	idegenked	-0.5875306157392811	NA
-idegeskedik	lakok/lakom	17271	idegešked	1.0419399015691988	NA
-idősödik	lakok/lakom	4870	időšöd	-2.125961557314729	NA
-időzik	lakok/lakom	38358	időz	0.8954999622050813	NA
-igazodik	lakok/lakom	195863	igazod	-0.07458194325035862	NA
-ígérkezik	lakok/lakom	66458	ígérkez	0.28768207245178085	NA
-igyekszik	lakok/lakom	1372052	iḏeks	-3.6522821831887295	NA
-imádkozik	lakok/lakom	319092	imádkoz	-2.575321698926278	NA
-ingadozik	lakok/lakom	33254	ingadoz	-0.8109302162163288	NA
-iparkodik	lakok/lakom	13706	iparkod	-0.8960880245566356	NA
-irigykedik	lakok/lakom	28990	iriḏked	-0.5102415115998503	NA
-irtózik	lakok/lakom	15667	irtóz	-2.2502082574884557	NA
-ismerkedik	lakok/lakom	344220	išmerked	0.01262465918950368	NA
-ismerszik	lakok/lakom	7941	išmers	0.28768207245178085	NA
-iszik	lakok/lakom	651299	is	1.203972804325936	NA
-iszik	lakok/lakom	651311	is	-1.528790696382441	NA
-iszonyodik	lakok/lakom	3335	isoṉod	-1.8718021769015911	NA
-ítélkezik	lakok/lakom	42419	ítélkez	-0.8710341402860342	NA
-izmosodik	lakok/lakom	4740	izmošod	-0.42050298547270487	NA
-játszadozik	lakok/lakom	20243	játsadoz	-1.4563619237366077	NA
-játszik	lakok/lakom	2672605	játs	-1.192321386234292	NA
-játszódik	lakok/lakom	142955	játsód	0.3483066942682158	NA
-jelentkezik	lakok/lakom	1317571	jelentkez	-1.7992245780132547	NA
-jeleskedik	lakok/lakom	26740	jelešked	-0.11980119981262063	NA
-jógázik	lakok/lakom	17732	jógáz	-1.439891547128869	NA
-jóllakik	lakok/lakom	27189	jóllak	1.791759469228055	NA
-kacérkodik	lakok/lakom	13978	kacérkod	-1.099726494911513	NA
-kajakozik	lakok/lakom	4622	kajakoz	-0.63372376008914455	NA
-kallódik	lakok/lakom	5181	kallód	0.25131442828090617	NA
-kapálódzik	lakok/lakom	6110	kapálódz	0.4177352006999788	NA
-kaparászik	lakok/lakom	2081	kaparás	-0.4054651081081645	NA
-kapaszkodik	lakok/lakom	113682	kapaskod	-0.6669634779442181	NA
-kapcsolódik	lakok/lakom	635457	kapčolód	-0.4747273035935119	NA
-kardoskodik	lakok/lakom	6275	kardoškod	-0.6026331730191135	NA
-kárhozik	lakok/lakom	4546	kárhoz	-0.3364722366212129	NA
-karikázik	lakok/lakom	14609	karikáz	1.1198896871153945	NA
-káromkodik	lakok/lakom	23314	káromkod	1.3096017403316362	NA
-kártyázik	lakok/lakom	10854	kárṯáz	0.5971325273203567	NA
-kászálódik	lakok/lakom	2552	kásálód	1.122142786078304	NA
-kávézik	lakok/lakom	24144	kávéz	0.5895771756759072	NA
-kedveskedik	lakok/lakom	70883	kedvešked	1.3333927028954773	NA
-kegyeskedik	lakok/lakom	2677	keḏešked	0.8649974374866045	NA
-kekeckedik	lakok/lakom	3302	kekecked	0.8938178760220965	NA
-kenődik	lakok/lakom	4832	kenőd	1.466337068793427	NA
-képzelődik	lakok/lakom	5260	képzelőd	-0.9392462011705406	NA
-képződik	lakok/lakom	75875	képződ	-1.9328380674879604	NA
-kéredzkedik	lakok/lakom	2470	kéredzked	0.5465437063680699	NA
-kerekedik	lakok/lakom	69864	kereked	0.5349231753450512	NA
-kerekezik	lakok/lakom	7868	kerekez	1.086636097621394	NA
-kereskedik	lakok/lakom	48423	kerešked	0.600126641137695	NA
-kergetőzik	lakok/lakom	5058	kergetőz	0	NA
-keringőzik	lakok/lakom	2274	keringőz	1.8458266904983307	NA
-kérkedik	lakok/lakom	10714	kérked	0.7339691750802005	NA
-kertészkedik	lakok/lakom	14951	kertésked	-0.1124518768334687	NA
-keseredik	lakok/lakom	22200	kešered	3.1282214566000697	NA
-késlekedik	lakok/lakom	18894	kéšleked	-0.3642221495741152	NA
-készülődik	lakok/lakom	54120	késülőd	0.11778303565638346	NA
-kételkedik	lakok/lakom	68084	kételked	-1.6007114225459107	NA
-kétkedik	lakok/lakom	9459	kétked	-0.6340582641899387	NA
-kezdődik	lakok/lakom	1316010	kezdőd	1.6153030318864985	NA
-kezeskedik	lakok/lakom	3469	kezešked	-2.088546308672755	NA
-kiáltozik	lakok/lakom	13243	kiáltoz	-0.8347976976229721	NA
-kínlódik	lakok/lakom	23589	kínlód	0.8492377252050303	NA
-kívánkozik	lakok/lakom	19880	kívánkoz	-1.474263134065848	NA
-kocsikázik	lakok/lakom	5753	kočikáz	1.5214691394881432	NA
-költekezik	lakok/lakom	6117	költekez	0.4054651081081644	NA
-költözik	lakok/lakom	393996	költöz	0.8472978603872037	NA
-költözködik	lakok/lakom	3358	költözköd	-0.5663954749208014	NA
-költözik	lakok/lakom	393996	költöz	-1.066279648731097	NA
-komolyodik	lakok/lakom	3885	komojod	-0.9444616088408514	NA
-könnyezik	lakok/lakom	19660	köṉṉez	1.958622184643675	NA
-kopaszodik	lakok/lakom	3051	kopasod	-1.3686985992295109	NA
-korcsolyázik	lakok/lakom	13624	korčojáz	-1.374865665296268	NA
-korzózik	lakok/lakom	2269	korzóz	0.36772478012531734	NA
-kosarazik	lakok/lakom	7721	košaraz	0.2787134024690205	NA
-kötődik	lakok/lakom	196712	kötőd	-1.885215082379563	NA
-kotorászik	lakok/lakom	7658	kotorás	1.0145934326149335	NA
-kötözködik	lakok/lakom	6981	kötözköd	-0.4040576483402846	NA
-követelőzik	lakok/lakom	4650	követelőz	1.916922612182061	NA
-következik	lakok/lakom	1151088	következ	-1.1714922120367706	NA
-közeledik	lakok/lakom	245136	közeled	0.9156881407140108	NA
-közlekedik	lakok/lakom	287338	közleked	0.10714805443819442	NA
-közösködik	lakok/lakom	2915	közöšköd	-1.8562979903656265	NA
-kuporodik	lakok/lakom	3941	kuporod	0	NA
-küszködik	lakok/lakom	65981	küsköd	0.4128985928644987	NA
-kutakodik	lakok/lakom	25692	kutakod	0.2947995402206448	NA
-lábadozik	lakok/lakom	7640	lábadoz	-0.4418327522790392	NA
-lakik	lakok/lakom	612717	lak	-2.0692685139667852	NA
-lakozik	lakok/lakom	39428	lakoz	-3.4631283393926457	NA
-látszik	lakok/lakom	1217735	láts	-2.3051328650728444	NA
-lázadozik	lakok/lakom	5616	lázadoz	-0.9473813189441862	NA
-leledzik	lakok/lakom	8370	leledz	0.01129955525393346	NA
-lélegzik	lakok/lakom	82329	lélegz	0.5948362483163822	NA
-lelkendezik	lakok/lakom	9487	lelkendez	1.8870696490323795	NA
-lelkesedik	lakok/lakom	33550	lelkešed	-0.6135115561405549	NA
-lepődik	lakok/lakom	86473	lepőd	0.2568839815845639	NA
-leselkedik	lakok/lakom	19027	lešelked	0.22314355131420976	NA
-leskelődik	lakok/lakom	5010	leškelőd	-0.03681397312271631	NA
-létezik	lakok/lakom	1297361	létez	-2.200927599527286	NA
-levegőzik	lakok/lakom	5361	levegőz	0.6931471805599453	NA
-lökdösődik	lakok/lakom	3007	lökdöšőd	0.5877866649021191	NA
-lottózik	lakok/lakom	2828	lottóz	-1.1969056371028437	NA
-lustálkodik	lakok/lakom	6541	luštálkod	-1.185152744999166	NA
-magasodik	lakok/lakom	22549	magašod	-0.2006706954621511	NA
-makacskodik	lakok/lakom	2104	makačkod	-0.6931471805599453	NA
-markolászik	lakok/lakom	3773	markolás	-1.791759469228055	NA
-mélázik	lakok/lakom	4413	méláz	1.1235512370153615	NA
-melegedik	lakok/lakom	35425	meleged	1.8458266904983307	NA
-melegszik	lakok/lakom	43511	melegs	-2.3283375890964604	NA
-merészkedik	lakok/lakom	32469	merésked	0.1608040643179949	NA
-mérgelődik	lakok/lakom	8669	mérgelőd	-0.1946420411819952	NA
-mesterkedik	lakok/lakom	5352	mešterked	-0.8266785731844679	NA
-misézik	lakok/lakom	6450	mišéz	2.302585092994046	NA
-mocskolódik	lakok/lakom	2235	močkolód	0.780158557549575	NA
-mókázik	lakok/lakom	4444	mókáz	1.363304842895192	NA
-morgolódik	lakok/lakom	4429	morgolód	1.1727202608218317	NA
-mosakszik	lakok/lakom	11483	mošaks	-3.1612467120315646	NA
-mosdik	lakok/lakom	3663	mošd	2.866274206317104	NA
-mosolyodik	lakok/lakom	11411	mošojod	-0.6118842164811795	NA
-mozgolódik	lakok/lakom	6963	mozgolód	0.125163142954006	NA
-működik	lakok/lakom	2493517	működ	-0.9055461925911776	NA
-munkálkodik	lakok/lakom	66126	munkálkod	-2.1957805337639855	NA
-mutatkozik	lakok/lakom	386251	mutatkoz	-1.8657507212182365	NA
-művelődik	lakok/lakom	4170	művelőd	-1.2321436812926323	NA
-napozik	lakok/lakom	24323	napoz	1.6669092663485792	NA
-nedvesedik	lakok/lakom	3755	nedvešed	1.405342556090585	NA
-nehezedik	lakok/lakom	38547	nehezed	1.491654876777717	NA
-nevelkedik	lakok/lakom	46282	nevelked	-1.6945957207744071	NA
-nézelődik	lakok/lakom	57827	nézelőd	0.1978730213007581	NA
-növekszik	lakok/lakom	520866	növeks	-2.4292177439274116	NA
-nyáladzik	lakok/lakom	2158	ṉáladz	0.550046336919272	NA
-nyálazik	lakok/lakom	2577	ṉálaz	-0.3364722366212129	NA
-nyilatkozik	lakok/lakom	726058	ṉilatkoz	-2.2485590231404133	NA
-nyomódik	lakok/lakom	5776	ṉomód	0.22314355131420976	NA
-nyűglődik	lakok/lakom	2530	ṉűglőd	0.05077232537342314	NA
-nyugodik	lakok/lakom	200200	ṉugod	1.6739764335716716	NA
-nyugszik	lakok/lakom	200200	ṉugs	-2.916205961450928	NA
-nyújtózkodik	lakok/lakom	14864	ṉújtózkod	-1.2454725352326887	NA
-nyújtózik	lakok/lakom	10262	ṉújtóz	-0.8898574748059995	NA
-ódzkodik	lakok/lakom	17257	ódzkod	-1.3214513796359275	NA
-öklendezik	lakok/lakom	4342	öklendez	2.3556949183079943	NA
-okoskodik	lakok/lakom	23651	okoškod	0.09416960368980012	NA
-okosodik	lakok/lakom	6651	okošod	-0.0472528848505455	NA
-ólálkodik	lakok/lakom	6185	ólálkod	-0.7205461547480597	NA
-oldódik	lakok/lakom	72937	oldód	1.0083871970753842	NA
-ölelkezik	lakok/lakom	6267	ölelkez	-0.6678293725756556	NA
-öltözködik	lakok/lakom	29838	öltözköd	-2.0548118465732053	NA
-öltözik	lakok/lakom	113660	öltöz	-0.5339074312252157	NA
-olvadozik	lakok/lakom	3573	olvadoz	0.2662679779479645	NA
-önállósodik	lakok/lakom	4835	önállóšod	-1.0986122886681098	NA
-ordítozik	lakok/lakom	7808	ordítoz	0.8754687373538999	NA
-öregszik	lakok/lakom	32240	öregs	-4.095548656286906	NA
-őrizkedik	lakok/lakom	2033	őrizked	-2.159484249353372	NA
-őrködik	lakok/lakom	18581	őrköd	-1.8309801823813363	NA
-őrlődik	lakok/lakom	6626	őrlőd	-0.42798397164351415	NA
-örvendezik	lakok/lakom	50814	örvendez	2.9888907417372743	NA
-osztódik	lakok/lakom	9844	ostód	-0.1823215567939546	NA
-osztozkodik	lakok/lakom	6441	ostozkod	-1.1239300966523995	NA
-osztozik	lakok/lakom	212384	ostoz	-2.3969857684155302	NA
-óvakodik	lakok/lakom	18248	óvakod	-0.9185869441345051	NA
-óvatoskodik	lakok/lakom	2608	óvatoškod	-0.16598513747426116	NA
-pályázik	lakok/lakom	247923	pájáz	0.849464708472294	NA
-panaszkodik	lakok/lakom	194071	panaskod	-1.798581632826525	NA
-párosodik	lakok/lakom	4817	párošod	0.28768207245178085	NA
-pásztázik	lakok/lakom	12172	pástáz	-0.608247736773459	NA
-pecázik	lakok/lakom	5981	pecáz	0.06115442315333064	NA
-példálódzik	lakok/lakom	8093	példálódz	0.4855078157817008	NA
-példálózik	lakok/lakom	8093	példálóz	-0.5807376129647052	NA
-pereskedik	lakok/lakom	7520	perešked	0.7178397931503168	NA
-pipázik	lakok/lakom	3608	pipáz	0.7331525151736445	NA
-pironkodik	lakok/lakom	4029	pironkod	-0.587786664902119	NA
-pirosodik	lakok/lakom	2743	pirošod	0.4855078157817008	NA
-poénkodik	lakok/lakom	7916	poénkod	0.6286086594223741	NA
-pompázik	lakok/lakom	35198	pompáz	0.377294231141468	NA
-porosodik	lakok/lakom	15132	porošod	-0.5596157879354228	NA
-portyázik	lakok/lakom	4052	porṯáz	1.9315214116032136	NA
-préselődik	lakok/lakom	3221	préšelőd	-0.45198512374305727	NA
-próbálkozik	lakok/lakom	323025	próbálkoz	-1.582621929074356	NA
-puhatolózik	lakok/lakom	2438	puhatolóz	-0.48285177172358457	NA
-raboskodik	lakok/lakom	8171	raboškod	-2.2246235515243336	NA
-rádiózik	lakok/lakom	5003	rádióz	-0.18825629231376917	NA
-ragaszkodik	lakok/lakom	266576	ragaskod	-2.3116055109089957	NA
-rágódik	lakok/lakom	21316	rágód	-0.7375989431307791	NA
-ráncosodik	lakok/lakom	3780	ráncošod	-1.01160091167848	NA
-randizik	lakok/lakom	20259	randiz	-0.0943460145359965	NA
-rángatózik	lakok/lakom	5548	rángatóz	-0.29849298855599654	NA
-rázkódik	lakok/lakom	6310	rázkód	-0.5753641449035618	NA
-rázódik	lakok/lakom	3960	rázód	-0.5225216635291818	NA
-reggelizik	lakok/lakom	37598	reggeliz	-0.01871545581135602	NA
-rejtezik	lakok/lakom	4572	rejtez	0.28768207245178085	NA
-rejtőzködik	lakok/lakom	13531	rejtőzköd	-2.108429078553088	NA
-rejtőzik	lakok/lakom	58821	rejtőz	-0.2719337154836418	NA
-reménykedik	lakok/lakom	167707	reméṉked	-1.285421894256811	NA
-rendelkezik	lakok/lakom	2695227	rendelkez	-2.743861597752787	NA
-rendezkedik	lakok/lakom	17362	rendezked	0.26826398659467937	NA
-rendeződik	lakok/lakom	54166	rendeződ	0.7731898882334817	NA
-részesedik	lakok/lakom	24890	résešed	0.49247648509779424	NA
-rimánkodik	lakok/lakom	4130	rimánkod	-0.0953101798043249	NA
-ringatózik	lakok/lakom	8674	ringatóz	-2.423031246069913	NA
-rohangászik	lakok/lakom	3976	rohangás	0.9498670274077594	NA
-röplabdázik	lakok/lakom	3986	röplabdáz	-0.5549968420791281	NA
-roskadozik	lakok/lakom	11094	roškadoz	-0.3184537311185346	NA
-rosszalkodik	lakok/lakom	6227	rossalkod	-0.4439313889359605	NA
-rozsdásodik	lakok/lakom	7072	roždášod	1.6739764335716716	NA
-rugaszkodik	lakok/lakom	7279	rugaskod	-1.0140549006400468	NA
-sáfárkodik	lakok/lakom	4988	šáfárkod	-0.17589066646366416	NA
-sajnálkozik	lakok/lakom	14151	šajnálkoz	-1.6241440598237955	NA
-segédkezik	lakok/lakom	34011	šegédkez	-0.9130066566729652	NA
-serénykedik	lakok/lakom	3658	šeréṉked	-0.7339691750802004	NA
-sértődik	lakok/lakom	14646	šértőd	-0.21570857282669167	NA
-settenkedik	lakok/lakom	3595	šettenked	-0.4855078157817008	NA
-sikoltozik	lakok/lakom	8245	šikoltoz	-0.7184649885442352	NA
-sínylődik	lakok/lakom	4938	šíṉlőd	-0.6151856390902334	NA
-siránkozik	lakok/lakom	14018	širánkoz	-0.16793281934185506	NA
-sodródik	lakok/lakom	50915	šodród	-0.5862581968934303	NA
-sóhajtozik	lakok/lakom	11449	šóhajtoz	-0.20304768731107156	NA
-sopánkodik	lakok/lakom	6686	šopánkod	0.08004270767353636	NA
-sorjázik	lakok/lakom	9441	šorjáz	-0.6931471805599453	NA
-sürgölődik	lakok/lakom	2392	šürgölőd	1.252762968495368	NA
-sütkérezik	lakok/lakom	7654	šütkérez	1.6691571471357225	NA
-szabadkozik	lakok/lakom	8713	sabadkoz	-1.616082455152769	NA
-szaglászik	lakok/lakom	6069	saglás	0.11506932978478727	NA
-száguldozik	lakok/lakom	16139	ságuldoz	0.4920055644392208	NA
-szánakozik	lakok/lakom	3014	sánakoz	-0.9808292530117262	NA
-szándékozik	lakok/lakom	57854	sándékoz	-1.3958258073854428	NA
-szándékszik	lakok/lakom	57854	sándéks	-3.6041382256588457	NA
-szaporodik	lakok/lakom	87868	saporod	0.36772478012531734	NA
-szarakodik	lakok/lakom	5699	sarakod	1.3437347467010947	NA
-szarakszik	lakok/lakom	5699	saraks	-0.6359887667199967	NA
-származik	lakok/lakom	596330	sármaz	-3.7228105038796184	NA
-szegényedik	lakok/lakom	3561	segéṉed	-0.15415067982725836	NA
-szegődik	lakok/lakom	26979	segőd	-0.5465437063680699	NA
-szégyenkezik	lakok/lakom	31859	séḏenkez	-1.513833571721639	NA
-szemlélődik	lakok/lakom	7997	semlélőd	0.1784076574728183	NA
-szerénykedik	lakok/lakom	4231	seréṉked	-0.5260930958967791	NA
-szeretkezik	lakok/lakom	27905	seretkez	0.3118443217308608	NA
-szerveződik	lakok/lakom	59340	serveződ	0	NA
-szerződik	lakok/lakom	51881	serződ	0.3241517522331723	NA
-színészkedik	lakok/lakom	7379	sínésked	-0.444251133143321	NA
-sziporkázik	lakok/lakom	4822	siporkáz	1.2992829841302609	NA
-szitkozódik	lakok/lakom	6590	sitkozód	-0.2847365622220242	NA
-szivarozik	lakok/lakom	2542	sivaroz	1.244324099849503	NA
-szíveskedik	lakok/lakom	81883	sívešked	0.9444616088408516	NA
-szökik	lakok/lakom	64890	sök	0.32158362412746233	NA
-szomjazik	lakok/lakom	21901	somjaz	-2.73292346584735	NA
-szomjúhozik	lakok/lakom	2852	somjúhoz	-1.3705460041517514	NA
-szomorkodik	lakok/lakom	22613	somorkod	-1.3806286235842131	NA
-szomorodik	lakok/lakom	2368	somorod	0.44628710262841953	NA
-szórakozik	lakok/lakom	197402	sórakoz	-0.7037758311027341	NA
-szorgoskodik	lakok/lakom	8106	sorgoškod	-1.496642418288756	NA
-szorítkozik	lakok/lakom	21720	sorítkoz	-2.522192989475948	NA
-szövetkezik	lakok/lakom	21303	sövetkez	-0.6097655716208943	NA
-szűkölködik	lakok/lakom	10233	sűkölköd	-3.498525725622718	NA
-táborozik	lakok/lakom	19944	táboroz	1.3388921222253067	NA
-tájékozódik	lakok/lakom	282902	tájékozód	-1.689153234280519	NA
-takarodik	lakok/lakom	16356	takarod	3.0757749812275277	NA
-taktikázik	lakok/lakom	10243	taktikáz	0.8718389693033212	NA
-találkozik	lakok/lakom	1857559	találkoz	-1.7982307334203127	NA
-támaszkodik	lakok/lakom	198608	támaskod	-1.843474301740052	NA
-tanácskozik	lakok/lakom	21064	tanáčkoz	-2.3978952727983707	NA
-tanakodik	lakok/lakom	16021	tanakod	-0.7500100424544885	NA
-tántorodik	lakok/lakom	2273	tántorod	0.4989911661189878	NA
-tanúskodik	lakok/lakom	82256	tanúškod	-2.6523612952416213	NA
-tanyázik	lakok/lakom	20309	taṉáz	0.5059356384717989	NA
-tápászkodik	lakok/lakom	2018	tápáskod	-0.12783337150988489	NA
-táplálkozik	lakok/lakom	101962	táplálkoz	-2.355199353601881	NA
-tartózkodik	lakok/lakom	323534	tartózkod	-2.4727016694171216	NA
-tartozik	lakok/lakom	2020739	tartoz	4.0187250865379065	NA
-távolodik	lakok/lakom	45390	távolod	-0.1222687849276415	NA
-teázik	lakok/lakom	7811	teáz	-0.2898920181025837	NA
-tegeződik	lakok/lakom	6296	tegeződ	-0.7570959051602187	NA
-telepszik	lakok/lakom	93057	teleps	0.15415067982725836	NA
-telítődik	lakok/lakom	13702	telítőd	-0.11441035117774422	NA
-teljesedik	lakok/lakom	38091	telješed	1.0245043165143877	NA
-telik	lakok/lakom	654760	tel	1.6916760106710724	NA
-temetkezik	lakok/lakom	8649	temetkez	-2.793208009442517	NA
-tempózik	lakok/lakom	2816	tempóz	0.9162907318741552	NA
-tengődik	lakok/lakom	10351	tengőd	-0.7465723472335258	NA
-teniszezik	lakok/lakom	11338	tenisez	2.2880217288061493	NA
-ténykedik	lakok/lakom	7581	téṉked	-0.7498425242364906	NA
-tépelődik	lakok/lakom	5841	tépelőd	-1.0886619578149417	NA
-terelődik	lakok/lakom	17677	terelőd	0.9808292530117262	NA
-terjeszkedik	lakok/lakom	34705	terjesked	-0.5187937934151675	NA
-terpeszkedik	lakok/lakom	6802	terpesked	0.661398482245365	NA
-teszik	lakok/lakom	13867767	tes	0.4054651081081644	NA
-tétlenkedik	lakok/lakom	15046	tétlenked	0.05989814158106901	NA
-tétovázik	lakok/lakom	12509	tétováz	-0.04478360262697331	NA
-tetszik	lakok/lakom	1498478	tets	-1.7797660417055086	NA
-tevődik	lakok/lakom	46451	tevőd	0.3364722366212129	NA
-tiltakozik	lakok/lakom	213776	tiltakoz	-1.75552362077401	NA
-tipródik	lakok/lakom	3039	tipród	-1.333868563780041	NA
-tisztálkodik	lakok/lakom	6177	tistálkod	-1.4445632692438664	NA
-titkolózik	lakok/lakom	9664	titkolóz	-0.8987464222232455	NA
-tobzódik	lakok/lakom	11742	tobzód	-0.519300250756963	NA
-tolódik	lakok/lakom	33844	tolód	0.4855078157817008	NA
-töltekezik	lakok/lakom	7443	töltekez	-1.8340618489187444	NA
-töltődik	lakok/lakom	40092	töltőd	-1.1407237740182363	NA
-törekszik	lakok/lakom	642126	töreks	-4.328330840532185	NA
-törlődik	lakok/lakom	35110	törlőd	0.9162907318741552	NA
-tornászik	lakok/lakom	6772	tornás	-0.8232003088081431	NA
-tornázik	lakok/lakom	32996	tornáz	-0.846565929887922	NA
-törődik	lakok/lakom	207517	törőd	-1.1104857790831262	NA
-tőzsdézik	lakok/lakom	2523	tőždéz	3.193558016883911	NA
-tréfálkozik	lakok/lakom	5571	tréfálkoz	-1.3268709406490895	NA
-tudakozódik	lakok/lakom	4897	tudakozód	-2.382627800667582	NA
-tudatosodik	lakok/lakom	7937	tudatošod	0.22314355131420976	NA
-túlórázik	lakok/lakom	9066	túlóráz	0.28768207245178085	NA
-tündöklik	lakok/lakom	3078	tündökl	2.5649493574615367	NA
-tűnődik	lakok/lakom	27459	tűnőd	-2.2120908839703057	NA
-túrázik	lakok/lakom	49897	túráz	0.07826141081460257	NA
-tüsténkedik	lakok/lakom	2685	tüšténked	-0.6592456288842639	NA
-ugrándozik	lakok/lakom	8866	ugrándoz	-0.3604414267342093	NA
-ügyesedik	lakok/lakom	2539	üḏešed	0	NA
-ügyeskedik	lakok/lakom	11033	üḏešked	0.44393138893596046	NA
-ügyködik	lakok/lakom	11226	üḏköd	-0.48587231368987344	NA
-unatkozik	lakok/lakom	103069	unatkoz	-1.8833965096825107	NA
-undorodik	lakok/lakom	14293	undorod	-1.5414987818244206	NA
-uralkodik	lakok/lakom	204714	uralkod	-0.4429614205704136	NA
-úszik	lakok/lakom	228752	ús	-0.6144378872302877	NA
-utálkozik	lakok/lakom	2391	utálkoz	-1.3609765531356008	NA
-utazik	lakok/lakom	732800	utaz	-1.0680897002624337	NA
-ütközik	lakok/lakom	225302	ütköz	-0.7325033124960186	NA
-vacsorázik	lakok/lakom	50661	vačoráz	-0.8857121047686609	NA
-vádaskodik	lakok/lakom	5755	vádaškod	-0.2825669717850105	NA
-vadászik	lakok/lakom	98441	vadás	-3.758571006197928	NA
-vagdalkozik	lakok/lakom	3657	vagdalkoz	-0.3856624808119846	NA
-vágódik	lakok/lakom	11694	vágód	0.4324209180966926	NA
-vágyakozik	lakok/lakom	33026	váḏakoz	-1.9901869334979667	NA
-vágyik	lakok/lakom	579400	váḏ	-1.828697599788822	NA
-vágyódik	lakok/lakom	14271	váḏód	-3.2299256610547857	NA
-vakaródzik	lakok/lakom	3785	vakaródz	-0.6567795363890705	NA
-vállalkozik	lakok/lakom	141984	vállalkoz	-2.009729047751941	NA
-változik	lakok/lakom	1725689	változ	-1.1526795099383855	NA
-várakozik	lakok/lakom	96850	várakoz	-0.4744579795951158	NA
-védekezik	lakok/lakom	166798	védekez	0.21053027742846367	NA
-végződik	lakok/lakom	106685	végződ	-1.3062516534463542	NA
-vékonyodik	lakok/lakom	4362	vékoṉod	-0.5108256237659907	NA
-vélekedik	lakok/lakom	123148	véleked	0.7665086054598828	NA
-vélekszik	lakok/lakom	123148	véleks	-0.5753641449035618	NA
-verekszik	lakok/lakom	32024	vereks	-2.456735772821304	NA
-vergődik	lakok/lakom	27292	vergőd	-0.08280590368423253	NA
-verődik	lakok/lakom	17097	verőd	0.6931471805599453	NA
-veselkedik	lakok/lakom	2295	vešelked	0.8938178760220965	NA
-veszekszik	lakok/lakom	39570	veseks	-2.0284652547446154	NA
-veszik	lakok/lakom	11594685	ves	0.6931471805599453	NA
-vesződik	lakok/lakom	11429	vesőd	-0.714840005171205	NA
-vetekszik	lakok/lakom	28843	veteks	-0.8472978603872037	NA
-vetélkedik	lakok/lakom	10217	vetélked	1.0986122886681098	NA
-vetemedik	lakok/lakom	15187	vetemed	0.5623769493767508	NA
-vetkezik	lakok/lakom	11392	vetkez	-0.6931471805599453	NA
-vétkezik	lakok/lakom	32653	vétkez	-1.4317567351966478	NA
-vetkőzik	lakok/lakom	24481	vetkőz	1.119231575870845	NA
-vetődik	lakok/lakom	46975	vetőd	-0.2102954088363608	NA
-viaskodik	lakok/lakom	10940	viaškod	-0.995428052432879	NA
-viccelődik	lakok/lakom	25569	viccelőd	-0.17716880339829824	NA
-világosodik	lakok/lakom	9640	világošod	1.0216512475319812	NA
-virágzik	lakok/lakom	83044	virágz	-0.8842024173226546	NA
-viselkedik	lakok/lakom	307068	višelked	-0.5909866676327898	NA
-visszakozik	lakok/lakom	8527	vissakoz	-0.07550755250814517	NA
-viszik	lakok/lakom	2117715	vis	1.9810014688665831	NA
-viszik	lakok/lakom	2117715	vis	0.4519851237430572	NA
-vitatkozik	lakok/lakom	147337	vitatkoz	-1.5876495373248378	NA
-vitázik	lakok/lakom	46729	vitáz	0.0157759625941674	NA
-vitézkedik	lakok/lakom	4493	vitézked	-0.4274440148269396	NA
-vitorlázik	lakok/lakom	19586	vitorláz	0.9257694758286988	NA
-vívódik	lakok/lakom	5972	vívód	0.02666824708216127	NA
-vizesedik	lakok/lakom	3171	vizešed	1.8845412026790211	NA
-vizsgálódik	lakok/lakom	22746	vižgálód	-0.8472978603872037	NA
-vizsgázik	lakok/lakom	61681	vižgáz	-0.800257756325557	NA
-vonakodik	lakok/lakom	22619	vonakod	-1.3275867602931126	NA
-vonatozik	lakok/lakom	10066	vonatoz	0.05826890812397582	NA
-vonzódik	lakok/lakom	41981	vonzód	-2.5714640384827305	NA
-vörösödik	lakok/lakom	2652	vöröšöd	-0.2282586519809802	NA
-zárkózik	lakok/lakom	34767	zárkóz	-1.406044838537307	NA
-záródik	lakok/lakom	24424	záród	1.203972804325936	NA
-zongorázik	lakok/lakom	30452	zongoráz	-2.1467033560030693	NA
-zötykölődik	lakok/lakom	3597	zöṯkölőd	-0.3953127366441464	NA
-zsírosodik	lakok/lakom	5118	žírošod	0.8157495026522776	NA
-zsörtölődik	lakok/lakom	3330	žörtölőd	-0.7375989431307791	NA
-zsúfolódik	lakok/lakom	4651	žúfolód	0	NA
-zúgolódik	lakok/lakom	6221	zúgolód	-0.35667494393873245	NA
-zuhanyozik	lakok/lakom	20011	zuhaṉoz	-0.1466034741918754	NA
-alszik	cselekszenek/cselekednek	221313766	als	NA	-1.2468350564105377
-áramlik	cselekszenek/cselekednek	13515798	áraml	NA	2.0390687645043313
-bagzik	cselekszenek/cselekednek	7065	bagz	NA	1.3631941863202346
-bicsaklik	cselekszenek/cselekednek	19938	bičakl	NA	4.825961003281055
-bomlik	cselekszenek/cselekednek	3187048	boml	NA	4.810957918913986
-botlik	cselekszenek/cselekednek	2436908	botl	NA	5.061485774000775
-burjánzik	cselekszenek/cselekednek	220729	burjánz	NA	2.2949588990664336
-bűzlik	cselekszenek/cselekednek	399643	bűzl	NA	6.468426836693364
-cselekszik	cselekszenek/cselekednek	48009401	čeleks	NA	-1.8918481875990265
-csetlik	cselekszenek/cselekednek	6281	četl	NA	-6.326230016126734
-csillapszik	cselekszenek/cselekednek	763584	čillaps	NA	-9.163513858954651
-csömörlik	cselekszenek/cselekednek	12435	čömörl	NA	1.3620635950949744
-csuklik	cselekszenek/cselekednek	367004	čukl	NA	2.8725727870621367
-dicsekszik	cselekszenek/cselekednek	5150715	dičeks	NA	-3.21490866884281
-díszlik	cselekszenek/cselekednek	99283	dísl	NA	5.91447655719631
-döglik	cselekszenek/cselekednek	2240613	dögl	NA	3.750087354349242
-dohányzik	cselekszenek/cselekednek	3237991	doháṉz	NA	-6.503875903459611
-elégszik	cselekszenek/cselekednek	17691020	elégs	NA	-2.6677795117753083
-elporzik	cselekszenek/cselekednek	5052	elporz	NA	-1.3273337925626696
-emlékszik	cselekszenek/cselekednek	100073966	emléks	NA	-9.791133652423978
-fajzik	cselekszenek/cselekednek	3278	fajz	NA	0.2419818937635047
-fejlik	cselekszenek/cselekednek	6037149	fejl	NA	-3.55343862814404
-fekszik	cselekszenek/cselekednek	141455438	feks	NA	-0.6628212121157038
-fénylik	cselekszenek/cselekednek	960464	féṉl	NA	5.324345716619467
-feslik	cselekszenek/cselekednek	32180	fešl	NA	3.3987524781552545
-fogzik	cselekszenek/cselekednek	104812	fogz	NA	2.70767496210424
-foszlik	cselekszenek/cselekednek	485736	fosl	NA	5.873455924092419
-fuldoklik	cselekszenek/cselekednek	514572	fuldokl	NA	-3.6122687087670564
-furakszik	cselekszenek/cselekednek	317388	furaks	NA	-7.477626604641993
-fürdik	cselekszenek/cselekednek	12697712	fürd	NA	2.7018475709503846
-gyanakszik	cselekszenek/cselekednek	6072457	ḏanaks	NA	-3.3453792443316686
-gyarapszik	cselekszenek/cselekednek	7383526	ḏaraps	NA	-8.959247870509651
-habzik	cselekszenek/cselekednek	3918266	habz	NA	-2.3509091873349397
-haldoklik	cselekszenek/cselekednek	1552626	haldokl	NA	-3.1066466250883464
-hámlik	cselekszenek/cselekednek	86453	háml	NA	7.923618233485802
-hangzik	cselekszenek/cselekednek	37084641	hangz	NA	1.517688887545303
-hanyatlik	cselekszenek/cselekednek	432700	haṉatl	NA	9.935553773729076
-haragszik	cselekszenek/cselekednek	12272826	harags	NA	-0.5878082578830167
-háramlik	cselekszenek/cselekednek	15084	háraml	NA	4.432600512475502
-hasonlik	cselekszenek/cselekednek	831860	hašonl	NA	-8.141713975841089
-hiányzik	cselekszenek/cselekednek	66161846	hiáṉz	NA	-5.980056714432942
-hírlik	cselekszenek/cselekednek	85212	hírl	NA	-1.6160452493078046
-hólyagzik	cselekszenek/cselekednek	596	hójagz	NA	2.0039155545219063
-homálylik	cselekszenek/cselekednek	785	homájl	NA	2.7152901465234582
-hullámzik	cselekszenek/cselekednek	1329613	hullámz	NA	-0.6527380210038556
-igyekszik	cselekszenek/cselekednek	163294398	iḏeks	NA	-5.321079381103727
-iramlik	cselekszenek/cselekednek	11891	iraml	NA	2.6398961186667758
-ivarzik	cselekszenek/cselekednek	5234	ivarz	NA	5.142044964969399
-ízlik	cselekszenek/cselekednek	2195683	ízl	NA	6.987061606632356
-kéklik	cselekszenek/cselekednek	22009	kékl	NA	4.454029896934848
-kimagaslik	cselekszenek/cselekednek	120962	kimagašl	NA	1.174855698072428
-ködlik	cselekszenek/cselekednek	14017	ködl	NA	-0.2856727083816921
-kotlik	cselekszenek/cselekednek	108182	kotl	NA	4.5883432353221885
-lecsillapszik	cselekszenek/cselekednek	359454	lečillaps	NA	-7.028233004013426
-lélegzik	cselekszenek/cselekednek	15485442	lélegz	NA	-4.111052884038909
-lúdbőrzik	cselekszenek/cselekednek	16048	lúdbőrz	NA	-6.989698973507948
-magaslik	cselekszenek/cselekednek	1149186	magašl	NA	-4.762147077040599
-magzik	cselekszenek/cselekednek	132765	magz	NA	-6.734675150513785
-melegszik	cselekszenek/cselekednek	3625379	melegs	NA	-2.8726800949450104
-mosakszik	cselekszenek/cselekednek	872844	mošaks	NA	-5.412407146543623
-növekszik	cselekszenek/cselekednek	58348947	növeks	NA	-4.8077399605864315
-nyaklik	cselekszenek/cselekednek	4204	ṉakl	NA	3.957086677073392
-nyugszik	cselekszenek/cselekednek	45649875	ṉugs	NA	-0.8256114763592516
-omlik	cselekszenek/cselekednek	4347256	oml	NA	3.8158440419765016
-ömlik	cselekszenek/cselekednek	3741861	öml	NA	4.833163678336171
-örvénylik	cselekszenek/cselekednek	75562	örvéṉl	NA	7.990029641855211
-összhangzik	cselekszenek/cselekednek	554	össhangz	NA	-0.7196475484629599
-oszlik	cselekszenek/cselekednek	8076952	osl	NA	3.313821364658031
-özönlik	cselekszenek/cselekednek	582160	özönl	NA	5.143784759615485
-parázslik	cselekszenek/cselekednek	35815	parážl	NA	5.529787547325399
-párzik	cselekszenek/cselekednek	66915	párz	NA	3.1802902866752665
-patakzik	cselekszenek/cselekednek	20376	patakz	NA	3.193528610834454
-pattogzik	cselekszenek/cselekednek	17899	pattogz	NA	6.037202682874684
-porzik	cselekszenek/cselekednek	220543	porz	NA	-0.8973579329736293
-rajzik	cselekszenek/cselekednek	81661910	rajz	NA	4.2001645245217825
-rémlik	cselekszenek/cselekednek	741505	réml	NA	7.209835719298689
-romlik	cselekszenek/cselekednek	19020414	roml	NA	5.574027702015574
-sárlik	cselekszenek/cselekednek	8354	šárl	NA	0.9830366055557115
-sereglik	cselekszenek/cselekednek	86986	šeregl	NA	3.216146195741514
-siklik	cselekszenek/cselekednek	1308087	šikl	NA	8.19599702092297
-sötétlik	cselekszenek/cselekednek	27541	šötétl	NA	-7.236225145687593
-sugárzik	cselekszenek/cselekednek	15892943	šugárz	NA	-6.426821454965351
-szaglik	cselekszenek/cselekednek	4618028	sagl	NA	-8.190951534690285
-szólamlik	cselekszenek/cselekednek	1875	sólaml	NA	-0.2496314087313802
-tajtékzik	cselekszenek/cselekednek	48387	tajtékz	NA	-1.8419777264364845
-telepszik	cselekszenek/cselekednek	9119819	teleps	NA	-4.1981799535064175
-tolakszik	cselekszenek/cselekednek	678108	tolaks	NA	-4.85176905312186
-törekszik	cselekszenek/cselekednek	71276285	töreks	NA	-2.97944281899591
-tülekszik	cselekszenek/cselekednek	203690	tüleks	NA	-8.506973377992143
-tündöklik	cselekszenek/cselekednek	2879564	tündökl	NA	-5.006587308700585
-ugrik	cselekszenek/cselekednek	65697873	ugr	NA	5.351628532786159
-ülepszik	cselekszenek/cselekednek	211524	üleps	NA	-5.136734263924543
-verekszik	cselekszenek/cselekednek	3943354	vereks	NA	-3.7433893199295536
-vérengzik	cselekszenek/cselekednek	3466	vérengz	NA	6.38036324111144
-vereslik	cselekszenek/cselekednek	784	verešl	NA	-3.2270692326243027
-vérzik	cselekszenek/cselekednek	9327333	vérz	NA	-4.611431030310471
-veszekszik	cselekszenek/cselekednek	3763729	veseks	NA	-4.5767619416607115
-vetekszik	cselekszenek/cselekednek	2279057	veteks	NA	-2.5888261509317823
-viharzik	cselekszenek/cselekednek	46411	viharz	NA	2.336047581142374
-világlik	cselekszenek/cselekednek	94656	világl	NA	-0.7855111004967759
-villámlik	cselekszenek/cselekednek	152246	villáml	NA	5.723219104774425
-virágzik	cselekszenek/cselekednek	13288214	virágz	NA	-3.4194722377883267
-visszhangzik	cselekszenek/cselekednek	1228783	visshangz	NA	-1.9155008412078112
-vonaglik	cselekszenek/cselekednek	192954	vonagl	NA	3.2827467112983064
-zajlik	cselekszenek/cselekednek	38097011	zajl	NA	7.922230702675336
-acél	hotelban/hotelben	172196	acél	NA	7.969525370781867
-áfész	hotelban/hotelben	618	áfés	NA	1.5663375165772135
-affér	hotelban/hotelben	7332	affér	NA	4.423651413989021
-ágens	hotelban/hotelben	17621	ágenš	NA	-3.077106121829334
-ágész	hotelban/hotelben	14	ágés	NA	2.413159844296544
-ágyék	hotelban/hotelben	11658	áḏék	NA	4.594176719885608
-ájer	hotelban/hotelben	465	ájer	NA	0.18864816709015134
-alélt	hotelban/hotelben	2710	alélt	NA	3.4757608417173524
-allél	hotelban/hotelben	9437	allél	NA	2.323962333326037
-amper	hotelban/hotelben	8498	amper	NA	-1.177425927869624
-ankét	hotelban/hotelben	10005	ankét	NA	4.200976148350007
-arckrém	hotelban/hotelben	19096	arckrém	NA	-3.1773363604185514
-árnyék	hotelban/hotelben	251729	árṉék	NA	7.588882368772865
-árrés	hotelban/hotelben	18480	árréš	NA	-2.7876691101095243
-arzén	hotelban/hotelben	14384	arzén	NA	2.2781198514426295
-azért	hotelban/hotelben	4710658	azért	NA	-0.11170389918296421
-babér	hotelban/hotelben	32310	babér	NA	5.874987339548145
-bagett	hotelban/hotelben	8695	bagett	NA	-2.48289549547715
-bagger	hotelban/hotelben	426	bagger	NA	1.2797013125728074
-bakter	hotelban/hotelben	4460	bakter	NA	2.1150650105710262
-balek	hotelban/hotelben	13062	balek	NA	3.908247274422416
-balett	hotelban/hotelben	87544	balett	NA	0.5426902175263971
-balfék	hotelban/hotelben	4514	balfék	NA	-0.9930139938502957
-bankett	hotelban/hotelben	10704	bankett	NA	-0.6008405796786569
-barchesz	hotelban/hotelben	348	barches	NA	2.413159844296544
-barrel	hotelban/hotelben	1662	barrel	NA	-0.0389228687523468
-barter	hotelban/hotelben	2631	barter	NA	-0.934813527017211
-blogtér	hotelban/hotelben	1792	blogtér	NA	-3.306792426446529
-bobbyék	hotelban/hotelben	12	bobbyék	NA	1.8734479865463987
-bohém	hotelban/hotelben	24956	bohém	NA	2.242796841036147
-bojler	hotelban/hotelben	25309	bojler	NA	-0.5875806340671917
-borbély	hotelban/hotelben	59299	borbéj	NA	7.4088968727802245
-borszék	hotelban/hotelben	2086	borsék	NA	-3.290247897872855
-bovden	hotelban/hotelben	1970	bovden	NA	-1.2282241797974158
-brojler	hotelban/hotelben	1774	brojler	NA	0.3698041294032742
-bróker	hotelban/hotelben	27705	bróker	NA	-3.0086928859894386
-brúder	hotelban/hotelben	138	brúder	NA	0.9596100168352717
-bunker	hotelban/hotelben	25691	bunker	NA	-0.32076544281847785
-burleszk	hotelban/hotelben	3962	burlesk	NA	-5.063467378987139
-charter	hotelban/hotelben	9782	charter	NA	-1.3014414685414175
-combrész	hotelban/hotelben	536	combrés	NA	-1.672404035203073
-csapszék	hotelban/hotelben	1650	čapsék	NA	-4.041709269315521
-dodzsem	hotelban/hotelben	1848	dodžem	NA	-2.468926860772217
-domén	hotelban/hotelben	8366	domén	NA	-1.15355452110577
-dózer	hotelban/hotelben	2635	dózer	NA	0.45854080868278385
-drukker	hotelban/hotelben	34067	drukker	NA	-2.3068051553011077
-duett	hotelban/hotelben	25938	duett	NA	-3.976655884244103
-dzsungel	hotelban/hotelben	55832	džungel	NA	-2.427287571064846
-fakép	hotelban/hotelben	8710	fakép	NA	-6.843432673597333
-falzett	hotelban/hotelben	591	falzett	NA	-0.4248116065888692
-fanyél	hotelban/hotelben	626	faṉél	NA	-2.515266892423059
-farmer	hotelban/hotelben	82647	farmer	NA	0.8083146366454382
-fater	hotelban/hotelben	15751	fater	NA	4.16749315248657
-fazék	hotelban/hotelben	47132	fazék	NA	7.621571056978031
-flanel	hotelban/hotelben	1947	flanel	NA	0.7179209216701824
-flaszter	hotelban/hotelben	2419	flaster	NA	1.423509801230911
-fogkrém	hotelban/hotelben	34578	fogkrém	NA	-5.132467576989973
-fotel	hotelban/hotelben	70961	fotel	NA	0.5769931849721702
-fráter	hotelban/hotelben	13052	fráter	NA	-0.602549241307234
-fuser	hotelban/hotelben	220	fušer	NA	1.0070777095427903
-ganéj	hotelban/hotelben	947	ganéj	NA	3.140341793352154
-gátér	hotelban/hotelben	902	gátér	NA	1.2054191613559833
-gatyesz	hotelban/hotelben	222	gaṯes	NA	1.5167188386140449
-glutén	hotelban/hotelben	33858	glutén	NA	1.7925224771034804
-gólem	hotelban/hotelben	7937	gólem	NA	-2.5130089966137037
-gukker	hotelban/hotelben	381	gukker	NA	-0.04521069050108528
-hadész	hotelban/hotelben	840	hadés	NA	2.438512700693269
-hardver	hotelban/hotelben	133417	hardver	NA	-2.9500022806434907
-hátér	hotelban/hotelben	2755	hátér	NA	-3.3548762020454608
-hátszél	hotelban/hotelben	13211	hátsél	NA	-5.4606316246552105
-háttér	hotelban/hotelben	1176278	háttér	NA	-7.052809069537738
-hátvéd	hotelban/hotelben	23893	hátvéd	NA	-3.1574907019493628
-haver	hotelban/hotelben	165801	haver	NA	5.063466916099091
-hóhér	hotelban/hotelben	21404	hóhér	NA	7.403280699860061
-honvéd	hotelban/hotelben	186978	honvéd	NA	3.5887896118742133
-hotel	hotelban/hotelben	789022	hotel	NA	-1.3670863209679203
-húsvét	hotelban/hotelben	195283	húšvét	NA	8.461568659899411
-jampec	hotelban/hotelben	1214	jampec	NA	2.7460807276307015
-játék	hotelban/hotelben	3685489	játék	NA	9.333787915723194
-jólét	hotelban/hotelben	141768	jólét	NA	-6.894293749588915
-junker	hotelban/hotelben	1227	junker	NA	-1.188794592238035
-kábel	hotelban/hotelben	287412	kábel	NA	-2.6654188203034295
-káder	hotelban/hotelben	8956	káder	NA	0.2803036092735796
-kadet	hotelban/hotelben	9726	kadet	NA	1.1393215121477063
-kadét	hotelban/hotelben	6328	kadét	NA	4.471131797638855
-kampec	hotelban/hotelben	1979	kampec	NA	0.7373282759800219
-karcer	hotelban/hotelben	215	karcer	NA	0.1402499910170637
-kardél	hotelban/hotelben	2284	kardél	NA	-5.153333035124171
-karéj	hotelban/hotelben	6812	karéj	NA	7.109788871177352
-kartell	hotelban/hotelben	13348	kartell	NA	-1.0697544833143957
-karter	hotelban/hotelben	1181	karter	NA	0.6735226331318547
-kasper	hotelban/hotelben	4608	kašper	NA	-0.5011212290836831
-kastély	hotelban/hotelben	320792	kaštéj	NA	9.167343423298256
-kastény	hotelban/hotelben	41	kaštéṉ	NA	1.1211086315922376
-klapec	hotelban/hotelben	99	klapec	NA	1.8734479865463987
-klaszter	hotelban/hotelben	72146	klaster	NA	-3.016074828807813
-klozet	hotelban/hotelben	993	klozet	NA	2.2418632558986107
-kódnév	hotelban/hotelben	10443	kódnév	NA	-5.143031102500137
-koffer	hotelban/hotelben	7809	koffer	NA	0.016239749176875744
-kókler	hotelban/hotelben	7297	kókler	NA	-1.1880474518285133
-koktél	hotelban/hotelben	70915	koktél	NA	5.960005371309007
-kolesz	hotelban/hotelben	5077	koles	NA	3.35496210723402
-koncert	hotelban/hotelben	1019145	koncert	NA	-6.343309712149597
-kondér	hotelban/hotelben	6000	kondér	NA	4.824953847820579
-konkrét	hotelban/hotelben	915418	konkrét	NA	5.363363477756728
-konzerv	hotelban/hotelben	49626	konzerv	NA	-4.4428988970467085
-kopek	hotelban/hotelben	1166	kopek	NA	-0.09894463436278701
-korner	hotelban/hotelben	2850	korner	NA	-0.2365911820844584
-korrekt	hotelban/hotelben	280874	korrekt	NA	-3.522625151094475
-korvett	hotelban/hotelben	1733	korvett	NA	-1.326959988049689
-kóser	hotelban/hotelben	13540	kóšer	NA	0.616833816612637
-kóter	hotelban/hotelben	752	kóter	NA	1.0669718667465296
-krapek	hotelban/hotelben	1655	krapek	NA	3.399205654184398
-kráter	hotelban/hotelben	30791	kráter	NA	-2.4914019137565697
-krokett	hotelban/hotelben	3075	krokett	NA	0.7391143990728046
-kukker	hotelban/hotelben	1077	kukker	NA	0.027168266388469375
-kupec	hotelban/hotelben	2393	kupec	NA	-0.5726616329183902
-kupés	hotelban/hotelben	1346	kupéš	NA	0.6073025283228959
-lábkrém	hotelban/hotelben	829	lábkrém	NA	-0.7791485130360672
-lábléc	hotelban/hotelben	22194	lábléc	NA	-8.068628504967256
-láét	hotelban/hotelben	24	láét	NA	1.3632418371053194
-láger	hotelban/hotelben	14977	láger	NA	-1.046546284403637
-lóden	hotelban/hotelben	235	lóden	NA	0.3715457338530629
-luesz	hotelban/hotelben	247	lues	NA	0.7857015355682327
-lumen	hotelban/hotelben	19534	lumen	NA	-4.588987199622639
-macesz	hotelban/hotelben	2035	maces	NA	2.1019819949406435
-máért	hotelban/hotelben	34	máért	NA	2.3424765008414234
-mágnes	hotelban/hotelben	59860	mágneš	NA	-3.4714557176214886
-májkrém	hotelban/hotelben	3794	májkrém	NA	-2.1241056785296113
-majszter	hotelban/hotelben	137	majster	NA	0.9596100168352717
-makett	hotelban/hotelben	42231	makett	NA	-1.1234848423513446
-malter	hotelban/hotelben	3492	malter	NA	1.812619467316886
-manézs	hotelban/hotelben	1722	manéž	NA	5.780925443842964
-másként	hotelban/hotelben	262358	mášként	NA	0.3709324791405047
-maszek	hotelban/hotelben	9770	masek	NA	4.4893245221657585
-matek	hotelban/hotelben	47606	matek	NA	5.19440614007839
-mater	hotelban/hotelben	16610	mater	NA	-0.5707698721526269
-modell	hotelban/hotelben	1509359	modell	NA	-6.306243971831483
-modem	hotelban/hotelben	54652	modem	NA	-3.8102195584636944
-modern	hotelban/hotelben	1359168	modern	NA	-6.129565408231473
-mohél	hotelban/hotelben	63	mohél	NA	1.8734479865463987
-molett	hotelban/hotelben	8596	molett	NA	-1.071647800516651
-moped	hotelban/hotelben	6981	moped	NA	-1.334697482675794
-motel	hotelban/hotelben	13960	motel	NA	-0.27320794202057286
-muter	hotelban/hotelben	2713	muter	NA	3.307218886174334
-mutter	hotelban/hotelben	2225	mutter	NA	2.1930989884566245
-napfény	hotelban/hotelben	173388	napféṉ	NA	-7.245548560436008
-nonszensz	hotelban/hotelben	16551	nonsens	NA	-4.151881147140097
-norvég	hotelban/hotelben	151508	norvég	NA	4.126220444518468
-notesz	hotelban/hotelben	13921	notes	NA	0.04221715515548426
-obszcén	hotelban/hotelben	12289	obscén	NA	0.8068190979494253
-okker	hotelban/hotelben	3652	okker	NA	-1.0639041728367533
-ómen	hotelban/hotelben	5118	ómen	NA	-3.5481495720107374
-omlett	hotelban/hotelben	7297	omlett	NA	-2.750982391428076
-oszét	hotelban/hotelben	1893	osét	NA	1.4416711121210357
-pajesz	hotelban/hotelben	1346	pajes	NA	3.229811874020414
-pakett	hotelban/hotelben	2400	pakett	NA	-0.1703392587389584
-pamflet	hotelban/hotelben	4742	pamflet	NA	-2.1071018882732067
-páncél	hotelban/hotelben	48853	páncél	NA	7.8000623241475795
-pancser	hotelban/hotelben	5888	pančer	NA	1.4331564785364752
-panel	hotelban/hotelben	223571	panel	NA	0.9593016017996736
-papper	hotelban/hotelben	331	papper	NA	1.3118011836456485
-parkett	hotelban/hotelben	12893	parkett	NA	-1.0091365026244934
-parszek	hotelban/hotelben	482	parsek	NA	-0.8063016999569907
-partner	hotelban/hotelben	1270201	partner	NA	-3.0965407025643814
-pasztell	hotelban/hotelben	22351	pastell	NA	-1.3837959648968632
-páter	hotelban/hotelben	9880	páter	NA	-0.6484870968304918
-plakett	hotelban/hotelben	13783	plakett	NA	-1.620881597839703
-poén	hotelban/hotelben	131624	poén	NA	7.33257573725398
-póker	hotelban/hotelben	22273	póker	NA	-2.3612297597476877
-pollen	hotelban/hotelben	29350	pollen	NA	-4.762224676515484
-popper	hotelban/hotelben	14166	popper	NA	-1.7402123048348535
-poszter	hotelban/hotelben	49599	poster	NA	-2.721417545857279
-pótlék	hotelban/hotelben	138201	pótlék	NA	8.6536464102897
-projekt	hotelban/hotelben	2236203	projekt	NA	-6.551144832948103
-púder	hotelban/hotelben	19636	púder	NA	-1.5095451762841807
-puffer	hotelban/hotelben	21029	puffer	NA	-1.4971748993012541
-rapper	hotelban/hotelben	28373	rapper	NA	-3.0056602651075535
-raszter	hotelban/hotelben	4403	raster	NA	-1.5255412662455277
-rocker	hotelban/hotelben	20440	rocker	NA	-2.617411082741733
-roller	hotelban/hotelben	22986	roller	NA	-1.3485599430267676
-rubel	hotelban/hotelben	19855	rubel	NA	-2.3058186154831897
-rulett	hotelban/hotelben	8587	rulett	NA	-1.744511172698545
-rumén	hotelban/hotelben	20	rumén	NA	2.039662704316092
-rutén	hotelban/hotelben	5396	rutén	NA	0.9269140313067946
-sábesz	hotelban/hotelben	745	šábes	NA	-0.9009766801997956
-sakter	hotelban/hotelben	814	šakter	NA	1.7560496860346984
-saller	hotelban/hotelben	7312	šaller	NA	0.7159974461751989
-samesz	hotelban/hotelben	2511	šames	NA	2.4762177153160545
-skanzen	hotelban/hotelben	26458	škanzen	NA	-0.661661528625308
-sláger	hotelban/hotelben	155508	šláger	NA	-3.354128142741639
-sóder	hotelban/hotelben	8264	šóder	NA	0.01672808661898757
-sóher	hotelban/hotelben	1445	šóher	NA	-1.2256379440831289
-sólet	hotelban/hotelben	3255	šólet	NA	-1.18186899977885
-sótér	hotelban/hotelben	258	šótér	NA	2.0058228451384865
-sparherd	hotelban/hotelben	458	šparherd	NA	0.08932543902649777
-sportrész	hotelban/hotelben	994	športrés	NA	-0.7171400629626086
-stájer	hotelban/hotelben	4074	štájer	NA	1.0433302625336696
-stopper	hotelban/hotelben	12525	štopper	NA	-1.5573277466425302
-stukker	hotelban/hotelben	2693	štukker	NA	0.1074465601437421
-sumer	hotelban/hotelben	9716	šumer	NA	1.1696892615955128
-suszter	hotelban/hotelben	6878	šuster	NA	1.2326580863916887
-szándék	hotelban/hotelben	734342	sándék	NA	10.166851284381753
-szatén	hotelban/hotelben	10585	satén	NA	4.146937733494821
-szkander	hotelban/hotelben	3569	skander	NA	0.36367612600433125
-szlogen	hotelban/hotelben	73259	slogen	NA	-4.43323357236444
-szlovén	hotelban/hotelben	111340	slovén	NA	1.9306140159219298
-szoftver	hotelban/hotelben	653676	softver	NA	-6.101315504891268
-szolfézs	hotelban/hotelben	7287	solféž	NA	3.3290760761267277
-szomszéd	hotelban/hotelben	463192	somséd	NA	8.5675184120669
-szonett	hotelban/hotelben	11142	sonett	NA	-2.787822154174889
-szótér	hotelban/hotelben	495	sótér	NA	1.0236905809621661
-szovjet	hotelban/hotelben	340921	sovjet	NA	-1.6641323053388812
-szuper	hotelban/hotelben	443862	super	NA	-3.6465741008939903
-szuszék	hotelban/hotelben	488	susék	NA	2.973459869543004
-tandem	hotelban/hotelben	10068	tandem	NA	-3.1382052671962284
-tanév	hotelban/hotelben	668169	tanév	NA	-7.887819022830662
-tanszék	hotelban/hotelben	470398	tansék	NA	-4.918166661942909
-tányér	hotelban/hotelben	157436	táṉér	NA	8.206707901657651
-tárgyév	hotelban/hotelben	136488	tárḏév	NA	-7.033998778179325
-token	hotelban/hotelben	15097	token	NA	-3.1409702695303254
-topper	hotelban/hotelben	1225	topper	NA	-0.9211879088567603
-totem	hotelban/hotelben	6244	totem	NA	-2.1093515971323025
-transzfer	hotelban/hotelben	87598	transfer	NA	-2.647765353057562
-trapéz	hotelban/hotelben	13414	trapéz	NA	4.77855505532787
-trapper	hotelban/hotelben	958	trapper	NA	-0.6275959539358485
-traverz	hotelban/hotelben	1380	traverz	NA	-0.6035097604088707
-tróger	hotelban/hotelben	4410	tróger	NA	0.6832192027020827
-valcer	hotelban/hotelben	1940	valcer	NA	-0.3994396200971845
-vamzer	hotelban/hotelben	516	vamzer	NA	0.3919969855136496
-vátesz	hotelban/hotelben	2163	vátes	NA	-2.324972305458039
-zacsek	hotelban/hotelben	392	začek	NA	2.2516398510247675
-zsakett	hotelban/hotelben	787	žakett	NA	-0.267025629072285
-zsáner	hotelban/hotelben	16709	žáner	NA	-3.7454055474742707
+base	variation	lemma_freq_corrected	string	category
+ábrándozik	lakok/lakom	18385	ábrándoz	low
+adakozik	lakok/lakom	17936	adakoz	high
+adaptálódik	lakok/lakom	4014	adaptálód	high
+adódik	lakok/lakom	313753	adód	high
+adósodik	lakok/lakom	5682	adóšod	high
+ágaskodik	lakok/lakom	5740	ágaškod	low
+aggódik	lakok/lakom	341034	aggód	low
+áhítozik	lakok/lakom	9214	áhítoz	low
+ajánlkozik	lakok/lakom	4605	ajánlkoz	low
+akaszkodik	lakok/lakom	2721	akaskod	low
+alkudik	lakok/lakom	17918	alkud	high
+alkudozik	lakok/lakom	14494	alkudoz	low
+alkuszik	lakok/lakom	17918	alkus	low
+állomásozik	lakok/lakom	17398	állomášoz	low
+álmélkodik	lakok/lakom	5761	álmélkod	low
+álmodik	lakok/lakom	223489	álmod	low
+álmodozik	lakok/lakom	59984	álmodoz	low
+alszik	lakok/lakom	668614	als	low
+aluszik	lakok/lakom	668614	alus	low
+ámuldozik	lakok/lakom	3333	ámuldoz	high
+árulkodik	lakok/lakom	62655	árulkod	high
+ásítozik	lakok/lakom	3555	ášítoz	high
+aszalódik	lakok/lakom	2207	asalód	high
+aszik	lakok/lakom	5633	as	high
+átkozódik	lakok/lakom	3739	átkozód	low
+autókázik	lakok/lakom	2943	autókáz	high
+autózik	lakok/lakom	53397	autóz	low
+avatkozik	lakok/lakom	45734	avatkoz	low
+bábáskodik	lakok/lakom	5536	bábáškod	low
+bajlódik	lakok/lakom	39724	bajlód	high
+bakizik	lakok/lakom	1995	bakiz	high
+balhézik	lakok/lakom	6131	balhéz	high
+bámészkodik	lakok/lakom	6070	báméskod	high
+bánkódik	lakok/lakom	14891	bánkód	low
+barátkozik	lakok/lakom	50745	barátkoz	low
+bátorkodik	lakok/lakom	9746	bátorkod	low
+berzenkedik	lakok/lakom	3632	berzenked	high
+betegszik	lakok/lakom	9223	betegs	low
+bíbelődik	lakok/lakom	14471	bíbelőd	high
+bíráskodik	lakok/lakom	3616	bíráškod	low
+birkózik	lakok/lakom	38668	birkóz	low
+bizakodik	lakok/lakom	30323	bizakod	low
+bízik	lakok/lakom	1037991	bíz	low
+bizonyosodik	lakok/lakom	29527	bizoṉošod	high
+bocsátkozik	lakok/lakom	24331	bočátkoz	low
+bogarászik	lakok/lakom	9264	bogarás	high
+bohóckodik	lakok/lakom	10687	bohóckod	high
+bóklászik	lakok/lakom	13080	bóklás	high
+bonyolódik	lakok/lakom	34776	boṉolód	high
+bosszankodik	lakok/lakom	28274	bossankod	low
+botladozik	lakok/lakom	8796	botladoz	high
+botlik	lakok/lakom	41912	botl	high
+botránkozik	lakok/lakom	3482	botránkoz	low
+bővelkedik	lakok/lakom	38446	bővelked	low
+búcsúzkodik	lakok/lakom	3282	búčúzkod	low
+búcsúzik	lakok/lakom	154036	búčúz	low
+bujdosik	lakok/lakom	4942	bujdoš	high
+bújócskázik	lakok/lakom	3783	bújóčkáz	high
+bukfencezik	lakok/lakom	3043	bukfencez	high
+bűnhődik	lakok/lakom	9169	bűnhőd	low
+búslakodik	lakok/lakom	8087	búšlakod	low
+büszkélkedik	lakok/lakom	84413	büskélked	low
+búvárkodik	lakok/lakom	10030	búvárkod	low
+bűvészkedik	lakok/lakom	3597	bűvésked	high
+cikkezik	lakok/lakom	14162	cikkez	high
+cipekedik	lakok/lakom	4233	cipeked	high
+cipekszik	lakok/lakom	4233	cipeks	high
+csalatkozik	lakok/lakom	4769	čalatkoz	low
+csalódik	lakok/lakom	170163	čalód	high
+csapódik	lakok/lakom	59286	čapód	high
+csatlakozik	lakok/lakom	869608	čatlakoz	low
+csavarodik	lakok/lakom	9265	čavarod	high
+cselekszik	lakok/lakom	280658	čeleks	low
+csendesedik	lakok/lakom	6494	čendešed	high
+csigázik	lakok/lakom	4081	čigáz	high
+csimpaszkodik	lakok/lakom	4352	čimpaskod	low
+csiszolódik	lakok/lakom	6459	čisolód	high
+csodálkozik	lakok/lakom	200735	čodálkoz	low
+csókolózik	lakok/lakom	18284	čókolóz	low
+csónakázik	lakok/lakom	6485	čónakáz	high
+csuklik	lakok/lakom	6520	čukl	high
+csúszik	lakok/lakom	191096	čús	high
+dicsekszik	lakok/lakom	46395	dičeks	low
+diétázik	lakok/lakom	18417	diétáz	low
+dobálódzik	lakok/lakom	12200	dobálódz	high
+döglődik	lakok/lakom	2107	döglőd	high
+dohányzik	lakok/lakom	67978	doháṉz	low
+dolgozik	lakok/lakom	3627092	dolgoz	low
+dörgölőzik	lakok/lakom	3938	dörgölőz	high
+dudorászik	lakok/lakom	3096	dudorás	high
+ébredezik	lakok/lakom	10153	ébredez	high
+edzik	lakok/lakom	183810	edz	high
+edződik	lakok/lakom	7138	edződ	low
+egyenesedik	lakok/lakom	3332	eḏenešed	high
+egyezik	lakok/lakom	230655	eḏez	high
+egyszerűsödik	lakok/lakom	13942	eḏserűšöd	low
+éhezik	lakok/lakom	59636	éhez	high
+éjszakázik	lakok/lakom	12361	éjsakáz	low
+ejtőzik	lakok/lakom	3317	ejtőz	high
+ékeskedik	lakok/lakom	5504	ékešked	low
+élcelődik	lakok/lakom	4503	élcelőd	high
+elégszik	lakok/lakom	184225	elégs	low
+elegyedik	lakok/lakom	21613	eleḏed	high
+ellenkezik	lakok/lakom	35786	ellenkez	high
+elmélázik	lakok/lakom	6646	elméláz	high
+elmélkedik	lakok/lakom	48134	elmélked	low
+élősködik	lakok/lakom	9380	élőšköd	high
+élvezkedik	lakok/lakom	4178	élvezked	high
+emlékezik	lakok/lakom	1190771	emlékez	high
+emlékezik	lakok/lakom	607896	emlékez	high
+emlékszik	lakok/lakom	582900	emléks	low
+emlékszik	lakok/lakom	582875	emléks	high
+epekedik	lakok/lakom	5130	epeked	high
+építkezik	lakok/lakom	78659	építkez	high
+érdeklődik	lakok/lakom	365910	érdeklőd	high
+ereszkedik	lakok/lakom	50960	eresked	high
+érintkezik	lakok/lakom	84963	érintkez	low
+érkezik	lakok/lakom	2258874	érkez	low
+érlelődik	lakok/lakom	17933	érlelőd	high
+erőlködik	lakok/lakom	26473	erőlköd	low
+erősködik	lakok/lakom	8007	erőšköd	low
+erősödik	lakok/lakom	216852	erőšöd	low
+értekezik	lakok/lakom	31517	értekez	high
+esik	lakok/lakom	1885634	eš	high
+esedezik	lakok/lakom	9804	ešedez	low
+esküdözik	lakok/lakom	2908	ešküdöz	high
+esküszik	lakok/lakom	82803	ešküs	low
+eszik	lakok/lakom	1320372	es	high
+eszik	lakok/lakom	1320365	es	high
+étkezik	lakok/lakom	56160	étkez	low
+évődik	lakok/lakom	2026	évőd	low
+faggatózik	lakok/lakom	2014	faggatóz	low
+fagyoskodik	lakok/lakom	5038	faḏoškod	low
+falatozik	lakok/lakom	15786	falatoz	high
+fanyalodik	lakok/lakom	2114	faṉalod	high
+fáradozik	lakok/lakom	40305	fáradoz	low
+fázik	lakok/lakom	77143	fáz	low
+fegyverkezik	lakok/lakom	3563	feḏverkez	high
+fejlődik	lakok/lakom	556362	fejlőd	high
+fekszik	lakok/lakom	604506	feks	low
+feledkezik	lakok/lakom	122115	feledkez	high
+felejtkezik	lakok/lakom	9049	felejtkez	low
+férkőzik	lakok/lakom	18255	férkőz	low
+fertőződik	lakok/lakom	16236	fertőződ	low
+fésülködik	lakok/lakom	2935	féšülköd	low
+fészkelődik	lakok/lakom	5381	féskelőd	high
+fiatalodik	lakok/lakom	6846	fiatalod	low
+finomkodik	lakok/lakom	5135	finomkod	high
+fogadkozik	lakok/lakom	8046	fogadkoz	low
+foglalkozik	lakok/lakom	1809823	foglalkoz	low
+fogyatkozik	lakok/lakom	8930	foḏatkoz	low
+fogyókúrázik	lakok/lakom	10254	foḏókúráz	high
+fohászkodik	lakok/lakom	16804	foháskod	low
+folytatódik	lakok/lakom	572068	fojtatód	low
+fonódik	lakok/lakom	18743	fonód	low
+fontoskodik	lakok/lakom	2612	fontoškod	low
+forgolódik	lakok/lakom	18063	forgolód	high
+formálódik	lakok/lakom	36394	formálód	high
+forrósodik	lakok/lakom	4210	forróšod	high
+főzőcskézik	lakok/lakom	4801	főzőčkéz	high
+fukarkodik	lakok/lakom	8454	fukarkod	low
+fulladozik	lakok/lakom	4240	fulladoz	low
+fürdőzik	lakok/lakom	12429	fürdőz	high
+fúródik	lakok/lakom	8002	fúród	high
+furulyázik	lakok/lakom	3355	furujáz	high
+futamodik	lakok/lakom	3227	futamod	high
+futballozik	lakok/lakom	36728	futballoz	low
+futkározik	lakok/lakom	9294	futkároz	high
+fuvolázik	lakok/lakom	2514	fuvoláz	low
+fűződik	lakok/lakom	121731	fűződ	high
+gazdagodik	lakok/lakom	134939	gazdagod	low
+gazdagszik	lakok/lakom	134939	gazdags	low
+gazdálkodik	lakok/lakom	93581	gazdálkod	low
+gömbölyödik	lakok/lakom	3513	gömböjöd	high
+gondolkodik	lakok/lakom	706718	gondolkod	low
+gondolkozik	lakok/lakom	253771	gondolkoz	low
+gondoskodik	lakok/lakom	785316	gondoškod	low
+gonoszkodik	lakok/lakom	2552	gonoskod	low
+gúnyolódik	lakok/lakom	12545	gúṉolód	high
+gyanakszik	lakok/lakom	68227	ḏanaks	low
+gyarapszik	lakok/lakom	86849	ḏaraps	low
+gyengélkedik	lakok/lakom	6911	ḏengélked	low
+gyöngyözik	lakok/lakom	7379	ḏönḏöz	high
+gyönyörködik	lakok/lakom	112176	ḏöṉörköd	low
+gyötrődik	lakok/lakom	7873	ḏötrőd	low
+győzködik	lakok/lakom	22154	ḏőzköd	high
+győződik	lakok/lakom	138711	ḏőződ	low
+gyűlölködik	lakok/lakom	6178	ḏűlölköd	high
+gyűrődik	lakok/lakom	5974	ḏűrőd	low
+háborodik	lakok/lakom	17472	háborod	high
+háborúzik	lakok/lakom	11765	háborúz	high
+hadakozik	lakok/lakom	14604	hadakoz	low
+hagyatkozik	lakok/lakom	65502	haḏatkoz	low
+hajladozik	lakok/lakom	3901	hajladoz	high
+hajókázik	lakok/lakom	4918	hajókáz	high
+hajózik	lakok/lakom	33540	hajóz	high
+hálálkodik	lakok/lakom	5921	hálálkod	low
+haldoklik	lakok/lakom	21831	haldokl	high
+halványodik	lakok/lakom	5957	halváṉod	low
+hangolódik	lakok/lakom	27076	hangolód	high
+hangoskodik	lakok/lakom	8641	hangoškod	high
+hanyatlik	lakok/lakom	15385	haṉatl	high
+hánykolódik	lakok/lakom	5657	háṉkolód	low
+hányódik	lakok/lakom	3101	háṉód	low
+haragszik	lakok/lakom	129179	harags	low
+harangozik	lakok/lakom	13662	harangoz	high
+hatódik	lakok/lakom	3690	hatód	high
+haverkodik	lakok/lakom	3524	haverkod	high
+házasodik	lakok/lakom	48749	házašod	high
+hazudozik	lakok/lakom	13233	hazudoz	high
+helyezkedik	lakok/lakom	435311	hejezked	low
+hiányzik	lakok/lakom	686890	hiáṉz	low
+hibázik	lakok/lakom	154009	hibáz	high
+hintázik	lakok/lakom	9317	hintáz	high
+hiszik	lakok/lakom	3584445	his	high
+hivalkodik	lakok/lakom	3478	hivalkod	low
+hivatkozik	lakok/lakom	508241	hivatkoz	low
+hízik	lakok/lakom	63813	híz	high
+hozakodik	lakok/lakom	6156	hozakod	low
+hüledezik	lakok/lakom	4646	hüledez	high
+hülyéskedik	lakok/lakom	8587	hüjéšked	high
+húzódik	lakok/lakom	188010	húzód	high
+húzódozik	lakok/lakom	2929	húzódoz	low
+idegenkedik	lakok/lakom	24833	idegenked	low
+idegeskedik	lakok/lakom	17271	idegešked	high
+idősödik	lakok/lakom	4870	időšöd	low
+időzik	lakok/lakom	38358	időz	high
+igazodik	lakok/lakom	195863	igazod	high
+ígérkezik	lakok/lakom	66458	ígérkez	high
+igyekszik	lakok/lakom	1372052	iḏeks	low
+imádkozik	lakok/lakom	319092	imádkoz	low
+ingadozik	lakok/lakom	33254	ingadoz	low
+iparkodik	lakok/lakom	13706	iparkod	low
+irigykedik	lakok/lakom	28990	iriḏked	low
+irtózik	lakok/lakom	15667	irtóz	low
+ismerkedik	lakok/lakom	344220	išmerked	high
+ismerszik	lakok/lakom	7941	išmers	high
+iszik	lakok/lakom	651299	is	high
+iszik	lakok/lakom	651311	is	low
+iszonyodik	lakok/lakom	3335	isoṉod	low
+ítélkezik	lakok/lakom	42419	ítélkez	low
+izmosodik	lakok/lakom	4740	izmošod	low
+játszadozik	lakok/lakom	20243	játsadoz	low
+játszik	lakok/lakom	2672605	játs	low
+játszódik	lakok/lakom	142955	játsód	high
+jelentkezik	lakok/lakom	1317571	jelentkez	low
+jeleskedik	lakok/lakom	26740	jelešked	high
+jógázik	lakok/lakom	17732	jógáz	low
+jóllakik	lakok/lakom	27189	jóllak	high
+kacérkodik	lakok/lakom	13978	kacérkod	low
+kajakozik	lakok/lakom	4622	kajakoz	low
+kallódik	lakok/lakom	5181	kallód	high
+kapálódzik	lakok/lakom	6110	kapálódz	high
+kaparászik	lakok/lakom	2081	kaparás	low
+kapaszkodik	lakok/lakom	113682	kapaskod	low
+kapcsolódik	lakok/lakom	635457	kapčolód	low
+kardoskodik	lakok/lakom	6275	kardoškod	low
+kárhozik	lakok/lakom	4546	kárhoz	high
+karikázik	lakok/lakom	14609	karikáz	high
+káromkodik	lakok/lakom	23314	káromkod	high
+kártyázik	lakok/lakom	10854	kárṯáz	high
+kászálódik	lakok/lakom	2552	kásálód	high
+kávézik	lakok/lakom	24144	kávéz	high
+kedveskedik	lakok/lakom	70883	kedvešked	high
+kegyeskedik	lakok/lakom	2677	keḏešked	high
+kekeckedik	lakok/lakom	3302	kekecked	high
+kenődik	lakok/lakom	4832	kenőd	high
+képzelődik	lakok/lakom	5260	képzelőd	low
+képződik	lakok/lakom	75875	képződ	low
+kéredzkedik	lakok/lakom	2470	kéredzked	high
+kerekedik	lakok/lakom	69864	kereked	high
+kerekezik	lakok/lakom	7868	kerekez	high
+kereskedik	lakok/lakom	48423	kerešked	high
+kergetőzik	lakok/lakom	5058	kergetőz	high
+keringőzik	lakok/lakom	2274	keringőz	high
+kérkedik	lakok/lakom	10714	kérked	high
+kertészkedik	lakok/lakom	14951	kertésked	high
+keseredik	lakok/lakom	22200	kešered	high
+késlekedik	lakok/lakom	18894	kéšleked	high
+készülődik	lakok/lakom	54120	késülőd	high
+kételkedik	lakok/lakom	68084	kételked	low
+kétkedik	lakok/lakom	9459	kétked	low
+kezdődik	lakok/lakom	1316010	kezdőd	high
+kezeskedik	lakok/lakom	3469	kezešked	low
+kiáltozik	lakok/lakom	13243	kiáltoz	low
+kínlódik	lakok/lakom	23589	kínlód	high
+kívánkozik	lakok/lakom	19880	kívánkoz	low
+kocsikázik	lakok/lakom	5753	kočikáz	high
+költekezik	lakok/lakom	6117	költekez	high
+költözik	lakok/lakom	393996	költöz	high
+költözködik	lakok/lakom	3358	költözköd	low
+költözik	lakok/lakom	393996	költöz	low
+komolyodik	lakok/lakom	3885	komojod	low
+könnyezik	lakok/lakom	19660	köṉṉez	high
+kopaszodik	lakok/lakom	3051	kopasod	low
+korcsolyázik	lakok/lakom	13624	korčojáz	low
+korzózik	lakok/lakom	2269	korzóz	high
+kosarazik	lakok/lakom	7721	košaraz	high
+kötődik	lakok/lakom	196712	kötőd	low
+kotorászik	lakok/lakom	7658	kotorás	high
+kötözködik	lakok/lakom	6981	kötözköd	low
+követelőzik	lakok/lakom	4650	követelőz	high
+következik	lakok/lakom	1151088	következ	low
+közeledik	lakok/lakom	245136	közeled	high
+közlekedik	lakok/lakom	287338	közleked	high
+közösködik	lakok/lakom	2915	közöšköd	low
+kuporodik	lakok/lakom	3941	kuporod	high
+küszködik	lakok/lakom	65981	küsköd	high
+kutakodik	lakok/lakom	25692	kutakod	high
+lábadozik	lakok/lakom	7640	lábadoz	low
+lakik	lakok/lakom	612717	lak	low
+lakozik	lakok/lakom	39428	lakoz	low
+látszik	lakok/lakom	1217735	láts	low
+lázadozik	lakok/lakom	5616	lázadoz	low
+leledzik	lakok/lakom	8370	leledz	high
+lélegzik	lakok/lakom	82329	lélegz	high
+lelkendezik	lakok/lakom	9487	lelkendez	high
+lelkesedik	lakok/lakom	33550	lelkešed	low
+lepődik	lakok/lakom	86473	lepőd	high
+leselkedik	lakok/lakom	19027	lešelked	high
+leskelődik	lakok/lakom	5010	leškelőd	high
+létezik	lakok/lakom	1297361	létez	low
+levegőzik	lakok/lakom	5361	levegőz	high
+lökdösődik	lakok/lakom	3007	lökdöšőd	high
+lottózik	lakok/lakom	2828	lottóz	low
+lustálkodik	lakok/lakom	6541	luštálkod	low
+magasodik	lakok/lakom	22549	magašod	high
+makacskodik	lakok/lakom	2104	makačkod	low
+markolászik	lakok/lakom	3773	markolás	low
+mélázik	lakok/lakom	4413	méláz	high
+melegedik	lakok/lakom	35425	meleged	high
+melegszik	lakok/lakom	43511	melegs	low
+merészkedik	lakok/lakom	32469	merésked	high
+mérgelődik	lakok/lakom	8669	mérgelőd	high
+mesterkedik	lakok/lakom	5352	mešterked	low
+misézik	lakok/lakom	6450	mišéz	high
+mocskolódik	lakok/lakom	2235	močkolód	high
+mókázik	lakok/lakom	4444	mókáz	high
+morgolódik	lakok/lakom	4429	morgolód	high
+mosakszik	lakok/lakom	11483	mošaks	low
+mosdik	lakok/lakom	3663	mošd	high
+mosolyodik	lakok/lakom	11411	mošojod	low
+mozgolódik	lakok/lakom	6963	mozgolód	high
+működik	lakok/lakom	2493517	működ	low
+munkálkodik	lakok/lakom	66126	munkálkod	low
+mutatkozik	lakok/lakom	386251	mutatkoz	low
+művelődik	lakok/lakom	4170	művelőd	low
+napozik	lakok/lakom	24323	napoz	high
+nedvesedik	lakok/lakom	3755	nedvešed	high
+nehezedik	lakok/lakom	38547	nehezed	high
+nevelkedik	lakok/lakom	46282	nevelked	low
+nézelődik	lakok/lakom	57827	nézelőd	high
+növekszik	lakok/lakom	520866	növeks	low
+nyáladzik	lakok/lakom	2158	ṉáladz	high
+nyálazik	lakok/lakom	2577	ṉálaz	high
+nyilatkozik	lakok/lakom	726058	ṉilatkoz	low
+nyomódik	lakok/lakom	5776	ṉomód	high
+nyűglődik	lakok/lakom	2530	ṉűglőd	high
+nyugodik	lakok/lakom	200200	ṉugod	high
+nyugszik	lakok/lakom	200200	ṉugs	low
+nyújtózkodik	lakok/lakom	14864	ṉújtózkod	low
+nyújtózik	lakok/lakom	10262	ṉújtóz	low
+ódzkodik	lakok/lakom	17257	ódzkod	low
+öklendezik	lakok/lakom	4342	öklendez	high
+okoskodik	lakok/lakom	23651	okoškod	high
+okosodik	lakok/lakom	6651	okošod	high
+ólálkodik	lakok/lakom	6185	ólálkod	low
+oldódik	lakok/lakom	72937	oldód	high
+ölelkezik	lakok/lakom	6267	ölelkez	low
+öltözködik	lakok/lakom	29838	öltözköd	low
+öltözik	lakok/lakom	113660	öltöz	low
+olvadozik	lakok/lakom	3573	olvadoz	high
+önállósodik	lakok/lakom	4835	önállóšod	low
+ordítozik	lakok/lakom	7808	ordítoz	high
+öregszik	lakok/lakom	32240	öregs	low
+őrizkedik	lakok/lakom	2033	őrizked	low
+őrködik	lakok/lakom	18581	őrköd	low
+őrlődik	lakok/lakom	6626	őrlőd	low
+örvendezik	lakok/lakom	50814	örvendez	high
+osztódik	lakok/lakom	9844	ostód	high
+osztozkodik	lakok/lakom	6441	ostozkod	low
+osztozik	lakok/lakom	212384	ostoz	low
+óvakodik	lakok/lakom	18248	óvakod	low
+óvatoskodik	lakok/lakom	2608	óvatoškod	high
+pályázik	lakok/lakom	247923	pájáz	high
+panaszkodik	lakok/lakom	194071	panaskod	low
+párosodik	lakok/lakom	4817	párošod	high
+pásztázik	lakok/lakom	12172	pástáz	low
+pecázik	lakok/lakom	5981	pecáz	high
+példálódzik	lakok/lakom	8093	példálódz	high
+példálózik	lakok/lakom	8093	példálóz	low
+pereskedik	lakok/lakom	7520	perešked	high
+pipázik	lakok/lakom	3608	pipáz	high
+pironkodik	lakok/lakom	4029	pironkod	low
+pirosodik	lakok/lakom	2743	pirošod	high
+poénkodik	lakok/lakom	7916	poénkod	high
+pompázik	lakok/lakom	35198	pompáz	high
+porosodik	lakok/lakom	15132	porošod	low
+portyázik	lakok/lakom	4052	porṯáz	high
+préselődik	lakok/lakom	3221	préšelőd	low
+próbálkozik	lakok/lakom	323025	próbálkoz	low
+puhatolózik	lakok/lakom	2438	puhatolóz	low
+raboskodik	lakok/lakom	8171	raboškod	low
+rádiózik	lakok/lakom	5003	rádióz	high
+ragaszkodik	lakok/lakom	266576	ragaskod	low
+rágódik	lakok/lakom	21316	rágód	low
+ráncosodik	lakok/lakom	3780	ráncošod	low
+randizik	lakok/lakom	20259	randiz	high
+rángatózik	lakok/lakom	5548	rángatóz	high
+rázkódik	lakok/lakom	6310	rázkód	low
+rázódik	lakok/lakom	3960	rázód	low
+reggelizik	lakok/lakom	37598	reggeliz	high
+rejtezik	lakok/lakom	4572	rejtez	high
+rejtőzködik	lakok/lakom	13531	rejtőzköd	low
+rejtőzik	lakok/lakom	58821	rejtőz	high
+reménykedik	lakok/lakom	167707	reméṉked	low
+rendelkezik	lakok/lakom	2695227	rendelkez	low
+rendezkedik	lakok/lakom	17362	rendezked	high
+rendeződik	lakok/lakom	54166	rendeződ	high
+részesedik	lakok/lakom	24890	résešed	high
+rimánkodik	lakok/lakom	4130	rimánkod	high
+ringatózik	lakok/lakom	8674	ringatóz	low
+rohangászik	lakok/lakom	3976	rohangás	high
+röplabdázik	lakok/lakom	3986	röplabdáz	low
+roskadozik	lakok/lakom	11094	roškadoz	high
+rosszalkodik	lakok/lakom	6227	rossalkod	low
+rozsdásodik	lakok/lakom	7072	roždášod	high
+rugaszkodik	lakok/lakom	7279	rugaskod	low
+sáfárkodik	lakok/lakom	4988	šáfárkod	high
+sajnálkozik	lakok/lakom	14151	šajnálkoz	low
+segédkezik	lakok/lakom	34011	šegédkez	low
+serénykedik	lakok/lakom	3658	šeréṉked	low
+sértődik	lakok/lakom	14646	šértőd	high
+settenkedik	lakok/lakom	3595	šettenked	low
+sikoltozik	lakok/lakom	8245	šikoltoz	low
+sínylődik	lakok/lakom	4938	šíṉlőd	low
+siránkozik	lakok/lakom	14018	širánkoz	high
+sodródik	lakok/lakom	50915	šodród	low
+sóhajtozik	lakok/lakom	11449	šóhajtoz	high
+sopánkodik	lakok/lakom	6686	šopánkod	high
+sorjázik	lakok/lakom	9441	šorjáz	low
+sürgölődik	lakok/lakom	2392	šürgölőd	high
+sütkérezik	lakok/lakom	7654	šütkérez	high
+szabadkozik	lakok/lakom	8713	sabadkoz	low
+szaglászik	lakok/lakom	6069	saglás	high
+száguldozik	lakok/lakom	16139	ságuldoz	high
+szánakozik	lakok/lakom	3014	sánakoz	low
+szándékozik	lakok/lakom	57854	sándékoz	low
+szándékszik	lakok/lakom	57854	sándéks	low
+szaporodik	lakok/lakom	87868	saporod	high
+szarakodik	lakok/lakom	5699	sarakod	high
+szarakszik	lakok/lakom	5699	saraks	low
+származik	lakok/lakom	596330	sármaz	low
+szegényedik	lakok/lakom	3561	segéṉed	high
+szegődik	lakok/lakom	26979	segőd	low
+szégyenkezik	lakok/lakom	31859	séḏenkez	low
+szemlélődik	lakok/lakom	7997	semlélőd	high
+szerénykedik	lakok/lakom	4231	seréṉked	low
+szeretkezik	lakok/lakom	27905	seretkez	high
+szerveződik	lakok/lakom	59340	serveződ	high
+szerződik	lakok/lakom	51881	serződ	high
+színészkedik	lakok/lakom	7379	sínésked	low
+sziporkázik	lakok/lakom	4822	siporkáz	high
+szitkozódik	lakok/lakom	6590	sitkozód	high
+szivarozik	lakok/lakom	2542	sivaroz	high
+szíveskedik	lakok/lakom	81883	sívešked	high
+szökik	lakok/lakom	64890	sök	high
+szomjazik	lakok/lakom	21901	somjaz	low
+szomjúhozik	lakok/lakom	2852	somjúhoz	low
+szomorkodik	lakok/lakom	22613	somorkod	low
+szomorodik	lakok/lakom	2368	somorod	high
+szórakozik	lakok/lakom	197402	sórakoz	low
+szorgoskodik	lakok/lakom	8106	sorgoškod	low
+szorítkozik	lakok/lakom	21720	sorítkoz	low
+szövetkezik	lakok/lakom	21303	sövetkez	low
+szűkölködik	lakok/lakom	10233	sűkölköd	low
+táborozik	lakok/lakom	19944	táboroz	high
+tájékozódik	lakok/lakom	282902	tájékozód	low
+takarodik	lakok/lakom	16356	takarod	high
+taktikázik	lakok/lakom	10243	taktikáz	high
+találkozik	lakok/lakom	1857559	találkoz	low
+támaszkodik	lakok/lakom	198608	támaskod	low
+tanácskozik	lakok/lakom	21064	tanáčkoz	low
+tanakodik	lakok/lakom	16021	tanakod	low
+tántorodik	lakok/lakom	2273	tántorod	high
+tanúskodik	lakok/lakom	82256	tanúškod	low
+tanyázik	lakok/lakom	20309	taṉáz	high
+tápászkodik	lakok/lakom	2018	tápáskod	high
+táplálkozik	lakok/lakom	101962	táplálkoz	low
+tartózkodik	lakok/lakom	323534	tartózkod	low
+tartozik	lakok/lakom	2020739	tartoz	high
+távolodik	lakok/lakom	45390	távolod	high
+teázik	lakok/lakom	7811	teáz	high
+tegeződik	lakok/lakom	6296	tegeződ	low
+telepszik	lakok/lakom	93057	teleps	high
+telítődik	lakok/lakom	13702	telítőd	high
+teljesedik	lakok/lakom	38091	telješed	high
+telik	lakok/lakom	654760	tel	high
+temetkezik	lakok/lakom	8649	temetkez	low
+tempózik	lakok/lakom	2816	tempóz	high
+tengődik	lakok/lakom	10351	tengőd	low
+teniszezik	lakok/lakom	11338	tenisez	high
+ténykedik	lakok/lakom	7581	téṉked	low
+tépelődik	lakok/lakom	5841	tépelőd	low
+terelődik	lakok/lakom	17677	terelőd	high
+terjeszkedik	lakok/lakom	34705	terjesked	low
+terpeszkedik	lakok/lakom	6802	terpesked	high
+teszik	lakok/lakom	13867767	tes	high
+tétlenkedik	lakok/lakom	15046	tétlenked	high
+tétovázik	lakok/lakom	12509	tétováz	high
+tetszik	lakok/lakom	1498478	tets	low
+tevődik	lakok/lakom	46451	tevőd	high
+tiltakozik	lakok/lakom	213776	tiltakoz	low
+tipródik	lakok/lakom	3039	tipród	low
+tisztálkodik	lakok/lakom	6177	tistálkod	low
+titkolózik	lakok/lakom	9664	titkolóz	low
+tobzódik	lakok/lakom	11742	tobzód	low
+tolódik	lakok/lakom	33844	tolód	high
+töltekezik	lakok/lakom	7443	töltekez	low
+töltődik	lakok/lakom	40092	töltőd	low
+törekszik	lakok/lakom	642126	töreks	low
+törlődik	lakok/lakom	35110	törlőd	high
+tornászik	lakok/lakom	6772	tornás	low
+tornázik	lakok/lakom	32996	tornáz	low
+törődik	lakok/lakom	207517	törőd	low
+tőzsdézik	lakok/lakom	2523	tőždéz	high
+tréfálkozik	lakok/lakom	5571	tréfálkoz	low
+tudakozódik	lakok/lakom	4897	tudakozód	low
+tudatosodik	lakok/lakom	7937	tudatošod	high
+túlórázik	lakok/lakom	9066	túlóráz	high
+tündöklik	lakok/lakom	3078	tündökl	high
+tűnődik	lakok/lakom	27459	tűnőd	low
+túrázik	lakok/lakom	49897	túráz	high
+tüsténkedik	lakok/lakom	2685	tüšténked	low
+ugrándozik	lakok/lakom	8866	ugrándoz	high
+ügyesedik	lakok/lakom	2539	üḏešed	high
+ügyeskedik	lakok/lakom	11033	üḏešked	high
+ügyködik	lakok/lakom	11226	üḏköd	low
+unatkozik	lakok/lakom	103069	unatkoz	low
+undorodik	lakok/lakom	14293	undorod	low
+uralkodik	lakok/lakom	204714	uralkod	low
+úszik	lakok/lakom	228752	ús	low
+utálkozik	lakok/lakom	2391	utálkoz	low
+utazik	lakok/lakom	732800	utaz	low
+ütközik	lakok/lakom	225302	ütköz	low
+vacsorázik	lakok/lakom	50661	vačoráz	low
+vádaskodik	lakok/lakom	5755	vádaškod	high
+vadászik	lakok/lakom	98441	vadás	low
+vagdalkozik	lakok/lakom	3657	vagdalkoz	high
+vágódik	lakok/lakom	11694	vágód	high
+vágyakozik	lakok/lakom	33026	váḏakoz	low
+vágyik	lakok/lakom	579400	váḏ	low
+vágyódik	lakok/lakom	14271	váḏód	low
+vakaródzik	lakok/lakom	3785	vakaródz	low
+vállalkozik	lakok/lakom	141984	vállalkoz	low
+változik	lakok/lakom	1725689	változ	low
+várakozik	lakok/lakom	96850	várakoz	low
+védekezik	lakok/lakom	166798	védekez	high
+végződik	lakok/lakom	106685	végződ	low
+vékonyodik	lakok/lakom	4362	vékoṉod	low
+vélekedik	lakok/lakom	123148	véleked	high
+vélekszik	lakok/lakom	123148	véleks	low
+verekszik	lakok/lakom	32024	vereks	low
+vergődik	lakok/lakom	27292	vergőd	high
+verődik	lakok/lakom	17097	verőd	high
+veselkedik	lakok/lakom	2295	vešelked	high
+veszekszik	lakok/lakom	39570	veseks	low
+veszik	lakok/lakom	11594685	ves	high
+vesződik	lakok/lakom	11429	vesőd	low
+vetekszik	lakok/lakom	28843	veteks	low
+vetélkedik	lakok/lakom	10217	vetélked	high
+vetemedik	lakok/lakom	15187	vetemed	high
+vetkezik	lakok/lakom	11392	vetkez	low
+vétkezik	lakok/lakom	32653	vétkez	low
+vetkőzik	lakok/lakom	24481	vetkőz	high
+vetődik	lakok/lakom	46975	vetőd	high
+viaskodik	lakok/lakom	10940	viaškod	low
+viccelődik	lakok/lakom	25569	viccelőd	high
+világosodik	lakok/lakom	9640	világošod	high
+virágzik	lakok/lakom	83044	virágz	low
+viselkedik	lakok/lakom	307068	višelked	low
+visszakozik	lakok/lakom	8527	vissakoz	high
+viszik	lakok/lakom	2117715	vis	high
+viszik	lakok/lakom	2117715	vis	high
+vitatkozik	lakok/lakom	147337	vitatkoz	low
+vitázik	lakok/lakom	46729	vitáz	high
+vitézkedik	lakok/lakom	4493	vitézked	low
+vitorlázik	lakok/lakom	19586	vitorláz	high
+vívódik	lakok/lakom	5972	vívód	high
+vizesedik	lakok/lakom	3171	vizešed	high
+vizsgálódik	lakok/lakom	22746	vižgálód	low
+vizsgázik	lakok/lakom	61681	vižgáz	low
+vonakodik	lakok/lakom	22619	vonakod	low
+vonatozik	lakok/lakom	10066	vonatoz	high
+vonzódik	lakok/lakom	41981	vonzód	low
+vörösödik	lakok/lakom	2652	vöröšöd	high
+zárkózik	lakok/lakom	34767	zárkóz	low
+záródik	lakok/lakom	24424	záród	high
+zongorázik	lakok/lakom	30452	zongoráz	low
+zötykölődik	lakok/lakom	3597	zöṯkölőd	low
+zsírosodik	lakok/lakom	5118	žírošod	high
+zsörtölődik	lakok/lakom	3330	žörtölőd	low
+zsúfolódik	lakok/lakom	4651	žúfolód	high
+zúgolódik	lakok/lakom	6221	zúgolód	high
+zuhanyozik	lakok/lakom	20011	zuhaṉoz	high
+emlékszik	cselekszenek/cselekednek	582875	emléks	high
+dolgozik	cselekszenek/cselekednek	3627092	dolgoz	low
+igyekszik	cselekszenek/cselekednek	1372052	iḏeks	high
+bízik	cselekszenek/cselekednek	324694	bíz	low
+vágyik	cselekszenek/cselekednek	579400	váḏ	low
+játszik	cselekszenek/cselekednek	2672605	játs	high
+lakik	cselekszenek/cselekednek	612717	lak	low
+iszik	cselekszenek/cselekednek	651299	is	low
+találkozik	cselekszenek/cselekednek	1857559	találkoz	low
+alszik	cselekszenek/cselekednek	668614	als	high
+törekszik	cselekszenek/cselekednek	642126	töreks	high
+aggódik	cselekszenek/cselekednek	341034	aggód	low
+eszik	cselekszenek/cselekednek	1320365	es	low
+utazik	cselekszenek/cselekednek	732800	utaz	low
+esküszik	cselekszenek/cselekednek	82803	ešküs	low
+fekszik	cselekszenek/cselekednek	604506	feks	high
+haragszik	cselekszenek/cselekednek	129179	harags	high
+dohányzik	cselekszenek/cselekednek	67978	doháṉz	high
+imádkozik	cselekszenek/cselekednek	319092	imádkoz	low
+esik	cselekszenek/cselekednek	1885634	eš	low
+álmodik	cselekszenek/cselekednek	223489	álmod	low
+válik	cselekszenek/cselekednek	4028540	vál	low
+származik	cselekszenek/cselekednek	596330	sármaz	low
+fázik	cselekszenek/cselekednek	77143	fáz	low
+érkezik	cselekszenek/cselekednek	2258874	érkez	low
+hajlik	cselekszenek/cselekednek	62306	hajl	high
+érdeklődik	cselekszenek/cselekednek	362506	érdeklőd	low
+fotózik	cselekszenek/cselekednek	141775	fotóz	low
+hazudik	cselekszenek/cselekednek	206336	hazud	low
+kételkedik	cselekszenek/cselekednek	68084	kételked	low
+létezik	cselekszenek/cselekednek	1297361	létez	low
+öregszik	cselekszenek/cselekednek	32240	öregs	high
+gyanakszik	cselekszenek/cselekednek	68227	ḏanaks	high
+asszik	cselekszenek/cselekednek	4781	ass	high
+törődik	cselekszenek/cselekednek	206232	törőd	low
+unatkozik	cselekszenek/cselekednek	103069	unatkoz	low
+ugrik	cselekszenek/cselekednek	341439	ugr	high
+vitatkozik	cselekszenek/cselekednek	147337	vitatkoz	low
+tetszik	cselekszenek/cselekednek	1498478	tets	high
+tartozik	cselekszenek/cselekednek	2020739	tartoz	low
+vonzódik	cselekszenek/cselekednek	41981	vonzód	low
+hivatkozik	cselekszenek/cselekednek	508241	hivatkoz	low
+cselekszik	cselekszenek/cselekednek	280658	čeleks	high
+tűnik	cselekszenek/cselekednek	2079177	tűn	low
+úszik	cselekszenek/cselekednek	228752	ús	low
+ismerkedik	cselekszenek/cselekednek	344220	išmerked	low
+kötődik	cselekszenek/cselekednek	196259	kötőd	low
+költözik	cselekszenek/cselekednek	393996	költöz	low
+működik	cselekszenek/cselekednek	2488856	működ	low
+tűnődik	cselekszenek/cselekednek	27257	tűnőd	low
+búcsúzik	cselekszenek/cselekednek	154036	búčúz	low
+viselkedik	cselekszenek/cselekednek	307068	višelked	low
+bújik	cselekszenek/cselekednek	143158	búj	low
+mászik	cselekszenek/cselekednek	135247	más	low
+szórakozik	cselekszenek/cselekednek	197402	sórakoz	low
+változik	cselekszenek/cselekednek	1725689	változ	low
+vadászik	cselekszenek/cselekednek	98441	vadás	low
+álmodozik	cselekszenek/cselekednek	59984	álmodoz	low
+küszködik	cselekszenek/cselekednek	65981	küsköd	low
+fejlődik	cselekszenek/cselekednek	554541	fejlőd	low
+irtózik	cselekszenek/cselekednek	15667	irtóz	low
+étkezik	cselekszenek/cselekednek	56160	étkez	low
+nyugszik	cselekszenek/cselekednek	200200	ṉugs	high
+barátkozik	cselekszenek/cselekednek	50745	barátkoz	low
+látszik	cselekszenek/cselekednek	1217735	láts	high
+nézelődik	cselekszenek/cselekednek	56891	nézelőd	low
+tornázik	cselekszenek/cselekednek	32996	tornáz	low
+zongorázik	cselekszenek/cselekednek	30452	zongoráz	low
+hibázik	cselekszenek/cselekednek	154009	hibáz	low
+közlekedik	cselekszenek/cselekednek	287338	közleked	low
+fürdik	cselekszenek/cselekednek	88169	fürd	low
+hiányzik	cselekszenek/cselekednek	686890	hiáṉz	high
+hasonlik	cselekszenek/cselekednek	2084	hašonl	high
+diétázik	cselekszenek/cselekednek	9816	diétáz	low
+botlik	cselekszenek/cselekednek	41912	botl	high
+bátorkodik	cselekszenek/cselekednek	9746	bátorkod	low
+közeledik	cselekszenek/cselekednek	245136	közeled	low
+küszködik	cselekszenek/cselekednek	65981	küsköd	low
+jelenik	cselekszenek/cselekednek	1647977	jelen	low
+nézelődik	cselekszenek/cselekednek	56891	nézelőd	low
+tiltakozik	cselekszenek/cselekednek	213776	tiltakoz	low
+bukik	cselekszenek/cselekednek	178435	buk	low
+hízik	cselekszenek/cselekednek	63813	híz	low
+fejlődik	cselekszenek/cselekednek	554541	fejlőd	low
+ütközik	cselekszenek/cselekednek	225302	ütköz	low
+törődik	cselekszenek/cselekednek	206232	törőd	low
+biciklizik	cselekszenek/cselekednek	32166	bicikliz	low
+dicsekszik	cselekszenek/cselekednek	46395	dičeks	high
+jógázik	cselekszenek/cselekednek	7512	jógáz	low
+szomjazik	cselekszenek/cselekednek	11680	somjaz	low
+vágyódik	cselekszenek/cselekednek	14271	váḏód	low
+öltözik	cselekszenek/cselekednek	113660	öltöz	low
+csalódik	cselekszenek/cselekednek	170163	čalód	low
+vérzik	cselekszenek/cselekednek	54196	vérz	high
+csúszik	cselekszenek/cselekednek	191096	čús	low
+undorodik	cselekszenek/cselekednek	14293	undorod	low
+túrázik	cselekszenek/cselekednek	49897	túráz	low
+érdeklődik	cselekszenek/cselekednek	362506	érdeklőd	low
+bűnözik	cselekszenek/cselekednek	5915	bűnöz	low
+kínlódik	cselekszenek/cselekednek	23589	kínlód	low
+születik	cselekszenek/cselekednek	1768256	sület	low
+működik	cselekszenek/cselekednek	2488856	működ	low
+öltözködik	cselekszenek/cselekednek	29838	öltözköd	low
+költözik	cselekszenek/cselekednek	393996	költöz	low
+irigykedik	cselekszenek/cselekednek	28990	iriḏked	low
+bizakodik	cselekszenek/cselekednek	30323	bizakod	low
+osztozik	cselekszenek/cselekednek	212384	ostoz	low
+autózik	cselekszenek/cselekednek	53397	autóz	low
+pályázik	cselekszenek/cselekednek	247923	pájáz	low
+tojik	cselekszenek/cselekednek	20901	toj	low
+keveredik	cselekszenek/cselekednek	181236	kevered	low
+vágyakozik	cselekszenek/cselekednek	33026	váḏakoz	low
+nekiesik	cselekszenek/cselekednek	18476	nekieš	low
+emlékezik	cselekszenek/cselekednek	607896	emlékez	low
+focizik	cselekszenek/cselekednek	50977	fociz	low
+kanyarodik	cselekszenek/cselekednek	54424	kaṉarod	low
+bénázik	cselekszenek/cselekednek	8505	bénáz	low
+kacérkodik	cselekszenek/cselekednek	13978	kacérkod	low
+cigizik	cselekszenek/cselekednek	11452	cigiz	low
+adózik	cselekszenek/cselekednek	58255	adóz	low
+erőlködik	cselekszenek/cselekednek	26402	erőlköd	low
+folyik	cselekszenek/cselekednek	743029	foj	low
+szopik	cselekszenek/cselekednek	56825	sop	low
+fáradozik	cselekszenek/cselekednek	40305	fáradoz	low
+ódzkodik	cselekszenek/cselekednek	17257	ódzkod	low
+teniszezik	cselekszenek/cselekednek	11338	tenisez	low
+ítélkezik	cselekszenek/cselekednek	42419	ítélkez	low
+reggelizik	cselekszenek/cselekednek	37598	reggeliz	low
+motorozik	cselekszenek/cselekednek	29136	motoroz	low
+íratik	cselekszenek/cselekednek	29583	írat	low
+öltözik	cselekszenek/cselekednek	113660	öltöz	low
+zárkózik	cselekszenek/cselekednek	34767	zárkóz	low
+várakozik	cselekszenek/cselekednek	96850	várakoz	low
+birkózik	cselekszenek/cselekednek	38668	birkóz	low
+hisztizik	cselekszenek/cselekednek	19664	histiz	low
+vélekedik	cselekszenek/cselekednek	123148	véleked	low
+ütközik	cselekszenek/cselekednek	225302	ütköz	low
+távozik	cselekszenek/cselekednek	362436	távoz	low
+okoskodik	cselekszenek/cselekednek	23651	okoškod	low
+vizsgázik	cselekszenek/cselekednek	61681	vižgáz	low
+képzelődik	cselekszenek/cselekednek	5210	képzelőd	low
+mutatkozik	cselekszenek/cselekednek	386251	mutatkoz	low
+döglik	cselekszenek/cselekednek	21538	dögl	low
+bringázik	cselekszenek/cselekednek	17885	bringáz	low
+kereskedik	cselekszenek/cselekednek	48423	kerešked	low
+veszekszik	cselekszenek/cselekednek	39570	veseks	high
+vacsorázik	cselekszenek/cselekednek	50661	vačoráz	low
+következik	cselekszenek/cselekednek	1151088	következ	low
+építkezik	cselekszenek/cselekednek	78659	építkez	low
+ábrándozik	cselekszenek/cselekednek	18385	ábrándoz	low
+nyílik	cselekszenek/cselekednek	769981	ṉíl	low
+fórumozik	cselekszenek/cselekednek	2573	fórumoz	low
+készülődik	cselekszenek/cselekednek	53599	késülőd	low
+foglakozik	cselekszenek/cselekednek	7136	foglakoz	low
+vitázik	cselekszenek/cselekednek	23295	vitáz	low
+kávézik	cselekszenek/cselekednek	24144	kávéz	low
+káromkodik	cselekszenek/cselekednek	23314	káromkod	low
+áhítozik	cselekszenek/cselekednek	9214	áhítoz	low
+nekiugrik	cselekszenek/cselekednek	6865	nekiugr	high
+készülődik	cselekszenek/cselekednek	53599	késülőd	low
+tévézik	cselekszenek/cselekednek	14352	tévéz	low
+baszik	cselekszenek/cselekednek	37569	bas	low
+hazautazik	cselekszenek/cselekednek	13619	hazautaz	low
+sodródik	cselekszenek/cselekednek	50915	šodród	low
+gyötrődik	cselekszenek/cselekednek	7873	ḏötrőd	low
+kutakodik	cselekszenek/cselekednek	25692	kutakod	low
+viseltetik	cselekszenek/cselekednek	13150	višeltet	low
+kötődik	cselekszenek/cselekednek	196259	kötőd	low
+bulizik	cselekszenek/cselekednek	60562	buliz	low
+időzik	cselekszenek/cselekednek	35735	időz	low
+igazodik	cselekszenek/cselekednek	195863	igazod	low
+forgolódik	cselekszenek/cselekednek	18063	forgolód	low
+lélegzik	cselekszenek/cselekednek	82329	lélegz	high
+sértődik	cselekszenek/cselekednek	14545	šértőd	low
+bánkódik	cselekszenek/cselekednek	14891	bánkód	low
+vergődik	cselekszenek/cselekednek	27087	vergőd	low
+védekezik	cselekszenek/cselekednek	166798	védekez	low
+avatkozik	cselekszenek/cselekednek	45734	avatkoz	low
+szokik	cselekszenek/cselekednek	1306902	sok	low
+éhezik	cselekszenek/cselekednek	59636	éhez	low
+telepszik	cselekszenek/cselekednek	93057	teleps	low
+ereszkedik	cselekszenek/cselekednek	50960	eresked	low
+ingázik	cselekszenek/cselekednek	17703	ingáz	low
+vitorlázik	cselekszenek/cselekednek	19586	vitorláz	low
+ügyfelezik	cselekszenek/cselekednek	458	üḏfelez	low
+szűnik	cselekszenek/cselekednek	168796	sűn	low
+húzódik	cselekszenek/cselekednek	188010	húzód	low
+erőlködik	cselekszenek/cselekednek	26402	erőlköd	low
+fosik	cselekszenek/cselekednek	9133	foš	low
+vergődik	cselekszenek/cselekednek	27087	vergőd	low
+habozik	cselekszenek/cselekednek	56137	haboz	low
+uralkodik	cselekszenek/cselekednek	204714	uralkod	low
+távolodik	cselekszenek/cselekednek	45390	távolod	low
+sugárzik	cselekszenek/cselekednek	39114	šugárz	high
+töltődik	cselekszenek/cselekednek	39903	töltőd	low
+hajózik	cselekszenek/cselekednek	33540	hajóz	low
+lakozik	cselekszenek/cselekednek	39428	lakoz	low
+kívánkozik	cselekszenek/cselekednek	19880	kívánkoz	low
+bajlódik	cselekszenek/cselekednek	39724	bajlód	low
+mosolyodik	cselekszenek/cselekednek	11411	mošojod	low
+intézkedik	cselekszenek/cselekednek	119410	intézked	low
+napozik	cselekszenek/cselekednek	24323	napoz	low
+sértődik	cselekszenek/cselekednek	14545	šértőd	low
+egyezik	cselekszenek/cselekednek	230655	eḏez	low
+ázik	cselekszenek/cselekednek	36090	áz	low
+vétkezik	cselekszenek/cselekednek	32653	vétkez	low
+kötözködik	cselekszenek/cselekednek	6981	kötözköd	low
+tipródik	cselekszenek/cselekednek	3039	tipród	low
+idősödik	cselekszenek/cselekednek	4870	időšöd	low
+ügyködik	cselekszenek/cselekednek	11226	üḏköd	low
+edzősködik	cselekszenek/cselekednek	4862	edzőšköd	low
+érintkezik	cselekszenek/cselekednek	84963	érintkez	low
+kezeskedik	cselekszenek/cselekednek	3469	kezešked	low
+tik	cselekszenek/cselekednek	20111	t	low
+értekezik	cselekszenek/cselekednek	31517	értekez	low
+tűnődik	cselekszenek/cselekednek	27257	tűnőd	low
+emelkedik	cselekszenek/cselekednek	747438	emelked	low
+őrködik	cselekszenek/cselekednek	18581	őrköd	low
+példálózik	cselekszenek/cselekednek	8093	példálóz	low
+randizik	cselekszenek/cselekednek	20259	randiz	low
+gazdagodik	cselekszenek/cselekednek	134939	gazdagod	low
+segédkezik	cselekszenek/cselekednek	34011	šegédkez	low
+tépelődik	cselekszenek/cselekednek	5780	tépelőd	low
+sörözik	cselekszenek/cselekednek	16041	šöröz	low
+erősödik	cselekszenek/cselekednek	216852	erőšöd	low
+mérgelődik	cselekszenek/cselekednek	8595	mérgelőd	low
+folyamodik	cselekszenek/cselekednek	49090	fojamod	low
+mosakszik	cselekszenek/cselekednek	11483	mošaks	low
+tornászik	cselekszenek/cselekednek	6772	tornás	low
+igyekszik	cselekszenek/cselekednek	1372052	iḏeks	low
+ringatózik	cselekszenek/cselekednek	8674	ringatóz	low
+kondizik	cselekszenek/cselekednek	1116	kondiz	low
+verekszik	cselekszenek/cselekednek	32024	vereks	high
+siklik	cselekszenek/cselekednek	27173	šikl	high
+hozakodik	cselekszenek/cselekednek	6156	hozakod	low
+videózik	cselekszenek/cselekednek	13191	videóz	low
+élősködik	cselekszenek/cselekednek	9346	élőšköd	low
+vetemedik	cselekszenek/cselekednek	15187	vetemed	low
+viccelődik	cselekszenek/cselekednek	25234	viccelőd	low
+képzelődik	cselekszenek/cselekednek	5210	képzelőd	low
+ténykedik	cselekszenek/cselekednek	7581	téṉked	low
+adatik	cselekszenek/cselekednek	76358	adat	low
+őrlődik	cselekszenek/cselekednek	6626	őrlőd	low
+iparkodik	cselekszenek/cselekednek	13706	iparkod	low
+időzik	cselekszenek/cselekednek	35735	időz	low
+szerződik	cselekszenek/cselekednek	51630	serződ	low
+bíbelődik	cselekszenek/cselekednek	14337	bíbelőd	low
+kötözködik	cselekszenek/cselekednek	6981	kötözköd	low
+melegszik	cselekszenek/cselekednek	43511	melegs	high
+mosakszik	cselekszenek/cselekednek	11483	mošaks	high
+alkudozik	cselekszenek/cselekednek	14494	alkudoz	low
+drogozik	cselekszenek/cselekednek	9319	drogoz	low
+lottózik	cselekszenek/cselekednek	2828	lottóz	low
+heverészik	cselekszenek/cselekednek	9293	heverés	low
+ingadozik	cselekszenek/cselekednek	33254	ingadoz	low
+iszonyodik	cselekszenek/cselekednek	3335	isoṉod	low
+mérgelődik	cselekszenek/cselekednek	8595	mérgelőd	low
+sóhajtozik	cselekszenek/cselekednek	11449	šóhajtoz	low
+oldódik	cselekszenek/cselekednek	72937	oldód	low
+vesződik	cselekszenek/cselekednek	11312	vesőd	low
+alkudik	cselekszenek/cselekednek	17918	alkud	low
+kotorászik	cselekszenek/cselekednek	6224	kotorás	low
+törekszik	cselekszenek/cselekednek	642126	töreks	low
+pakolászik	cselekszenek/cselekednek	4806	pakolás	low
+növekszik	cselekszenek/cselekednek	520866	növeks	high
+tanúskodik	cselekszenek/cselekednek	82256	tanúškod	low
+hazudozik	cselekszenek/cselekednek	13233	hazudoz	low
+kúszik	cselekszenek/cselekednek	40879	kús	low
+viccelődik	cselekszenek/cselekednek	25234	viccelőd	low
+omlik	cselekszenek/cselekednek	44757	oml	high
+lakkozik	cselekszenek/cselekednek	4229	lakkoz	low
+óvakodik	cselekszenek/cselekednek	18248	óvakod	low
+hadakozik	cselekszenek/cselekednek	14604	hadakoz	low
+vonakodik	cselekszenek/cselekednek	22619	vonakod	low
+ügyködik	cselekszenek/cselekednek	11226	üḏköd	low
+lábadozik	cselekszenek/cselekednek	7640	lábadoz	low
+morgolódik	cselekszenek/cselekednek	4429	morgolód	low
+vajúdik	cselekszenek/cselekednek	5934	vajúd	low
+bóklászik	cselekszenek/cselekednek	13080	bóklás	low
+siránkozik	cselekszenek/cselekednek	14018	širánkoz	low
+bonyolódik	cselekszenek/cselekednek	34776	boṉolód	low
+vonatozik	cselekszenek/cselekednek	6608	vonatoz	low
+mélázik	cselekszenek/cselekednek	4413	méláz	low
+buszozik	cselekszenek/cselekednek	4958	busoz	low
+bíbelődik	cselekszenek/cselekednek	14337	bíbelőd	low
+tanakodik	cselekszenek/cselekednek	16021	tanakod	low
+nyűglődik	cselekszenek/cselekednek	2514	ṉűglőd	low
+gúnyolódik	cselekszenek/cselekednek	12545	gúṉolód	low
+bicajozik	cselekszenek/cselekednek	3866	bicajoz	low
+nyűglődik	cselekszenek/cselekednek	2514	ṉűglőd	low
+hangolódik	cselekszenek/cselekednek	27076	hangolód	low
+vívódik	cselekszenek/cselekednek	5972	vívód	low
+botladozik	cselekszenek/cselekednek	8796	botladoz	low
+fingik	cselekszenek/cselekednek	4111	fing	high
+tolakszik	cselekszenek/cselekednek	10114	tolaks	high
+lobbizik	cselekszenek/cselekednek	17334	lobbiz	low
+adakozik	cselekszenek/cselekednek	17936	adakoz	low
+rajzik	cselekszenek/cselekednek	5848	rajz	high
+bogarászik	cselekszenek/cselekednek	7314	bogarás	low
+kamionozik	cselekszenek/cselekednek	393	kamionoz	low
+szerződik	cselekszenek/cselekednek	51630	serződ	low
+gürizik	cselekszenek/cselekednek	2101	güriz	low
+vetődik	cselekszenek/cselekednek	46715	vetőd	low
+háborodik	cselekszenek/cselekednek	17472	háborod	low
+tengődik	cselekszenek/cselekednek	10351	tengőd	low
+vételezik	cselekszenek/cselekednek	2305	vételez	low
+kutyázik	cselekszenek/cselekednek	722	kuṯáz	low
+kezdődik	cselekszenek/cselekednek	1314350	kezdőd	low
+korizik	cselekszenek/cselekednek	2844	koriz	low
+kopaszodik	cselekszenek/cselekednek	3051	kopasod	low
+töltekezik	cselekszenek/cselekednek	7443	töltekez	low
+nyújtózik	cselekszenek/cselekednek	10262	ṉújtóz	low
+sakkozik	cselekszenek/cselekednek	14004	šakkoz	low
+kerekezik	cselekszenek/cselekednek	7868	kerekez	low
+bohóckodik	cselekszenek/cselekednek	10687	bohóckod	low
+zuhanyozik	cselekszenek/cselekednek	20011	zuhaṉoz	low
+hadonászik	cselekszenek/cselekednek	10296	hadonás	low
+szarakodik	cselekszenek/cselekednek	5699	sarakod	low
+őrlődik	cselekszenek/cselekednek	6626	őrlőd	low
+tobzódik	cselekszenek/cselekednek	11742	tobzód	low
+fuldoklik	cselekszenek/cselekednek	7240	fuldokl	high
+erősödik	cselekszenek/cselekednek	216852	erőšöd	low
+hugyozik	cselekszenek/cselekednek	3653	huḏoz	low
+multizik	cselekszenek/cselekednek	1966	multiz	low
+szegődik	cselekszenek/cselekednek	26862	segőd	low
+teázik	cselekszenek/cselekednek	7811	teáz	low
+haverkodik	cselekszenek/cselekednek	3524	haverkod	low
+hámozik	cselekszenek/cselekednek	1892	hámoz	low
+múlik	cselekszenek/cselekednek	558108	múl	low
+poénkodik	cselekszenek/cselekednek	7916	poénkod	low
+öltözködik	cselekszenek/cselekednek	29838	öltözköd	low
+aszik	cselekszenek/cselekednek	5633	as	low
+hüledezik	cselekszenek/cselekednek	4646	hüledez	low
+pihizik	cselekszenek/cselekednek	994	pihiz	low
+esküszik	cselekszenek/cselekednek	82803	ešküs	low
+történik	cselekszenek/cselekednek	4203497	történ	low
+csapódik	cselekszenek/cselekednek	59286	čapód	low
+dobálózik	cselekszenek/cselekednek	12200	dobálóz	low
+csajozik	cselekszenek/cselekednek	8156	čajoz	low
+viaskodik	cselekszenek/cselekednek	10940	viaškod	low
+keseredik	cselekszenek/cselekednek	22200	kešered	low
+puskázik	cselekszenek/cselekednek	4497	puškáz	low
+tétovázik	cselekszenek/cselekednek	2262	tétováz	low
+erősködik	cselekszenek/cselekednek	7991	erőšköd	low
+vetődik	cselekszenek/cselekednek	46715	vetőd	low
+mozizik	cselekszenek/cselekednek	2159	moziz	low
+zuhanyozik	cselekszenek/cselekednek	20011	zuhaṉoz	low
+éjszakázik	cselekszenek/cselekednek	12361	éjsakáz	low
+ásítozik	cselekszenek/cselekednek	3555	ášítoz	low
+bűzlik	cselekszenek/cselekednek	12877	bűzl	low
+kapálózik	cselekszenek/cselekednek	6110	kapálóz	low
+kártyázik	cselekszenek/cselekednek	10854	kárṯáz	low
+ékeskedik	cselekszenek/cselekednek	5504	ékešked	low
+hazaesik	cselekszenek/cselekednek	1395	hazaeš	low
+hősködik	cselekszenek/cselekednek	1727	hőšköd	low
+grillezik	cselekszenek/cselekednek	5885	grillez	low
+jeleskedik	cselekszenek/cselekednek	26740	jelešked	low
+fulladozik	cselekszenek/cselekednek	4240	fulladoz	low
+futkározik	cselekszenek/cselekednek	9294	futkároz	low
+kopik	cselekszenek/cselekednek	45804	kop	low
+mosdik	cselekszenek/cselekednek	3663	mošd	high
+babázik	cselekszenek/cselekednek	5288	babáz	low
+örömködik	cselekszenek/cselekednek	4042	örömköd	low
+jóllakik	cselekszenek/cselekednek	27189	jóllak	low
+művelődik	cselekszenek/cselekednek	4170	művelőd	low
+töltődik	cselekszenek/cselekednek	39903	töltőd	low
+bővelkedik	cselekszenek/cselekednek	38446	bővelked	low
+pecázik	cselekszenek/cselekednek	5981	pecáz	low
+vetkőzik	cselekszenek/cselekednek	24148	vetkőz	low
+ocsúdik	cselekszenek/cselekednek	4854	očúd	low
+kétkedik	cselekszenek/cselekednek	9459	kétked	low
+fogadkozik	cselekszenek/cselekednek	8046	fogadkoz	low
+tegeződik	cselekszenek/cselekednek	6254	tegeződ	low
+titkolózik	cselekszenek/cselekednek	2873	titkolóz	low
+vesződik	cselekszenek/cselekednek	11312	vesőd	low
+kosarazik	cselekszenek/cselekednek	7721	košaraz	low
+cipekedik	cselekszenek/cselekednek	4233	cipeked	low
+kekeckedik	cselekszenek/cselekednek	3302	kekecked	low
+csuklik	cselekszenek/cselekednek	6520	čukl	high
+nedvesedik	cselekszenek/cselekednek	3755	nedvešed	low
+törölközik	cselekszenek/cselekednek	1292	törölköz	low
+ügyeskedik	cselekszenek/cselekednek	11033	üḏešked	low
+búvik	cselekszenek/cselekednek	2269	búv	low
+haldoklik	cselekszenek/cselekednek	21831	haldokl	high
+házasodik	cselekszenek/cselekednek	48749	házašod	low
+táborozik	cselekszenek/cselekednek	19944	táboroz	low
+pipázik	cselekszenek/cselekednek	3608	pipáz	low
+sikítozik	cselekszenek/cselekednek	3535	šikítoz	low
+élvezkedik	cselekszenek/cselekednek	4178	élvezked	low
+borsozik	cselekszenek/cselekednek	15047	boršoz	low
+csókolózik	cselekszenek/cselekednek	18284	čókolóz	low
+falatozik	cselekszenek/cselekednek	15786	falatoz	low
+kockázik	cselekszenek/cselekednek	31690	kockáz	low
+kérkedik	cselekszenek/cselekednek	10714	kérked	low
+toszik	cselekszenek/cselekednek	1131	tos	low
+tépelődik	cselekszenek/cselekednek	5780	tépelőd	low
+győződik	cselekszenek/cselekednek	138711	ḏőződ	low
+kajakozik	cselekszenek/cselekednek	4622	kajakoz	low
+lázadozik	cselekszenek/cselekednek	5616	lázadoz	low
+telepszik	cselekszenek/cselekednek	93057	teleps	high
+temetkezik	cselekszenek/cselekednek	8649	temetkez	low
+búvárkodik	cselekszenek/cselekednek	10030	búvárkod	low
+fiatalodik	cselekszenek/cselekednek	6846	fiatalod	low
+iratkozik	cselekszenek/cselekednek	135875	iratkoz	low
+ordítozik	cselekszenek/cselekednek	7808	ordítoz	low
+fénylik	cselekszenek/cselekednek	21630	féṉl	high
+késlekedik	cselekszenek/cselekednek	18894	kéšleked	low
+vágódik	cselekszenek/cselekednek	11694	vágód	low
+gyanakszik	cselekszenek/cselekednek	68227	ḏanaks	low
+esedezik	cselekszenek/cselekednek	9804	ešedez	low
+kotlik	cselekszenek/cselekednek	3286	kotl	high
+finomkodik	cselekszenek/cselekednek	5135	finomkod	low
+cikázik	cselekszenek/cselekednek	17022	cikáz	low
+kívántatik	cselekszenek/cselekednek	1400	kívántat	low
+formálódik	cselekszenek/cselekednek	36394	formálód	low
+kocsikázik	cselekszenek/cselekednek	5753	kočikáz	low
+veszekszik	cselekszenek/cselekednek	39570	veseks	low
+bűnhődik	cselekszenek/cselekednek	9071	bűnhőd	low
+hatódik	cselekszenek/cselekednek	3690	hatód	low
+kászálódik	cselekszenek/cselekednek	2552	kásálód	low
+futamodik	cselekszenek/cselekednek	3227	futamod	low
+hálálkodik	cselekszenek/cselekednek	5921	hálálkod	low
+látszódik	cselekszenek/cselekednek	61395	látsód	low
+fésülködik	cselekszenek/cselekednek	2935	féšülköd	low
+epekedik	cselekszenek/cselekednek	5130	epeked	low
+húzódozik	cselekszenek/cselekednek	2929	húzódoz	low
+madarászik	cselekszenek/cselekednek	1060	madarás	low
+taxizik	cselekszenek/cselekednek	1888	taksiz	low
+szaglászik	cselekszenek/cselekednek	767	saglás	low
+tengődik	cselekszenek/cselekednek	10351	tengőd	low
+álmélkodik	cselekszenek/cselekednek	5761	álmélkod	low
+alszik	cselekszenek/cselekednek	668614	als	low
+pedálozik	cselekszenek/cselekednek	2131	pedáloz	low
+áramlik	cselekszenek/cselekednek	85538	áraml	high
+sikoltozik	cselekszenek/cselekednek	8245	šikoltoz	low
+szökik	cselekszenek/cselekednek	64890	sök	low
+tápozik	cselekszenek/cselekednek	346	tápoz	low
+pásztázik	cselekszenek/cselekednek	1268	pástáz	low
+szegődik	cselekszenek/cselekednek	26862	segőd	low
+vizesedik	cselekszenek/cselekednek	3171	vizešed	low
+korosodik	cselekszenek/cselekednek	1301	korošod	low
+utálkozik	cselekszenek/cselekednek	2391	utálkoz	low
+vonaglik	cselekszenek/cselekednek	6602	vonagl	high
+hangzik	cselekszenek/cselekednek	530652	hangz	high
+olvadozik	cselekszenek/cselekednek	3573	olvadoz	low
+képződik	cselekszenek/cselekednek	75875	képződ	low
+ugrándozik	cselekszenek/cselekednek	8866	ugrándoz	low
+örömködik	cselekszenek/cselekednek	4042	örömköd	low
+hazaugrik	cselekszenek/cselekednek	1236	hazaugr	high
+sínylődik	cselekszenek/cselekednek	4915	šíṉlőd	low
+telítődik	cselekszenek/cselekednek	13702	telítőd	low
+cselezik	cselekszenek/cselekednek	1793	čelez	low
+hintázik	cselekszenek/cselekednek	9317	hintáz	low
+ajánlkozik	cselekszenek/cselekednek	4605	ajánlkoz	low
+angolozik	cselekszenek/cselekednek	1000	angoloz	low
+csalizik	cselekszenek/cselekednek	1630	čaliz	low
+rakodik	cselekszenek/cselekednek	7911	rakod	low
+élősködik	cselekszenek/cselekednek	9346	élőšköd	low
+búslakodik	cselekszenek/cselekednek	8087	búšlakod	low
+fukarkodik	cselekszenek/cselekednek	8454	fukarkod	low
+sztorizik	cselekszenek/cselekednek	1497	storiz	low
+kerekedik	cselekszenek/cselekednek	69864	kereked	low
+kémkedik	cselekszenek/cselekednek	9300	kémked	low
+tempózik	cselekszenek/cselekednek	2816	tempóz	low
+hokizik	cselekszenek/cselekednek	1800	hokiz	low
+sütkérezik	cselekszenek/cselekednek	7654	šütkérez	low
+torlik	cselekszenek/cselekednek	899	torl	high
+gyarapszik	cselekszenek/cselekednek	86849	ḏaraps	low
+mozgolódik	cselekszenek/cselekednek	6963	mozgolód	low
+tanyázik	cselekszenek/cselekednek	20309	taṉáz	low
+izmosodik	cselekszenek/cselekednek	4740	izmošod	low
+könnyezik	cselekszenek/cselekednek	3047	köṉṉez	low
+hányódik	cselekszenek/cselekednek	3101	háṉód	low
+nyomdázik	cselekszenek/cselekednek	1852	ṉomdáz	low
+telítődik	cselekszenek/cselekednek	13702	telítőd	low
+veselkedik	cselekszenek/cselekednek	2295	vešelked	low
+okosodik	cselekszenek/cselekednek	6651	okošod	low
+sopánkodik	cselekszenek/cselekednek	6686	šopánkod	low
+takarodik	cselekszenek/cselekednek	16356	takarod	low
+vádaskodik	cselekszenek/cselekednek	5755	vádaškod	low
+közösködik	cselekszenek/cselekednek	2915	közöšköd	low
+bomlik	cselekszenek/cselekednek	48249	boml	high
+dudorászik	cselekszenek/cselekednek	3096	dudorás	low
+harangozik	cselekszenek/cselekednek	13662	harangoz	low
+pironkodik	cselekszenek/cselekednek	4029	pironkod	low
+tenyészik	cselekszenek/cselekednek	8988	teṉés	low
+tükröződik	cselekszenek/cselekednek	50822	tükröződ	low
+egyezkedik	cselekszenek/cselekednek	9405	eḏezked	low
+faggatózik	cselekszenek/cselekednek	1750	faggatóz	low
+hahotázik	cselekszenek/cselekednek	3528	hahotáz	low
+keményedik	cselekszenek/cselekednek	8028	keméṉed	low
+pacsizik	cselekszenek/cselekednek	1963	pačiz	low
+évődik	cselekszenek/cselekednek	2007	évőd	low
+gyötrődik	cselekszenek/cselekednek	7873	ḏötrőd	low
+tamáskodik	cselekszenek/cselekednek	788	tamáškod	low
+vedlik	cselekszenek/cselekednek	5893	vedl	high
+furikázik	cselekszenek/cselekednek	5701	furikáz	low
+gazdagodik	cselekszenek/cselekednek	134939	gazdagod	low
+bábozik	cselekszenek/cselekednek	1445	báboz	low
+fagyizik	cselekszenek/cselekednek	6324	faḏiz	low
+szökik	cselekszenek/cselekednek	64890	sök	low
+erősködik	cselekszenek/cselekednek	7991	erőšköd	low
+háborúzik	cselekszenek/cselekednek	11765	háborúz	low
+fésülködik	cselekszenek/cselekednek	2935	féšülköd	low
+hullámzik	cselekszenek/cselekednek	19472	hullámz	high
+labdázik	cselekszenek/cselekednek	7296	labdáz	low
+ámuldozik	cselekszenek/cselekednek	3333	ámuldoz	low
+íjászkodik	cselekszenek/cselekednek	2052	íjáskod	low
+cigányozik	cselekszenek/cselekednek	1491	cigáṉoz	low
+iramodik	cselekszenek/cselekednek	4404	iramod	low
+rimánkodik	cselekszenek/cselekednek	4130	rimánkod	low
+taktikázik	cselekszenek/cselekednek	10243	taktikáz	low
+vásik	cselekszenek/cselekednek	1244	váš	low
+álmosodik	cselekszenek/cselekednek	1357	álmošod	low
+győződik	cselekszenek/cselekednek	138711	ḏőződ	low
+szőrösödik	cselekszenek/cselekednek	950	sőröšöd	low
+cselekszik	cselekszenek/cselekednek	280658	čeleks	low
+nyáladzik	cselekszenek/cselekednek	2158	ṉáladz	high
+növekszik	cselekszenek/cselekednek	520866	növeks	low
+zsírosodik	cselekszenek/cselekednek	5118	žírošod	low
+diplomázik	cselekszenek/cselekednek	27815	diplomáz	low
+fuvolázik	cselekszenek/cselekednek	1280	fuvoláz	low
+kamerázik	cselekszenek/cselekednek	3140	kameráz	low
+tegeződik	cselekszenek/cselekednek	6254	tegeződ	low
+telik	cselekszenek/cselekednek	654760	tel	low
+verekszik	cselekszenek/cselekednek	32024	vereks	low
+bujdosik	cselekszenek/cselekednek	4942	bujdoš	low
+ollózik	cselekszenek/cselekednek	3460	ollóz	low
+szellőzik	cselekszenek/cselekednek	22012	sellőz	low
+vágtázik	cselekszenek/cselekednek	4820	vágtáz	low
+zavarodik	cselekszenek/cselekednek	11253	zavarod	low
+őrködik	cselekszenek/cselekednek	18581	őrköd	low
+edződik	cselekszenek/cselekednek	7138	edződ	low
+nevelkedik	cselekszenek/cselekednek	46282	nevelked	low
+vörösödik	cselekszenek/cselekednek	2652	vöröšöd	low
+állapodik	cselekszenek/cselekednek	73318	állapod	low
+hanyatlik	cselekszenek/cselekednek	15385	haṉatl	high
+vetkőzik	cselekszenek/cselekednek	24148	vetkőz	low
+végződik	cselekszenek/cselekednek	106528	végződ	low
+alázkodik	cselekszenek/cselekednek	1842	alázkod	low
+vigyorodik	cselekszenek/cselekednek	2118	viḏorod	low
+csetlik	cselekszenek/cselekednek	386	četl	high
+fanyalodik	cselekszenek/cselekednek	2114	faṉalod	low
+mobilozik	cselekszenek/cselekednek	1867	mobiloz	low
+virágzik	cselekszenek/cselekednek	83044	virágz	high
+zajlik	cselekszenek/cselekednek	746813	zajl	high
+kacarászik	cselekszenek/cselekednek	1946	kacarás	low
+merevedik	cselekszenek/cselekednek	5585	mereved	low
+csúfolódik	cselekszenek/cselekednek	2254	čúfolód	low
+gabalyodik	cselekszenek/cselekednek	5752	gabajod	low
+keletkezik	cselekszenek/cselekednek	429200	keletkez	low
+romlik	cselekszenek/cselekednek	195968	roml	high
+szobrozik	cselekszenek/cselekednek	1224	sobroz	low
+viharzik	cselekszenek/cselekednek	2411	viharz	high
+vonatkozik	cselekszenek/cselekednek	740326	vonatkoz	low
+cidrizik	cselekszenek/cselekednek	413	cidriz	low
+hitelezik	cselekszenek/cselekednek	2785	hitelez	low
+mókázik	cselekszenek/cselekednek	4444	mókáz	low
+tiplizik	cselekszenek/cselekednek	412	tipliz	low
+baszakodik	cselekszenek/cselekednek	1540	basakod	low
+idősödik	cselekszenek/cselekednek	4870	időšöd	low
+kaparászik	cselekszenek/cselekednek	2081	kaparás	low
+költekezik	cselekszenek/cselekednek	6117	költekez	low
+malmozik	cselekszenek/cselekednek	969	malmoz	low
+rejtőzik	cselekszenek/cselekednek	58213	rejtőz	low
+bíráskodik	cselekszenek/cselekednek	3616	bíráškod	low
+kapálózik	cselekszenek/cselekednek	6110	kapálóz	low
+karatézik	cselekszenek/cselekednek	2810	karatéz	low
+pasizik	cselekszenek/cselekednek	761	pašiz	low
+pereskedik	cselekszenek/cselekednek	7520	perešked	low
+csellózik	cselekszenek/cselekednek	919	čellóz	low
+nehezedik	cselekszenek/cselekednek	38547	nehezed	low
+perlekedik	cselekszenek/cselekednek	1989	perleked	low
+rejlik	cselekszenek/cselekednek	197559	rejl	high
+szánakozik	cselekszenek/cselekednek	3014	sánakoz	low
+vizezik	cselekszenek/cselekednek	734	vizez	low
+dumcsizik	cselekszenek/cselekednek	2150	dumčiz	low
+kuporodik	cselekszenek/cselekednek	3941	kuporod	low
+szolizik	cselekszenek/cselekednek	696	soliz	low
+sínylődik	cselekszenek/cselekednek	4915	šíṉlőd	low
+teljesedik	cselekszenek/cselekednek	38091	telješed	low
+tolakszik	cselekszenek/cselekednek	10114	tolaks	low
+tudódik	cselekszenek/cselekednek	1403	tudód	low
+tündöklik	cselekszenek/cselekednek	3078	tündökl	low
+vörösödik	cselekszenek/cselekednek	2652	vöröšöd	low
+ölelkezik	cselekszenek/cselekednek	6267	ölelkez	low
+bandázik	cselekszenek/cselekednek	3279	bandáz	low
+melegedik	cselekszenek/cselekednek	35425	meleged	low
+vacsizik	cselekszenek/cselekednek	1096	vačiz	low
+botozik	cselekszenek/cselekednek	445	botoz	low
+döglődik	cselekszenek/cselekednek	2107	döglőd	low
+magozik	cselekszenek/cselekednek	1857	magoz	low
+raboskodik	cselekszenek/cselekednek	8171	raboškod	low
+szaglik	cselekszenek/cselekednek	1207	sagl	high
+ólálkodik	cselekszenek/cselekednek	6185	ólálkod	low
+magázódik	cselekszenek/cselekednek	1546	magázód	low
+parádézik	cselekszenek/cselekednek	8833	parádéz	low
+részesedik	cselekszenek/cselekednek	24890	résešed	low
+golfozik	cselekszenek/cselekednek	1249	golfoz	low
+gyöngyözik	cselekszenek/cselekednek	7379	ḏönḏöz	low
+heveredik	cselekszenek/cselekednek	2283	hevered	low
+lúdbőrzik	cselekszenek/cselekednek	416	lúdbőrz	low
+művelődik	cselekszenek/cselekednek	4170	művelőd	low
+pompázik	cselekszenek/cselekednek	35198	pompáz	low
+tollasozik	cselekszenek/cselekednek	1732	tollašoz	low
+aláíratik	cselekszenek/cselekednek	6661	aláírat	low
+csavarodik	cselekszenek/cselekednek	9265	čavarod	low
+furakszik	cselekszenek/cselekednek	4959	furaks	high
+gyarapszik	cselekszenek/cselekednek	86849	ḏaraps	high
+győzik	cselekszenek/cselekednek	3094	ḏőz	low
+horgászik	cselekszenek/cselekednek	54507	horgás	low
+kezdődik	cselekszenek/cselekednek	1314350	kezdőd	low
+szőrösödik	cselekszenek/cselekednek	950	sőröšöd	low
+élcelődik	cselekszenek/cselekednek	4503	élcelőd	low
+bábáskodik	cselekszenek/cselekednek	5536	bábáškod	low
+bűnhődik	cselekszenek/cselekednek	9071	bűnhőd	low
+hivalkodik	cselekszenek/cselekednek	3478	hivalkod	low
+roskadozik	cselekszenek/cselekednek	11094	roškadoz	low
+spirálozik	cselekszenek/cselekednek	560	špiráloz	low
+ötlik	cselekszenek/cselekednek	14667	ötl	low
+balettozik	cselekszenek/cselekednek	1326	balettoz	low
+bányászik	cselekszenek/cselekednek	16534	báṉás	low
+fogózik	cselekszenek/cselekednek	1173	fogóz	low
+nyalizik	cselekszenek/cselekednek	625	ṉaliz	low
+szakosodik	cselekszenek/cselekednek	15303	sakošod	low
+törölközik	cselekszenek/cselekednek	1292	törölköz	low
+ökörködik	cselekszenek/cselekednek	1755	ökörköd	low
+buzizik	cselekszenek/cselekednek	1052	buziz	low
+egyik	cselekszenek/cselekednek	9067194	eḏ	low
+karikázik	cselekszenek/cselekednek	3124	karikáz	low
+sáfárkodik	cselekszenek/cselekednek	4988	šáfárkod	low
+akaszkodik	cselekszenek/cselekednek	2721	akaskod	low
+autókázik	cselekszenek/cselekednek	2943	autókáz	low
+izmozik	cselekszenek/cselekednek	772	izmoz	low
+komcsizik	cselekszenek/cselekednek	501	komčiz	low
+kérődzik	cselekszenek/cselekednek	1448	kérődz	low
+piacozik	cselekszenek/cselekednek	609	piacoz	low
+rejtőzik	cselekszenek/cselekednek	58213	rejtőz	low
+szundizik	cselekszenek/cselekednek	399	sundiz	low
+zúgolódik	cselekszenek/cselekednek	6221	zúgolód	low
+árulkodik	cselekszenek/cselekednek	62655	árulkod	low
+alkudik	cselekszenek/cselekednek	17918	alkud	low
+dicsekszik	cselekszenek/cselekednek	46395	dičeks	low
+döglődik	cselekszenek/cselekednek	2107	döglőd	low
+szopizik	cselekszenek/cselekednek	10385	sopiz	low
+dogozik	cselekszenek/cselekednek	2272	dogoz	low
+furakszik	cselekszenek/cselekednek	4959	furaks	low
+hámlik	cselekszenek/cselekednek	4793	háml	high
+súlyozik	cselekszenek/cselekednek	750	šújoz	low
+tántorodik	cselekszenek/cselekednek	2273	tántorod	low
+törülközik	cselekszenek/cselekednek	745	törülköz	low
+aszalódik	cselekszenek/cselekednek	2207	asalód	low
+bontakozik	cselekszenek/cselekednek	76347	bontakoz	low
+bratyizik	cselekszenek/cselekednek	792	braṯiz	low
+gombászik	cselekszenek/cselekednek	1638	gombás	low
+hajhászik	cselekszenek/cselekednek	821	hajhás	low
+józanodik	cselekszenek/cselekednek	1799	józanod	low
+pólózik	cselekszenek/cselekednek	842	pólóz	low
+randevúzik	cselekszenek/cselekednek	5799	randevúz	low
+rohamozik	cselekszenek/cselekednek	1015	rohamoz	low
+vakarózik	cselekszenek/cselekednek	3785	vakaróz	low
+ágaskodik	cselekszenek/cselekednek	5740	ágaškod	low
+ejtőzik	cselekszenek/cselekednek	1123	ejtőz	low
+furulyázik	cselekszenek/cselekednek	1730	furujáz	low
+kavarodik	cselekszenek/cselekednek	2978	kavarod	low
+kucorodik	cselekszenek/cselekednek	1517	kucorod	low
+kérődzik	cselekszenek/cselekednek	1448	kérődz	low
+púpozik	cselekszenek/cselekednek	561	púpoz	low
+rúzsozik	cselekszenek/cselekednek	474	rúžoz	low
+savasodik	cselekszenek/cselekednek	1150	šavašod	low
+szaporodik	cselekszenek/cselekednek	87868	saporod	low
+szondázik	cselekszenek/cselekednek	711	sondáz	low
+szóbelizik	cselekszenek/cselekednek	942	sóbeliz	low
+őrizkedik	cselekszenek/cselekednek	2033	őrizked	low
+acsarkodik	cselekszenek/cselekednek	2934	ačarkod	low
+adódik	cselekszenek/cselekednek	313753	adód	low
+bakizik	cselekszenek/cselekednek	1995	bakiz	low
+drótozik	cselekszenek/cselekednek	619	drótoz	low
+hánykódik	cselekszenek/cselekednek	1146	háṉkód	low
+pitizik	cselekszenek/cselekednek	757	pitiz	low
+remizik	cselekszenek/cselekednek	6394	remiz	low
+szomorodik	cselekszenek/cselekednek	2368	somorod	low
+öregedik	cselekszenek/cselekednek	15686	öreged	low
+morajlik	cselekszenek/cselekednek	2232	morajl	high
+ripakodik	cselekszenek/cselekednek	1271	ripakod	low
+zsugorodik	cselekszenek/cselekednek	28285	žugorod	low
+élcelődik	cselekszenek/cselekednek	4503	élcelőd	low
+emlékszik	cselekszenek/cselekednek	582875	emléks	low
+enyészik	cselekszenek/cselekednek	3553	eṉés	low
+szik	cselekszenek/cselekednek	11264	s	low
+veszkődik	cselekszenek/cselekednek	353	veskőd	low
+vitézkedik	cselekszenek/cselekednek	4493	vitézked	low
+zománcozik	cselekszenek/cselekednek	994	zománcoz	low
+örvénylik	cselekszenek/cselekednek	4181	örvéṉl	high
+őrzik	cselekszenek/cselekednek	1093	őrz	low
+bogozik	cselekszenek/cselekednek	526	bogoz	low
+bunkózik	cselekszenek/cselekednek	1031	bunkóz	low
+burkolózik	cselekszenek/cselekednek	13652	burkolóz	low
+cumizik	cselekszenek/cselekednek	1472	cumiz	low
+hazavágyik	cselekszenek/cselekednek	902	hazaváḏ	low
+magasodik	cselekszenek/cselekednek	22549	magašod	low
+páváskodik	cselekszenek/cselekednek	1096	páváškod	low
+totojázik	cselekszenek/cselekednek	825	totojáz	low
+vetkezik	cselekszenek/cselekednek	11392	vetkez	low
+ömlik	cselekszenek/cselekednek	51237	öml	low
+örvendezik	cselekszenek/cselekednek	1360	örvendez	low
+emlékszik	cselekszenek/cselekednek	582875	emléks	low
+homokozik	cselekszenek/cselekednek	2536	homokoz	low
+lázasodik	cselekszenek/cselekednek	964	lázašod	low
+oszlik	cselekszenek/cselekednek	77631	osl	high
+partizik	cselekszenek/cselekednek	1548	partiz	low
+pukizik	cselekszenek/cselekednek	966	pukiz	low
+rökönyödik	cselekszenek/cselekednek	1054	rököṉöd	low
+szánkózik	cselekszenek/cselekednek	5609	sánkóz	low
+évődik	cselekszenek/cselekednek	2007	évőd	low
+akadozik	cselekszenek/cselekednek	26700	akadoz	low
+eszik	cselekszenek/cselekednek	1320365	es	low
+főzik	cselekszenek/cselekednek	6098	főz	low
+korlatozik	cselekszenek/cselekednek	2493	korlatoz	low
+ládázik	cselekszenek/cselekednek	859	ládáz	low
+párbajozik	cselekszenek/cselekednek	3357	párbajoz	low
+visítozik	cselekszenek/cselekednek	1924	višítoz	low
+bumlizik	cselekszenek/cselekednek	381	bumliz	low
+centizik	cselekszenek/cselekednek	511	centiz	low
+dobálózik	cselekszenek/cselekednek	12200	dobálóz	low
+gyökerezik	cselekszenek/cselekednek	34269	ḏökerez	low
+hősködik	cselekszenek/cselekednek	1727	hőšköd	low
+kalózkodik	cselekszenek/cselekednek	1080	kalózkod	low
+kocsizik	cselekszenek/cselekednek	647	kočiz	low
+kunyizik	cselekszenek/cselekednek	393	kuṉiz	low
+lármázik	cselekszenek/cselekednek	2298	lármáz	low
+menekszik	cselekszenek/cselekednek	1116	meneks	high
+sütizik	cselekszenek/cselekednek	1163	šütiz	low
+ütődik	cselekszenek/cselekednek	5543	ütőd	low
+csíkozik	cselekszenek/cselekednek	669	číkoz	low
+fonódik	cselekszenek/cselekednek	18743	fonód	low
+ijedezik	cselekszenek/cselekednek	1072	ijedez	low
+kajánkodik	cselekszenek/cselekednek	917	kajánkod	low
+keringőzik	cselekszenek/cselekednek	2256	keringőz	low
+komolyodik	cselekszenek/cselekednek	3885	komojod	low
+majomkodik	cselekszenek/cselekednek	559	majomkod	low
+mutyizik	cselekszenek/cselekednek	1087	muṯiz	low
+pipiskedik	cselekszenek/cselekednek	1067	pipišked	low
+sorjázik	cselekszenek/cselekednek	504	šorjáz	low
+tekeredik	cselekszenek/cselekednek	8524	tekered	low
+uzsonnázik	cselekszenek/cselekednek	2222	užonnáz	low
+verődik	cselekszenek/cselekednek	17097	verőd	low
+ökörködik	cselekszenek/cselekednek	1755	ökörköd	low
+űzik	cselekszenek/cselekednek	715	űz	low
+burkolózik	cselekszenek/cselekednek	13652	burkolóz	low
+bálozik	cselekszenek/cselekednek	951	báloz	low
+bátorodik	cselekszenek/cselekednek	1398	bátorod	low
+fűzik	cselekszenek/cselekednek	861	fűz	low
+galoppozik	cselekszenek/cselekednek	721	galoppoz	low
+játszódik	cselekszenek/cselekednek	142955	játsód	low
+szarakodik	cselekszenek/cselekednek	5699	sarakod	low
+szivarozik	cselekszenek/cselekednek	1165	sivaroz	low
+ultizik	cselekszenek/cselekednek	1092	ultiz	low
+alibizik	cselekszenek/cselekednek	1099	alibiz	low
+aláfekszik	cselekszenek/cselekednek	516	aláfeks	high
+dühödik	cselekszenek/cselekednek	804	dühöd	low
+edzősködik	cselekszenek/cselekednek	4862	edzőšköd	low
+fekszik	cselekszenek/cselekednek	604506	feks	low
+gokartozik	cselekszenek/cselekednek	1768	gokartoz	low
+gumizik	cselekszenek/cselekednek	371	gumiz	low
+hajókázik	cselekszenek/cselekednek	4918	hajókáz	low
+járőrözik	cselekszenek/cselekednek	8814	járőröz	low
+működik	cselekszenek/cselekednek	2488856	működ	low
+nyomakodik	cselekszenek/cselekednek	1539	ṉomakod	low
+nyugszik	cselekszenek/cselekednek	200200	ṉugs	low
+rémüldözik	cselekszenek/cselekednek	1401	rémüldöz	low
+tajtékzik	cselekszenek/cselekednek	1903	tajtékz	high
+vélekedik	cselekszenek/cselekednek	123148	véleked	low
+akarózik	cselekszenek/cselekednek	9063	akaróz	low
+feketézik	cselekszenek/cselekednek	660	feketéz	low
+félreugrik	cselekszenek/cselekednek	1413	félreugr	high
+italozik	cselekszenek/cselekednek	3410	italoz	low
+kotródik	cselekszenek/cselekednek	1221	kotród	low
+mindegyik	cselekszenek/cselekednek	891169	mindeḏ	low
+parázslik	cselekszenek/cselekednek	2744	parážl	high
+sápítozik	cselekszenek/cselekednek	1286	šápítoz	low
+telezik	cselekszenek/cselekednek	1517	telez	low
+tusakodik	cselekszenek/cselekednek	2786	tušakod	low
+vetélkedik	cselekszenek/cselekednek	10217	vetélked	low
+vidámkodik	cselekszenek/cselekednek	567	vidámkod	low
+ájuldozik	cselekszenek/cselekednek	1360	ájuldoz	low
+citerázik	cselekszenek/cselekednek	1464	citeráz	low
+csónakázik	cselekszenek/cselekednek	6485	čónakáz	low
+csúszdázik	cselekszenek/cselekednek	2655	čúsdáz	low
+dühösködik	cselekszenek/cselekednek	411	dühöšköd	low
+gyülekezik	cselekszenek/cselekednek	44039	ḏülekez	low
+hajladozik	cselekszenek/cselekednek	2936	hajladoz	low
+halódik	cselekszenek/cselekednek	1397	halód	low
+huzakodik	cselekszenek/cselekednek	1262	huzakod	low
+kezdődik	cselekszenek/cselekednek	1314350	kezdőd	low
+kárhozik	cselekszenek/cselekednek	4546	kárhoz	low
+rugdalózik	cselekszenek/cselekednek	1324	rugdalóz	low
+sürgölődik	cselekszenek/cselekednek	2392	šürgölőd	low
+tökölődik	cselekszenek/cselekednek	421	tökölőd	low
+vetekszik	cselekszenek/cselekednek	28843	veteks	high
+vihorászik	cselekszenek/cselekednek	831	vihorás	low
+áskálódik	cselekszenek/cselekednek	1964	áškálód	low
+anyáskodik	cselekszenek/cselekednek	1025	aṉáškod	low
+büfizik	cselekszenek/cselekednek	1700	büfiz	low
+edződik	cselekszenek/cselekednek	7138	edződ	low
+esküszik	cselekszenek/cselekednek	82803	ešküs	low
+fűződik	cselekszenek/cselekednek	121731	fűződ	low
+golyózik	cselekszenek/cselekednek	1279	gojóz	low
+haknizik	cselekszenek/cselekednek	1370	hakniz	low
+időutazik	cselekszenek/cselekednek	625	időutaz	low
+kenődik	cselekszenek/cselekednek	4832	kenőd	low
+lopózik	cselekszenek/cselekednek	2918	lopóz	low
+nyalakodik	cselekszenek/cselekednek	1148	ṉalakod	low
+pirosodik	cselekszenek/cselekednek	2743	pirošod	low
+példálózik	cselekszenek/cselekednek	8093	példálóz	low
+rendeződik	cselekszenek/cselekednek	54166	rendeződ	low
+sivalkodik	cselekszenek/cselekednek	1974	šivalkod	low
+sorakozik	cselekszenek/cselekednek	94911	šorakoz	low
+szikrázik	cselekszenek/cselekednek	11894	sikráz	low
+takarózik	cselekszenek/cselekednek	3750	takaróz	low
+tolódik	cselekszenek/cselekednek	33844	tolód	low
+tárulkozik	cselekszenek/cselekednek	2504	tárulkoz	low
+tökölődik	cselekszenek/cselekednek	421	tökölőd	low
+ébredezik	cselekszenek/cselekednek	3598	ébredez	low
+bőgőzik	cselekszenek/cselekednek	1398	bőgőz	low
+divatozik	cselekszenek/cselekednek	1234	divatoz	low
+férkőzik	cselekszenek/cselekednek	18255	férkőz	low
+gyűlik	cselekszenek/cselekednek	173964	ḏűl	low
+havazik	cselekszenek/cselekednek	16393	havaz	low
+kereskedik	cselekszenek/cselekednek	48423	kerešked	low
+korongozik	cselekszenek/cselekednek	721	korongoz	low
+marakodik	cselekszenek/cselekednek	3621	marakod	low
+piroslik	cselekszenek/cselekednek	2621	pirošl	high
+pityeredik	cselekszenek/cselekednek	469	piṯered	low
+porzik	cselekszenek/cselekednek	4213	porz	high
+vonódik	cselekszenek/cselekednek	2977	vonód	low
+végződik	cselekszenek/cselekednek	106528	végződ	low
+bántódik	cselekszenek/cselekednek	1216	bántód	low
+csömörlik	cselekszenek/cselekednek	539	čömörl	low
+fekszik	cselekszenek/cselekednek	604506	feks	low
+fűződik	cselekszenek/cselekednek	121731	fűződ	low
+gyürkőzik	cselekszenek/cselekednek	975	ḏürkőz	low
+hancúrozik	cselekszenek/cselekednek	4623	hancúroz	low
+haragszik	cselekszenek/cselekednek	129179	harags	low
+kergetőzik	cselekszenek/cselekednek	5058	kergetőz	low
+kergetőzik	cselekszenek/cselekednek	5058	kergetőz	low
+képződik	cselekszenek/cselekednek	75875	képződ	low
+lakmározik	cselekszenek/cselekednek	5103	lakmároz	low
+mulatozik	cselekszenek/cselekednek	3429	mulatoz	low
+nyomakodik	cselekszenek/cselekednek	1539	ṉomakod	low
+préselődik	cselekszenek/cselekednek	3193	préšelőd	low
+ralizik	cselekszenek/cselekednek	684	raliz	low
+szabódik	cselekszenek/cselekednek	925	sabód	low
+tanakodik	cselekszenek/cselekednek	16021	tanakod	low
+társasozik	cselekszenek/cselekednek	3392	táršašoz	low
+tünedezik	cselekszenek/cselekednek	1133	tünedez	low
+valamelyik	cselekszenek/cselekednek	663426	valamej	low
+vécézik	cselekszenek/cselekednek	722	vécéz	low
+éledezik	cselekszenek/cselekednek	4011	éledez	low
+öklendezik	cselekszenek/cselekednek	606	öklendez	low
+fényesedik	cselekszenek/cselekednek	2301	féṉešed	low
+halálozik	cselekszenek/cselekednek	868	haláloz	low
+iramlik	cselekszenek/cselekednek	847	iraml	high
+kamaszodik	cselekszenek/cselekednek	1964	kamasod	low
+káprázik	cselekszenek/cselekednek	7191	kápráz	low
+kínálkozik	cselekszenek/cselekednek	36868	kínálkoz	low
+kókadozik	cselekszenek/cselekednek	1303	kókadoz	low
+közösködik	cselekszenek/cselekednek	2915	közöšköd	low
+misézik	cselekszenek/cselekednek	1955	mišéz	low
+piknikezik	cselekszenek/cselekednek	7782	piknikez	low
+portyázik	cselekszenek/cselekednek	489	porṯáz	low
+párzik	cselekszenek/cselekednek	2316	párz	high
+szik	cselekszenek/cselekednek	11264	s	low
+szívódik	cselekszenek/cselekednek	38838	sívód	low
+tovatűnik	cselekszenek/cselekednek	3352	tovatűn	low
+törlődik	cselekszenek/cselekednek	35110	törlőd	low
+záródik	cselekszenek/cselekednek	24424	záród	low
+alábukik	cselekszenek/cselekednek	1223	alábuk	low
+cikkezik	cselekszenek/cselekednek	1063	cikkez	low
+csukázik	cselekszenek/cselekednek	393	čukáz	low
+dobódik	cselekszenek/cselekednek	1083	dobód	low
+emlékszik	cselekszenek/cselekednek	582875	emléks	low
+fehéredik	cselekszenek/cselekednek	3331	fehéred	low
+foszlik	cselekszenek/cselekednek	9690	fosl	high
+gecizik	cselekszenek/cselekednek	466	geciz	low
+kallódik	cselekszenek/cselekednek	5181	kallód	low
+klónozik	cselekszenek/cselekednek	647	klónoz	low
+korpásodik	cselekszenek/cselekednek	1009	korpášod	low
+korzózik	cselekszenek/cselekednek	1595	korzóz	low
+kunkorodik	cselekszenek/cselekednek	2038	kunkorod	low
+ladik	cselekszenek/cselekednek	10803	lad	low
+lopódzik	cselekszenek/cselekednek	2068	lopódz	high
+lökdösődik	cselekszenek/cselekednek	3007	lökdöšőd	low
+penészedik	cselekszenek/cselekednek	4601	penésed	low
+petárdázik	cselekszenek/cselekednek	805	petárdáz	low
+részegedik	cselekszenek/cselekednek	1562	réseged	low
+szaladozik	cselekszenek/cselekednek	540	saladoz	low
+tanárkodik	cselekszenek/cselekednek	474	tanárkod	low
+tévelyedik	cselekszenek/cselekednek	1157	tévejed	low
+tűzik	cselekszenek/cselekednek	1680	tűz	low
+verődik	cselekszenek/cselekednek	17097	verőd	low
+vigadozik	cselekszenek/cselekednek	1583	vigadoz	low
+ügyesedik	cselekszenek/cselekednek	2539	üḏešed	low
+akik	cselekszenek/cselekednek	1454	ak	low
+csikizik	cselekszenek/cselekednek	374	čikiz	low
+dörgölőzik	cselekszenek/cselekednek	2068	dörgölőz	low
+dühösködik	cselekszenek/cselekednek	411	dühöšköd	low
+esküdözik	cselekszenek/cselekednek	2908	ešküdöz	low
+feneklik	cselekszenek/cselekednek	753	fenekl	high
+fertőződik	cselekszenek/cselekednek	16236	fertőződ	low
+fúródik	cselekszenek/cselekednek	8002	fúród	low
+gyűrődik	cselekszenek/cselekednek	5974	ḏűrőd	low
+himbálózik	cselekszenek/cselekednek	3641	himbálóz	low
+igázik	cselekszenek/cselekednek	522	igáz	low
+ihletődik	cselekszenek/cselekednek	561	ihletőd	low
+komédiázik	cselekszenek/cselekednek	1168	komédiáz	low
+kupálódik	cselekszenek/cselekednek	393	kupálód	low
+küszködik	cselekszenek/cselekednek	65981	küsköd	low
+mik	cselekszenek/cselekednek	472	m	low
+pattogzik	cselekszenek/cselekednek	1049	pattogz	high
+pizzázik	cselekszenek/cselekednek	1650	pizzáz	low
+sipítozik	cselekszenek/cselekednek	625	šipítoz	low
+szalagozik	cselekszenek/cselekednek	527	salagoz	low
+tízóraizik	cselekszenek/cselekednek	619	tízóraiz	low
+tülekszik	cselekszenek/cselekednek	3917	tüleks	low
+tőzsdézik	cselekszenek/cselekednek	548	tőždéz	low
+ágazik	cselekszenek/cselekednek	11732	ágaz	low
+agyagozik	cselekszenek/cselekednek	815	aḏagoz	low
+algásodik	cselekszenek/cselekednek	733	algášod	low
+bobozik	cselekszenek/cselekednek	739	boboz	low
+cseperedik	cselekszenek/cselekednek	13071	čepered	low
+csókolózik	cselekszenek/cselekednek	18284	čókolóz	low
+dartsozik	cselekszenek/cselekednek	584	dartšoz	low
+esküdözik	cselekszenek/cselekednek	2908	ešküdöz	low
+esküszik	cselekszenek/cselekednek	82803	ešküs	low
+gombázik	cselekszenek/cselekednek	554	gombáz	low
+habarodik	cselekszenek/cselekednek	1327	habarod	low
+hengeredik	cselekszenek/cselekednek	413	hengered	low
+koktélozik	cselekszenek/cselekednek	1055	koktéloz	low
+kárpitozik	cselekszenek/cselekednek	1695	kárpitoz	low
+kérezkedik	cselekszenek/cselekednek	403	kérezked	low
+kígyózik	cselekszenek/cselekednek	9592	kíḏóz	low
+költözik	cselekszenek/cselekednek	393996	költöz	low
+meszesedik	cselekszenek/cselekednek	792	mesešed	low
+mérgesedik	cselekszenek/cselekednek	1700	mérgešed	low
+nedvedzik	cselekszenek/cselekednek	381	nedvedz	high
+nevelődik	cselekszenek/cselekednek	4747	nevelőd	low
+nullázódik	cselekszenek/cselekednek	1550	nullázód	low
+porosodik	cselekszenek/cselekednek	15132	porošod	low
+pukedlizik	cselekszenek/cselekednek	342	pukedliz	low
+pukkadozik	cselekszenek/cselekednek	544	pukkadoz	low
+rögbizik	cselekszenek/cselekednek	471	rögbiz	low
+tatozik	cselekszenek/cselekednek	678	tatoz	low
+tevődik	cselekszenek/cselekednek	46451	tevőd	low
+vastagodik	cselekszenek/cselekednek	4356	vaštagod	low
+villámlik	cselekszenek/cselekednek	4477	villáml	high
+viszik	cselekszenek/cselekednek	522	vis	low
+ágyazódik	cselekszenek/cselekednek	6589	áḏazód	low
+árválkodik	cselekszenek/cselekednek	7261	árválkod	low
+érkezik	cselekszenek/cselekednek	2258874	érkez	low
+ízlik	cselekszenek/cselekednek	62418	ízl	high
+öltözik	cselekszenek/cselekednek	113660	öltöz	low
+aljasodik	cselekszenek/cselekednek	367	aljašod	low
+balhézik	cselekszenek/cselekednek	3340	balhéz	low
+bikázik	cselekszenek/cselekednek	786	bikáz	low
+bridzsezik	cselekszenek/cselekednek	680	bridžez	low
+butáskodik	cselekszenek/cselekednek	585	butáškod	low
+cicizik	cselekszenek/cselekednek	988	ciciz	low
+cihelődik	cselekszenek/cselekednek	461	cihelőd	low
+danolászik	cselekszenek/cselekednek	407	danolás	low
+duhajkodik	cselekszenek/cselekednek	777	duhajkod	low
+dörgölőzik	cselekszenek/cselekednek	2068	dörgölőz	low
+emésztődik	cselekszenek/cselekednek	2749	eméstőd	low
+eszik	cselekszenek/cselekednek	1320365	es	low
+fejeződik	cselekszenek/cselekednek	91178	fejeződ	low
+férkőzik	cselekszenek/cselekednek	18255	férkőz	low
+fújódik	cselekszenek/cselekednek	1344	fújód	low
+gyöngyözik	cselekszenek/cselekednek	7379	ḏönḏöz	low
+hamarkodik	cselekszenek/cselekednek	1217	hamarkod	low
+illetődik	cselekszenek/cselekednek	1961	illetőd	low
+ingerkedik	cselekszenek/cselekednek	578	ingerked	low
+kacsázik	cselekszenek/cselekednek	1002	kačáz	low
+komorodik	cselekszenek/cselekednek	605	komorod	low
+mindenik	cselekszenek/cselekednek	14581	minden	low
+munkálódik	cselekszenek/cselekednek	443	munkálód	low
+osztódik	cselekszenek/cselekednek	9844	ostód	low
+préselődik	cselekszenek/cselekednek	3193	préšelőd	low
+párásodik	cselekszenek/cselekednek	2554	párášod	low
+rendeződik	cselekszenek/cselekednek	54166	rendeződ	low
+riadozik	cselekszenek/cselekednek	733	riadoz	low
+rémlik	cselekszenek/cselekednek	33703	réml	high
+szakadozik	cselekszenek/cselekednek	6941	sakadoz	low
+tagozódik	cselekszenek/cselekednek	7570	tagozód	low
+terelődik	cselekszenek/cselekednek	17644	terelőd	low
+trükközik	cselekszenek/cselekednek	6339	trükköz	low
+tudakozik	cselekszenek/cselekednek	468	tudakoz	low
+tülekszik	cselekszenek/cselekednek	3917	tüleks	high
+érdeklődik	cselekszenek/cselekednek	362506	érdeklőd	low
+érzik	cselekszenek/cselekednek	3268	érz	low
+íródik	cselekszenek/cselekednek	102757	íród	low
+özönlik	cselekszenek/cselekednek	18470	özönl	low
+üresedik	cselekszenek/cselekednek	2026	ürešed	low
+őrizik	cselekszenek/cselekednek	1060	őriz	low
+atyáskodik	cselekszenek/cselekednek	525	aṯáškod	low
+basáskodik	cselekszenek/cselekednek	547	bašáškod	low
+bucskázik	cselekszenek/cselekednek	706	bučkáz	low
+bundázik	cselekszenek/cselekednek	601	bundáz	low
+böngészik	cselekszenek/cselekednek	9773	böngés	low
+büdösödik	cselekszenek/cselekednek	1381	büdöšöd	low
+cipekedik	cselekszenek/cselekednek	4233	cipeked	low
+civakodik	cselekszenek/cselekednek	2972	civakod	low
+civódik	cselekszenek/cselekednek	735	civód	low
+domborodik	cselekszenek/cselekednek	6046	domborod	low
+fehérlik	cselekszenek/cselekednek	3574	fehérl	high
+fejeződik	cselekszenek/cselekednek	91178	fejeződ	low
+fintorodik	cselekszenek/cselekednek	412	fintorod	low
+foltosodik	cselekszenek/cselekednek	1089	foltošod	low
+forrósodik	cselekszenek/cselekednek	4210	forróšod	low
+gyűrődik	cselekszenek/cselekednek	5974	ḏűrőd	low
+gémberedik	cselekszenek/cselekednek	379	gémbered	low
+habzik	cselekszenek/cselekednek	11630	habz	high
+jólesik	cselekszenek/cselekednek	54288	jóleš	low
+kakaskodik	cselekszenek/cselekednek	935	kakaškod	low
+kettéválik	cselekszenek/cselekednek	8640	kettévál	low
+késik	cselekszenek/cselekednek	131308	kéš	low
+következik	cselekszenek/cselekednek	1151088	következ	low
+lökdösődik	cselekszenek/cselekednek	3007	lökdöšőd	low
+maradozik	cselekszenek/cselekednek	687	maradoz	low
+mosódik	cselekszenek/cselekednek	5652	mošód	low
+mérkőzik	cselekszenek/cselekednek	32614	mérkőz	low
+nyomódik	cselekszenek/cselekednek	5776	ṉomód	low
+némelyik	cselekszenek/cselekednek	114373	némej	low
+nőiesedik	cselekszenek/cselekednek	477	nőiešed	low
+pofozkodik	cselekszenek/cselekednek	1126	pofozkod	low
+porlik	cselekszenek/cselekednek	1648	porl	high
+ringatózik	cselekszenek/cselekednek	8674	ringatóz	low
+savanyodik	cselekszenek/cselekednek	1282	šavaṉod	low
+sejlik	cselekszenek/cselekednek	8848	šejl	high
+sikeredik	cselekszenek/cselekednek	71942	šikered	low
+sokasodik	cselekszenek/cselekednek	12473	šokašod	low
+sorolódik	cselekszenek/cselekednek	4731	šorolód	low
+soványodik	cselekszenek/cselekednek	1420	šováṉod	low
+tevődik	cselekszenek/cselekednek	46451	tevőd	low
+torlódik	cselekszenek/cselekednek	6519	torlód	low
+türemkedik	cselekszenek/cselekednek	1600	türemked	low
+viszonylik	cselekszenek/cselekednek	1087	visoṉl	high
+váltakozik	cselekszenek/cselekednek	35732	váltakoz	low
+végződik	cselekszenek/cselekednek	106528	végződ	low
+vékonyodik	cselekszenek/cselekednek	4362	vékoṉod	low
+éhezik	cselekszenek/cselekednek	59636	éhez	low
+érlelődik	cselekszenek/cselekednek	17933	érlelőd	low
+érlelődik	cselekszenek/cselekednek	17933	érlelőd	low
+érződik	cselekszenek/cselekednek	74697	érződ	low
+aranylik	cselekszenek/cselekednek	865	araṉl	high
+baszódik	cselekszenek/cselekednek	1072	basód	low
+cicózik	cselekszenek/cselekednek	756	cicóz	low
+csatakozik	cselekszenek/cselekednek	355	čatakoz	low
+csinosodik	cselekszenek/cselekednek	521	činošod	low
+deresedik	cselekszenek/cselekednek	388	derešed	low
+dolgozódik	cselekszenek/cselekednek	420	dolgozód	low
+díszlik	cselekszenek/cselekednek	4946	dísl	high
+egybeesik	cselekszenek/cselekednek	37431	eḏbeeš	low
+esteledik	cselekszenek/cselekednek	5772	ešteled	low
+fejődik	cselekszenek/cselekednek	797	fejőd	low
+fertőződik	cselekszenek/cselekednek	16236	fertőződ	low
+formásodik	cselekszenek/cselekednek	664	formášod	low
+fürdőzik	cselekszenek/cselekednek	2872	fürdőz	low
+gyúródik	cselekszenek/cselekednek	339	ḏúród	low
+hallatszik	cselekszenek/cselekednek	66547	hallats	high
+hegesedik	cselekszenek/cselekednek	859	hegešed	low
+hervadozik	cselekszenek/cselekednek	992	hervadoz	low
+heveskedik	cselekszenek/cselekednek	472	hevešked	low
+huzalozik	cselekszenek/cselekednek	394	huzaloz	low
+ismerszik	cselekszenek/cselekednek	7941	išmers	high
+ismétlődik	cselekszenek/cselekednek	40309	išmétlőd	low
+kezelődik	cselekszenek/cselekednek	388	kezelőd	low
+kufárkodik	cselekszenek/cselekednek	698	kufárkod	low
+károsodik	cselekszenek/cselekednek	44575	károšod	low
+közlekedik	cselekszenek/cselekednek	287338	közleked	low
+küldik	cselekszenek/cselekednek	452	küld	high
+menekszik	cselekszenek/cselekednek	1116	meneks	low
+nekiütődik	cselekszenek/cselekednek	786	nekiütőd	low
+pezsgőzik	cselekszenek/cselekednek	655	pežgőz	low
+pácolódik	cselekszenek/cselekednek	1769	pácolód	low
+párosodik	cselekszenek/cselekednek	4817	párošod	low
+rejtezik	cselekszenek/cselekednek	4572	rejtez	low
+rogyadozik	cselekszenek/cselekednek	1367	roḏadoz	low
+ruházkodik	cselekszenek/cselekednek	1397	ruházkod	low
+számítódik	cselekszenek/cselekednek	2554	sámítód	low
+színesedik	cselekszenek/cselekednek	5561	sínešed	low
+szövődik	cselekszenek/cselekednek	17256	sövőd	low
+szűrődik	cselekszenek/cselekednek	11887	sűrőd	low
+sápadozik	cselekszenek/cselekednek	355	šápadoz	low
+sürgölődik	cselekszenek/cselekednek	2392	šürgölőd	low
+tekergőzik	cselekszenek/cselekednek	959	tekergőz	low
+trafik	cselekszenek/cselekednek	20593	traf	low
+tárolódik	cselekszenek/cselekednek	33869	tárolód	low
+töpörödik	cselekszenek/cselekednek	909	töpöröd	low
+törlődik	cselekszenek/cselekednek	35110	törlőd	low
+tűnik	cselekszenek/cselekednek	2079177	tűn	low
+vackolódik	cselekszenek/cselekednek	577	vackolód	low
+veszkődik	cselekszenek/cselekednek	353	veskőd	low
+vetekszik	cselekszenek/cselekednek	28843	veteks	low
+viszik	cselekszenek/cselekednek	522	vis	low
+ígérkezik	cselekszenek/cselekednek	66458	ígérkez	low
+ívik	cselekszenek/cselekednek	2496	ív	low
+ötvöződik	cselekszenek/cselekednek	11295	ötvöződ	low
+ülepszik	cselekszenek/cselekednek	5288	üleps	low
+ülésezik	cselekszenek/cselekednek	27682	üléšez	low
+ütközik	cselekszenek/cselekednek	225302	ütköz	low
+üzérkedik	cselekszenek/cselekednek	667	üzérked	low
+adósodik	cselekszenek/cselekednek	5682	adóšod	low
+alapszik	cselekszenek/cselekednek	60602	alaps	high
+aprózódik	cselekszenek/cselekednek	1387	aprózód	low
+bicsaklik	cselekszenek/cselekednek	1642	bičakl	high
+bármelyik	cselekszenek/cselekednek	450701	bármej	low
+büdösödik	cselekszenek/cselekednek	1381	büdöšöd	low
+csukódik	cselekszenek/cselekednek	5898	čukód	low
+dudorodik	cselekszenek/cselekednek	1869	dudorod	low
+dulakodik	cselekszenek/cselekednek	3982	dulakod	low
+düledezik	cselekszenek/cselekednek	758	düledez	low
+emlékezik	cselekszenek/cselekednek	607896	emlékez	low
+emlékezik	cselekszenek/cselekednek	607896	emlékez	low
+fejlődik	cselekszenek/cselekednek	554541	fejlőd	low
+fejődik	cselekszenek/cselekednek	797	fejőd	low
+fekszik	cselekszenek/cselekednek	604506	feks	low
+finomodik	cselekszenek/cselekednek	7558	finomod	low
+fogzik	cselekszenek/cselekednek	1239	fogz	high
+fokozódik	cselekszenek/cselekednek	95082	fokozód	low
+fröccsözik	cselekszenek/cselekednek	439	fröččöz	low
+fúvódik	cselekszenek/cselekednek	746	fúvód	low
+gondosodik	cselekszenek/cselekednek	531	gondošod	low
+gyülemlik	cselekszenek/cselekednek	2336	ḏüleml	high
+hazaszökik	cselekszenek/cselekednek	749	hazasök	low
+hírlik	cselekszenek/cselekednek	8945	hírl	high
+hízelkedik	cselekszenek/cselekednek	687	hízelked	low
+illetődik	cselekszenek/cselekednek	1961	illetőd	low
+inaskodik	cselekszenek/cselekednek	668	inaškod	low
+ismerkedik	cselekszenek/cselekednek	344220	išmerked	low
+itatódik	cselekszenek/cselekednek	587	itatód	low
+izolálódik	cselekszenek/cselekednek	876	izolálód	low
+kacsolódik	cselekszenek/cselekednek	468	kačolód	low
+kamatozik	cselekszenek/cselekednek	32078	kamatoz	low
+kenődik	cselekszenek/cselekednek	4832	kenőd	low
+keringőzik	cselekszenek/cselekednek	2256	keringőz	low
+kezezik	cselekszenek/cselekednek	433	kezez	low
+kéklik	cselekszenek/cselekednek	1449	kékl	high
+lik	cselekszenek/cselekednek	19254	l	low
+melyik	cselekszenek/cselekednek	1176930	mej	low
+mutálódik	cselekszenek/cselekednek	2782	mutálód	low
+mérgeződik	cselekszenek/cselekednek	361	mérgeződ	low
+nekiütődik	cselekszenek/cselekednek	786	nekiütőd	low
+nyalakodik	cselekszenek/cselekednek	1148	ṉalakod	low
+nyomorodik	cselekszenek/cselekednek	743	ṉomorod	low
+pörkölődik	cselekszenek/cselekednek	806	pörkölőd	low
+pörkölődik	cselekszenek/cselekednek	806	pörkölőd	low
+pörlekedik	cselekszenek/cselekednek	427	pörleked	low
+rajzolódik	cselekszenek/cselekednek	30853	rajzolód	low
+rakódik	cselekszenek/cselekednek	18327	rakód	low
+rendelődik	cselekszenek/cselekednek	2522	rendelőd	low
+rugdosódik	cselekszenek/cselekednek	369	rugdošód	low
+sugdolózik	cselekszenek/cselekednek	1645	šugdolóz	low
+szerződik	cselekszenek/cselekednek	51630	serződ	low
+színeződik	cselekszenek/cselekednek	7341	síneződ	low
+szóródik	cselekszenek/cselekednek	15400	sóród	low
+sötétedik	cselekszenek/cselekednek	18489	šötéted	low
+súrlódik	cselekszenek/cselekednek	2226	šúrlód	low
+sűrűsödik	cselekszenek/cselekednek	21560	šűrűšöd	low
+tavaszodik	cselekszenek/cselekednek	2315	tavasod	low
+terelődik	cselekszenek/cselekednek	17644	terelőd	low
+terhelődik	cselekszenek/cselekednek	3333	terhelőd	low
+titkolózik	cselekszenek/cselekednek	2873	titkolóz	low
+tollasodik	cselekszenek/cselekednek	652	tollašod	low
+tépődik	cselekszenek/cselekednek	410	tépőd	low
+törülközik	cselekszenek/cselekednek	745	törülköz	low
+törődik	cselekszenek/cselekednek	206232	törőd	low
+tündöklik	cselekszenek/cselekednek	3078	tündökl	low
+variálódik	cselekszenek/cselekednek	1019	variálód	low
+verekszik	cselekszenek/cselekednek	32024	vereks	low
+veszik	cselekszenek/cselekednek	167484	ves	low
+vöröslik	cselekszenek/cselekednek	1594	vöröšl	low
+zsúfolódik	cselekszenek/cselekednek	4651	žúfolód	low
+árnyalódik	cselekszenek/cselekednek	1138	árṉalód	low
+ékelődik	cselekszenek/cselekednek	7970	ékelőd	low
+ékezik	cselekszenek/cselekednek	798	ékez	low
+érintkezik	cselekszenek/cselekednek	84963	érintkez	low
+értetődik	cselekszenek/cselekednek	7670	értetőd	low
+űzik	cselekszenek/cselekednek	715	űz	low
+aggódik	cselekszenek/cselekednek	341034	aggód	low
+akarózik	cselekszenek/cselekednek	9063	akaróz	low
+alszik	cselekszenek/cselekednek	668614	als	low
+alájátszik	cselekszenek/cselekednek	347	alájáts	high
+aránylik	cselekszenek/cselekednek	4146	aráṉl	high
+asszik	cselekszenek/cselekednek	4781	ass	low
+avatódik	cselekszenek/cselekednek	389	avatód	low
+bokrosodik	cselekszenek/cselekednek	1331	bokrošod	low
+boltozik	cselekszenek/cselekednek	916	boltoz	low
+borsódzik	cselekszenek/cselekednek	1850	boršódz	high
+bábozódik	cselekszenek/cselekednek	769	bábozód	low
+bíbelődik	cselekszenek/cselekednek	14337	bíbelőd	low
+bűnözik	cselekszenek/cselekednek	5915	bűnöz	low
+csapdázik	cselekszenek/cselekednek	404	čapdáz	low
+cselekszik	cselekszenek/cselekednek	280658	čeleks	low
+cserélődik	cselekszenek/cselekednek	17246	čerélőd	low
+csírázik	cselekszenek/cselekednek	6977	číráz	low
+dicsekszik	cselekszenek/cselekednek	46395	dičeks	low
+dörgölőzik	cselekszenek/cselekednek	2068	dörgölőz	low
+emelődik	cselekszenek/cselekednek	794	emelőd	low
+erodálódik	cselekszenek/cselekednek	2742	erodálód	low
+erősödik	cselekszenek/cselekednek	216852	erőšöd	low
+esik	cselekszenek/cselekednek	1885634	eš	low
+fejeződik	cselekszenek/cselekednek	91178	fejeződ	low
+fejlik	cselekszenek/cselekednek	2183	fejl	high
+feketézik	cselekszenek/cselekednek	660	feketéz	low
+fekszik	cselekszenek/cselekednek	604506	feks	low
+fekszik	cselekszenek/cselekednek	604506	feks	low
+fekszik	cselekszenek/cselekednek	604506	feks	low
+fenekedik	cselekszenek/cselekednek	876	feneked	low
+fenekedik	cselekszenek/cselekednek	876	feneked	low
+feslik	cselekszenek/cselekednek	1427	fešl	high
+fixálódik	cselekszenek/cselekednek	1057	fiksálód	low
+fizetődik	cselekszenek/cselekednek	900	fizetőd	low
+fodrozódik	cselekszenek/cselekednek	1727	fodrozód	low
+fordítódik	cselekszenek/cselekednek	5050	fordítód	low
+forrásozik	cselekszenek/cselekednek	590	forrášoz	low
+gazdisodik	cselekszenek/cselekednek	428	gazdišod	low
+gombásodik	cselekszenek/cselekednek	647	gombášod	low
+gyámkodik	cselekszenek/cselekednek	461	ḏámkod	low
+hajnalodik	cselekszenek/cselekednek	3624	hajnalod	low
+halmozódik	cselekszenek/cselekednek	31519	halmozód	low
+hangosodik	cselekszenek/cselekednek	518	hangošod	low
+hasadozik	cselekszenek/cselekednek	443	hašadoz	low
+hibádzik	cselekszenek/cselekednek	5785	hibádz	high
+hibásodik	cselekszenek/cselekednek	6561	hibášod	low
+hiányozik	cselekszenek/cselekednek	58910	hiáṉoz	low
+hullámozik	cselekszenek/cselekednek	2033	hullámoz	low
+időzik	cselekszenek/cselekednek	35735	időz	low
+igazolódik	cselekszenek/cselekednek	20486	igazolód	low
+ismétlődik	cselekszenek/cselekednek	40309	išmétlőd	low
+karcolódik	cselekszenek/cselekednek	11391	karcolód	low
+keményedik	cselekszenek/cselekednek	8028	keméṉed	low
+kezelődik	cselekszenek/cselekednek	388	kezelőd	low
+koszolódik	cselekszenek/cselekednek	3595	kosolód	low
+koszorúzik	cselekszenek/cselekednek	3466	kosorúz	low
+képzelődik	cselekszenek/cselekednek	5210	képzelőd	low
+képződik	cselekszenek/cselekednek	75875	képződ	low
+kínlódik	cselekszenek/cselekednek	23589	kínlód	low
+kötődik	cselekszenek/cselekednek	196259	kötőd	low
+kövesedik	cselekszenek/cselekednek	641	kövešed	low
+kőrözik	cselekszenek/cselekednek	473	kőröz	low
+laposodik	cselekszenek/cselekednek	2357	lapošod	low
+lépcsőzik	cselekszenek/cselekednek	702	lépčőz	low
+lökődik	cselekszenek/cselekednek	1503	lökőd	low
+lúdbőrzik	cselekszenek/cselekednek	416	lúdbőrz	low
+mentődik	cselekszenek/cselekednek	1082	mentőd	low
+másolódik	cselekszenek/cselekednek	1390	mášolód	low
+mérgeződik	cselekszenek/cselekednek	361	mérgeződ	low
+mérkőzik	cselekszenek/cselekednek	32614	mérkőz	low
+nemesedik	cselekszenek/cselekednek	3366	nemešed	low
+nevelődik	cselekszenek/cselekednek	4747	nevelőd	low
+nyiladozik	cselekszenek/cselekednek	1250	ṉiladoz	low
+nyitódik	cselekszenek/cselekednek	642	ṉitód	low
+nyálzik	cselekszenek/cselekednek	1006	ṉálz	high
+nézelődik	cselekszenek/cselekednek	56891	nézelőd	low
+oszladozik	cselekszenek/cselekednek	984	osladoz	low
+pogózik	cselekszenek/cselekednek	944	pogóz	low
+pontozódik	cselekszenek/cselekednek	464	pontozód	low
+pöndörödik	cselekszenek/cselekednek	871	pöndöröd	low
+púposodik	cselekszenek/cselekednek	1726	púpošod	low
+rejtőzik	cselekszenek/cselekednek	58213	rejtőz	low
+részegedik	cselekszenek/cselekednek	1562	réseged	low
+rétegződik	cselekszenek/cselekednek	1627	rétegződ	low
+sebesedik	cselekszenek/cselekednek	680	šebešed	low
+skálázódik	cselekszenek/cselekednek	1491	škálázód	low
+sugárzódik	cselekszenek/cselekednek	488	šugárzód	low
+szegeződik	cselekszenek/cselekednek	7210	segeződ	low
+szegeződik	cselekszenek/cselekednek	7210	segeződ	low
+szerzik	cselekszenek/cselekednek	352	serz	high
+számolódik	cselekszenek/cselekednek	2073	sámolód	low
+szélesedik	cselekszenek/cselekednek	14264	sélešed	low
+színeződik	cselekszenek/cselekednek	7341	síneződ	low
+szőrözik	cselekszenek/cselekednek	850	sőröz	low
+szűnik	cselekszenek/cselekednek	168796	sűn	low
+súlyosodik	cselekszenek/cselekednek	468	šújošod	low
+terhelődik	cselekszenek/cselekednek	3333	terhelőd	low
+termelődik	cselekszenek/cselekednek	31918	termelőd	low
+tetszik	cselekszenek/cselekednek	1498478	tets	low
+tépődik	cselekszenek/cselekednek	410	tépőd	low
+töltődik	cselekszenek/cselekednek	39903	töltőd	low
+töredezik	cselekszenek/cselekednek	5353	töredez	low
+tükröződik	cselekszenek/cselekednek	50822	tükröződ	low
+tűnődik	cselekszenek/cselekednek	27257	tűnőd	low
+vastagodik	cselekszenek/cselekednek	4356	vaštagod	low
+vetkőzik	cselekszenek/cselekednek	24148	vetkőz	low
+vetélkedik	cselekszenek/cselekednek	10217	vetélked	low
+vezetődik	cselekszenek/cselekednek	1451	vezetőd	low
+váltódik	cselekszenek/cselekednek	1123	váltód	low
+zsűrizik	cselekszenek/cselekednek	635	žűriz	low
+zúzódik	cselekszenek/cselekednek	1418	zúzód	low
+állítódik	cselekszenek/cselekednek	1900	állítód	low
+élesedik	cselekszenek/cselekednek	8529	élešed	low
+érződik	cselekszenek/cselekednek	74697	érződ	low
+öröklődik	cselekszenek/cselekednek	17166	öröklőd	low
+öröklődik	cselekszenek/cselekednek	17166	öröklőd	low
+ütődik	cselekszenek/cselekednek	5543	ütőd	low
+üzekedik	cselekszenek/cselekednek	659	üzeked	low
+őrizik	cselekszenek/cselekednek	1060	őriz	low
+acél	hotelban/hotelben	172196	acél	high
+áfész	hotelban/hotelben	618	áfés	high
+affér	hotelban/hotelben	7332	affér	high
+ágens	hotelban/hotelben	17621	ágenš	low
+ágész	hotelban/hotelben	14	ágés	high
+ágyék	hotelban/hotelben	11658	áḏék	high
+ájer	hotelban/hotelben	465	ájer	high
+alélt	hotelban/hotelben	2710	alélt	high
+allél	hotelban/hotelben	9437	allél	high
+amper	hotelban/hotelben	8498	amper	low
+ankét	hotelban/hotelben	10005	ankét	high
+arckrém	hotelban/hotelben	19096	arckrém	low
+árnyék	hotelban/hotelben	251729	árṉék	high
+árrés	hotelban/hotelben	18480	árréš	low
+arzén	hotelban/hotelben	14384	arzén	high
+azért	hotelban/hotelben	4710658	azért	high
+babér	hotelban/hotelben	32310	babér	high
+bagett	hotelban/hotelben	8695	bagett	low
+bagger	hotelban/hotelben	426	bagger	high
+bakter	hotelban/hotelben	4460	bakter	high
+balek	hotelban/hotelben	13062	balek	high
+balett	hotelban/hotelben	87544	balett	high
+balfék	hotelban/hotelben	4514	balfék	low
+bankett	hotelban/hotelben	10704	bankett	low
+barchesz	hotelban/hotelben	348	barches	high
+barrel	hotelban/hotelben	1662	barrel	high
+barter	hotelban/hotelben	2631	barter	low
+blogtér	hotelban/hotelben	1792	blogtér	low
+bobbyék	hotelban/hotelben	12	bobbyék	high
+bohém	hotelban/hotelben	24956	bohém	high
+bojler	hotelban/hotelben	25309	bojler	low
+borbély	hotelban/hotelben	59299	borbéj	high
+borszék	hotelban/hotelben	2086	borsék	low
+bovden	hotelban/hotelben	1970	bovden	low
+brojler	hotelban/hotelben	1774	brojler	high
+bróker	hotelban/hotelben	27705	bróker	low
+brúder	hotelban/hotelben	138	brúder	high
+bunker	hotelban/hotelben	25691	bunker	low
+burleszk	hotelban/hotelben	3962	burlesk	low
+charter	hotelban/hotelben	9782	charter	low
+combrész	hotelban/hotelben	536	combrés	low
+csapszék	hotelban/hotelben	1650	čapsék	low
+dodzsem	hotelban/hotelben	1848	dodžem	low
+domén	hotelban/hotelben	8366	domén	low
+dózer	hotelban/hotelben	2635	dózer	high
+drukker	hotelban/hotelben	34067	drukker	low
+duett	hotelban/hotelben	25938	duett	low
+dzsungel	hotelban/hotelben	55832	džungel	low
+fakép	hotelban/hotelben	8710	fakép	low
+falzett	hotelban/hotelben	591	falzett	low
+fanyél	hotelban/hotelben	626	faṉél	low
+farmer	hotelban/hotelben	82647	farmer	high
+fater	hotelban/hotelben	15751	fater	high
+fazék	hotelban/hotelben	47132	fazék	high
+flanel	hotelban/hotelben	1947	flanel	high
+flaszter	hotelban/hotelben	2419	flaster	high
+fogkrém	hotelban/hotelben	34578	fogkrém	low
+fotel	hotelban/hotelben	70961	fotel	high
+fráter	hotelban/hotelben	13052	fráter	low
+fuser	hotelban/hotelben	220	fušer	high
+ganéj	hotelban/hotelben	947	ganéj	high
+gátér	hotelban/hotelben	902	gátér	high
+gatyesz	hotelban/hotelben	222	gaṯes	high
+glutén	hotelban/hotelben	33858	glutén	high
+gólem	hotelban/hotelben	7937	gólem	low
+gukker	hotelban/hotelben	381	gukker	high
+hadész	hotelban/hotelben	840	hadés	high
+hardver	hotelban/hotelben	133417	hardver	low
+hátér	hotelban/hotelben	2755	hátér	low
+hátszél	hotelban/hotelben	13211	hátsél	low
+háttér	hotelban/hotelben	1176278	háttér	low
+hátvéd	hotelban/hotelben	23893	hátvéd	low
+haver	hotelban/hotelben	165801	haver	high
+hóhér	hotelban/hotelben	21404	hóhér	high
+honvéd	hotelban/hotelben	186978	honvéd	high
+hotel	hotelban/hotelben	789022	hotel	low
+húsvét	hotelban/hotelben	195283	húšvét	high
+jampec	hotelban/hotelben	1214	jampec	high
+játék	hotelban/hotelben	3685489	játék	high
+jólét	hotelban/hotelben	141768	jólét	low
+junker	hotelban/hotelben	1227	junker	low
+kábel	hotelban/hotelben	287412	kábel	low
+káder	hotelban/hotelben	8956	káder	high
+kadet	hotelban/hotelben	9726	kadet	high
+kadét	hotelban/hotelben	6328	kadét	high
+kampec	hotelban/hotelben	1979	kampec	high
+karcer	hotelban/hotelben	215	karcer	high
+kardél	hotelban/hotelben	2284	kardél	low
+karéj	hotelban/hotelben	6812	karéj	high
+kartell	hotelban/hotelben	13348	kartell	low
+karter	hotelban/hotelben	1181	karter	high
+kasper	hotelban/hotelben	4608	kašper	low
+kastély	hotelban/hotelben	320792	kaštéj	high
+kastény	hotelban/hotelben	41	kaštéṉ	high
+klapec	hotelban/hotelben	99	klapec	high
+klaszter	hotelban/hotelben	72146	klaster	low
+klozet	hotelban/hotelben	993	klozet	high
+kódnév	hotelban/hotelben	10443	kódnév	low
+koffer	hotelban/hotelben	7809	koffer	high
+kókler	hotelban/hotelben	7297	kókler	low
+koktél	hotelban/hotelben	70915	koktél	high
+kolesz	hotelban/hotelben	5077	koles	high
+koncert	hotelban/hotelben	1019145	koncert	low
+kondér	hotelban/hotelben	6000	kondér	high
+konkrét	hotelban/hotelben	915418	konkrét	high
+konzerv	hotelban/hotelben	49626	konzerv	low
+kopek	hotelban/hotelben	1166	kopek	high
+korner	hotelban/hotelben	2850	korner	low
+korrekt	hotelban/hotelben	280874	korrekt	low
+korvett	hotelban/hotelben	1733	korvett	low
+kóser	hotelban/hotelben	13540	kóšer	high
+kóter	hotelban/hotelben	752	kóter	high
+krapek	hotelban/hotelben	1655	krapek	high
+kráter	hotelban/hotelben	30791	kráter	low
+krokett	hotelban/hotelben	3075	krokett	high
+kukker	hotelban/hotelben	1077	kukker	high
+kupec	hotelban/hotelben	2393	kupec	low
+kupés	hotelban/hotelben	1346	kupéš	high
+lábkrém	hotelban/hotelben	829	lábkrém	low
+lábléc	hotelban/hotelben	22194	lábléc	low
+láét	hotelban/hotelben	24	láét	high
+láger	hotelban/hotelben	14977	láger	low
+lóden	hotelban/hotelben	235	lóden	high
+luesz	hotelban/hotelben	247	lues	high
+lumen	hotelban/hotelben	19534	lumen	low
+macesz	hotelban/hotelben	2035	maces	high
+máért	hotelban/hotelben	34	máért	high
+mágnes	hotelban/hotelben	59860	mágneš	low
+májkrém	hotelban/hotelben	3794	májkrém	low
+majszter	hotelban/hotelben	137	majster	high
+makett	hotelban/hotelben	42231	makett	low
+malter	hotelban/hotelben	3492	malter	high
+manézs	hotelban/hotelben	1722	manéž	high
+másként	hotelban/hotelben	262358	mášként	high
+maszek	hotelban/hotelben	9770	masek	high
+matek	hotelban/hotelben	47606	matek	high
+mater	hotelban/hotelben	16610	mater	low
+modell	hotelban/hotelben	1509359	modell	low
+modem	hotelban/hotelben	54652	modem	low
+modern	hotelban/hotelben	1359168	modern	low
+mohél	hotelban/hotelben	63	mohél	high
+molett	hotelban/hotelben	8596	molett	low
+moped	hotelban/hotelben	6981	moped	low
+motel	hotelban/hotelben	13960	motel	low
+muter	hotelban/hotelben	2713	muter	high
+mutter	hotelban/hotelben	2225	mutter	high
+napfény	hotelban/hotelben	173388	napféṉ	low
+nonszensz	hotelban/hotelben	16551	nonsens	low
+norvég	hotelban/hotelben	151508	norvég	high
+notesz	hotelban/hotelben	13921	notes	high
+obszcén	hotelban/hotelben	12289	obscén	high
+okker	hotelban/hotelben	3652	okker	low
+ómen	hotelban/hotelben	5118	ómen	low
+omlett	hotelban/hotelben	7297	omlett	low
+oszét	hotelban/hotelben	1893	osét	high
+pajesz	hotelban/hotelben	1346	pajes	high
+pakett	hotelban/hotelben	2400	pakett	low
+pamflet	hotelban/hotelben	4742	pamflet	low
+páncél	hotelban/hotelben	48853	páncél	high
+pancser	hotelban/hotelben	5888	pančer	high
+panel	hotelban/hotelben	223571	panel	high
+papper	hotelban/hotelben	331	papper	high
+parkett	hotelban/hotelben	12893	parkett	low
+parszek	hotelban/hotelben	482	parsek	low
+partner	hotelban/hotelben	1270201	partner	low
+pasztell	hotelban/hotelben	22351	pastell	low
+páter	hotelban/hotelben	9880	páter	low
+plakett	hotelban/hotelben	13783	plakett	low
+poén	hotelban/hotelben	131624	poén	high
+póker	hotelban/hotelben	22273	póker	low
+pollen	hotelban/hotelben	29350	pollen	low
+popper	hotelban/hotelben	14166	popper	low
+poszter	hotelban/hotelben	49599	poster	low
+pótlék	hotelban/hotelben	138201	pótlék	high
+projekt	hotelban/hotelben	2236203	projekt	low
+púder	hotelban/hotelben	19636	púder	low
+puffer	hotelban/hotelben	21029	puffer	low
+rapper	hotelban/hotelben	28373	rapper	low
+raszter	hotelban/hotelben	4403	raster	low
+rocker	hotelban/hotelben	20440	rocker	low
+roller	hotelban/hotelben	22986	roller	low
+rubel	hotelban/hotelben	19855	rubel	low
+rulett	hotelban/hotelben	8587	rulett	low
+rumén	hotelban/hotelben	20	rumén	high
+rutén	hotelban/hotelben	5396	rutén	high
+sábesz	hotelban/hotelben	745	šábes	low
+sakter	hotelban/hotelben	814	šakter	high
+saller	hotelban/hotelben	7312	šaller	high
+samesz	hotelban/hotelben	2511	šames	high
+skanzen	hotelban/hotelben	26458	škanzen	low
+sláger	hotelban/hotelben	155508	šláger	low
+sóder	hotelban/hotelben	8264	šóder	high
+sóher	hotelban/hotelben	1445	šóher	low
+sólet	hotelban/hotelben	3255	šólet	low
+sótér	hotelban/hotelben	258	šótér	high
+sparherd	hotelban/hotelben	458	šparherd	high
+sportrész	hotelban/hotelben	994	športrés	low
+stájer	hotelban/hotelben	4074	štájer	high
+stopper	hotelban/hotelben	12525	štopper	low
+stukker	hotelban/hotelben	2693	štukker	high
+sumer	hotelban/hotelben	9716	šumer	high
+suszter	hotelban/hotelben	6878	šuster	high
+szándék	hotelban/hotelben	734342	sándék	high
+szatén	hotelban/hotelben	10585	satén	high
+szkander	hotelban/hotelben	3569	skander	high
+szlogen	hotelban/hotelben	73259	slogen	low
+szlovén	hotelban/hotelben	111340	slovén	high
+szoftver	hotelban/hotelben	653676	softver	low
+szolfézs	hotelban/hotelben	7287	solféž	high
+szomszéd	hotelban/hotelben	463192	somséd	high
+szonett	hotelban/hotelben	11142	sonett	low
+szótér	hotelban/hotelben	495	sótér	high
+szovjet	hotelban/hotelben	340921	sovjet	low
+szuper	hotelban/hotelben	443862	super	low
+szuszék	hotelban/hotelben	488	susék	high
+tandem	hotelban/hotelben	10068	tandem	low
+tanév	hotelban/hotelben	668169	tanév	low
+tanszék	hotelban/hotelben	470398	tansék	low
+tányér	hotelban/hotelben	157436	táṉér	high
+tárgyév	hotelban/hotelben	136488	tárḏév	low
+token	hotelban/hotelben	15097	token	low
+topper	hotelban/hotelben	1225	topper	low
+totem	hotelban/hotelben	6244	totem	low
+transzfer	hotelban/hotelben	87598	transfer	low
+trapéz	hotelban/hotelben	13414	trapéz	high
+trapper	hotelban/hotelben	958	trapper	low
+traverz	hotelban/hotelben	1380	traverz	low
+tróger	hotelban/hotelben	4410	tróger	high
+valcer	hotelban/hotelben	1940	valcer	low
+vamzer	hotelban/hotelben	516	vamzer	high
+vátesz	hotelban/hotelben	2163	vátes	low
+zacsek	hotelban/hotelben	392	začek	high
+zsakett	hotelban/hotelben	787	žakett	low
+zsáner	hotelban/hotelben	16709	žáner	low

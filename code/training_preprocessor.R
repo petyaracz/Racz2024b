@@ -1,6 +1,6 @@
 # preprocessing for the three variables
 
-setwd('~/Github/packages/worddist')
+setwd('~/Github/Racz2024b')
 
 library(tidyverse)
 library(lme4)
@@ -11,7 +11,7 @@ source('code/helper.R')
 # -- read -- #
 
 training_ik = read_tsv('~/Github/Racz2024/resource/real_words/ik_verbs/ikes_pairs_webcorpus2.tsv')
-training_ep = read_tsv('~/Github/Racz2024/resource/real_words/epenthetic_stems/epenthesis_pairs_webcorpus2.tsv')
+training_ep = read_tsv('dat/training_sets/cselekszenek_alt_training_set.tsv')
 training_vh = read_tsv('~/Github/Racz2024/resource/real_words/front_harmony/fh_pairs_webcorpus2.tsv')
 test = read_tsv('~/Github/Racz2024/exp_data/baseline/baseline_tidy_proc.tsv')
 
@@ -51,25 +51,54 @@ training_ik2 = training_ik  %>%
     freq_2 > 1,
     nchar < quantile(nchar, .9)
   ) %>% 
-  select(base,variation,lemma_freq_corrected,string,log_odds)
-
+  mutate(
+    median_val = median(log_odds),
+    category = case_when(
+      log_odds >= median_val ~ 'high',
+      log_odds < median_val ~ 'low'
+    )
+  ) %>% 
+  select(base,variation,lemma_freq_corrected,string,category)
+  
 # - ep - #
 
-fit1 = glmer(cbind(freq_1,freq_2) ~ 1 + (1|base) + (1|xpostag), family = binomial, data = training_ep)
+igekotok = '^(be|ki|fel|föl|túl|le|meg|át|oda|vissza|el|külön|végig|hátra|hozzá|össze|rá|tovább|ide|oda|utána|közbe|szét)'
 
 training_ep2 = training_ep %>% 
+  filter(
+    !lemma %in% c('kszik','latszik'),
+    str_detect(lemma, '(ll|zz)ik$', negate = TRUE),
+    str_detect(lemma, igekotok, negate = TRUE),
+    lemma_freq > quantile(lemma_freq, .5),
+    nchar(lemma) < 11 # so the truncated lemma is max as long as the longest string in test + 
+         ) %>% 
   mutate(
-    string = base %>% 
-      str_replace('ik$', '') %>% 
-      transcribeIPA('single'),
-    nchar = nchar(string)
+  string = lemma %>% 
+    str_replace('x', 'ksz') %>% 
+    str_replace('w', 'v') %>% 
+    transcribeIPA('single') %>% 
+    str_replace('ik$', ''),
+  category = case_when(
+    stem_type == 'cc' ~ 'high',
+    stem_type == 'cvc' ~ 'low'
+  )
+) %>% 
+  mutate(
+    variation = 'cselekszenek/cselekednek',
+    lemma_freq_corrected = lemma_freq,
+    base = lemma,
+    category = case_when(
+      str_detect(base, '[oóe][dz]ik$') ~ 'low',
+      T ~ category # I have no clue why this ended up here.
+    )
   ) %>% 
-  distinct(base,variation,lemma_freq_corrected,string)
+  select(base, variation, lemma_freq_corrected, string, category)
 
-training_ep3 = as.data.frame(ranef(fit1)$base) %>% 
-  rownames_to_column() %>% 
-  rename(base = rowname, ranef = `(Intercept)`) %>% 
-  inner_join(training_ep2)
+# double check
+training_ep2 %>% 
+  filter(category == 'high') %>% 
+  pull(base) %>% 
+  sort()
 
 # -- vh -- #
 
@@ -97,13 +126,20 @@ training_vh2 = training_vh2 %>%
 training_vh3 = as.data.frame(ranef(fit2)$base) %>% 
   rownames_to_column() %>% 
   rename(base = rowname, ranef = `(Intercept)`) %>% 
-  inner_join(training_vh2)
+  inner_join(training_vh2) %>% 
+  mutate(
+    category = case_when(
+      ranef > median(ranef) ~ 'high',
+      ranef <= median(ranef) ~ 'low'
+    )
+  ) %>% 
+  select(base,variation,lemma_freq_corrected,string,category)
 
 # -- combine -- #
 
 training2 = bind_rows(
   training_ik2,
-  training_ep3,
+  training_ep2,
   training_vh3
 )
 
@@ -111,3 +147,4 @@ training2 = bind_rows(
 
 write_tsv(test2, 'dat/training_sets/test_set.tsv')
 write_tsv(training2, 'dat/training_sets/training_set.tsv')
+

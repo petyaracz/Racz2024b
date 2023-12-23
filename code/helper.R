@@ -52,7 +52,9 @@ getSegments = function(dat, my_combination){
       # collapse feature into one string
       feature_bundle = purrr::map(feature, ~ glue::glue_collapse(.x, sep = ', ')) |>
         unlist() |>
-        stringr::str_replace_all(c('^' = '[', '$' = ']', '1' = '+', '0' = '-'))
+        stringr::str_replace_all(c('^' = '[', '$' = ']', '1' = '+', '0' = '-')) |>
+        stringr::str_replace('\\+(?=[,\\]])', '1') |> # turn these back if they are in feature names
+        stringr::str_replace('\\-(?=[,\\]])', '0')
     ) |>
     dplyr::ungroup() |>
     dplyr::select(feature_bundle,segments)
@@ -277,7 +279,7 @@ runLookup = function(test,training,my_variation,lookup_dist){
 
   string_distance_res = string_distance_res |>
   dplyr::select(test,training,res) |>
-  tidyr::nnest(res)
+  tidyr::unnest(res)
   
   return(string_distance_res)
 }
@@ -296,14 +298,14 @@ if(!variation_type %in% dat$variation){
   stop('variation_type must be one of lakok/lakom, hotelban/hotelben, cselekszenek/cselekednek')
 }
 
-  dists = word_distance %>% 
-    filter(variation == variation_type) %>% 
-    select(test,training,phon_dist,category) %>% 
+  dists = dat %>% 
+    filter(variation == variation_type) %>%  
     mutate(
       dist = case_when(
         distance_type == 'phon' ~ phon_dist,
         distance_type == 'jaccard' ~ stringdist::stringdist(test,training,method = 'jaccard'),
-        distance_type == 'edit' ~ stringdist::stringdist(test,training,method = 'lv')
+        distance_type == 'edit' ~ stringdist::stringdist(test,training,method = 'lv'),
+        distance_type == 'qgram' ~ stringdist::stringdist(test,training,method = 'qgram')
       )
     ) %>% 
     mutate(
@@ -338,14 +340,14 @@ if(!variation_type %in% dat$variation){
   stop('variation_type must be one of lakok/lakom, hotelban/hotelben, cselekszenek/cselekednek')
 }
   
-  knn = word_distance %>% 
+  knn = dat %>% 
     filter(variation == variation_type) %>% 
-    select(test,training,phon_dist,category) %>% 
     mutate(
       dist = case_when(
         distance_type == 'phon' ~ phon_dist,
         distance_type == 'jaccard' ~ stringdist::stringdist(test,training,method = 'jaccard'),
-        distance_type == 'edit' ~ stringdist::stringdist(test,training,method = 'lv')
+        distance_type == 'edit' ~ stringdist::stringdist(test,training,method = 'lv'),
+        distance_type == 'qgram' ~ stringdist::stringdist(test,training,method = 'qgram')
       ),
       category_high = category == 'high'
     ) %>% 
@@ -358,5 +360,63 @@ if(!variation_type %in% dat$variation){
     summarise(category_high = mean(category_high))
   
   return(knn)
+  
+}
+
+##
+# wrappers
+##
+
+# wrapper fun for knn
+KNNwrapper = function(test,training,feature_matrix,my_variation,my_distance,my_s,my_k,my_p){
+  if(distance_type == 'phon'){
+    nc = feature_matrix |>
+      generateNaturalClasses()
+    
+    lookup = buildDistTable(feature_matrix, nc) |>
+      addLevenshtein()
+    
+    alignments = runLookup(test,training,my_variation,lookup)
+    
+    distances = alignments |>
+      dplyr::distinct(test,training,total_dist) |>
+      dplyr::rename(phon_dist = total_dist) |>
+      dplyr::left_join(training, join_by('training' == 'string'))
+  } else {
+    distances = crossing(test, training) %>% 
+      mutate(
+        variation = my_variation,
+        phon_dist = NA
+      )
+  }
+  
+  KNN(dat = distances, variation_type = my_variation, distance_type = my_distance, var_s = my_s, var_k = my_k, var_p = my_p)
+  
+}
+
+# wrapper fun for gcm
+GCMwrapper = function(test,training,feature_matrix,my_variation,my_distance,my_s,my_p){
+  if(distance_type == 'phon'){
+    nc = feature_matrix |>
+      generateNaturalClasses()
+    
+    lookup = buildDistTable(feature_matrix, nc) |>
+      addLevenshtein()
+    
+    alignments = runLookup(test,training,my_variation,lookup)
+    
+    distances = alignments |>
+      dplyr::distinct(test,training,total_dist) |>
+      dplyr::rename(phon_dist = total_dist) |>
+      dplyr::left_join(training, join_by('training' == 'string'))
+  } else {
+    distances = crossing(test, training) %>% 
+      mutate(
+        variation = my_variation,
+        phon_dist = NA
+      )
+  }
+  
+  lookupGCM(dat = distances, distance_type = my_distance, variation_type = my_variation, var_s = my_s, var_p = my_p)
   
 }

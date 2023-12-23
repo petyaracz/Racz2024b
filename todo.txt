@@ -1,0 +1,3 @@
+todo.txt
+
+- check categoristion2 chunk in readme rmd

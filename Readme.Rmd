@@ -1,5 +1,5 @@
 ---
-title: "Phonological categorisation models"
+title: "Phonological categorisation models for Hungarian morphological patterns"
 author: "Rácz, Péter"
 date: "`r Sys.Date()`"
 output: github_document
@@ -11,8 +11,8 @@ output: github_document
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, error = FALSE, message = FALSE, fig.path = 'figures/', fig.width = 8, fig.height = 8)
 
 # set wd in md
-knitr::opts_knit$set(root.dir = '~/Github/packages/worddist')
-setwd('~/Github/packages/worddist')
+knitr::opts_knit$set(root.dir = '~/Github/Racz2024b')
+setwd('~/Github/Racz2024b')
 
 set.seed(1337)
 
@@ -54,7 +54,9 @@ makeDistMDS = function(dat){
 }
 ```
 
-## Phonological categorisation models
+In this readme, we go through a way of measuring distance between words based on natural classes that are, in turn, based on segmental similarity. Then we use this in two categorisation models to predict what people do in a Wug task with three variable patterns of Hungarian morphology.
+
+## Phonological categorisation models for Hungarian morphological patterns
 
 1. Generate natural classes from a language's phonological feature matrix
 2. Generate segment-distances from the natural classes
@@ -96,18 +98,23 @@ nch = h |>
 lookup_h = buildDistTable(h, nch) |>
   addLevenshtein()
 
-# c. align test and target words to find best phon-based alignment, here, for the 'lakok/lakom' variation
+# c. align test and target words to find best phon-based alignment, here, for the 'lakok/lakom' variation. this takes ages.
 
 alignments_lakok = runLookup(test,training,'lakok/lakom',lookup_h)
 
-# d. get distance based on best alignment, here, for lakok. this takes ages.
+# d. get distance based on best alignment, here, for lakok. join back with training data.
 
 word_distance_lakok = alignments_lakok |>
-  dplyr::distinct(test,training,total_dist,variation)
+  dplyr::distinct(test,training,total_dist) |>
+  dplyr::rename(phon_dist = total_dist) |>
+  dplyr::left_join(training, join_by('training' == 'string'))
 
 # e. use the paired data to fit some sort of a phon distance based learning model, here, a KNN
 
-KNN(dat = word_distance_lakok, variation_type = 'lakok/lakom', distance_type = 'phon', s = .1, k = 3)
+KNN(dat = word_distance_lakok, variation_type = 'lakok/lakom', distance_type = 'phon', var_s = .1, var_k = 3, var_p = 1)
+
+# you can use a wrapper function to do a-e:
+KNNwrapper(test = test, training = training, feature_matrix = h, my_variation = 'lakok/lakom', ,distance_type = 'phon', my_s = .1, my_k = 3)
 
 # f. join the output with the test data and check how well model predictions correlate with test data.
 ```
@@ -125,7 +132,7 @@ h %>%
   mutate(across(-segment, ~ ifelse(.x == 1, '+', .x))) %>%
   # replace NA with " "
   mutate(across(-segment, ~ ifelse(is.na(.x), " ", .x))) %>%
-  kable(caption = 'Sample of the phonological feature matrix')
+  kable(caption = 'Table: Sample of the phonological feature matrix')
 ```
 
 We turn it into underspecified natural class descriptions following Albrighty and Hayes (2003) and Frisch, Pierrehumbert, and Broe (2004).
@@ -142,12 +149,12 @@ Here's a sample of what the output looks like.
 ```{r natural_classes_2}
 nch %>% 
   sample_n(10) %>% 
-  kable(caption = 'Sample of the natural classes')
+  kable(caption = 'Table: Sample of the natural classes')
 ```
 
 ## 2. Generate segment-distances from the natural classes
 
-We use the natural classes to calculate segment distances and add edit distances: any segment vs nothing is 1.
+We use the natural classes to calculate segment distances and also add edit distances for the sake of completeness: Any segment vs any other segment has a distance of 0-1, any segment vs nothing has a distance of 1.
 
 ```{r segment_distances_1, echo = T, eval = F}
 lookup_h = buildDistTable(h, nch) |>
@@ -163,11 +170,10 @@ lookup_h %>%
   # replace all NA with ' ' in all columns
   mutate(across(all_of(c("segment1","segment2")), ~ ifelse(is.na(.x), ' ', .x))) %>% 
   sample_n(10) %>% 
-  kable(digits = 2, caption = 'Sample of the segmental distances')
-
+  kable(digits = 2, caption = 'Table: Sample of the segmental distances')
 ```
 
-Here's what segmental distances look like in the output, across 3 dimensions.
+Distances between objects can be turned into a map of objects using multidimensional scaling. Here's what segmental distances look like in the output as a map, across 3 dimensions.
 
 ```{r segment_distances_3, fig.width = 8, fig.height = 8}
 # some innocent fun
@@ -195,8 +201,11 @@ p3 = mds_h |>
   geom_label_repel(max.overlaps = 11) +
   theme_few() +
   my_theme
-(p1 + p2) / (plot_spacer() + p3)
+(p1 + p2) / (plot_spacer() + p3) + plot_annotation(title = 'Figure: Segmental distances in 3 dimensions')
+
 ```
+
+These three dimensions don't exactly match to place or manner of articulation, but we can recognise patterns. The top left panel splits segments into vowels, non-coronals, coronal stops, and coronal continuants. The top right panel shows velars, labials, and coronals, mixing in the vowels, which share place of articulation features with the consonants. The bottom right panel splits vowels from consonants, and shows consonants in a continuum from labial and dorsal to coronal.
 
 ## 3. Generate word-distances from the segment-distances using a word aligner
 
@@ -214,25 +223,25 @@ a s t r á l
 o s t á j 
 ```
 
-For each word pair, we do every conceivable alignment and pick the one with the shortest total distance. This will be the pair with the smallest total phonological distance. This process is resource intensive. For this, we need the two words and the lookup table generated in step 2. The resulting table shows the two strings in their bestalignment (col 1 and 2), the distances between the segments (dist, this is 0 for identical segments and 1 for deletion / insertion) and the total distance (sum of dist, which is the same value for the whole aignment).
+For each word pair, we do every conceivable alignment and pick the one with the shortest total distance. This will be the pair with the best alignment. This process is resource intensive. To run it, we need the two words and the lookup table generated in step 2. The resulting table shows the two strings in their bestalignment (col 1 and 2), the distances between the segments (dist, this is 0 for identical segments and 1 for deletion / insertion) and the total distance (sum of dist, which is the same value for the whole aignment).
 
 ```{r word_distances_1, echo = T}
 alignWords('astrál', 'ostáj', lookup_h) %>% 
-  kable(digits = 2, caption = 'Sample alignment 1')
+  kable(digits = 2, caption = 'Table: Sample alignment 1')
 ```
 
 Some of this is less intuitive, because sometimes the best alignment is ceteris paribus not the one you'd expect, see:
 
 ```{r word_distances_2, echo = T}
 alignWords('astalka', 'astrál', lookup_h) %>% 
-  kable(digits = 2, caption = 'Sample alignment 2')
+  kable(digits = 2, caption = 'Table: Sample alignment 2')
 ```
 
-Apparently comparing the final `ka$` to the final `ál\$` is a better bargain than skipping 1 segment and gaining a penalty of 1 and then comparing `ka \$` to ` ál\$`.
+Apparently comparing the final `ka$` to the final `ál$` is a better bargain than skipping 1 segment and gaining a penalty of 1 and then comparing `ka $` to ` ál$`.
 
 This is based on Albrighty and Hayes (2003) and Dawdy-Hesterberg and Pierrehumbert (2014).
 
-## 4. Generate categories from the word distances and an algo
+## 4. Generate categories from the word distances and an algorithm
 
 I have some training and test data for three variable patterns in Hungarian. See the preprint for details.
 
@@ -241,20 +250,26 @@ b. inflectional: vowel deletion: cselekszenek/cselekednek ("they act")
 c. declensional: vowel harmony: hotelban/hotelben ("in the hotel")
 
 - training data come from Hungarian webcorpus 2.
-- test data come from a wug task where people responded to prompts in a forced-choice format. about 30 people responded to each prompt. they came from a student pool. See the preprint for details. (The preprint only talks about a and b right now, but it covers methods and ethics for c as well.)
+- test data come from a wug task where people responded to prompts in a forced-choice format. about 30 people responded to each prompt. they came from a student pool. See the preprint for details. (The preprint only talks about 1 and 2 right now, but it covers methods and ethics for 3 as well.)
 
 Training data look like this:
 
 ```{r training_data_1}
 training %>% 
-  group_by(variation) %>% 
-  sample_n(5) %>% 
-  kable(digits = 2, caption = 'Sample of the training data')
+  group_by(variation,category) %>% 
+  sample_n(2) %>% 
+  kable(digits = 2, caption = 'Table: Sample of the training data')
 ```
 
-For 'lakok/lakom', there is one exponent that varies and you can count the two forms (lakok, lakom) per verb and calculate log odds. The other two vary across a range of suffixes, the suffixes themselves have different total frequencies, so I fit a mixed model predicting `cbind(freq1,freq2)` with a stem and suffix intercept. I then extracted the stem random effects and include these here as `ranef`.
+The category labels are pretty arbitrary.
 
-Training data was restricted to exclude less frequent and very long forms. This is fairly arbitrary.
+For 'cselekszenek/cselekednek', verbs that end in `CCik$` are the "high" category and verbs that end in `CVCik$` are the "low" category. (This is slightly more complicated: some `CVCik$` verbs act like `CCik$` verbs with vowel-initial suffixes and these were put in the `CCik$` category.)
+
+For 'hotelban/hotelben', the two variants are back or front vowel in the suffix -- but these vary across a range of suffixes, the suffixes themselves have different total frequencies, so I fit a mixed model predicting `cbind(freq1,freq2)` in the corpus with a stem and suffix intercept. I then extracted the stem random effects and split the distribution across the median. This is the "high" and "low" category. Nouns that prefer back suffixes are in the "high" category and nouns that prefer front suffixes are in the "low" category.
+
+For 'lakok/lakom', there is one exponent that varies and you can count the two forms (lakok, lakom) per verb and calculate log odds, then split the distribution across the median.
+
+Training data was restricted to exclude less frequent forms and very long forms. This is fairly arbitrary.
 
 Test data look like this:
 
@@ -263,13 +278,15 @@ test %>%
   group_by(variation) %>% 
   select(base,variation,variant1,variant2,resp1,resp2,string) %>% 
   sample_n(5) %>% 
-  kable(digits = 2, caption = 'Sample of the test data')
+  kable(digits = 2, caption = 'Table: Sample of the test data')
 
 ```
 
+Test data were generated from corpus distributions using a syllabic constituent-based ngram model. The resulting words are somewhat onset-heavy (words in Hungarian can begin with `^sp` but maybe not this often). Note that for 'cselekszenek', the Wug prompts had a CC and CVC form, as both are possible (that being the point). We use the CC form to calculate distances. This is a semi-arbitrary decision: variable verbs have a CC and a CVC form. Stable CVC verbs never have a CC form. See the preprint for details.
+
 `string` is transcribed using a simple converter that maps Hungarian orthography to IPA.
 
-For each variation, you pair test and training words and calc word distance.
+For each variation, you pair test and training words and calc word distance. For the verbs ('cselekszenek', 'lakok' types) you can drop the `ik$` ending as all verbs have it anyway.
 
 ```{r word_distances_3, echo = T, eval = F}
 # this legitimately takes a while.
@@ -284,7 +301,9 @@ alignments_hotelban = runLookup(test,training,'hotelban/hotelben',lookup_h)
 # write_tsv(alignments_hotelban, 'dat/alignments/alignments_hotelban.tsv')
 ```
 
-We now have best alignments for training : test data. These might be useful someday, like if we want to build a rule-based learner. They look like this. On the left are three nonce words used in the Wug task. On the right there are three aligned training words. This is just three examples. Note that we deleted the verbal "ik" ending because that's the same everywhere and this speeds up computation.
+We now have best alignments for training : test data. These might be useful someday, like if we want to build a rule-based learner. They look like this. In the test col are three nonce words used in the Wug task. In the training col are three aligned training words. Segment 1 and 2 show the test and training words broken up in segments, in their best alignment. Dist shows segmental distances (this is the same as the table above). Total dist shows the total distance for the alignment, which is the sum of segmental distances. 
+
+This is just three examples. Note that we deleted the verbal "ik" ending because that's the same everywhere and this speeds up computation.
 
 ```{r word_distances_4, eval = F}
 
@@ -299,7 +318,7 @@ alignments_lakok %>%
          segment2 = ifelse(is.na(segment2), ' ', segment2)) %>%
   kable(digits = 2)
 
-# the same in a md table:
+# the same in a md Table: 
 ```
 
 
@@ -325,6 +344,8 @@ alignments_lakok %>%
 |streml |vesőd    |e        |ő        | 0.79|       5.11|
 |streml |vesőd    |m        |d        | 0.86|       5.11|
 |streml |vesőd    |l        |         | 1.00|       5.11|
+
+Table: Example alignments
 
 What we actually need is the total distances.
 
@@ -359,102 +380,82 @@ word_distance %>%
   group_by(variation) %>% 
   sample_n(5) %>%
   select(test,training,variation,phon_dist) %>% 
-  kable(digits = 2, caption = 'Word distances for nonce words in the Wug task and their aligned training words.')
+  kable(digits = 2, caption = 'Table: Word distances for nonce words in the Wug task and their aligned training words.')
   
 ```
 
 ## 4. Model!
 
-The nonce verbs got variable responses in the Wug task and have a specific similarity to existing verbs. We want to see whether similarity to existing verbs predicts variable responses. To calculate class similarity, we need to categorise the verbs into classes. We look at variable distributions and create category labels so we have something to work with.
+The nonce words got variable A or B responses in the Wug task and have a specific similarity to existing words in two categories: A and B. A and B are different for each word type ('cselekszenek', 'hotelban', 'lakok'). We want to see whether similarity to existing words predicts variable responses. 
 
-```{r categorisation1, echo = T, fig.width = 9, fig.height = 3}
-training %>% 
-  mutate(
-    val = ifelse(is.na(log_odds),ranef,log_odds)
-  ) %>% 
-  group_by(variation) %>% 
-  mutate(
-    median_val = median(val)
-  ) %>%
-  ggplot(aes(x = val)) +
-  geom_histogram(bins = 20) +
-  geom_vline(aes(xintercept = median_val), linetype = 'dashed') +
-  facet_wrap(~variation) +
-  # no x and y lab
-  theme(axis.title.x = element_blank(),
-        axis.title.y = element_blank()) +
-  theme_bw() +
-  ggtitle('Response distributions on training verbs')
+Training categories are:
 
-```
+- cselekszenek/cselekednek: stable `CCik$` verbs are high, stable `CVCik$` verbs are low
+- lakok/lakom: variable verbs above the median log odds of k/m in the corpus are high, others are low
+- hotelban/hotelben: we aggregated over multiple suffixed variants to have a random intercept for each stem, those over the median of random intercepts are high, others low
 
-"cselekszenek" and "hotelban" are somewhat visibly bimodal. "lakok" not so much. We split them each across the distribution's median.
+Training sets were also slightly culled to include only more frequent verbs and shorter verbs. (see preprint and `training_preprocessor.R` for details).
 
 ```{r categorisation2, echo = F}
-training %<>% 
-  mutate(
-    val = ifelse(is.na(log_odds),ranef,log_odds)
-  ) %>% 
-  group_by(variation) %>% 
-  mutate(
-    median_val = median(val),
-    category = ifelse(val > median_val, 'high', 'low')
-  ) %>% 
-  ungroup() %>% 
-  rename(training = string, training_label = base) %>% 
-  arrange(-lemma_freq_corrected) %>% 
-  group_by(training_label) %>% 
-  slice(1) %>% 
-  ungroup()
+# same verb if variable might be in both categories, for cselekszenek. double check it please.
 
 word_distance = training %>% 
-  select(training,training_label,category,val,median_val) %>% 
-  inner_join(word_distance)
+  rename(training = string, training_label = base) %>%
+  select(training,training_label,variation,category) %>% 
+  inner_join(word_distance) %>% 
+  distinct(test,training,training_label,variation,category,phon_dist)
 
 word_distance = test %>%
   rename(test = string, test_label = base) %>%
-left_join(word_distance)
+  inner_join(word_distance)
 ```
 
 The end result looks like this. This is distances between test words and training words and responses to test words and training word category.
 
 ```{r categorisation3}
 word_distance %>% 
-  group_by(variation) %>%
-  sample_n(5) %>%
+  group_by(variation,category) %>%
+  sample_n(2) %>%
   select(test_label,training_label,category,phon_dist) %>% 
-  kable(digits = 2, caption = 'Word distances for nonce words in the Wug task and their aligned training words, with training word category and test word response log odds (large log odds: lot of "high" responses).')
+  kable(digits = 2, caption = 'Table: Word distances for nonce words in the Wug task and their aligned training words, with training word category and test word response log odds (large log odds: lot of "high" responses).')
 
 ```
 
 ### KNN
 
-We categorise test words based on similarity with training words using a K-Nearest Neighbours algorithm. We try `k = [1,3,7]`, `s = [.1,.5,.9]` and edit distance, jaccard distance, and phonological distance (the whole shebang above).
+We categorise test words based on similarity with training words using a K-Nearest Neighbours algorithm. The algorithm calculates word distance using the formula `exp ( - dist / s ) ^ p`.
 
-```{r categorisation6, echo = T}
+We try `k = [1,3,5,7,15]`, `p = [1,2]`, and `s = [.1,.3,.5,.7,.9]` and `dist = [edit distance, jaccard distance, phonological distance]`. Edit distance tallies up the number of edits needed to get from Word A to Word B. Jaccard distance is the set size of the intersect of segments in Word A and Word B divided by the set size of the union of segments in Word A and Word B. Phonological distance is the whole setup above.
+
+A regular old KNN compares the target word to the nearest n words and counts category labels. So if this is 3 words and they are "high", "high", "low", the target word is categorised as "high". My KNN outputs the mean category label, which, in the example, would be .66.
+
+For each test word, we get a KNN prediction for each parameter combination. Then we fit a GLM that predicts how people "voted" on the word (like, 15 picked variant A and 20 picked variant B) from the model's category weight. We then grab the term "category: high" from the model and take the est, std error, z value (statistic), and p value. These express how well the KNN weights predict whether more people picked variant A or B. We compare models using the z value (statistic), which favours the least noise over the largest effect.
+
+```{r categorisation4, echo = T}
 
 # set up parameters
 my_parameters_1 = crossing(
-  k = c(1,3,7,15),
-  s = c(.1,.5,.9),
+  p = c(1,2),
+  k = c(1,3,5,7,15),
+  s = c(.1,.3,.5,.7,.9),
   sim = c('edit','jaccard','phon'),
   variation = c('lakok/lakom','hotelban/hotelben','cselekszenek/cselekednek')
 )
 
-# run models
+# run 450 models, parallelised, add prediction tibbles to each model
 my_knns = my_parameters_1 %>% 
   mutate(
-    knn = pmap(list(k,s,sim,variation), ~ KNN(
+    knn = furrr::future_pmap(list(k,s,sim,variation,p), ~ KNN(
       dat = word_distance,
       var_s = ..2,
       var_k = ..1,
-      var_p = 1,
+      var_p = ..5,
       distance_type = ..3,
       variation_type = ..4
     ))
   )
 
-# combine results with test responses
+# combine result tibbles with test responses
 combineWithTest = function(dat){
   test %>% 
   rename(test = string) %>% 
@@ -466,7 +467,14 @@ combineWithTest = function(dat){
 testAccuracy = function(dat){
   fit = glm(cbind(resp1,resp2) ~ 1 + category_high, data = dat, family = binomial(link = 'logit'))
   broom::tidy(fit) %>% 
-    filter(term == 'category_high')
+    filter(term == 'category_high') %>% 
+    mutate(sig = case_when(
+      p.value < .001 ~ '***',
+      p.value < .01 ~ '**',
+      p.value < .05 ~ '*',
+      p.value >= .05 ~ 'ns.'
+      )
+    )
 }
 
 # combine with test and calc accuracy
@@ -489,10 +497,13 @@ my_knns2 %>%
   group_by(variation) %>% 
   arrange(-statistic) %>% 
   slice(1) %>% 
-  kable(digits = 2, caption = 'Best KNN model for each variation.')
+  select(-term,-p.value) %>% 
+  kable(digits = 2, caption = 'Table: Best KNN model for each variation.')
 ```
 
-For 'cselekszenek/cselekednek', even the best KNN model is terrible. For 'lakok/lakom', the best KNN model uses 7 neighbours, an s of .1, and, most importantly, edit distance, rather than phonological distance. For 'cselekzenek/cselekednek', the best KNN model uses 15 neighbours, an s of .1, and, most importantly, edit distance, rather than phonological distance. For 'hotelban/hotelben', the best KNN model uses 7 neighbours, an s of .1, and jaccard distance.
+For 'cselekszenek', the best model isn't very good, but it does something. It uses phonological distance and the largest k, k=15. For 'hotelban', the best model is decent. It also uses the largest k and, curiously, jaccard distance over phonological distance (even though the latter contains more information on how the words compare to one another). For 'lakok', the best model uses k=7 and edit distance. All three best models have an s = .1 which relatively penalises more distant neighbours over closer neighbours.
+
+We can look at the best model for each distance type and variation.
 
 ```{r categorisation8}
 my_knns2 %>% 
@@ -500,18 +511,17 @@ my_knns2 %>%
   group_by(variation,sim) %>% 
   # filter(sim == 'phon') %>% 
   arrange(-statistic) %>% 
+  select(-p.value) %>% 
   slice(1) %>% 
-  kable(digits = 2, caption = 'Best KNN model for each variation and distance type.')
+  kable(digits = 2, caption = 'Table: Best KNN model for each variation and distance type.')
 
 ```
 
-We can compare the best models across all three distances. 'cselekszenek' is just universally terrible, suggesting that either people treat this one very differently from the other two or that our training set is not the right one. (We have independent grounds to assume that it's the latter.) Edit distance works pretty well for both other patterns (for 'hotelban' there's very little difference between the best edit-based and the best jaccard-based model), jaccard distance only seems to cut it for 'hotelban'.
+For 'cselekszenek' and 'hotelban', the models don't differ much in accuracy depending on distance. For 'lakok', jaccard distance is markedly more terrible than the others. Phonological distance always helps a little bit over edit distance.
 
-The best models based on phonological distance do something. But they are worse for both 'lakok' and 'hotelban' than the edit/jaccard distance based ones.
+Let's visualise the best KNN model for each variation type.
 
-Let's visualise the best model for each variation type.
-
-```{r categorisation9, fig.width = 9, fig.height = 3}
+```{r categorisation9, fig.width = 9, fig.height = 5}
 best_params = my_knns2 %>% 
   ungroup() %>% 
   group_by(variation) %>% 
@@ -538,6 +548,7 @@ my_knns %>%
 We categorise test words based on similarity with training words using the Generalised Context Model. We try `p = [1,2]`, `s = [.1,.3,.5,.7,.9]` and edit distance, jaccard distance, and phonological distance.
 
 ```{r categorisation6gcm, echo = T}
+# we do the same thing as with the KNNs. If I did this once more I'd need to put it into a function! cheeky
 
 # set up parameters
 my_parameters_2 = crossing(
@@ -550,7 +561,7 @@ my_parameters_2 = crossing(
 # run models
 my_gcms = my_parameters_2 %>% 
   mutate(
-    gcm = pmap(list(s,sim,variation,p), ~ lookupGCM(
+    gcm = furrr::future_pmap(list(s,sim,variation,p), ~ lookupGCM(
       var_p = ..4,
       dat = word_distance,
       distance_type  = ..2,
@@ -578,13 +589,12 @@ my_gcms2 %>%
   ungroup() %>% 
   group_by(variation) %>% 
   arrange(-statistic) %>% 
+  select(-p.value) %>% 
   slice(1) %>% 
-  kable(digits = 2, caption = 'Best GCM model for each variation.')
+  kable(digits = 2, caption = 'Table: Best GCM model for each variation.')
 ```
 
-'cselekszenek/cselekednek' is hopeless. The best model uses phonological distance for "lakok/lakom" and jaccard distance for "hotelban/hotelben". 
-
-For 'hotelban', the best GCM model uses jaccard distance and is a marked improvement over the KNN model. For 'lakok', the best GCM model is on par with the best KNN model.
+The GCM models are all pretty good. For 'cselekszenek' and 'lakok', the best model uses phonological distance. For 'hotelban' it, again, uses jaccard distance.
 
 ```{r categorisation8gcm}
 my_gcms2 %>% 
@@ -592,14 +602,38 @@ my_gcms2 %>%
   group_by(variation,sim) %>% 
   # filter(sim == 'phon') %>% 
   arrange(-statistic) %>% 
+  select(-p.value) %>% 
   slice(1) %>% 
-  kable(digits = 2, caption = 'Best GCM model for each variation and distance type.')
+  kable(digits = 2, caption = 'Table: Best GCM model for each variation and distance type.')
 
 ```
 
+Checking on the best model for all distance types we can see that using jaccard distance gives you a massive but very noisy estimate. For 'hotelban', however, the noise is much smaller and so jaccard wins.
+
+__What are the best models today?__
+
+```{r best_models}
+my_knns3 = my_knns2 %>% 
+  select(sim,variation,estimate,std.error,statistic,sig) %>% 
+  mutate(model = 'KNN')
+
+my_gcms3 = my_gcms2 %>%
+  select(sim,variation,estimate,std.error,statistic,sig) %>% 
+  mutate(model = 'GCM')
+
+bind_rows(my_gcms3,my_knns3) %>% 
+  relocate(model, .before = sim) %>% 
+  group_by(variation,model) %>%
+  arrange(-statistic) %>%
+  slice(1) %>% 
+  kable(digits = 2, caption = 'Table: Best KNN and GCM model for each variation.')
+```
+
+The GCM beats the KNN model for all three variation types, with a solid margin. 
+
 Let's visualise the best model for each variation type.
 
-```{r categorisation9gcm, fig.width = 9, fig.height = 3}
+```{r categorisation9gcm, fig.width = 9, fig.height = 5}
 best_params2 = my_gcms2 %>% 
   ungroup() %>% 
   group_by(variation) %>% 
@@ -617,11 +651,12 @@ gcmplots = my_gcms %>%
             geom_point() +
             theme_bw() +
             geom_smooth(method = 'lm', se = F) +
-            # facet_wrap( ~ parameters) +
             xlab('weight of "high" category') +
             ylab('log odds of "high/low" category answers in test') +
             ggtitle(.y) +
-            ylim(-1.5,2.5)
+            geom_rug() +
+            ylim(-3.5,3.5)
+            
                 }
               )  
   )
@@ -639,40 +674,24 @@ p3 = gcmplots$plot[[3]] +
   theme(axis.title.y = element_blank(),
         axis.text.y = element_blank(),
         axis.ticks.y = element_blank())
-
-p1 + p2 + p3 + plot_annotation(title = 'GCM models of Wug test')
+  
+p1 + p2 + p3 + plot_annotation(title = 'Figure: GCM models of Wug test')
   
 ```
 
-What are the best ever models?
-
-```{r best_models}
-my_knns3 = my_knns2 %>% 
-  select(k,sim,variation,term,estimate,std.error,statistic,p.value) %>% 
-  mutate(model = 'KNN')
-
-my_gcms3 = my_gcms2 %>%
-  select(sim,variation,term,estimate,std.error,statistic,p.value) %>% 
-  mutate(model = 'GCM')
-
-bind_rows(my_gcms3,my_knns3) %>% 
-  filter(variation != 'cselekszenek/cselekednek') %>%
-  relocate(model, .before = sim) %>% 
-  group_by(variation,model) %>%
-  arrange(-statistic) %>%
-  slice(1) %>% 
-  kable(digits = 2, caption = 'Best KNN and GCM model for each variation. "cselekszenek" does not work and is ommitted.')
-```
-
-The GCM is a notable improvement on the KNN for 'hotelban'. For 'lakok', the GCM is on par with the KNN. Technically, the best model for 'lakok' uses phonological distance, but the improvement on edit distance is minimal.
+For the two verb patterns (left and right), we see a largely normal distribution of both GCM category weights (x axis) and test answers (y axis). They are correlated, not that much for 'cselekszenek' (left) and a bit better for 'lakok' (right). For the noun pattern (middle), the two categories are much more neatly delineated both in the answers and the GCM weights and the two match relatively well. One exception is a set of verbs in the bottom-right corner that the model sees as relatively "high" but the test answers see as relatively "low".
 
 ## Discussion
 
-- 'cselekszenek' doesn't really work. People do show structured variation in the test data. Models can't predict it. For example, nonce verbs with different derivational suffixes behave differently in the test data, the way they do in the corpus. So there is structure there. But the training data are likely inappropriate.
-- 'hotelban' really likes jaccard distance. Similarity to the training data is very bimodal, which would explain why the GCM, which splits the data more or less into two, works relatively well. Possibly an SVM (or even a simple logistic regression model!) would work even better.
-- 'lakok' is the most like your usual morphological variation. The GCM is on par with the KNN. The best model uses phonological distance, but the improvement on edit distance is minimal.
+For the verbs, we get the best results by using overall, detailed similarity to everything, more or less. The 'cselekszenek' pattern is noisier than the 'lakok' pattern. This is probably because the former is pretty complicated on its own: some verbs never delete the last vowel, some always do, some do it in some exponents, some pairs differ in meaning, and some verbs actually vary in the same exponent with the same meaning. The test nonce verbs were like these. For the latter, the pattern is much simpler: it only happens in one exponent and a large number of verbs vary.
+
+For the noun pattern, people in the Wug task seem to have a pretty clear idea of what nouns are supposed to be doing, which they probably picked up from the ambient language -- in the corpus, nouns also seem to have a clear idea what they are supposed to be doing! A very specific subset of nonce verbs have prediction error on them, meaning that people don't treat them as they should based on their similarity to existing verbs. This merits further investigation but shouldn't be blamed on the categorisation model.
 
 ## References
+
+The Wug task:
+
+Berko, Jean. "The child’s learning of English morphology." Word 14, no. 2-3 (1958): 150-177.
 
 The natural class theory of segmental distances:
 
@@ -693,7 +712,13 @@ Training data:
 - Rácz, Péter, and Ágnes Lukács. Morphological convergence and sociolinguistic salience: an experimental study. (2023) [https://osf.io/preprints/psyarxiv/zqwxv](https://osf.io/preprints/psyarxiv/zqwxv).
 - Nemeskey, Dávid Márk (2020). Natural Language Processing methods for Language Modeling. PhD thesis. Eötvös Loránd University. [https://hlt.bme.hu/en/resources/webcorpus2](https://hlt.bme.hu/en/resources/webcorpus2)
 
-GCM, K-nearest:
+GCM, KNN:
 
 - Nosofsky, Robert M. "The generalized context model: An exemplar model of classification." Formal approaches in categorization (2011): 18-39.
 - Peterson, Leif E. "K-nearest neighbor." Scholarpedia 4, no. 2 (2009): 1883.
+
+The three variable patterns:
+
+- 'cselekszenek/cselekednek': Rácz, Péter, Péter Rebrus, and Miklós Törkenczy. "Attractors of variation in Hungarian inflectional morphology." Corpus Linguistics and Linguistic Theory 17, no. 2 (2021): 287-317.
+- 'hotelban/hotelben': Hayes, Bruce, Péter Siptár, Kie Zuraw, and Zsuzsa Londe. "Natural and unnatural constraints in Hungarian vowel harmony." Language (2009): 822-863.
+- 'lakok/lakom': Rácz, Péter. "Frequency and prototypicality determine variation in the Hungarian verbal 1 SG. INDEF." Acta Linguistica Academica. An International Journal of Linguistics (Until 2016 Acta Linguistica Hungarica) 66, no. 4 (2019): 601-620.
