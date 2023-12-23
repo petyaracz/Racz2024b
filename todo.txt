@@ -1,3 +1,4 @@
 todo.txt
 
 - check categoristion2 chunk in readme rmd
+- get variation out of the gcm and knn arguments
