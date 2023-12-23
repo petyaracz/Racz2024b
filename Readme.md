@@ -9,7 +9,7 @@ similarity. Then we use this in two categorisation models to predict
 what people do in a Wug task with three variable patterns of Hungarian
 morphology.
 
-## Phonological categorisation models for Hungarian morphological patterns
+## TOC
 
 1.  Generate natural classes from a language’s phonological feature
     matrix
@@ -33,23 +33,24 @@ nch = h |>
 lookup_h = buildDistTable(h, nch) |>
   addLevenshtein()
 
-# c. align test and target words to find best phon-based alignment, here, for the 'lakok/lakom' variation
+# c. align test and target words to find best phon-based alignment, here, for the 'lakok/lakom' variation. this takes ages.
 
 alignments_lakok = runLookup(test,training,'lakok/lakom',lookup_h)
 
-# d. get distance based on best alignment, here, for lakok. this takes ages.
+# d. get distance based on best alignment, here, for lakok. join back with training data.
 
 word_distance_lakok = alignments_lakok |>
-  dplyr::distinct(test,training,total_dist,variation)
+  dplyr::distinct(test,training,total_dist) |>
+  dplyr::rename(phon_dist = total_dist) |>
+  dplyr::left_join(training, join_by('training' == 'string'))
 
 # e. use the paired data to fit some sort of a phon distance based learning model, here, a KNN
 
-KNN(dat = word_distance_lakok, variation_type = 'lakok/lakom', distance_type = 'phon', var_s = .1, var_k = 3)
-
 # you can use a wrapper function to do a-e:
-KNNwrapper(test = test, training = training, feature_matrix = h, my_variation = 'lakok/lakom', ,distance_type = 'phon', my_s = .1, my_k = 3)
+KNNwrapper(test = test, training = training, feature_matrix = fm, my_variation = 'whatever', my_distance = 'phon', my_s = .1, my_k = 3, my_p = 1)
 
-# f. join the output with the test data and check how well model predictions correlate with test data.
+# you can use the wrapper function to use some other distance and skip the whole alignment bit:
+KNNwrapper(test = test, training = training, feature_matrix = fm, my_variation = 'whatever', my_distance = 'jaccard', my_s = .1, my_k = 3, my_p = 1)
 ```
 
 ## 1. Generate natural classes

@@ -56,7 +56,7 @@ makeDistMDS = function(dat){
 
 In this readme, we go through a way of measuring distance between words based on natural classes that are, in turn, based on segmental similarity. Then we use this in two categorisation models to predict what people do in a Wug task with three variable patterns of Hungarian morphology.
 
-## Phonological categorisation models for Hungarian morphological patterns
+## TOC
 
 1. Generate natural classes from a language's phonological feature matrix
 2. Generate segment-distances from the natural classes
@@ -111,12 +111,12 @@ word_distance_lakok = alignments_lakok |>
 
 # e. use the paired data to fit some sort of a phon distance based learning model, here, a KNN
 
-KNN(dat = word_distance_lakok, variation_type = 'lakok/lakom', distance_type = 'phon', var_s = .1, var_k = 3, var_p = 1)
-
 # you can use a wrapper function to do a-e:
-KNNwrapper(test = test, training = training, feature_matrix = h, my_variation = 'lakok/lakom', ,distance_type = 'phon', my_s = .1, my_k = 3)
+KNNwrapper(test = test, training = training, feature_matrix = fm, my_variation = 'whatever', my_distance = 'phon', my_s = .1, my_k = 3, my_p = 1)
 
-# f. join the output with the test data and check how well model predictions correlate with test data.
+# you can use the wrapper function to use some other distance and skip the whole alignment bit:
+KNNwrapper(test = test, training = training, feature_matrix = fm, my_variation = 'whatever', my_distance = 'jaccard', my_s = .1, my_k = 3, my_p = 1)
+
 ```
 
 ## 1. Generate natural classes
