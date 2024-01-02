@@ -1,7 +1,7 @@
 Phonological categorisation models for Hungarian morphological patterns
 ================
 Rácz, Péter
-2023-12-23
+2024-01-02
 
 In this readme, we go through a way of measuring distance between words
 based on natural classes that are, in turn, based on segmental
@@ -35,7 +35,7 @@ lookup_h = buildDistTable(h, nch) |>
 
 # c. align test and target words to find best phon-based alignment, here, for the 'lakok/lakom' variation. this takes ages.
 
-alignments_lakok = runLookup(test,training,'lakok/lakom',lookup_h)
+alignments_lakok = runLookup(test_l,training_l,lookup_h)
 
 # d. get distance based on best alignment, here, for lakok. join back with training data.
 
@@ -47,10 +47,10 @@ word_distance_lakok = alignments_lakok |>
 # e. use the paired data to fit some sort of a phon distance based learning model, here, a KNN
 
 # you can use a wrapper function to do a-e:
-KNNwrapper(test = test, training = training, feature_matrix = fm, my_variation = 'whatever', my_distance = 'phon', my_s = .1, my_k = 3, my_p = 1)
+KNNwrapper(test = test, training = training, feature_matrix = fm, my_distance = 'phon', my_s = .1, my_k = 3, my_p = 1)
 
 # you can use the wrapper function to use some other distance and skip the whole alignment bit:
-KNNwrapper(test = test, training = training, feature_matrix = fm, my_variation = 'whatever', my_distance = 'jaccard', my_s = .1, my_k = 3, my_p = 1)
+KNNwrapper(test = test, training = training, feature_matrix = fm, my_distance = 'jaccard', my_s = .1, my_k = 3, my_p = 1)
 ```
 
 ## 1. Generate natural classes
@@ -174,14 +174,14 @@ alignWords('astrál', 'ostáj', lookup_h) %>%
   kable(digits = 2, caption = 'Table: Sample alignment 1')
 ```
 
-| segment1 | segment2 | dist | total_dist |
-|:---------|:---------|-----:|-----------:|
-| a        | o        | 0.62 |       2.07 |
-| s        | s        | 0.00 |       2.07 |
-| t        | t        | 0.00 |       2.07 |
-| r        |          | 1.00 |       2.07 |
-| á        | á        | 0.00 |       2.07 |
-| l        | j        | 0.45 |       2.07 |
+| segment1 | segment2 | dist | phon_dist |
+|:---------|:---------|-----:|----------:|
+| a        | o        | 0.62 |      2.07 |
+| s        | s        | 0.00 |      2.07 |
+| t        | t        | 0.00 |      2.07 |
+| r        |          | 1.00 |      2.07 |
+| á        | á        | 0.00 |      2.07 |
+| l        | j        | 0.45 |      2.07 |
 
 Table: Sample alignment 1
 
@@ -193,15 +193,15 @@ alignWords('astalka', 'astrál', lookup_h) %>%
   kable(digits = 2, caption = 'Table: Sample alignment 2')
 ```
 
-| segment1 | segment2 | dist | total_dist |
-|:---------|:---------|-----:|-----------:|
-| a        | a        | 0.00 |       2.97 |
-| s        | s        | 0.00 |       2.97 |
-| t        | t        | 0.00 |       2.97 |
-| a        |          | 1.00 |       2.97 |
-| l        | r        | 0.12 |       2.97 |
-| k        | á        | 0.92 |       2.97 |
-| a        | l        | 0.94 |       2.97 |
+| segment1 | segment2 | dist | phon_dist |
+|:---------|:---------|-----:|----------:|
+| a        | a        | 0.00 |      2.97 |
+| s        | s        | 0.00 |      2.97 |
+| t        | t        | 0.00 |      2.97 |
+| a        |          | 1.00 |      2.97 |
+| l        | r        | 0.12 |      2.97 |
+| k        | á        | 0.92 |      2.97 |
+| a        | l        | 0.94 |      2.97 |
 
 Table: Sample alignment 2
 
@@ -236,8 +236,8 @@ Training data look like this:
 | áramlik     | cselekszenek/cselekednek |                85538 | áraml    | high     |
 | törölközik  | cselekszenek/cselekednek |                 1292 | törölköz | low      |
 | bicajozik   | cselekszenek/cselekednek |                 3866 | bicajoz  | low      |
-| lóden       | hotelban/hotelben        |                  235 | lóden    | high     |
-| bobbyék     | hotelban/hotelben        |                   12 | bobbyék  | high     |
+| luesz       | hotelban/hotelben        |                  247 | lues     | high     |
+| bohém       | hotelban/hotelben        |                24956 | bohém    | high     |
 | trapper     | hotelban/hotelben        |                  958 | trapper  | low      |
 | kókler      | hotelban/hotelben        |                 7297 | kókler   | low      |
 | terelődik   | lakok/lakom              |                17677 | terelőd  | high     |
@@ -311,10 +311,18 @@ distance. For the verbs (‘cselekszenek’, ‘lakok’ types) you can drop the
 ``` r
 # this legitimately takes a while.
 
+# set up test and training data
+testl = filter(test, variation == 'lakok/lakom')
+trainingl = filter(training, variation == 'lakok/lakom')
+testcs = filter(test, variation == 'cselekszenek/cselekednek')
+trainingcs = filter(training, variation == 'cselekszenek/cselekednek')
+testh = filter(test, variation == 'hotelban/hotelben')
+trainingh = filter(training, variation == 'hotelban/hotelben')
+
 # run the lookup for all variations
-alignments_lakok = runLookup(test,training,'lakok/lakom',lookup_h)
-alignments_cselekszenek = runLookup(test,training,'cselekszenek/cselekednek',lookup_h)
-alignments_hotelban = runLookup(test,training,'hotelban/hotelben',lookup_h)
+alignments_lakok = runLookup(testl,trainingl,lookup_h)
+alignments_cselekszenek = runLookup(testcs,trainingcs,lookup_h)
+alignments_hotelban = runLookup(testh,trainingh,lookup_h)
 
 # write_tsv(alignments_lakok, 'dat/alignments/alignments_lakok.tsv')
 # write_tsv(alignments_cselekszenek, 'dat/alignments/alignments_cselekszenek.tsv')
@@ -333,32 +341,32 @@ the sum of segmental distances.
 This is just three examples. Note that we deleted the verbal “ik” ending
 because that’s the same everywhere and this speeds up computation.
 
-| test   | training | segment1 | segment2 | dist | total_dist |
-|:-------|:---------|:---------|:---------|-----:|-----------:|
-| narádz | bábáškod | n        | b        | 0.84 |       5.84 |
-| narádz | bábáškod | a        | á        | 0.58 |       5.84 |
-| narádz | bábáškod | r        | b        | 0.94 |       5.84 |
-| narádz | bábáškod | á        | á        | 0.00 |       5.84 |
-| narádz | bábáškod |          | š        | 1.00 |       5.84 |
-| narádz | bábáškod | d        | k        | 0.84 |       5.84 |
-| narádz | bábáškod |          | o        | 1.00 |       5.84 |
-| narádz | bábáškod | z        | d        | 0.63 |       5.84 |
-| šalárz | kérked   | š        | k        | 0.86 |       4.21 |
-| šalárz | kérked   | a        | é        | 0.81 |       4.21 |
-| šalárz | kérked   | l        | r        | 0.12 |       4.21 |
-| šalárz | kérked   | á        | k        | 0.92 |       4.21 |
-| šalárz | kérked   | r        | e        | 0.88 |       4.21 |
-| šalárz | kérked   | z        | d        | 0.63 |       4.21 |
-| streml | vesőd    | s        | v        | 0.87 |       5.11 |
-| streml | vesőd    | t        | e        | 0.95 |       5.11 |
-| streml | vesőd    | r        | s        | 0.64 |       5.11 |
-| streml | vesőd    | e        | ő        | 0.79 |       5.11 |
-| streml | vesőd    | m        | d        | 0.86 |       5.11 |
-| streml | vesőd    | l        |          | 1.00 |       5.11 |
+| test   | training | segment1 | segment2 | dist | phon_dist |
+|:-------|:---------|:---------|:---------|-----:|----------:|
+| narádz | bábáškod | n        | b        | 0.84 |      5.84 |
+| narádz | bábáškod | a        | á        | 0.58 |      5.84 |
+| narádz | bábáškod | r        | b        | 0.94 |      5.84 |
+| narádz | bábáškod | á        | á        | 0.00 |      5.84 |
+| narádz | bábáškod |          | š        | 1.00 |      5.84 |
+| narádz | bábáškod | d        | k        | 0.84 |      5.84 |
+| narádz | bábáškod |          | o        | 1.00 |      5.84 |
+| narádz | bábáškod | z        | d        | 0.63 |      5.84 |
+| šalárz | kérked   | š        | k        | 0.86 |      4.21 |
+| šalárz | kérked   | a        | é        | 0.81 |      4.21 |
+| šalárz | kérked   | l        | r        | 0.12 |      4.21 |
+| šalárz | kérked   | á        | k        | 0.92 |      4.21 |
+| šalárz | kérked   | r        | e        | 0.88 |      4.21 |
+| šalárz | kérked   | z        | d        | 0.63 |      4.21 |
+| streml | vesőd    | s        | v        | 0.87 |      5.11 |
+| streml | vesőd    | t        | e        | 0.95 |      5.11 |
+| streml | vesőd    | r        | s        | 0.64 |      5.11 |
+| streml | vesőd    | e        | ő        | 0.79 |      5.11 |
+| streml | vesőd    | m        | d        | 0.86 |      5.11 |
+| streml | vesőd    | l        |          | 1.00 |      5.11 |
 
 Example alignments
 
-What we actually need is the total distances.
+What we actually need is the total phonological distances.
 
 The final result looks like this:
 
@@ -457,47 +465,26 @@ which favours the least noise over the largest effect.
 ``` r
 # set up parameters
 my_parameters_1 = crossing(
-  p = c(1,2),
-  k = c(1,3,5,7,15),
-  s = c(.1,.3,.5,.7,.9),
-  sim = c('edit','jaccard','phon'),
+  var_p = c(1,2),
+  var_k = c(1,3,5,7,15),
+  var_s = c(.1,.3,.5,.7,.9),
+  distance_type = c('edit','jaccard','phon'),
   variation = c('lakok/lakom','hotelban/hotelben','cselekszenek/cselekednek')
 )
 
 # run 450 models, parallelised, add prediction tibbles to each model
 my_knns = my_parameters_1 %>% 
   mutate(
-    knn = furrr::future_pmap(list(k,s,sim,variation,p), ~ KNN(
+    knn = furrr::future_pmap(list(variation,distance_type,var_p,var_s,var_k), ~ wrapKNN(
       dat = word_distance,
-      var_s = ..2,
-      var_k = ..1,
-      var_p = ..5,
-      distance_type = ..3,
-      variation_type = ..4
-    ))
-  )
-
-# combine result tibbles with test responses
-combineWithTest = function(dat){
-  test %>% 
-  rename(test = string) %>% 
-  select(test,resp1,resp2,log_odds) %>% 
-  inner_join(dat, by = 'test')
-}
-
-# fit a model that predicts response rations from category labels and pulls the summary
-testAccuracy = function(dat){
-  fit = glm(cbind(resp1,resp2) ~ 1 + category_high, data = dat, family = binomial(link = 'logit'))
-  broom::tidy(fit) %>% 
-    filter(term == 'category_high') %>% 
-    mutate(sig = case_when(
-      p.value < .001 ~ '***',
-      p.value < .01 ~ '**',
-      p.value < .05 ~ '*',
-      p.value >= .05 ~ 'ns.'
+      my_variation = ..1,
+      distance_type = ..2,
+      var_p = ..3,
+      var_s = ..4,
+      var_k = ..5
       )
     )
-}
+  )
 
 # combine with test and calc accuracy
 my_knns %<>% 
@@ -511,11 +498,11 @@ my_knns2 = my_knns %>%
   unnest(accuracy)
 ```
 
-|   p |   k |   s | sim     | variation                | estimate | std.error | statistic | sig    |
-|----:|----:|----:|:--------|:-------------------------|---------:|----------:|----------:|:-------|
-|   1 |  15 | 0.1 | phon    | cselekszenek/cselekednek |     0.61 |      0.14 |      4.29 | \*\*\* |
-|   1 |  15 | 0.1 | jaccard | hotelban/hotelben        |     2.76 |      0.20 |     13.84 | \*\*\* |
-|   1 |   7 | 0.1 | edit    | lakok/lakom              |     1.23 |      0.13 |      9.20 | \*\*\* |
+| var_p | var_k | var_s | distance_type | variation                | estimate | std.error | statistic | sig    |
+|------:|------:|------:|:--------------|:-------------------------|---------:|----------:|----------:|:-------|
+|     1 |    15 |   0.1 | phon          | cselekszenek/cselekednek |     0.61 |      0.14 |      4.29 | \*\*\* |
+|     1 |    15 |   0.1 | jaccard       | hotelban/hotelben        |     2.76 |      0.20 |     13.84 | \*\*\* |
+|     1 |     7 |   0.1 | edit          | lakok/lakom              |     1.23 |      0.13 |      9.20 | \*\*\* |
 
 Table: Best KNN model for each variation.
 
@@ -530,17 +517,17 @@ neighbours over closer neighbours.
 
 We can look at the best model for each distance type and variation.
 
-|   p |   k |   s | sim     | variation                | term          | estimate | std.error | statistic | sig    |
-|----:|----:|----:|:--------|:-------------------------|:--------------|---------:|----------:|----------:|:-------|
-|   1 |   7 | 0.1 | edit    | cselekszenek/cselekednek | category_high |     0.41 |      0.12 |      3.36 | \*\*\* |
-|   1 |   3 | 0.1 | jaccard | cselekszenek/cselekednek | category_high |     0.34 |      0.09 |      3.64 | \*\*\* |
-|   1 |  15 | 0.1 | phon    | cselekszenek/cselekednek | category_high |     0.61 |      0.14 |      4.29 | \*\*\* |
-|   1 |  15 | 0.1 | edit    | hotelban/hotelben        | category_high |     2.91 |      0.22 |     13.20 | \*\*\* |
-|   1 |  15 | 0.1 | jaccard | hotelban/hotelben        | category_high |     2.76 |      0.20 |     13.84 | \*\*\* |
-|   1 |  15 | 0.1 | phon    | hotelban/hotelben        | category_high |     2.80 |      0.21 |     13.28 | \*\*\* |
-|   1 |   7 | 0.1 | edit    | lakok/lakom              | category_high |     1.23 |      0.13 |      9.20 | \*\*\* |
-|   1 |  15 | 0.1 | jaccard | lakok/lakom              | category_high |     0.80 |      0.22 |      3.60 | \*\*\* |
-|   1 |  15 | 0.1 | phon    | lakok/lakom              | category_high |     1.44 |      0.17 |      8.31 | \*\*\* |
+| var_p | var_k | var_s | distance_type | variation                | term          | estimate | std.error | statistic | sig    |
+|------:|------:|------:|:--------------|:-------------------------|:--------------|---------:|----------:|----------:|:-------|
+|     1 |     7 |   0.1 | edit          | cselekszenek/cselekednek | category_high |     0.41 |      0.12 |      3.36 | \*\*\* |
+|     1 |     3 |   0.1 | jaccard       | cselekszenek/cselekednek | category_high |     0.34 |      0.09 |      3.64 | \*\*\* |
+|     1 |    15 |   0.1 | phon          | cselekszenek/cselekednek | category_high |     0.61 |      0.14 |      4.29 | \*\*\* |
+|     1 |    15 |   0.1 | edit          | hotelban/hotelben        | category_high |     2.91 |      0.22 |     13.20 | \*\*\* |
+|     1 |    15 |   0.1 | jaccard       | hotelban/hotelben        | category_high |     2.76 |      0.20 |     13.84 | \*\*\* |
+|     1 |    15 |   0.1 | phon          | hotelban/hotelben        | category_high |     2.80 |      0.21 |     13.28 | \*\*\* |
+|     1 |     7 |   0.1 | edit          | lakok/lakom              | category_high |     1.23 |      0.13 |      9.20 | \*\*\* |
+|     1 |    15 |   0.1 | jaccard       | lakok/lakom              | category_high |     0.80 |      0.22 |      3.60 | \*\*\* |
+|     1 |    15 |   0.1 | phon          | lakok/lakom              | category_high |     1.44 |      0.17 |      8.31 | \*\*\* |
 
 Table: Best KNN model for each variation and distance type.
 
@@ -565,21 +552,21 @@ phonological distance.
 
 # set up parameters
 my_parameters_2 = crossing(
-  p = c(1,2),
-  s = c(.1,.3,.5,.7,.9),
-  sim = c('edit','jaccard','phon'),
+  var_p = c(1,2),
+  var_s = c(.1,.3,.5,.7,.9),
+  distance_type = c('edit','jaccard','phon'),
   variation = c('lakok/lakom','hotelban/hotelben','cselekszenek/cselekednek')
 )
 
 # run models
 my_gcms = my_parameters_2 %>% 
   mutate(
-    gcm = furrr::future_pmap(list(s,sim,variation,p), ~ lookupGCM(
-      var_p = ..4,
+    gcm = furrr::future_pmap(list(distance_type,variation,var_p,var_s), ~ wrapGCM(
       dat = word_distance,
-      distance_type  = ..2,
-      variation_type = ..3,
-      var_s = ..1
+      distance_type = ..1,
+      my_variation = ..2,
+      var_s = ..3,
+      var_p = ..4
     ))
   )
 
@@ -595,29 +582,30 @@ my_gcms2 = my_gcms %>%
   unnest(accuracy)
 ```
 
-|   p |   s | sim     | variation                | term          | estimate | std.error | statistic | sig    |
-|----:|----:|:--------|:-------------------------|:--------------|---------:|----------:|----------:|:-------|
-|   1 | 0.9 | phon    | cselekszenek/cselekednek | category_high |     2.60 |      0.50 |      5.20 | \*\*\* |
-|   1 | 0.7 | jaccard | hotelban/hotelben        | category_high |    50.11 |      2.87 |     17.44 | \*\*\* |
-|   1 | 0.9 | phon    | lakok/lakom              | category_high |     7.66 |      0.68 |     11.26 | \*\*\* |
+| var_p | var_s | distance_type | variation                | term          | estimate | std.error | statistic | sig    |
+|------:|------:|:--------------|:-------------------------|:--------------|---------:|----------:|----------:|:-------|
+|     2 |   0.3 | edit          | cselekszenek/cselekednek | category_high |    36.23 |      6.23 |      5.81 | \*\*\* |
+|     1 |   0.9 | jaccard       | hotelban/hotelben        | category_high |    80.46 |      4.62 |     17.43 | \*\*\* |
+|     2 |   0.9 | phon          | lakok/lakom              | category_high |    27.97 |      2.40 |     11.66 | \*\*\* |
 
 Table: Best GCM model for each variation.
 
-The GCM models are all pretty good. For ‘cselekszenek’ and ‘lakok’, the
-best model uses phonological distance. For ‘hotelban’ it, again, uses
-jaccard distance.
+The GCM models are all pretty good. For ‘cselekszenek’, the best model
+uses edit distance and an exponential distance metric. For ‘lakok’, the
+best model uses phonological distance and the exponential metric. For
+‘hotelban’ it, again, uses jaccard distance.
 
-|   p |   s | sim     | variation                | term          | estimate | std.error | statistic | sig    |
-|----:|----:|:--------|:-------------------------|:--------------|---------:|----------:|----------:|:-------|
-|   1 | 0.9 | edit    | cselekszenek/cselekednek | category_high |     2.11 |      0.41 |      5.18 | \*\*\* |
-|   2 | 0.5 | jaccard | cselekszenek/cselekednek | category_high |     8.64 |      1.82 |      4.75 | \*\*\* |
-|   1 | 0.9 | phon    | cselekszenek/cselekednek | category_high |     2.60 |      0.50 |      5.20 | \*\*\* |
-|   1 | 0.9 | edit    | hotelban/hotelben        | category_high |     6.67 |      0.40 |     16.68 | \*\*\* |
-|   1 | 0.7 | jaccard | hotelban/hotelben        | category_high |    50.11 |      2.87 |     17.44 | \*\*\* |
-|   1 | 0.9 | phon    | hotelban/hotelben        | category_high |     9.57 |      0.59 |     16.25 | \*\*\* |
-|   1 | 0.9 | edit    | lakok/lakom              | category_high |     5.39 |      0.51 |     10.54 | \*\*\* |
-|   1 | 0.9 | jaccard | lakok/lakom              | category_high |    37.11 |      6.42 |      5.78 | \*\*\* |
-|   1 | 0.9 | phon    | lakok/lakom              | category_high |     7.66 |      0.68 |     11.26 | \*\*\* |
+| var_p | var_s | distance_type | variation                | term          | estimate | std.error | statistic | sig    |
+|------:|------:|:--------------|:-------------------------|:--------------|---------:|----------:|----------:|:-------|
+|     2 |   0.3 | edit          | cselekszenek/cselekednek | category_high |    36.23 |      6.23 |      5.81 | \*\*\* |
+|     1 |   0.9 | jaccard       | cselekszenek/cselekednek | category_high |    44.52 |      9.53 |      4.67 | \*\*\* |
+|     1 |   0.9 | phon          | cselekszenek/cselekednek | category_high |     3.56 |      0.68 |      5.22 | \*\*\* |
+|     1 |   0.3 | edit          | hotelban/hotelben        | category_high |    27.97 |      1.62 |     17.21 | \*\*\* |
+|     1 |   0.9 | jaccard       | hotelban/hotelben        | category_high |    80.46 |      4.62 |     17.43 | \*\*\* |
+|     1 |   0.7 | phon          | hotelban/hotelben        | category_high |    15.76 |      0.96 |     16.37 | \*\*\* |
+|     1 |   0.9 | edit          | lakok/lakom              | category_high |     7.71 |      0.73 |     10.62 | \*\*\* |
+|     2 |   0.1 | jaccard       | lakok/lakom              | category_high |   856.03 |    147.10 |      5.82 | \*\*\* |
+|     2 |   0.9 | phon          | lakok/lakom              | category_high |    27.97 |      2.40 |     11.66 | \*\*\* |
 
 Table: Best GCM model for each variation and distance type.
 
@@ -627,14 +615,14 @@ jaccard distance gives you a massive but very noisy estimate. For
 
 **What are the best models today?**
 
-| model | sim     | variation                | estimate | std.error | statistic | sig    |
-|:------|:--------|:-------------------------|---------:|----------:|----------:|:-------|
-| GCM   | phon    | cselekszenek/cselekednek |     2.60 |      0.50 |      5.20 | \*\*\* |
-| KNN   | phon    | cselekszenek/cselekednek |     0.61 |      0.14 |      4.29 | \*\*\* |
-| GCM   | jaccard | hotelban/hotelben        |    50.11 |      2.87 |     17.44 | \*\*\* |
-| KNN   | jaccard | hotelban/hotelben        |     2.76 |      0.20 |     13.84 | \*\*\* |
-| GCM   | phon    | lakok/lakom              |     7.66 |      0.68 |     11.26 | \*\*\* |
-| KNN   | edit    | lakok/lakom              |     1.23 |      0.13 |      9.20 | \*\*\* |
+| model | distance_type | var_s | var_p | var_k | variation                | estimate | std.error | statistic | sig    |
+|:------|:--------------|------:|------:|------:|:-------------------------|---------:|----------:|----------:|:-------|
+| GCM   | edit          |   0.3 |     2 |    NA | cselekszenek/cselekednek |    36.23 |      6.23 |      5.81 | \*\*\* |
+| KNN   | phon          |   0.1 |     1 |    15 | cselekszenek/cselekednek |     0.61 |      0.14 |      4.29 | \*\*\* |
+| GCM   | jaccard       |   0.9 |     1 |    NA | hotelban/hotelben        |    80.46 |      4.62 |     17.43 | \*\*\* |
+| KNN   | jaccard       |   0.1 |     1 |    15 | hotelban/hotelben        |     2.76 |      0.20 |     13.84 | \*\*\* |
+| GCM   | phon          |   0.9 |     2 |    NA | lakok/lakom              |    27.97 |      2.40 |     11.66 | \*\*\* |
+| KNN   | edit          |   0.1 |     1 |     7 | lakok/lakom              |     1.23 |      0.13 |      9.20 | \*\*\* |
 
 Table: Best KNN and GCM model for each variation.
 
@@ -656,15 +644,20 @@ verbs in the bottom-right corner that the model sees as relatively
 
 ## Discussion
 
-For the verbs, we get the best results by using overall, detailed
-similarity to everything, more or less. The ‘cselekszenek’ pattern is
-noisier than the ‘lakok’ pattern. This is probably because the former is
-pretty complicated on its own: some verbs never delete the last vowel,
-some always do, some do it in some exponents, some pairs differ in
-meaning, and some verbs actually vary in the same exponent with the same
-meaning. The test nonce verbs were like these. For the latter, the
-pattern is much simpler: it only happens in one exponent and a large
-number of verbs vary.
+For the verbs, we get the best results by using overall similarity to
+everything, more or less. The ‘cselekszenek’ pattern is noisier than the
+‘lakok’ pattern. This is probably because the former is pretty
+complicated on its own: some verbs never delete the last vowel, some
+always do, some do it in some exponents, some pairs differ in meaning,
+and some verbs actually vary in the same exponent with the same meaning.
+The test nonce verbs were like these. For the latter, the pattern is
+much simpler: it only happens in one exponent and a large number of
+verbs vary.
+
+For ‘cselekszenek’, the best model uses edit distance, for ‘lakok’,
+phonological distance. Note, however, that there is no massive
+difference in the accuracy of the phonology-based and the edit-distance
+based model for either variable pattern.
 
 For the noun pattern, people in the Wug task seem to have a pretty clear
 idea of what nouns are supposed to be doing, which they probably picked

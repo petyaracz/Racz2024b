@@ -247,27 +247,25 @@ alignWords = function(s1,s2,lookup_dist){
     # we group alignments by id and sum the distances in each alignment
     dplyr::group_by(id) |>
     dplyr::mutate(
-      total_dist = sum(dist),
+      phon_dist = sum(dist),
       length = n()
     ) |>
     dplyr::ungroup()
   best_alignment = best_alignments |># several ones are best. but these are equivalent except things are in different pos. so we take the shortest ones, pick the first one and remove pos 
-    dplyr::filter(total_dist == min(total_dist)) |>
+    dplyr::filter(phon_dist == min(phon_dist)) |>
     dplyr::filter(length == min(length)) |>
     dplyr::filter(id == min(id)) |>
-    dplyr::select(segment1, segment2, dist, total_dist)
+    dplyr::select(segment1, segment2, dist, phon_dist)
   
   # this is the best alignment. hooray!
   return(best_alignment)
 }
 
 # loop the aligner through a paired table of test and training forms
-runLookup = function(test,training,my_variation,lookup_dist){
+runLookup = function(test,training,lookup_dist){
   test_string = test |>
-    dplyr::filter(variation == my_variation) |>
     dplyr::pull(string)
   training_string = training |>
-    dplyr::filter(variation == my_variation) |>
     dplyr::pull(string)
   string_distance_lookup = tidyr::crossing(
     test = test_string,
@@ -289,17 +287,13 @@ runLookup = function(test,training,my_variation,lookup_dist){
 ##
 
 # GCM (Nosofsky 1988) takes the word_distance data frame, distance type, variation type, and variation parameters and returns test words with predictions
-lookupGCM = function(dat, distance_type, variation_type, var_s, var_p){
+GCM = function(dat, distance_type, var_s, var_p){
 
 if(!distance_type %in% c('phon','jaccard','edit')){
   stop('distance_type must be one of phon, jaccard, edit')
 }
-if(!variation_type %in% dat$variation){
-  stop('variation_type must be one of lakok/lakom, hotelban/hotelben, cselekszenek/cselekednek')
-}
 
   dists = dat %>% 
-    filter(variation == variation_type) %>%  
     mutate(
       dist = case_when(
         distance_type == 'phon' ~ phon_dist,
@@ -331,17 +325,13 @@ if(!variation_type %in% dat$variation){
 }
 
 # K-nearest neighbours. takes the word_distance data frame, distance type, variation type, and variation parameters and returns test words with predictions
-KNN = function(dat,variation_type,distance_type,var_p,var_s,var_k){
+KNN = function(dat,distance_type,var_p,var_s,var_k){
   
 if(!distance_type %in% c('phon','jaccard','edit')){
   stop('distance_type must be one of phon, jaccard, edit')
 }
-if(!variation_type %in% dat$variation){
-  stop('variation_type must be one of lakok/lakom, hotelban/hotelben, cselekszenek/cselekednek')
-}
   
   knn = dat %>% 
-    filter(variation == variation_type) %>% 
     mutate(
       dist = case_when(
         distance_type == 'phon' ~ phon_dist,
@@ -368,55 +358,67 @@ if(!variation_type %in% dat$variation){
 ##
 
 # wrapper fun for knn
-KNNwrapper = function(test,training,feature_matrix,my_variation,my_distance,my_s,my_k,my_p){
-  if(distance_type == 'phon'){
-    nc = feature_matrix |>
-      generateNaturalClasses()
-    
-    lookup = buildDistTable(feature_matrix, nc) |>
-      addLevenshtein()
-    
-    alignments = runLookup(test,training,my_variation,lookup)
-    
-    distances = alignments |>
-      dplyr::distinct(test,training,total_dist) |>
-      dplyr::rename(phon_dist = total_dist) |>
-      dplyr::left_join(training, join_by('training' == 'string'))
-  } else {
-    distances = crossing(test, training) %>% 
-      mutate(
-        variation = my_variation,
-        phon_dist = NA
-      )
-  }
+KNNwrapper = function(test,training,feature_matrix,my_distance,my_s,my_k,my_p){
+if(my_distance == 'phon'){
+  nc = feature_matrix |>
+    generateNaturalClasses()
   
-  KNN(dat = distances, variation_type = my_variation, distance_type = my_distance, var_s = my_s, var_k = my_k, var_p = my_p)
+  lookup = buildDistTable(feature_matrix, nc) |>
+    addLevenshtein()
+  
+  alignments = runLookup(test,training,lookup)
+  
+  distances = alignments |>
+    dplyr::distinct(test,training,phon_dist) |>
+    dplyr::left_join(training, join_by('training' == 'string'))
+} else {
+  test = test |>
+    dplyr::rename(
+      test = string
+    )
+  training = training |>
+    dplyr::rename(
+      training = string
+    )
+  distances = tidyr::crossing(test, training) |>
+    mutate(
+      phon_dist = NA
+    )
+}
+
+KNN(dat = distances, distance_type = my_distance, var_s = my_s, var_k = my_k, var_p = my_p)
   
 }
 
 # wrapper fun for gcm
-GCMwrapper = function(test,training,feature_matrix,my_variation,my_distance,my_s,my_p){
-  if(distance_type == 'phon'){
+GCMwrapper = function(test,training,feature_matrix,my_distance,my_s,my_p){
+  if(my_distance == 'phon'){
     nc = feature_matrix |>
       generateNaturalClasses()
     
     lookup = buildDistTable(feature_matrix, nc) |>
       addLevenshtein()
     
-    alignments = runLookup(test,training,my_variation,lookup)
+    alignments = runLookup(test,training,lookup)
     
     distances = alignments |>
-      dplyr::distinct(test,training,total_dist) |>
-      dplyr::rename(phon_dist = total_dist) |>
+      dplyr::distinct(test,training,phon_dist) |>
       dplyr::left_join(training, join_by('training' == 'string'))
   } else {
-    distances = crossing(test, training) %>% 
-      mutate(
-        variation = my_variation,
-        phon_dist = NA
-      )
+    test = test |>
+    dplyr::rename(
+      test = string
+    )
+  training = training |>
+    dplyr::rename(
+      training = string
+    )
+  distances = tidyr::crossing(test, training) |>
+    mutate(
+      phon_dist = NA
+    )
   }
   
-  lookupGCM(dat = distances, distance_type = my_distance, variation_type = my_variation, var_s = my_s, var_p = my_p)
+  GCM(dat = distances, distance_type = my_distance, var_s = my_s, var_p = my_p)
   
 }

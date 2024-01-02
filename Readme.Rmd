@@ -34,6 +34,7 @@ future::plan(future::multisession, workers = no_cores)
 source('code/helper.R')
 
 # other functions
+
 # -- fun -- #
 
 # build 3d mds from dist table
@@ -51,6 +52,41 @@ makeDistMDS = function(dat){
     z = dat_mds[,3],
     label = unique(dat2$segment1)
   ) 
+}
+
+# wrapper for KNN that filters for variation
+wrapKNN = function(dat, distance_type, my_variation, var_p, var_s, var_k){
+dat |>
+  dplyr::filter(variation == my_variation) |>
+  KNN(distance_type = distance_type, var_s = var_s, var_k = var_k, var_p = var_p)
+}
+# wrapper for GCM that filters for variation
+wrapGCM = function(dat, distance_type, my_variation, var_s, var_p){
+dat |>
+  dplyr::filter(variation == my_variation) |>
+  GCM(distance_type = distance_type, var_s = var_s, var_p = var_p)
+}
+
+# combine result tibbles with test responses
+combineWithTest = function(dat){
+  test %>% 
+  rename(test = string) %>% 
+  select(test,resp1,resp2,log_odds) %>% 
+  inner_join(dat, by = 'test')
+}
+
+# fit a model that predicts response rations from category labels and pulls the summary
+testAccuracy = function(dat){
+  fit = glm(cbind(resp1,resp2) ~ 1 + category_high, data = dat, family = binomial(link = 'logit'))
+  broom::tidy(fit) %>% 
+    filter(term == 'category_high') %>% 
+    mutate(sig = case_when(
+      p.value < .001 ~ '***',
+      p.value < .01 ~ '**',
+      p.value < .05 ~ '*',
+      p.value >= .05 ~ 'ns.'
+      )
+    )
 }
 ```
 
@@ -100,7 +136,7 @@ lookup_h = buildDistTable(h, nch) |>
 
 # c. align test and target words to find best phon-based alignment, here, for the 'lakok/lakom' variation. this takes ages.
 
-alignments_lakok = runLookup(test,training,'lakok/lakom',lookup_h)
+alignments_lakok = runLookup(test_l,training_l,lookup_h)
 
 # d. get distance based on best alignment, here, for lakok. join back with training data.
 
@@ -112,10 +148,10 @@ word_distance_lakok = alignments_lakok |>
 # e. use the paired data to fit some sort of a phon distance based learning model, here, a KNN
 
 # you can use a wrapper function to do a-e:
-KNNwrapper(test = test, training = training, feature_matrix = fm, my_variation = 'whatever', my_distance = 'phon', my_s = .1, my_k = 3, my_p = 1)
+KNNwrapper(test = test, training = training, feature_matrix = fm, my_distance = 'phon', my_s = .1, my_k = 3, my_p = 1)
 
 # you can use the wrapper function to use some other distance and skip the whole alignment bit:
-KNNwrapper(test = test, training = training, feature_matrix = fm, my_variation = 'whatever', my_distance = 'jaccard', my_s = .1, my_k = 3, my_p = 1)
+KNNwrapper(test = test, training = training, feature_matrix = fm, my_distance = 'jaccard', my_s = .1, my_k = 3, my_p = 1)
 
 ```
 
@@ -291,10 +327,18 @@ For each variation, you pair test and training words and calc word distance. For
 ```{r word_distances_3, echo = T, eval = F}
 # this legitimately takes a while.
 
+# set up test and training data
+testl = filter(test, variation == 'lakok/lakom')
+trainingl = filter(training, variation == 'lakok/lakom')
+testcs = filter(test, variation == 'cselekszenek/cselekednek')
+trainingcs = filter(training, variation == 'cselekszenek/cselekednek')
+testh = filter(test, variation == 'hotelban/hotelben')
+trainingh = filter(training, variation == 'hotelban/hotelben')
+
 # run the lookup for all variations
-alignments_lakok = runLookup(test,training,'lakok/lakom',lookup_h)
-alignments_cselekszenek = runLookup(test,training,'cselekszenek/cselekednek',lookup_h)
-alignments_hotelban = runLookup(test,training,'hotelban/hotelben',lookup_h)
+alignments_lakok = runLookup(testl,trainingl,lookup_h)
+alignments_cselekszenek = runLookup(testcs,trainingcs,lookup_h)
+alignments_hotelban = runLookup(testh,trainingh,lookup_h)
 
 # write_tsv(alignments_lakok, 'dat/alignments/alignments_lakok.tsv')
 # write_tsv(alignments_cselekszenek, 'dat/alignments/alignments_cselekszenek.tsv')
@@ -322,7 +366,7 @@ alignments_lakok %>%
 ```
 
 
-|test   |training |segment1 |segment2 | dist| total_dist|
+|test   |training |segment1 |segment2 | dist|  phon_dist|
 |:------|:--------|:--------|:--------|----:|----------:|
 |narádz |bábáškod |n        |b        | 0.84|       5.84|
 |narádz |bábáškod |a        |á        | 0.58|       5.84|
@@ -347,27 +391,26 @@ alignments_lakok %>%
 
 Table: Example alignments
 
-What we actually need is the total distances.
+What we actually need is the total phonological distances.
 
 ```{r add_distance, eval = F, echo = F}
 alignments_lakok_2 = alignments_lakok %>% 
   mutate(variation = 'lakok/lakom') %>% 
-  distinct(test,training,total_dist,variation)
+  distinct(test,training,phon_dist,variation)
 
 alignments_hotelban_2 = alignments_hotelban %>% 
   mutate(variation = 'hotelban/hotelben') %>% 
-  distinct(test,training,total_dist,variation)
+  distinct(test,training,phon_dist,variation)
 
 alignments_cselekszenek_2 = alignments_cselekszenek %>% 
   mutate(variation = 'cselekszenek/cselekednek') %>%
-  distinct(test,training,total_dist,variation)
+  distinct(test,training,phon_dist,variation)
 
 word_distance = bind_rows(
   alignments_lakok_2,
   alignments_hotelban_2,
   alignments_cselekszenek_2
-) %>% 
-  rename(phon_dist = total_dist)
+)
 
 write_tsv(word_distance, 'dat/alignments/word_distances.tsv')
 ```
@@ -435,47 +478,26 @@ For each test word, we get a KNN prediction for each parameter combination. Then
 
 # set up parameters
 my_parameters_1 = crossing(
-  p = c(1,2),
-  k = c(1,3,5,7,15),
-  s = c(.1,.3,.5,.7,.9),
-  sim = c('edit','jaccard','phon'),
+  var_p = c(1,2),
+  var_k = c(1,3,5,7,15),
+  var_s = c(.1,.3,.5,.7,.9),
+  distance_type = c('edit','jaccard','phon'),
   variation = c('lakok/lakom','hotelban/hotelben','cselekszenek/cselekednek')
 )
 
 # run 450 models, parallelised, add prediction tibbles to each model
 my_knns = my_parameters_1 %>% 
   mutate(
-    knn = furrr::future_pmap(list(k,s,sim,variation,p), ~ KNN(
+    knn = furrr::future_pmap(list(variation,distance_type,var_p,var_s,var_k), ~ wrapKNN(
       dat = word_distance,
-      var_s = ..2,
-      var_k = ..1,
-      var_p = ..5,
-      distance_type = ..3,
-      variation_type = ..4
-    ))
-  )
-
-# combine result tibbles with test responses
-combineWithTest = function(dat){
-  test %>% 
-  rename(test = string) %>% 
-  select(test,resp1,resp2,log_odds) %>% 
-  inner_join(dat, by = 'test')
-}
-
-# fit a model that predicts response rations from category labels and pulls the summary
-testAccuracy = function(dat){
-  fit = glm(cbind(resp1,resp2) ~ 1 + category_high, data = dat, family = binomial(link = 'logit'))
-  broom::tidy(fit) %>% 
-    filter(term == 'category_high') %>% 
-    mutate(sig = case_when(
-      p.value < .001 ~ '***',
-      p.value < .01 ~ '**',
-      p.value < .05 ~ '*',
-      p.value >= .05 ~ 'ns.'
+      my_variation = ..1,
+      distance_type = ..2,
+      var_p = ..3,
+      var_s = ..4,
+      var_k = ..5
       )
     )
-}
+  )
 
 # combine with test and calc accuracy
 my_knns %<>% 
@@ -487,6 +509,7 @@ my_knns %<>%
 my_knns2 = my_knns %>% 
   select(-knn,-knn2) %>% 
   unnest(accuracy)
+
 ```
 
 ```{r categorisation7}
@@ -508,7 +531,7 @@ We can look at the best model for each distance type and variation.
 ```{r categorisation8}
 my_knns2 %>% 
   ungroup() %>% 
-  group_by(variation,sim) %>% 
+  group_by(variation,distance_type) %>% 
   # filter(sim == 'phon') %>% 
   arrange(-statistic) %>% 
   select(-p.value) %>% 
@@ -530,7 +553,7 @@ best_params = my_knns2 %>%
 
 my_knns %>% 
   inner_join(best_params) %>% 
-  mutate(parameters = glue('{variation},\nk = {k},\ns = {s},\nsim = {sim}')) %>%
+  mutate(parameters = glue('{variation},\nk = {var_k},\ns = {var_s},\ndist = {distance_type}')) %>%
   select(parameters,knn2) %>% 
   unnest(knn2) %>% 
   ggplot(aes(category_high,log_odds)) +
@@ -552,21 +575,21 @@ We categorise test words based on similarity with training words using the Gener
 
 # set up parameters
 my_parameters_2 = crossing(
-  p = c(1,2),
-  s = c(.1,.3,.5,.7,.9),
-  sim = c('edit','jaccard','phon'),
+  var_p = c(1,2),
+  var_s = c(.1,.3,.5,.7,.9),
+  distance_type = c('edit','jaccard','phon'),
   variation = c('lakok/lakom','hotelban/hotelben','cselekszenek/cselekednek')
 )
 
 # run models
 my_gcms = my_parameters_2 %>% 
   mutate(
-    gcm = furrr::future_pmap(list(s,sim,variation,p), ~ lookupGCM(
-      var_p = ..4,
+    gcm = furrr::future_pmap(list(distance_type,variation,var_p,var_s), ~ wrapGCM(
       dat = word_distance,
-      distance_type  = ..2,
-      variation_type = ..3,
-      var_s = ..1
+      distance_type = ..1,
+      my_variation = ..2,
+      var_s = ..3,
+      var_p = ..4
     ))
   )
 
@@ -594,12 +617,12 @@ my_gcms2 %>%
   kable(digits = 2, caption = 'Table: Best GCM model for each variation.')
 ```
 
-The GCM models are all pretty good. For 'cselekszenek' and 'lakok', the best model uses phonological distance. For 'hotelban' it, again, uses jaccard distance.
+The GCM models are all pretty good. For 'cselekszenek', the best model uses edit distance and an exponential distance metric. For 'lakok', the best model uses phonological distance and the exponential metric. For 'hotelban' it, again, uses jaccard distance.
 
 ```{r categorisation8gcm}
 my_gcms2 %>% 
   ungroup() %>% 
-  group_by(variation,sim) %>% 
+  group_by(variation,distance_type) %>% 
   # filter(sim == 'phon') %>% 
   arrange(-statistic) %>% 
   select(-p.value) %>% 
@@ -614,15 +637,16 @@ __What are the best models today?__
 
 ```{r best_models}
 my_knns3 = my_knns2 %>% 
-  select(sim,variation,estimate,std.error,statistic,sig) %>% 
+  select(distance_type,var_s,var_p,var_k,variation,estimate,std.error,statistic,sig) %>% 
   mutate(model = 'KNN')
 
 my_gcms3 = my_gcms2 %>%
-  select(sim,variation,estimate,std.error,statistic,sig) %>% 
+  select(distance_type,var_s,var_p,variation,estimate,std.error,statistic,sig) %>% 
   mutate(model = 'GCM')
 
 bind_rows(my_gcms3,my_knns3) %>% 
-  relocate(model, .before = sim) %>% 
+  relocate(model, .before = distance_type) %>% 
+  relocate(var_k, .after = var_p) %>% 
   group_by(variation,model) %>%
   arrange(-statistic) %>%
   slice(1) %>% 
@@ -642,7 +666,7 @@ best_params2 = my_gcms2 %>%
 
 gcmplots = my_gcms %>% 
   inner_join(best_params2) %>% 
-  mutate(parameters = glue('{variation},\ns = {s},\nsim = {sim}')) %>%
+  mutate(parameters = glue('{variation},\ns = {var_s},\np = {var_p}, \ndist = {distance_type}')) %>%
   select(parameters,gcm2) %>% 
   mutate(
     plot = map2(gcm2,parameters, ~
@@ -683,7 +707,9 @@ For the two verb patterns (left and right), we see a largely normal distribution
 
 ## Discussion
 
-For the verbs, we get the best results by using overall, detailed similarity to everything, more or less. The 'cselekszenek' pattern is noisier than the 'lakok' pattern. This is probably because the former is pretty complicated on its own: some verbs never delete the last vowel, some always do, some do it in some exponents, some pairs differ in meaning, and some verbs actually vary in the same exponent with the same meaning. The test nonce verbs were like these. For the latter, the pattern is much simpler: it only happens in one exponent and a large number of verbs vary.
+For the verbs, we get the best results by using overall similarity to everything, more or less. The 'cselekszenek' pattern is noisier than the 'lakok' pattern. This is probably because the former is pretty complicated on its own: some verbs never delete the last vowel, some always do, some do it in some exponents, some pairs differ in meaning, and some verbs actually vary in the same exponent with the same meaning. The test nonce verbs were like these. For the latter, the pattern is much simpler: it only happens in one exponent and a large number of verbs vary.
+
+For 'cselekszenek', the best model uses edit distance, for 'lakok', phonological distance. Note, however, that there is no massive difference in the accuracy of the phonology-based and the edit-distance based model for either variable pattern.
 
 For the noun pattern, people in the Wug task seem to have a pretty clear idea of what nouns are supposed to be doing, which they probably picked up from the ambient language -- in the corpus, nouns also seem to have a clear idea what they are supposed to be doing! A very specific subset of nonce verbs have prediction error on them, meaning that people don't treat them as they should based on their similarity to existing verbs. This merits further investigation but shouldn't be blamed on the categorisation model.
 
