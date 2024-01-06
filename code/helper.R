@@ -289,8 +289,8 @@ runLookup = function(test,training,lookup_dist){
 # GCM (Nosofsky 1988) takes the word_distance data frame, distance type, variation type, and variation parameters and returns test words with predictions
 GCM = function(dat, distance_type, var_s, var_p){
 
-if(!distance_type %in% c('phon','jaccard','edit')){
-  stop('distance_type must be one of phon, jaccard, edit')
+if(!distance_type %in% c('phon','jaccard','edit','hamming')){
+  stop('distance_type must be one of phon, jaccard, edit, hamming')
 }
 
   dists = dat %>% 
@@ -299,7 +299,8 @@ if(!distance_type %in% c('phon','jaccard','edit')){
         distance_type == 'phon' ~ phon_dist,
         distance_type == 'jaccard' ~ stringdist::stringdist(test,training,method = 'jaccard'),
         distance_type == 'edit' ~ stringdist::stringdist(test,training,method = 'lv'),
-        distance_type == 'qgram' ~ stringdist::stringdist(test,training,method = 'qgram')
+        distance_type == 'qgram' ~ stringdist::stringdist(test,training,method = 'qgram'),
+        distance_type == 'hamming' ~ stringdist::stringdist(test,training,method = 'hamming')
       )
     ) %>% 
     mutate(
@@ -327,8 +328,8 @@ if(!distance_type %in% c('phon','jaccard','edit')){
 # K-nearest neighbours. takes the word_distance data frame, distance type, variation type, and variation parameters and returns test words with predictions
 KNN = function(dat,distance_type,var_p,var_s,var_k){
   
-if(!distance_type %in% c('phon','jaccard','edit')){
-  stop('distance_type must be one of phon, jaccard, edit')
+if(!distance_type %in% c('phon','jaccard','edit','hamming')){
+  stop('distance_type must be one of phon, jaccard, edit, hamming')
 }
   
   knn = dat %>% 
@@ -337,7 +338,8 @@ if(!distance_type %in% c('phon','jaccard','edit')){
         distance_type == 'phon' ~ phon_dist,
         distance_type == 'jaccard' ~ stringdist::stringdist(test,training,method = 'jaccard'),
         distance_type == 'edit' ~ stringdist::stringdist(test,training,method = 'lv'),
-        distance_type == 'qgram' ~ stringdist::stringdist(test,training,method = 'qgram')
+        distance_type == 'qgram' ~ stringdist::stringdist(test,training,method = 'qgram'),
+        distance_type == 'hamming' ~ stringdist::stringdist(test,training,method = 'hamming')
       ),
       category_high = category == 'high'
     ) %>% 

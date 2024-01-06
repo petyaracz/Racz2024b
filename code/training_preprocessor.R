@@ -4,6 +4,7 @@ setwd('~/Github/Racz2024b')
 
 library(tidyverse)
 library(lme4)
+library(glue)
 library(hunspell)
 
 source('code/helper.R')
@@ -14,6 +15,7 @@ training_ik = read_tsv('~/Github/Racz2024/resource/real_words/ik_verbs/ikes_pair
 training_ep = read_tsv('dat/training_sets/cselekszenek_alt_training_set.tsv')
 training_vh = read_tsv('~/Github/Racz2024/resource/real_words/front_harmony/fh_pairs_webcorpus2.tsv')
 test = read_tsv('~/Github/Racz2024/exp_data/baseline/baseline_tidy_proc.tsv')
+v = read_tsv('~/Github/Racz2024/resource/webcorpus2freqlist/verb_forms.tsv.gz')
 
 # -- test -- #
 
@@ -143,8 +145,80 @@ training2 = bind_rows(
   training_vh3
 )
 
+# -- set up mgl training -- #
+
+training_ik_mgl = training_ik %>% 
+  select(base,form_1,form_2) %>% 
+  right_join(training_ik2) %>% 
+  mutate(
+    input = glue('{string}ik'),
+    output = case_when(
+      category == 'high' ~ transcribeIPA(form_1, 'single'),
+      category == 'low' ~ transcribeIPA(form_2, 'single')
+    ),
+    output = str_replace(output, '[oeö](?=[mk]$)', 'V'),
+    suffix = '3sg'
+  ) %>% 
+  distinct(variation,base,category,suffix,input,output)
+
+training_vh_mgl = training_vh %>%
+  select(base,form_1,form_2) %>% 
+  right_join(training_vh3) %>% 
+  mutate(
+    input = string,
+    output = case_when(
+      category == 'high' ~ transcribeIPA(form_1, 'single'),
+      category == 'low' ~ transcribeIPA(form_2, 'single')
+    ),
+    suffix = case_when(
+      str_detect(output, 'b[ae]n$') ~ 'in',
+      str_detect(output, 'b[ae]$') ~ 'into',
+      str_detect(output, 'r[ae]$') ~ 'onto',
+      str_detect(output, 'n[ae]k$') ~ 'to',
+      str_detect(output, 'n[áé]l$') ~ 'by'
+    )
+  ) %>% 
+  filter(!is.na(suffix)) %>% 
+  distinct(variation,base,category,suffix,input,output)
+
+
+keep_tag = v %>% 
+  filter(
+    form %in% c('eszünk', 'esztek', 'esznek')
+  ) %>% 
+  pull(xpostag)
+
+v2 = v %>% 
+  filter(
+    xpostag %in% keep_tag,
+    lemma %in% training_ep$lemma
+  ) %>% 
+  mutate(
+    suffix = case_when(
+      xpostag == "[/V][Prs.NDef.1Pl]" ~ '1pl',
+      xpostag == "[/V][Prs.NDef.3Pl]" ~ '3pl',
+      xpostag == "[/V][Prs.NDef.2Pl]" ~ '2pl'
+    )
+  )
+
+training_ep_mgl = v2 %>% 
+  select(lemma,form,suffix) %>% 
+  rename(base = lemma) %>% 
+  right_join(training_ep2) %>% 
+  mutate(
+    input = transcribeIPA(base, 'single'),
+    output = transcribeIPA(form, 'single')
+  ) %>% 
+  distinct(variation,base,category,suffix,input,output)
+
+training_mgl = bind_rows(
+  training_ep_mgl,
+  training_vh_mgl,
+  training_ik_mgl
+)
+
 # -- write -- #
 
 write_tsv(test2, 'dat/training_sets/test_set.tsv')
 write_tsv(training2, 'dat/training_sets/training_set.tsv')
-
+write_tsv(training_mgl, 'dat/training_sets/training_mgl.tsv')
