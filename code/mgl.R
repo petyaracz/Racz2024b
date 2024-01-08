@@ -1,3 +1,8 @@
+# -- par -- #
+
+no_cores <- future::availableCores() - 1
+future::plan(future::multisession, workers = no_cores)
+
 # -- fun -- #
 
 # replace characters in pairs with their IPA equivalents
@@ -104,8 +109,8 @@ findLargerRules = function(t){
     dplyr::filter(!(c1 == c2 & d1 == d2)) |> 
     dplyr::rowwise() |> 
     dplyr::mutate(
-      C = str_overlap_right(c1,c2),
-      D = str_overlap_left(d1,d2)
+      C = str_overlap_right(c1, c2),
+      D = str_overlap_left(d1, d2)
     ) |>
     dplyr::rename(
       A = a1, 
@@ -216,7 +221,7 @@ impugnRules = function(all_rules_stats,rules_and_words){
     ) |> 
     dplyr::rowwise() |> 
     dplyr::mutate(
-      keep = compareContextsC(C_2,C)
+      keep = compareContextsC(C_2, C)
     ) |> 
     dplyr::filter(keep)
   
@@ -262,29 +267,6 @@ addWordsToRules = function(rules,rules_and_words){
     dplyr::select(rule,examples,exceptions)
   
   left_join(rules,rules_w_e, by = join_by(rule))
-}
-
-# merge rules w/ test and get predictions from best rules
-
-getPredictions = function(test,rules){
-  test |> 
-    dplyr::mutate(input = glue::glue('#{input}#')) |> 
-    tidyr::crossing(rules) |> 
-    dplyr::filter(str_detect(input, glue::glue('{C}{A}{D}$'))) |> #!
-    dplyr::group_by(input,B) |> 
-    dplyr::arrange(-impugned_lower_confidence_limit) |>
-    dplyr::slice(1) |> 
-    dplyr::select(input,log_odds,B,impugned_lower_confidence_limit) |> 
-    tidyr::pivot_wider(names_from = B, values_from = impugned_lower_confidence_limit, values_fill = 0) |> 
-    magrittr::set_colnames(c('base','log_odds','cat1','cat2')) |> 
-    dplyr::mutate(
-      cat1_weight  = dplyr::case_when(
-        cat1 == 0 ~ 0,
-        cat2 == 0 ~ 1,
-        cat1 != 0 & cat2 != 0 ~ cat1 / (cat1 + cat2)
-      )
-    )
-  
 }
 
 # -- run the whole thing -- #

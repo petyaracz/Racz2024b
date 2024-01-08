@@ -9,6 +9,27 @@ library(hunspell)
 
 source('code/helper.R')
 
+# -- fun -- #
+
+SetupInputOutput = . %>% mutate(
+        input = case_when(
+          variation == 'hotelban/hotelben' ~ string,
+          variation == 'lakok/lakom' ~ glue('string{iK$}'),
+          variation == 'cselekszenek/cselekednek' ~ glue('string{iK$}')
+        ),
+        output = case_when(
+          variation == 'hotelban/hotelben' ~ form,
+          variation == 'lakok/lakom' ~ str_replace(form, '[oeö](?=[km]$)', 'V'),
+          variation == 'cselekszenek/cselekednek' & suffix == 'nek' ~ str_replace(form, '[aáeéiíoóöőuúüű]n[ae]k$', 'VnVk'),
+          variation == 'cselekszenek/cselekednek' & suffix == 'nek' ~ str_replace(form, '(?<=[^aáeéiíoóöőuúüű])n[ae]k$', 'nVk'),
+          variation == 'cselekszenek/cselekednek' & suffix == 'tek' ~ str_replace(form, '[aáeéiíoóöőuúüű]t[ae]k$', 'VtVk'),
+          variation == 'cselekszenek/cselekednek' & suffix == 'tek' ~ str_replace(form, '(?<=[^aáeéiíoóöőuúüű])t[ae]k$', 'tVk'),
+          variation == 'cselekszenek/cselekednek' & suffix == 'ünk' ~ str_replace(form, '[uü]nk$', 'Vnk')
+        )
+)
+
+
+
 # -- read -- #
 
 training_ik = read_tsv('~/Github/Racz2024/resource/real_words/ik_verbs/ikes_pairs_webcorpus2.tsv')
@@ -151,36 +172,33 @@ training_ik_mgl = training_ik %>%
   select(base,form_1,form_2) %>% 
   right_join(training_ik2) %>% 
   mutate(
-    input = glue('{string}ik'),
-    output = case_when(
+    suffix = '3sg',
+    form = case_when(
       category == 'high' ~ transcribeIPA(form_1, 'single'),
       category == 'low' ~ transcribeIPA(form_2, 'single')
-    ),
-    output = str_replace(output, '[oeö](?=[mk]$)', 'V'),
-    suffix = '3sg'
+    )
   ) %>% 
-  distinct(variation,base,category,suffix,input,output)
+  distinct(variation,base,category,suffix,string,form)
 
 training_vh_mgl = training_vh %>%
   select(base,form_1,form_2) %>% 
+  # filter(str_detect(base, 'rész$', negate = T)) %>% 
   right_join(training_vh3) %>% 
   mutate(
-    input = string,
-    output = case_when(
+    suffix = case_when(
+      str_detect(form_1, 'b[ae]n$') ~ 'ban',
+      str_detect(form_1, 'b[ae]$') ~ 'ba',
+      str_detect(form_1, 'r[ae]$') ~ 'ra',
+      str_detect(form_1, 'n[ae]k$') ~ 'nak',
+      str_detect(form_1, 'n[áé]l$') ~ 'nál'
+    ),
+    form = case_when(
       category == 'high' ~ transcribeIPA(form_1, 'single'),
       category == 'low' ~ transcribeIPA(form_2, 'single')
-    ),
-    suffix = case_when(
-      str_detect(output, 'b[ae]n$') ~ 'in',
-      str_detect(output, 'b[ae]$') ~ 'into',
-      str_detect(output, 'r[ae]$') ~ 'onto',
-      str_detect(output, 'n[ae]k$') ~ 'to',
-      str_detect(output, 'n[áé]l$') ~ 'by'
     )
   ) %>% 
-  filter(!is.na(suffix)) %>% 
-  distinct(variation,base,category,suffix,input,output)
-
+  filter(suffix %in% c('ban','nál','nak')) %>% 
+  distinct(variation,base,category,suffix,string,form)
 
 keep_tag = v %>% 
   filter(
@@ -191,7 +209,8 @@ keep_tag = v %>%
 v2 = v %>% 
   filter(
     xpostag %in% keep_tag,
-    lemma %in% training_ep$lemma
+    lemma %in% training_ep$lemma,
+    !lemma %in% c('egyik', 'mindegyik', 'valamelyik', 'tik')
   ) %>% 
   mutate(
     suffix = case_when(
@@ -205,20 +224,44 @@ training_ep_mgl = v2 %>%
   select(lemma,form,suffix) %>% 
   rename(base = lemma) %>% 
   right_join(training_ep2) %>% 
+  filter(form != 'feksziknek') %>% 
   mutate(
-    input = transcribeIPA(base, 'single'),
-    output = transcribeIPA(form, 'single')
+    suffix = case_when(
+      suffix == '1pl' ~ 'ünk',
+      suffix == '2pl' ~ 'tek',
+      suffix == '3pl' ~ 'nek'
+    )
   ) %>% 
-  distinct(variation,base,category,suffix,input,output)
+  distinct(variation,base,category,suffix,string,form)
 
 training_mgl = bind_rows(
   training_ep_mgl,
   training_vh_mgl,
   training_ik_mgl
-)
+) %>% 
+  SetupInputOutput()
+
+test_mgl1 = 
+  test2 %>%
+  select(base,string,resp1,resp2,log_odds,variation,suffix,variant1) %>% 
+  rename(form = variant1) %>% 
+  SetupInputOutput() %>% 
+  select(-form) %>% 
+  rename(output1 = output)
+
+test_mgl2 = 
+  test2 %>%
+  select(base,string,variation,suffix,variant2) %>% 
+  rename(form = variant2) %>% 
+  SetupInputOutput() %>% 
+  select(-form) %>% 
+  rename(output2 = output)
+
+test_mgl = left_join(test_mgl1,test_mgl2)
 
 # -- write -- #
 
 write_tsv(test2, 'dat/training_sets/test_set.tsv')
+write_tsv(test_mgl, 'dat/training_sets/test_mgl.tsv')
 write_tsv(training2, 'dat/training_sets/training_set.tsv')
 write_tsv(training_mgl, 'dat/training_sets/training_mgl.tsv')

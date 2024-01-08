@@ -1,0 +1,487 @@
+base	string	resp1	resp2	log_odds	variation	suffix	output1	input	output2
+aglik	agl	12	15	-0.2076393647782445	lakok/lakom	NA	aglVk	agliK	aglVm
+bejzik / bejezik	bejz	13	14	-0.06899287148695143	cselekszenek/cselekednek	ünk	bejzVnk	bejziK	bejezVnk
+bidem	bidem	1	25	-2.5649493574615367	hotelban/hotelben	ban	bidemban	bidem	bidemben
+bihánylik	biháṉl	21	5	1.2992829841302609	lakok/lakom	NA	biháṉlVk	biháṉliK	biháṉlVm
+bingéj	bingéj	5	24	-1.4271163556401458	hotelban/hotelben	nak	bingéjnak	bingéj	bingéjnek
+bivégszik	bivégs	7	22	-1.0560526742493137	lakok/lakom	NA	bivégsVk	bivégsiK	bivégsVm
+bivejlik	bivejl	18	8	0.7472144018302211	lakok/lakom	NA	bivejlVk	bivejliK	bivejlVm
+böjzik	böjz	14	12	0.14310084364067324	lakok/lakom	NA	böjzVk	böjziK	böjzVm
+bölszik	böls	16	11	0.3483066942682158	lakok/lakom	NA	bölsVk	bölsiK	bölsVm
+bötőrzik / bötőrözik	bötőrz	16	11	0.3483066942682158	cselekszenek/cselekednek	ünk	bötőrzVnk	bötőrziK	bötőrözVnk
+brágaklik	brágakl	12	17	-0.325422400434628	lakok/lakom	NA	brágaklVk	brágakliK	brágaklVm
+brágéd	brágéd	14	15	-0.06453852113757118	hotelban/hotelben	nak	brágédnak	brágéd	brágédnek
+brálamlik / brálamozik	brálaml	16	10	0.4353180712578455	cselekszenek/cselekednek	nek	brálamlVnVk	brálamliK	brálamoznVk
+bralkép	bralkép	6	21	-1.1451323043030026	hotelban/hotelben	ban	bralképban	bralkép	bralképben
+branylik / branyozik	braṉl	17	12	0.32542240043462795	cselekszenek/cselekednek	nek	braṉlVnVk	braṉliK	braṉoznVk
+brarlik	brarl	21	6	1.1451323043030026	lakok/lakom	NA	brarlVk	brarliK	brarlVm
+brárlik / brározik	brárl	14	12	0.14310084364067324	cselekszenek/cselekednek	nek	brárlVnVk	brárliK	brároznVk
+braszenc	brasenc	8	18	-0.7472144018302211	hotelban/hotelben	nál	brasencnál	brasenc	brasencnél
+bratárzik / bratározik	bratárz	5	21	-1.2992829841302609	cselekszenek/cselekednek	nek	bratárzVnVk	bratárziK	bratároznVk
+bregzik / bregezik	bregz	17	10	0.49247648509779424	cselekszenek/cselekednek	ünk	bregzVnk	bregziK	bregezVnk
+breslik / bresezik	brešl	14	13	0.06899287148695142	cselekszenek/cselekednek	nek	brešlVnVk	brešliK	brešeznVk
+bribaslik / bribasozik	bribašl	11	16	-0.3483066942682157	cselekszenek/cselekednek	nek	bribašlVnVk	bribašliK	bribašoznVk
+bribékszik / bribékedik	bribéks	13	16	-0.1941560144409575	cselekszenek/cselekednek	tek	bribéksVtVk	bribéksiK	bribékedtVk
+brigeszt	brigest	1	26	-2.6026896854443837	hotelban/hotelben	nak	brigestnak	brigest	brigestnek
+brilegzik / brilegezik	brilegz	15	11	0.28768207245178085	cselekszenek/cselekednek	ünk	brilegzVnk	brilegziK	brilegezVnk
+brindez	brindez	1	25	-2.5649493574615367	hotelban/hotelben	nak	brindeznak	brindez	brindeznek
+briskéd	briškéd	3	23	-1.791759469228055	hotelban/hotelben	nál	briškédnál	briškéd	briškédnél
+briváglik / brivágozik	brivágl	11	15	-0.2876820724517809	cselekszenek/cselekednek	nek	briváglVnVk	brivágliK	brivágoznVk
+brivaklik / brivakozik	brivakl	12	15	-0.2076393647782445	cselekszenek/cselekednek	tek	brivaklVtVk	brivakliK	brivakoztVk
+brivegzik	brivegz	8	21	-0.8938178760220964	lakok/lakom	NA	brivegzVk	brivegziK	brivegzVm
+brivepszik / brivepedik	briveps	19	7	0.9162907318741552	cselekszenek/cselekednek	ünk	brivepsVnk	brivepsiK	brivepedVnk
+brobódzik	brobódz	9	18	-0.6418538861723948	lakok/lakom	NA	brobódzVk	brobódziK	brobódzVm
+bródesz	bródes	6	20	-1.0986122886681098	hotelban/hotelben	nak	bródesnak	bródes	bródesnek
+brotes	broteš	13	13	0	hotelban/hotelben	ban	brotešban	broteš	brotešben
+brözlik / brözözik	brözl	14	13	0.06899287148695142	cselekszenek/cselekednek	tek	brözlVtVk	brözliK	brözöztVk
+brubzik	brubz	16	11	0.3483066942682158	lakok/lakom	NA	brubzVk	brubziK	brubzVm
+brüjlik	brüjl	18	8	0.7472144018302211	lakok/lakom	NA	brüjlVk	brüjliK	brüjlVm
+brukész	brukés	12	14	-0.1431008436406733	hotelban/hotelben	nál	brukésnál	brukés	brukésnél
+brűklik / brűközik	brűkl	14	12	0.14310084364067324	cselekszenek/cselekednek	tek	brűklVtVk	brűkliK	brűköztVk
+brülöslik / brülösözik	brülöšl	13	14	-0.06899287148695143	cselekszenek/cselekednek	ünk	brülöšlVnk	brülöšliK	brülöšözVnk
+brürzik / brürözik	brürz	12	14	-0.1431008436406733	cselekszenek/cselekednek	nek	brürzVnVk	brürziK	brüröznVk
+brüszlik / brüszözik	brüsl	12	15	-0.2076393647782445	cselekszenek/cselekednek	tek	brüslVtVk	brüsliK	brüsöztVk
+büglik	bügl	19	7	0.9162907318741552	lakok/lakom	NA	büglVk	bügliK	büglVm
+bügzik / bügözik	bügz	18	9	0.6418538861723947	cselekszenek/cselekednek	nek	bügzVnVk	bügziK	bügöznVk
+buhény	buhéṉ	21	6	1.1451323043030026	hotelban/hotelben	ban	buhéṉban	buhéṉ	buhéṉben
+bupéz	bupéz	15	11	0.28768207245178085	hotelban/hotelben	ban	bupézban	bupéz	bupézben
+bűtszik	bűts	14	12	0.14310084364067324	lakok/lakom	NA	bűtsVk	bűtsiK	bűtsVm
+cságyelt	čáḏelt	9	20	-0.7419373447293773	hotelban/hotelben	ban	čáḏeltban	čáḏelt	čáḏeltben
+csartény	čartéṉ	16	11	0.3483066942682158	hotelban/hotelben	nak	čartéṉnak	čartéṉ	čartéṉnek
+csibagzik / csibagozik	čibagz	8	19	-0.7985076962177716	cselekszenek/cselekednek	tek	čibagzVtVk	čibagziK	čibagoztVk
+csimen	čimen	1	28	-2.6741486494265287	hotelban/hotelben	nál	čimennál	čimen	čimennél
+csinték	činték	4	25	-1.6486586255873816	hotelban/hotelben	ban	čintékban	činték	čintékben
+csíszlik	čísl	20	9	0.7419373447293773	lakok/lakom	NA	číslVk	čísliK	číslVm
+csodeg	čodeg	10	16	-0.4353180712578455	hotelban/hotelben	nál	čodegnál	čodeg	čodegnél
+csólorzik	čólorz	10	19	-0.5978370007556204	lakok/lakom	NA	čólorzVk	čólorziK	čólorzVm
+csublény	čubléṉ	17	10	0.49247648509779424	hotelban/hotelben	ban	čubléṉban	čubléṉ	čubléṉben
+csubzik / csubozik	čubz	20	9	0.7419373447293773	cselekszenek/cselekednek	ünk	čubzVnk	čubziK	čubozVnk
+dábegy	dábeḏ	4	23	-1.5686159179138452	hotelban/hotelben	ban	dábeḏban	dábeḏ	dábeḏben
+dabzik / dabozik	dabz	13	16	-0.1941560144409575	cselekszenek/cselekednek	tek	dabzVtVk	dabziK	daboztVk
+dajrens	dajrenš	4	23	-1.5686159179138452	hotelban/hotelben	nál	dajrenšnál	dajrenš	dajrenšnél
+dalenc	dalenc	9	17	-0.587786664902119	hotelban/hotelben	nál	dalencnál	dalenc	dalencnél
+danét	danét	19	7	0.9162907318741552	hotelban/hotelben	nál	danétnál	danét	danétnél
+dárakszik / dárakodik	dáraks	15	14	0.06453852113757116	cselekszenek/cselekednek	ünk	dáraksVnk	dáraksiK	dárakodVnk
+darhén	darhén	24	3	1.8325814637483104	hotelban/hotelben	ban	darhénban	darhén	darhénben
+dibáglik / dibágozik	dibágl	16	13	0.1941560144409574	cselekszenek/cselekednek	tek	dibáglVtVk	dibágliK	dibágoztVk
+dibez	dibez	2	24	-2.120263536200091	hotelban/hotelben	ban	dibezban	dibez	dibezben
+dihely	dihej	1	28	-2.6741486494265287	hotelban/hotelben	nak	dihejnak	dihej	dihejnek
+dilaklik / dilakozik	dilakl	11	18	-0.4595323293784402	cselekszenek/cselekednek	tek	dilaklVtVk	dilakliK	dilakoztVk
+dinelt	dinelt	3	26	-1.9095425048844383	hotelban/hotelben	ban	dineltban	dinelt	dineltben
+dingec	dingec	3	26	-1.9095425048844383	hotelban/hotelben	nak	dingecnak	dingec	dingecnek
+diránylik / dirányozik	diráṉl	13	14	-0.06899287148695143	cselekszenek/cselekednek	nek	diráṉlVnVk	diráṉliK	diráṉoznVk
+dirlik / dirozik	dirl	13	13	0	cselekszenek/cselekednek	tek	dirlVtVk	dirliK	diroztVk
+dóbem	dóbem	6	23	-1.2321436812926323	hotelban/hotelben	nak	dóbemnak	dóbem	dóbemnek
+döjlik / döjözik	döjl	17	9	0.5877866649021191	cselekszenek/cselekednek	nek	döjlVnVk	döjliK	döjöznVk
+dorzéj	dorzéj	12	14	-0.1431008436406733	hotelban/hotelben	nak	dorzéjnak	dorzéj	dorzéjnek
+dralágzik / dralágozik	dralágz	16	10	0.4353180712578455	cselekszenek/cselekednek	ünk	dralágzVnk	dralágziK	dralágozVnk
+driládzik	driládz	10	19	-0.5978370007556204	lakok/lakom	NA	driládzVk	driládziK	driládzVm
+drilarzik / drilarozik	drilarz	10	16	-0.4353180712578455	cselekszenek/cselekednek	ünk	drilarzVnk	drilarziK	drilarozVnk
+drivegzik / drivegezik	drivegz	10	16	-0.4353180712578455	cselekszenek/cselekednek	tek	drivegzVtVk	drivegziK	drivegeztVk
+drojzik / drojozik	drojz	17	12	0.32542240043462795	cselekszenek/cselekednek	ünk	drojzVnk	drojziK	drojozVnk
+drubódzik	drubódz	10	16	-0.4353180712578455	lakok/lakom	NA	drubódzVk	drubódziK	drubódzVm
+drügzik	drügz	14	13	0.06899287148695142	lakok/lakom	NA	drügzVk	drügziK	drügzVm
+drűrzik / drűrözik	drűrz	11	16	-0.3483066942682157	cselekszenek/cselekednek	nek	drűrzVnVk	drűrziK	drűröznVk
+düjzik	düjz	13	13	0	lakok/lakom	NA	düjzVk	düjziK	düjzVm
+dujzik / dujozik	dujz	16	11	0.3483066942682158	cselekszenek/cselekednek	nek	dujzVnVk	dujziK	dujoznVk
+dunkész	dunkés	15	12	0.20763936477824457	hotelban/hotelben	ban	dunkésban	dunkés	dunkésben
+dutec	dutec	6	21	-1.1451323043030026	hotelban/hotelben	nál	dutecnál	dutec	dutecnél
+fádens	fádenš	6	21	-1.1451323043030026	hotelban/hotelben	nak	fádenšnak	fádenš	fádenšnek
+fágyép	fáḏép	13	14	-0.06899287148695143	hotelban/hotelben	nál	fáḏépnál	fáḏép	fáḏépnél
+fájéz	fájéz	19	10	0.5978370007556204	hotelban/hotelben	ban	fájézban	fájéz	fájézben
+féjzik	féjz	16	10	0.4353180712578455	lakok/lakom	NA	féjzVk	féjziK	féjzVm
+femlik	feml	25	4	1.6486586255873816	lakok/lakom	NA	femlVk	femliK	femlVm
+feténylik	fetéṉl	23	4	1.5686159179138452	lakok/lakom	NA	fetéṉlVk	fetéṉliK	fetéṉlVm
+fibamlik	fibaml	26	3	1.9095425048844383	lakok/lakom	NA	fibamlVk	fibamliK	fibamlVm
+figlik	figl	20	9	0.7419373447293773	lakok/lakom	NA	figlVk	figliK	figlVm
+filágzik	filágz	7	20	-0.9650808960435872	lakok/lakom	NA	filágzVk	filágziK	filágzVm
+filánylik / filányozik	filáṉl	13	13	0	cselekszenek/cselekednek	ünk	filáṉlVnk	filáṉliK	filáṉozVnk
+fincek	fincek	4	22	-1.5260563034950494	hotelban/hotelben	nál	finceknál	fincek	finceknél
+fivénylik	fivéṉl	20	9	0.7419373447293773	lakok/lakom	NA	fivéṉlVk	fivéṉliK	fivéṉlVm
+fizend	fizend	1	25	-2.5649493574615367	hotelban/hotelben	ban	fizendban	fizend	fizendben
+flagánylik	flagáṉl	22	7	1.0560526742493137	lakok/lakom	NA	flagáṉlVk	flagáṉliK	flagáṉlVm
+flagárzik	flagárz	12	15	-0.2076393647782445	lakok/lakom	NA	flagárzVk	flagárziK	flagárzVm
+flátlik / flátozik	flátl	11	15	-0.2876820724517809	cselekszenek/cselekednek	tek	flátlVtVk	flátliK	flátoztVk
+flátszik	fláts	11	18	-0.4595323293784402	lakok/lakom	NA	flátsVk	flátsiK	flátsVm
+flehékszik	flehéks	10	19	-0.5978370007556204	lakok/lakom	NA	flehéksVk	flehéksiK	flehéksVm
+flehénylik	flehéṉl	23	4	1.5686159179138452	lakok/lakom	NA	flehéṉlVk	flehéṉliK	flehéṉlVm
+flemlik / flemezik	fleml	10	19	-0.5978370007556204	cselekszenek/cselekednek	ünk	flemlVnk	flemliK	flemezVnk
+flerékszik / flerékedik	fleréks	17	12	0.32542240043462795	cselekszenek/cselekednek	ünk	fleréksVnk	fleréksiK	flerékedVnk
+flérlik	flérl	23	4	1.5686159179138452	lakok/lakom	NA	flérlVk	flérliK	flérlVm
+flézlik / flézezik	flézl	11	18	-0.4595323293784402	cselekszenek/cselekednek	tek	flézlVtVk	flézliK	flézeztVk
+flibekszik	flibeks	11	18	-0.4595323293784402	lakok/lakom	NA	flibeksVk	flibeksiK	flibeksVm
+fligzik	fligz	10	19	-0.5978370007556204	lakok/lakom	NA	fligzVk	fligziK	fligzVm
+fliraklik	flirakl	13	13	0	lakok/lakom	NA	fliraklVk	flirakliK	fliraklVm
+flitlik	flitl	25	4	1.6486586255873816	lakok/lakom	NA	flitlVk	flitliK	flitlVm
+flivegzik / flivegezik	flivegz	11	16	-0.3483066942682157	cselekszenek/cselekednek	nek	flivegzVnVk	flivegziK	flivegeznVk
+flodlik / flodozik	flodl	12	17	-0.325422400434628	cselekszenek/cselekednek	tek	flodlVtVk	flodliK	flodoztVk
+floglik	flogl	18	11	0.4595323293784402	lakok/lakom	NA	floglVk	flogliK	floglVm
+flöklik / flöközik	flökl	12	14	-0.1431008436406733	cselekszenek/cselekednek	tek	flöklVtVk	flökliK	flököztVk
+flözlik	flözl	20	7	0.965080896043587	lakok/lakom	NA	flözlVk	flözliK	flözlVm
+fluboklik / flubokozik	flubokl	10	19	-0.5978370007556204	cselekszenek/cselekednek	tek	fluboklVtVk	flubokliK	flubokoztVk
+flugonylik / flugonyozik	flugoṉl	13	13	0	cselekszenek/cselekednek	nek	flugoṉlVnVk	flugoṉliK	flugoṉoznVk
+flűgzik / flűgözik	flűgz	17	12	0.32542240043462795	cselekszenek/cselekednek	ünk	flűgzVnk	flűgziK	flűgözVnk
+flűmlik	flűml	24	5	1.4271163556401458	lakok/lakom	NA	flűmlVk	flűmliK	flűmlVm
+flűröklik	flűrökl	17	12	0.32542240043462795	lakok/lakom	NA	flűröklVk	flűrökliK	flűröklVm
+flüröklik / flüröközik	flürökl	16	13	0.1941560144409574	cselekszenek/cselekednek	tek	flüröklVtVk	flürökliK	flürököztVk
+flüröslik	flüröšl	20	9	0.7419373447293773	lakok/lakom	NA	flüröšlVk	flüröšliK	flüröšlVm
+fojlegy	fojleḏ	1	28	-2.6741486494265287	hotelban/hotelben	nak	fojleḏnak	fojleḏ	fojleḏnek
+fökszik / föködik	föks	18	9	0.6418538861723947	cselekszenek/cselekednek	nek	föksVnVk	föksiK	föködnVk
+forzéd	forzéd	13	16	-0.1941560144409575	hotelban/hotelben	nak	forzédnak	forzéd	forzédnek
+frágapszik	frágaps	11	16	-0.3483066942682157	lakok/lakom	NA	frágapsVk	frágapsiK	frágapsVm
+fraklik / frakozik	frakl	15	12	0.20763936477824457	cselekszenek/cselekednek	ünk	fraklVnk	frakliK	frakozVnk
+frálapszik / frálapodik	frálaps	16	10	0.4353180712578455	cselekszenek/cselekednek	tek	frálapsVtVk	frálapsiK	frálapodtVk
+frálaslik / frálasozik	frálašl	18	11	0.4595323293784402	cselekszenek/cselekednek	nek	frálašlVnVk	frálašliK	frálašoznVk
+frélegzik / frélegezik	frélegz	19	8	0.7985076962177716	cselekszenek/cselekednek	ünk	frélegzVnk	frélegziK	frélegezVnk
+fréslik / frésezik	fréšl	19	10	0.5978370007556204	cselekszenek/cselekednek	ünk	fréšlVnk	fréšliK	fréšezVnk
+fretszik	frets	13	13	0	lakok/lakom	NA	fretsVk	fretsiK	fretsVm
+friheglik / frihegezik	frihegl	14	13	0.06899287148695142	cselekszenek/cselekednek	ünk	friheglVnk	frihegliK	frihegezVnk
+frilegszik	frilegs	11	15	-0.2876820724517809	lakok/lakom	NA	frilegsVk	frilegsiK	frilegsVm
+frinylik / frinyozik	friṉl	13	14	-0.06899287148695143	cselekszenek/cselekednek	ünk	friṉlVnk	friṉliK	friṉozVnk
+frirzik / frirozik	frirz	11	16	-0.3483066942682157	cselekszenek/cselekednek	ünk	frirzVnk	frirziK	frirozVnk
+friszlik	frisl	15	14	0.06453852113757116	lakok/lakom	NA	frislVk	frisliK	frislVm
+frivajlik	frivajl	21	5	1.2992829841302609	lakok/lakom	NA	frivajlVk	frivajliK	frivajlVm
+frivamlik / frivamozik	frivaml	20	9	0.7419373447293773	cselekszenek/cselekednek	ünk	frivamlVnk	frivamliK	frivamozVnk
+frodlik	frodl	20	9	0.7419373447293773	lakok/lakom	NA	frodlVk	frodliK	frodlVm
+fröjlik / fröjözik	fröjl	17	12	0.32542240043462795	cselekszenek/cselekednek	ünk	fröjlVnk	fröjliK	fröjözVnk
+fröjzik / fröjözik	fröjz	8	21	-0.8938178760220964	cselekszenek/cselekednek	tek	fröjzVtVk	fröjziK	fröjöztVk
+frorlik / frorozik	frorl	17	10	0.49247648509779424	cselekszenek/cselekednek	nek	frorlVnVk	frorliK	froroznVk
+fupét	fupét	12	17	-0.325422400434628	hotelban/hotelben	nál	fupétnál	fupét	fupétnél
+gábéd	gábéd	20	7	0.965080896043587	hotelban/hotelben	nál	gábédnál	gábéd	gábédnél
+galárzik / galározik	galárz	10	17	-0.49247648509779407	cselekszenek/cselekednek	nek	galárzVnVk	galárziK	galároznVk
+garcép	garcép	14	15	-0.06453852113757118	hotelban/hotelben	nál	garcépnál	garcép	garcépnél
+gatáglik / gatágozik	gatágl	8	19	-0.7985076962177716	cselekszenek/cselekednek	ünk	gatáglVnk	gatágliK	gatágozVnk
+géreglik / géregezik	géregl	9	18	-0.6418538861723948	cselekszenek/cselekednek	tek	géreglVtVk	géregliK	géregeztVk
+gerénylik	geréṉl	23	3	1.791759469228055	lakok/lakom	NA	geréṉlVk	geréṉliK	geréṉlVm
+gibemlik / gibemezik	gibeml	16	10	0.4353180712578455	cselekszenek/cselekednek	ünk	gibemlVnk	gibemliK	gibemezVnk
+gicéj	gicéj	1	25	-2.5649493574615367	hotelban/hotelben	nál	gicéjnál	gicéj	gicéjnél
+gihamlik / gihamozik	gihaml	17	12	0.32542240043462795	cselekszenek/cselekednek	nek	gihamlVnVk	gihamliK	gihamoznVk
+gihejlik / gihejezik	gihejl	17	10	0.49247648509779424	cselekszenek/cselekednek	ünk	gihejlVnk	gihejliK	gihejezVnk
+giheszt	gihest	2	27	-2.2335922215070942	hotelban/hotelben	nak	gihestnak	gihest	gihestnek
+gilárzik	gilárz	8	21	-0.8938178760220964	lakok/lakom	NA	gilárzVk	gilárziK	gilárzVm
+gonszék	gonsék	9	18	-0.6418538861723948	hotelban/hotelben	nál	gonséknál	gonsék	gonséknél
+gótem	gótem	5	21	-1.2992829841302609	hotelban/hotelben	nak	gótemnak	gótem	gótemnek
+gúden	gúden	2	27	-2.2335922215070942	hotelban/hotelben	ban	gúdenban	gúden	gúdenben
+gyibakszik	ḏibaks	9	17	-0.587786664902119	lakok/lakom	NA	ḏibaksVk	ḏibaksiK	ḏibaksVm
+gyibeslik	ḏibešl	18	9	0.6418538861723947	lakok/lakom	NA	ḏibešlVk	ḏibešliK	ḏibešlVm
+gyihegzik / gyihegezik	ḏihegz	12	17	-0.325422400434628	cselekszenek/cselekednek	tek	ḏihegzVtVk	ḏihegziK	ḏihegeztVk
+gyivádzik	ḏivádz	9	18	-0.6418538861723948	lakok/lakom	NA	ḏivádzVk	ḏivádziK	ḏivádzVm
+gyivepszik / gyivepedik	ḏiveps	15	12	0.20763936477824457	cselekszenek/cselekednek	nek	ḏivepsVnVk	ḏivepsiK	ḏivepednVk
+hágyét	háḏét	13	13	0	hotelban/hotelben	nak	háḏétnak	háḏét	háḏétnek
+hákszik / hákodik	háks	15	14	0.06453852113757116	cselekszenek/cselekednek	nek	háksVnVk	háksiK	hákodnVk
+herégszik	herégs	9	18	-0.6418538861723948	lakok/lakom	NA	herégsVk	herégsiK	herégsVm
+hijegy	hijeḏ	3	24	-1.8325814637483104	hotelban/hotelben	nál	hijeḏnál	hijeḏ	hijeḏnél
+hilarzik	hilarz	14	13	0.06899287148695142	lakok/lakom	NA	hilarzVk	hilarziK	hilarzVm
+hiragzik / hiragozik	hiragz	15	12	0.20763936477824457	cselekszenek/cselekednek	nek	hiragzVnVk	hiragziK	hiragoznVk
+hivép	hivép	4	23	-1.5686159179138452	hotelban/hotelben	ban	hivépban	hivép	hivépben
+hóbens	hóbenš	5	22	-1.3437347467010947	hotelban/hotelben	ban	hóbenšban	hóbenš	hóbenšben
+hosét	hošét	14	13	0.06899287148695142	hotelban/hotelben	nak	hošétnak	hošét	hošétnek
+hubonylik / hubonyozik	huboṉl	10	19	-0.5978370007556204	cselekszenek/cselekednek	tek	huboṉlVtVk	huboṉliK	huboṉoztVk
+hűgzik	hűgz	13	13	0	lakok/lakom	NA	hűgzVk	hűgziK	hűgzVm
+huklik	hukl	13	14	-0.06899287148695143	lakok/lakom	NA	huklVk	hukliK	huklVm
+humék	humék	13	13	0	hotelban/hotelben	nak	huméknak	humék	huméknek
+hurjorzik	hurjorz	14	13	0.06899287148695142	lakok/lakom	NA	hurjorzVk	hurjorziK	hurjorzVm
+huroslik	hurošl	22	7	1.0560526742493137	lakok/lakom	NA	hurošlVk	hurošliK	hurošlVm
+ibáglik	ibágl	18	9	0.6418538861723947	lakok/lakom	NA	ibáglVk	ibágliK	ibáglVm
+ibékszik	ibéks	10	16	-0.4353180712578455	lakok/lakom	NA	ibéksVk	ibéksiK	ibéksVm
+ikszert	iksert	0	29	-3.4011973816621555	hotelban/hotelben	ban	iksertban	iksert	iksertben
+incéj	incéj	2	25	-2.159484249353372	hotelban/hotelben	nak	incéjnak	incéj	incéjnek
+ítens	ítenš	4	25	-1.6486586255873816	hotelban/hotelben	ban	ítenšban	ítenš	ítenšben
+jábéz	jábéz	16	13	0.1941560144409574	hotelban/hotelben	ban	jábézban	jábéz	jábézben
+jalrény	jalréṉ	13	14	-0.06899287148695143	hotelban/hotelben	nál	jalréṉnál	jalréṉ	jalréṉnél
+játlik / játozik	játl	19	10	0.5978370007556204	cselekszenek/cselekednek	ünk	játlVnk	játliK	játozVnk
+jóbec	jóbec	8	21	-0.8938178760220964	hotelban/hotelben	nak	jóbecnak	jóbec	jóbecnek
+jonylik	joṉl	21	8	0.8938178760220965	lakok/lakom	NA	joṉlVk	joṉliK	joṉlVm
+jorzég	jorzég	10	17	-0.49247648509779407	hotelban/hotelben	nak	jorzégnak	jorzég	jorzégnek
+júder	júder	10	19	-0.5978370007556204	hotelban/hotelben	nak	júdernak	júder	júdernek
+jukél	jukél	12	15	-0.2076393647782445	hotelban/hotelben	nál	jukélnál	jukél	jukélnél
+jurdent	jurdent	7	19	-0.916290731874155	hotelban/hotelben	nál	jurdentnál	jurdent	jurdentnél
+jurlik / jurozik	jurl	14	13	0.06899287148695142	cselekszenek/cselekednek	ünk	jurlVnk	jurliK	jurozVnk
+jüslik	jüšl	20	7	0.965080896043587	lakok/lakom	NA	jüšlVk	jüšliK	jüšlVm
+juszlik	jusl	18	11	0.4595323293784402	lakok/lakom	NA	juslVk	jusliK	juslVm
+jutély	jutéj	19	8	0.7985076962177716	hotelban/hotelben	nál	jutéjnál	jutéj	jutéjnél
+kábesz	kábes	11	15	-0.2876820724517809	hotelban/hotelben	nál	kábesnál	kábes	kábesnél
+kadér	kadér	19	8	0.7985076962177716	hotelban/hotelben	nál	kadérnál	kadér	kadérnél
+kalhész	kalhés	13	14	-0.06899287148695143	hotelban/hotelben	nak	kalhésnak	kalhés	kalhésnek
+kalréz	kalréz	16	13	0.1941560144409574	hotelban/hotelben	ban	kalrézban	kalréz	kalrézben
+kaszép	kasép	11	16	-0.3483066942682157	hotelban/hotelben	nak	kasépnak	kasép	kasépnek
+kátéd	kátéd	19	10	0.5978370007556204	hotelban/hotelben	nál	kátédnál	kátéd	kátédnél
+kátel	kátel	4	22	-1.5260563034950494	hotelban/hotelben	nak	kátelnak	kátel	kátelnek
+klajrén	klajrén	17	12	0.32542240043462795	hotelban/hotelben	nak	klajrénnak	klajrén	klajrénnek
+klaráglik	klarágl	20	7	0.965080896043587	lakok/lakom	NA	klaráglVk	klarágliK	klaráglVm
+kláragszik / kláragodik	klárags	15	11	0.28768207245178085	cselekszenek/cselekednek	tek	kláragsVtVk	kláragsiK	kláragodtVk
+klarágzik / klarágozik	klarágz	7	19	-0.916290731874155	cselekszenek/cselekednek	tek	klarágzVtVk	klarágziK	klarágoztVk
+klárzik	klárz	13	13	0	lakok/lakom	NA	klárzVk	klárziK	klárzVm
+klazér	klazér	16	13	0.1941560144409574	hotelban/hotelben	ban	klazérban	klazér	klazérben
+kléglik / klégezik	klégl	16	10	0.4353180712578455	cselekszenek/cselekednek	ünk	kléglVnk	klégliK	klégezVnk
+klehénylik / klehényezik	klehéṉl	17	12	0.32542240043462795	cselekszenek/cselekednek	tek	klehéṉlVtVk	klehéṉliK	klehéṉeztVk
+klétszik	kléts	11	15	-0.2876820724517809	lakok/lakom	NA	klétsVk	klétsiK	klétsVm
+klibamlik	klibaml	16	10	0.4353180712578455	lakok/lakom	NA	klibamlVk	klibamliK	klibamlVm
+klidlik	klidl	21	8	0.8938178760220965	lakok/lakom	NA	klidlVk	klidliK	klidlVm
+klihaslik / klihasozik	klihašl	12	15	-0.2076393647782445	cselekszenek/cselekednek	tek	klihašlVtVk	klihašliK	klihašoztVk
+klingesz	klinges	3	26	-1.9095425048844383	hotelban/hotelben	ban	klingesban	klinges	klingesben
+kliszer	kliser	3	24	-1.8325814637483104	hotelban/hotelben	nál	klisernál	kliser	klisernél
+klítegy	klíteḏ	4	25	-1.6486586255873816	hotelban/hotelben	nál	klíteḏnál	klíteḏ	klíteḏnél
+klivaslik	klivašl	19	7	0.9162907318741552	lakok/lakom	NA	klivašlVk	klivašliK	klivašlVm
+klordény	klordéṉ	14	13	0.06899287148695142	hotelban/hotelben	nak	klordéṉnak	klordéṉ	klordéṉnek
+klörlik	klörl	18	9	0.6418538861723947	lakok/lakom	NA	klörlVk	klörliK	klörlVm
+klosét	klošét	18	8	0.7472144018302211	hotelban/hotelben	nak	klošétnak	klošét	klošétnek
+kluhéj	kluhéj	19	10	0.5978370007556204	hotelban/hotelben	nál	kluhéjnál	kluhéj	kluhéjnél
+klűmlik / klűmözik	klűml	11	18	-0.4595323293784402	cselekszenek/cselekednek	tek	klűmlVtVk	klűmliK	klűmöztVk
+kluzlik / kluzozik	kluzl	12	17	-0.325422400434628	cselekszenek/cselekednek	tek	kluzlVtVk	kluzliK	kluzoztVk
+köszlik / köszözik	kösl	11	16	-0.3483066942682157	cselekszenek/cselekednek	tek	köslVtVk	kösliK	kösöztVk
+kűdlik / kűdözik	kűdl	19	8	0.7985076962177716	cselekszenek/cselekednek	nek	kűdlVnVk	kűdliK	kűdöznVk
+kumlik	kuml	25	4	1.6486586255873816	lakok/lakom	NA	kumlVk	kumliK	kumlVm
+küslik / küsözik	küšl	18	9	0.6418538861723947	cselekszenek/cselekednek	ünk	küšlVnk	küšliK	küšözVnk
+lájzik / lájozik	lájz	16	10	0.4353180712578455	cselekszenek/cselekednek	tek	lájzVtVk	lájziK	lájoztVk
+licegy	liceḏ	2	24	-2.120263536200091	hotelban/hotelben	ban	liceḏban	liceḏ	liceḏben
+lihadzik	lihadz	16	13	0.1941560144409574	lakok/lakom	NA	lihadzVk	lihadziK	lihadzVm
+lihény	lihéṉ	2	25	-2.159484249353372	hotelban/hotelben	nak	lihéṉnak	lihéṉ	lihéṉnek
+lijez	lijez	2	27	-2.2335922215070942	hotelban/hotelben	nak	lijeznak	lijez	lijeznek
+lingék	lingék	3	26	-1.9095425048844383	hotelban/hotelben	nál	lingéknál	lingék	lingéknél
+lírlik / lírozik	lírl	14	15	-0.06453852113757118	cselekszenek/cselekednek	nek	lírlVnVk	lírliK	líroznVk
+lismév	lišmév	3	23	-1.791759469228055	hotelban/hotelben	ban	lišmévban	lišmév	lišmévben
+livaklik	livakl	7	20	-0.9650808960435872	lakok/lakom	NA	livaklVk	livakliK	livaklVm
+livénylik / livényezik	livéṉl	18	11	0.4595323293784402	cselekszenek/cselekednek	ünk	livéṉlVnk	livéṉliK	livéṉezVnk
+lorjódzik	lorjódz	13	16	-0.1941560144409575	lakok/lakom	NA	lorjódzVk	lorjódziK	lorjódzVm
+lörűdzik	lörűdz	12	15	-0.2076393647782445	lakok/lakom	NA	lörűdzVk	lörűdziK	lörűdzVm
+lorzens	lorzenš	5	22	-1.3437347467010947	hotelban/hotelben	nál	lorzenšnál	lorzenš	lorzenšnél
+lűklik / lűközik	lűkl	11	15	-0.2876820724517809	cselekszenek/cselekednek	nek	lűklVnVk	lűkliK	lűköznVk
+luméz	luméz	14	13	0.06899287148695142	hotelban/hotelben	ban	lumézban	luméz	lumézben
+lumlik / lumozik	luml	11	15	-0.2876820724517809	cselekszenek/cselekednek	tek	lumlVtVk	lumliK	lumoztVk
+mádép	mádép	18	9	0.6418538861723947	hotelban/hotelben	nál	mádépnál	mádép	mádépnél
+mágamlik / mágamozik	mágaml	17	9	0.5877866649021191	cselekszenek/cselekednek	ünk	mágamlVnk	mágamliK	mágamozVnk
+málapszik	málaps	13	14	-0.06899287148695143	lakok/lakom	NA	málapsVk	málapsiK	málapsVm
+marzik	marz	19	8	0.7985076962177716	lakok/lakom	NA	marzVk	marziK	marzVm
+matéz	matéz	18	9	0.6418538861723947	hotelban/hotelben	ban	matézban	matéz	matézben
+mékszik	méks	12	14	-0.1431008436406733	lakok/lakom	NA	méksVk	méksiK	méksVm
+metégszik / metégedik	metégs	15	14	0.06453852113757116	cselekszenek/cselekednek	nek	metégsVnVk	metégsiK	metégednVk
+mihágzik / mihágozik	mihágz	9	20	-0.7419373447293773	cselekszenek/cselekednek	tek	mihágzVtVk	mihágziK	mihágoztVk
+míjzik / míjozik	míjz	16	13	0.1941560144409574	cselekszenek/cselekednek	ünk	míjzVnk	míjziK	míjozVnk
+míslik / mísozik	míšl	16	11	0.3483066942682158	cselekszenek/cselekednek	ünk	míšlVnk	míšliK	míšozVnk
+molszik / molodik	mols	21	8	0.8938178760220965	cselekszenek/cselekednek	tek	molsVtVk	molsiK	molodtVk
+monveg	monveg	4	23	-1.5686159179138452	hotelban/hotelben	nál	monvegnál	monveg	monvegnél
+mülőrzik / mülőrözik	mülőrz	15	11	0.28768207245178085	cselekszenek/cselekednek	ünk	mülőrzVnk	mülőrziK	mülőrözVnk
+murdes	murdeš	9	17	-0.587786664902119	hotelban/hotelben	nál	murdešnál	murdeš	murdešnél
+nágapszik / nágapodik	nágaps	15	11	0.28768207245178085	cselekszenek/cselekednek	nek	nágapsVnVk	nágapsiK	nágapodnVk
+narádzik	narádz	9	18	-0.6418538861723948	lakok/lakom	NA	narádzVk	narádziK	narádzVm
+narem	narem	9	18	-0.6418538861723948	hotelban/hotelben	ban	naremban	narem	naremben
+narjárzik	narjárz	13	13	0	lakok/lakom	NA	narjárzVk	narjárziK	narjárzVm
+navec	navec	12	17	-0.325422400434628	hotelban/hotelben	ban	navecban	navec	navecben
+nidét	nidét	3	26	-1.9095425048844383	hotelban/hotelben	ban	nidétban	nidét	nidétben
+nivárzik / nivározik	nivárz	7	19	-0.916290731874155	cselekszenek/cselekednek	tek	nivárzVtVk	nivárziK	nivároztVk
+nuhét	nuhét	12	15	-0.2076393647782445	hotelban/hotelben	nál	nuhétnál	nuhét	nuhétnél
+nűröklik	nűrökl	13	16	-0.1941560144409575	lakok/lakom	NA	nűröklVk	nűrökliK	nűröklVm
+nuroklik / nurokozik	nurokl	20	9	0.7419373447293773	cselekszenek/cselekednek	ünk	nuroklVnk	nurokliK	nurokozVnk
+nyábét	ṉábét	16	13	0.1941560144409574	hotelban/hotelben	ban	ṉábétban	ṉábét	ṉábétben
+nyádlik / nyádozik	ṉádl	18	11	0.4595323293784402	cselekszenek/cselekednek	nek	ṉádlVnVk	ṉádliK	ṉádoznVk
+nyamet	ṉamet	10	19	-0.5978370007556204	hotelban/hotelben	ban	ṉametban	ṉamet	ṉametben
+nyarcéj	ṉarcéj	13	13	0	hotelban/hotelben	nak	ṉarcéjnak	ṉarcéj	ṉarcéjnek
+nyáslik	ṉášl	17	9	0.5877866649021191	lakok/lakom	NA	ṉášlVk	ṉášliK	ṉášlVm
+nyítem	ṉítem	1	25	-2.5649493574615367	hotelban/hotelben	ban	ṉítemban	ṉítem	ṉítemben
+nyivágzik / nyivágozik	ṉivágz	20	7	0.965080896043587	cselekszenek/cselekednek	ünk	ṉivágzVnk	ṉivágziK	ṉivágozVnk
+nyizlik / nyizozik	ṉizl	18	9	0.6418538861723947	cselekszenek/cselekednek	ünk	ṉizlVnk	ṉizliK	ṉizozVnk
+nyöbzik / nyöbözik	ṉöbz	14	15	-0.06453852113757118	cselekszenek/cselekednek	nek	ṉöbzVnVk	ṉöbziK	ṉöböznVk
+nyülöklik / nyülöközik	ṉülökl	16	11	0.3483066942682158	cselekszenek/cselekednek	nek	ṉülöklVnVk	ṉülökliK	ṉülököznVk
+nyupér	ṉupér	13	13	0	hotelban/hotelben	nál	ṉupérnál	ṉupér	ṉupérnél
+nyürzik / nyürözik	ṉürz	14	15	-0.06453852113757118	cselekszenek/cselekednek	nek	ṉürzVnVk	ṉürziK	ṉüröznVk
+pazév	pazév	13	13	0	hotelban/hotelben	nál	pazévnál	pazév	pazévnél
+pebzik	pebz	17	10	0.49247648509779424	lakok/lakom	NA	pebzVk	pebziK	pebzVm
+pehégszik / pehégedik	pehégs	16	10	0.4353180712578455	cselekszenek/cselekednek	tek	pehégsVtVk	pehégsiK	pehégedtVk
+pekszik / pekedik	peks	19	8	0.7985076962177716	cselekszenek/cselekednek	ünk	peksVnk	peksiK	pekedVnk
+péleslik	pélešl	20	9	0.7419373447293773	lakok/lakom	NA	pélešlVk	pélešliK	pélešlVm
+pibegzik / pibegezik	pibegz	8	18	-0.7472144018302211	cselekszenek/cselekednek	nek	pibegzVnVk	pibegziK	pibegeznVk
+pijél	pijél	2	24	-2.120263536200091	hotelban/hotelben	nál	pijélnál	pijél	pijélnél
+píjlik	píjl	18	9	0.6418538861723947	lakok/lakom	NA	píjlVk	píjliK	píjlVm
+pilégszik / pilégedik	pilégs	18	9	0.6418538861723947	cselekszenek/cselekednek	nek	pilégsVnVk	pilégsiK	pilégednVk
+piragszik	pirags	9	17	-0.587786664902119	lakok/lakom	NA	piragsVk	piragsiK	piragsVm
+pisély	pišéj	3	24	-1.8325814637483104	hotelban/hotelben	ban	pišéjban	pišéj	pišéjben
+pítend	pítend	3	26	-1.9095425048844383	hotelban/hotelben	ban	pítendban	pítend	pítendben
+pítszik	píts	10	17	-0.49247648509779407	lakok/lakom	NA	pítsVk	pítsiK	pítsVm
+pivéd	pivéd	7	20	-0.9650808960435872	hotelban/hotelben	ban	pivédban	pivéd	pivédben
+pivegszik	pivegs	8	21	-0.8938178760220964	lakok/lakom	NA	pivegsVk	pivegsiK	pivegsVm
+plágadzik	plágadz	10	16	-0.4353180712578455	lakok/lakom	NA	plágadzVk	plágadziK	plágadzVm
+plibzik / plibozik	plibz	10	17	-0.49247648509779407	cselekszenek/cselekednek	tek	plibzVtVk	plibziK	pliboztVk
+plövőrzik	plövőrz	14	13	0.06899287148695142	lakok/lakom	NA	plövőrzVk	plövőrziK	plövőrzVm
+plűbzik	plűbz	17	10	0.49247648509779424	lakok/lakom	NA	plűbzVk	plűbziK	plűbzVm
+plugzik	plugz	12	17	-0.325422400434628	lakok/lakom	NA	plugzVk	plugziK	plugzVm
+pörzik / pörözik	pörz	11	16	-0.3483066942682157	cselekszenek/cselekednek	tek	pörzVtVk	pörziK	pöröztVk
+poslik / posozik	pošl	20	9	0.7419373447293773	cselekszenek/cselekednek	tek	pošlVtVk	pošliK	pošoztVk
+pragánylik / pragányozik	pragáṉl	13	13	0	cselekszenek/cselekednek	tek	pragáṉlVtVk	pragáṉliK	pragáṉoztVk
+praslik	prašl	24	5	1.4271163556401458	lakok/lakom	NA	prašlVk	prašliK	prašlVm
+pratánylik	pratáṉl	23	6	1.2321436812926323	lakok/lakom	NA	pratáṉlVk	pratáṉliK	pratáṉlVm
+prately	pratej	6	23	-1.2321436812926323	hotelban/hotelben	nak	pratejnak	pratej	pratejnek
+prazlik / prazozik	prazl	13	16	-0.1941560144409575	cselekszenek/cselekednek	ünk	prazlVnk	prazliK	prazozVnk
+préleglik	prélegl	18	9	0.6418538861723947	lakok/lakom	NA	préleglVk	prélegliK	préleglVm
+prélemlik / prélemezik	préleml	15	12	0.20763936477824457	cselekszenek/cselekednek	nek	prélemlVnVk	prélemliK	prélemeznVk
+prezlik	prezl	19	7	0.9162907318741552	lakok/lakom	NA	prezlVk	prezliK	prezlVm
+pribagszik	pribags	9	17	-0.587786664902119	lakok/lakom	NA	pribagsVk	pribagsiK	pribagsVm
+pribemlik	pribeml	26	3	1.9095425048844383	lakok/lakom	NA	pribemlVk	pribemliK	pribemlVm
+prihegszik / prihegedik	prihegs	13	16	-0.1941560144409575	cselekszenek/cselekednek	nek	prihegsVnVk	prihegsiK	prihegednVk
+prihekszik	priheks	13	16	-0.1941560144409575	lakok/lakom	NA	priheksVk	priheksiK	priheksVm
+prilegzik	prilegz	11	16	-0.3483066942682157	lakok/lakom	NA	prilegzVk	prilegziK	prilegzVm
+prilepszik / prilepedik	prileps	21	8	0.8938178760220965	cselekszenek/cselekednek	ünk	prilepsVnk	prilepsiK	prilepedVnk
+prínylik	príṉl	17	9	0.5877866649021191	lakok/lakom	NA	príṉlVk	príṉliK	príṉlVm
+pristél	prištél	2	24	-2.120263536200091	hotelban/hotelben	ban	prištélban	prištél	prištélben
+priszec	prisec	1	26	-2.6026896854443837	hotelban/hotelben	ban	prisecban	prisec	prisecben
+priszkenc	priskenc	2	25	-2.159484249353372	hotelban/hotelben	nak	priskencnak	priskenc	priskencnek
+privékszik / privékedik	privéks	14	13	0.06899287148695142	cselekszenek/cselekednek	nek	privéksVnVk	privéksiK	privékednVk
+prögzik / prögözik	prögz	9	18	-0.6418538861723948	cselekszenek/cselekednek	tek	prögzVtVk	prögziK	prögöztVk
+prohódzik	prohódz	7	22	-1.0560526742493137	lakok/lakom	NA	prohódzVk	prohódziK	prohódzVm
+prugorzik / prugorozik	prugorz	8	19	-0.7985076962177716	cselekszenek/cselekednek	tek	prugorzVtVk	prugorziK	prugoroztVk
+prűrlik	prűrl	19	7	0.9162907318741552	lakok/lakom	NA	prűrlVk	prűrliK	prűrlVm
+pugoslik	pugošl	20	7	0.965080896043587	lakok/lakom	NA	pugošlVk	pugošliK	pugošlVm
+püzlik / püzözik	püzl	13	14	-0.06899287148695143	cselekszenek/cselekednek	tek	püzlVtVk	püzliK	püzöztVk
+rájzik	rájz	13	13	0	lakok/lakom	NA	rájzVk	rájziK	rájzVm
+rapszek	rapsek	6	23	-1.2321436812926323	hotelban/hotelben	nál	rapseknál	rapsek	rapseknél
+ribegszik / ribegedik	ribegs	11	15	-0.2876820724517809	cselekszenek/cselekednek	tek	ribegsVtVk	ribegsiK	ribegedtVk
+ribegzik	ribegz	13	16	-0.1941560144409575	lakok/lakom	NA	ribegzVk	ribegziK	ribegzVm
+ribzik	ribz	10	19	-0.5978370007556204	lakok/lakom	NA	ribzVk	ribziK	ribzVm
+riványlik / riványozik	riváṉl	14	13	0.06899287148695142	cselekszenek/cselekednek	tek	riváṉlVtVk	riváṉliK	riváṉoztVk
+rokszik	roks	11	16	-0.3483066942682157	lakok/lakom	NA	roksVk	roksiK	roksVm
+ronszek	ronsek	6	20	-1.0986122886681098	hotelban/hotelben	ban	ronsekban	ronsek	ronsekben
+ronvet	ronvet	5	24	-1.4271163556401458	hotelban/hotelben	nak	ronvetnak	ronvet	ronvetnek
+ruslik	rušl	21	8	0.8938178760220965	lakok/lakom	NA	rušlVk	rušliK	rušlVm
+salárzik	šalárz	15	12	0.20763936477824457	lakok/lakom	NA	šalárzVk	šalárziK	šalárzVm
+sartely	šartej	9	17	-0.587786664902119	hotelban/hotelben	ban	šartejban	šartej	šartejben
+sihen	šihen	1	26	-2.6026896854443837	hotelban/hotelben	nál	šihennál	šihen	šihennél
+siladzik	šiladz	10	16	-0.4353180712578455	lakok/lakom	NA	šiladzVk	šiladziK	šiladzVm
+sojzik	šojz	11	18	-0.4595323293784402	lakok/lakom	NA	šojzVk	šojziK	šojzVm
+sortem	šortem	5	24	-1.4271163556401458	hotelban/hotelben	nál	šortemnál	šortem	šortemnél
+spábét	špábét	21	6	1.1451323043030026	hotelban/hotelben	ban	špábétban	špábét	špábétben
+spalárzik / spalározik	špalárz	12	14	-0.1431008436406733	cselekszenek/cselekednek	nek	špalárzVnVk	špalárziK	špalároznVk
+spanél	španél	17	9	0.5877866649021191	hotelban/hotelben	nál	španélnál	španél	španélnél
+spáraklik	špárakl	18	11	0.4595323293784402	lakok/lakom	NA	špáraklVk	špárakliK	špáraklVm
+spatárzik	špatárz	14	15	-0.06453852113757118	lakok/lakom	NA	špatárzVk	špatárziK	špatárzVm
+spatel	špatel	4	22	-1.5260563034950494	hotelban/hotelben	nak	špatelnak	špatel	špatelnek
+spáten	špáten	9	20	-0.7419373447293773	hotelban/hotelben	nak	špátennak	špáten	špátennek
+spatszik	špats	11	16	-0.3483066942682157	lakok/lakom	NA	špatsVk	špatsiK	špatsVm
+spélszik	špéls	16	11	0.3483066942682158	lakok/lakom	NA	špélsVk	špélsiK	špélsVm
+spéslik	špéšl	21	6	1.1451323043030026	lakok/lakom	NA	špéšlVk	špéšliK	špéšlVm
+spibádzik	špibádz	12	15	-0.2076393647782445	lakok/lakom	NA	špibádzVk	špibádziK	špibádzVm
+spibaklik	špibakl	14	13	0.06899287148695142	lakok/lakom	NA	špibaklVk	špibakliK	špibaklVm
+spibamlik / spibamozik	špibaml	17	9	0.5877866649021191	cselekszenek/cselekednek	nek	špibamlVnVk	špibamliK	špibamoznVk
+spibeglik / spibegezik	špibegl	19	10	0.5978370007556204	cselekszenek/cselekednek	ünk	špibeglVnk	špibegliK	špibegezVnk
+spicet	špicet	2	25	-2.159484249353372	hotelban/hotelben	nak	špicetnak	špicet	špicetnek
+spiharzik / spiharozik	špiharz	10	19	-0.5978370007556204	cselekszenek/cselekednek	tek	špiharzVtVk	špiharziK	špiharoztVk
+spihegzik	špihegz	14	15	-0.06453852113757118	lakok/lakom	NA	špihegzVk	špihegziK	špihegzVm
+spihemlik	špiheml	25	2	2.159484249353372	lakok/lakom	NA	špihemlVk	špihemliK	špihemlVm
+spilágzik	špilágz	7	20	-0.9650808960435872	lakok/lakom	NA	špilágzVk	špilágziK	špilágzVm
+spiráglik / spirágozik	špirágl	11	15	-0.2876820724517809	cselekszenek/cselekednek	tek	špiráglVtVk	špirágliK	špirágoztVk
+spírzik	špírz	13	13	0	lakok/lakom	NA	špírzVk	špírziK	špírzVm
+spivejlik / spivejezik	špivejl	11	16	-0.3483066942682157	cselekszenek/cselekednek	nek	špivejlVnVk	špivejliK	špivejeznVk
+spivél	špivél	5	24	-1.4271163556401458	hotelban/hotelben	nak	špivélnak	špivél	špivélnek
+spizec	špizec	3	26	-1.9095425048844383	hotelban/hotelben	nak	špizecnak	špizec	špizecnek
+spöklik / spöközik	špökl	19	10	0.5978370007556204	cselekszenek/cselekednek	ünk	špöklVnk	špökliK	špöközVnk
+sponylik / sponyozik	špoṉl	20	9	0.7419373447293773	cselekszenek/cselekednek	nek	špoṉlVnVk	špoṉliK	špoṉoznVk
+sporzem	šporzem	4	25	-1.6486586255873816	hotelban/hotelben	nak	šporzemnak	šporzem	šporzemnek
+sprálszik	špráls	11	15	-0.2876820724517809	lakok/lakom	NA	šprálsVk	šprálsiK	šprálsVm
+sprebzik / sprebezik	šprebz	16	13	0.1941560144409574	cselekszenek/cselekednek	nek	šprebzVnVk	šprebziK	šprebeznVk
+sprédlik	šprédl	25	2	2.159484249353372	lakok/lakom	NA	šprédlVk	šprédliK	šprédlVm
+sprigzik / sprigozik	šprigz	5	24	-1.4271163556401458	cselekszenek/cselekednek	tek	šprigzVtVk	šprigziK	šprigoztVk
+sprimlik / sprimozik	špriml	15	12	0.20763936477824457	cselekszenek/cselekednek	ünk	šprimlVnk	šprimliK	šprimozVnk
+sprivenc	šprivenc	3	23	-1.791759469228055	hotelban/hotelben	nál	šprivencnál	šprivenc	šprivencnél
+sprízem	šprízem	3	26	-1.9095425048844383	hotelban/hotelben	nál	šprízemnál	šprízem	šprízemnél
+spröbzik	špröbz	15	11	0.28768207245178085	lakok/lakom	NA	špröbzVk	špröbziK	špröbzVm
+sprogzik	šprogz	9	20	-0.7419373447293773	lakok/lakom	NA	šprogzVk	šprogziK	šprogzVm
+sprökszik	špröks	11	15	-0.2876820724517809	lakok/lakom	NA	špröksVk	špröksiK	špröksVm
+sprozlik / sprozozik	šprozl	14	12	0.14310084364067324	cselekszenek/cselekednek	nek	šprozlVnVk	šprozliK	šprozoznVk
+sprudlik / sprudozik	šprudl	12	15	-0.2076393647782445	cselekszenek/cselekednek	ünk	šprudlVnk	šprudliK	šprudozVnk
+sprűrlik / sprűrözik	šprűrl	16	13	0.1941560144409574	cselekszenek/cselekednek	nek	šprűrlVnVk	šprűrliK	šprűröznVk
+spubonylik	špuboṉl	23	6	1.2321436812926323	lakok/lakom	NA	špuboṉlVk	špuboṉliK	špuboṉlVm
+spuborzik / spuborozik	špuborz	10	16	-0.4353180712578455	cselekszenek/cselekednek	nek	špuborzVnVk	špuborziK	špuboroznVk
+spügzik / spügözik	špügz	18	11	0.4595323293784402	cselekszenek/cselekednek	ünk	špügzVnk	špügziK	špügözVnk
+spüjzik	špüjz	21	8	0.8938178760220965	lakok/lakom	NA	špüjzVk	špüjziK	špüjzVm
+spülöklik	špülökl	15	11	0.28768207245178085	lakok/lakom	NA	špülöklVk	špülökliK	špülöklVm
+spülőrzik	špülőrz	17	9	0.5877866649021191	lakok/lakom	NA	špülőrzVk	špülőrziK	špülőrzVm
+spülűdzik	špülűdz	13	16	-0.1941560144409575	lakok/lakom	NA	špülűdzVk	špülűdziK	špülűdzVm
+spumény	špuméṉ	9	17	-0.587786664902119	hotelban/hotelben	nak	špuméṉnak	špuméṉ	špuméṉnek
+spűmlik	špűml	23	4	1.5686159179138452	lakok/lakom	NA	špűmlVk	špűmliK	špűmlVm
+spüszlik	špüsl	14	12	0.14310084364067324	lakok/lakom	NA	špüslVk	špüsliK	špüslVm
+sűjlik / sűjözik	šűjl	17	9	0.5877866649021191	cselekszenek/cselekednek	ünk	šűjlVnk	šűjliK	šűjözVnk
+surnegy	šurneḏ	9	17	-0.587786664902119	hotelban/hotelben	nál	šurneḏnál	šurneḏ	šurneḏnél
+sűzlik	šűzl	14	12	0.14310084364067324	lakok/lakom	NA	šűzlVk	šűzliK	šűzlVm
+szanéj	sanéj	15	14	0.06453852113757116	hotelban/hotelben	nak	sanéjnak	sanéj	sanéjnek
+szibánylik	sibáṉl	19	8	0.7985076962177716	lakok/lakom	NA	sibáṉlVk	sibáṉliK	sibáṉlVm
+szibed	sibed	2	25	-2.159484249353372	hotelban/hotelben	ban	sibedban	sibed	sibedben
+szihét	sihét	2	24	-2.120263536200091	hotelban/hotelben	nak	sihétnak	sihét	sihétnek
+szirlik	sirl	20	9	0.7419373447293773	lakok/lakom	NA	sirlVk	sirliK	sirlVm
+sztrajlik / sztrajozik	strajl	17	10	0.49247648509779424	cselekszenek/cselekednek	nek	strajlVnVk	strajliK	strajoznVk
+sztredlik / sztredezik	stredl	15	11	0.28768207245178085	cselekszenek/cselekednek	tek	stredlVtVk	stredliK	stredeztVk
+sztremlik	streml	22	5	1.3437347467010947	lakok/lakom	NA	stremlVk	stremliK	stremlVm
+sztrijzik	strijz	14	12	0.14310084364067324	lakok/lakom	NA	strijzVk	strijziK	strijzVm
+sztritlik / sztritozik	stritl	14	12	0.14310084364067324	cselekszenek/cselekednek	nek	stritlVnVk	stritliK	stritoznVk
+sztrozlik	strozl	16	10	0.4353180712578455	lakok/lakom	NA	strozlVk	strozliK	strozlVm
+sztruglik	strugl	16	10	0.4353180712578455	lakok/lakom	NA	struglVk	strugliK	struglVm
+sztrűkszik	strűks	11	15	-0.2876820724517809	lakok/lakom	NA	strűksVk	strűksiK	strűksVm
+szűslik	sűšl	21	8	0.8938178760220965	lakok/lakom	NA	sűšlVk	sűšliK	sűšlVm
+szutend	sutend	7	19	-0.916290731874155	hotelban/hotelben	ban	sutendban	sutend	sutendben
+tágarzik / tágarozik	tágarz	13	14	-0.06899287148695143	cselekszenek/cselekednek	ünk	tágarzVnk	tágarziK	tágarozVnk
+táklik	tákl	11	15	-0.2876820724517809	lakok/lakom	NA	táklVk	tákliK	táklVm
+tarhéz	tarhéz	21	6	1.1451323043030026	hotelban/hotelben	ban	tarhézban	tarhéz	tarhézben
+tibarzik / tibarozik	tibarz	13	13	0	cselekszenek/cselekednek	nek	tibarzVnVk	tibarziK	tibaroznVk
+tínylik	tíṉl	16	10	0.4353180712578455	lakok/lakom	NA	tíṉlVk	tíṉliK	tíṉlVm
+tiregzik	tiregz	15	14	0.06453852113757116	lakok/lakom	NA	tiregzVk	tiregziK	tiregzVm
+tivenc	tivenc	4	23	-1.5686159179138452	hotelban/hotelben	ban	tivencban	tivenc	tivencben
+töglik / tögözik	tögl	23	6	1.2321436812926323	cselekszenek/cselekednek	nek	töglVnVk	tögliK	tögöznVk
+tomlik	toml	27	2	2.2335922215070942	lakok/lakom	NA	tomlVk	tomliK	tomlVm
+tosély	tošéj	22	7	1.0560526742493137	hotelban/hotelben	ban	tošéjban	tošéj	tošéjben
+trádlik	trádl	16	10	0.4353180712578455	lakok/lakom	NA	trádlVk	trádliK	trádlVm
+tragzik	tragz	13	14	-0.06899287148695143	lakok/lakom	NA	tragzVk	tragziK	tragzVm
+trájeg	trájeg	5	21	-1.2992829841302609	hotelban/hotelben	ban	trájegban	trájeg	trájegben
+trálaklik / trálakozik	trálakl	13	13	0	cselekszenek/cselekednek	nek	trálaklVnVk	trálakliK	trálakoznVk
+trálszik / trálodik	tráls	19	7	0.9162907318741552	cselekszenek/cselekednek	ünk	trálsVnk	trálsiK	trálodVnk
+tranék	tranék	17	12	0.32542240043462795	hotelban/hotelben	ban	tranékban	tranék	tranékben
+tránély	tránéj	21	6	1.1451323043030026	hotelban/hotelben	nak	tránéjnak	tránéj	tránéjnek
+trapszegy	trapseḏ	4	22	-1.5260563034950494	hotelban/hotelben	nál	trapseḏnál	trapseḏ	trapseḏnél
+treglik	tregl	18	8	0.7472144018302211	lakok/lakom	NA	treglVk	tregliK	treglVm
+trehégszik	trehégs	8	18	-0.7472144018302211	lakok/lakom	NA	trehégsVk	trehégsiK	trehégsVm
+tribejlik / tribejezik	tribejl	10	19	-0.5978370007556204	cselekszenek/cselekednek	tek	tribejlVtVk	tribejliK	tribejeztVk
+trigenc	trigenc	1	28	-2.6741486494265287	hotelban/hotelben	nak	trigencnak	trigenc	trigencnek
+trihagzik	trihagz	9	18	-0.6418538861723948	lakok/lakom	NA	trihagzVk	trihagziK	trihagzVm
+trikép	trikép	3	23	-1.791759469228055	hotelban/hotelben	ban	triképban	trikép	triképben
+triklik / trikozik	trlik	17	9	0.5877866649021191	cselekszenek/cselekednek	tek	triklVtVk	trlikiK	trikoztVk
+trilekszik / trilekedik	trileks	14	12	0.14310084364067324	cselekszenek/cselekednek	tek	trileksVtVk	trileksiK	trilekedtVk
+trilszik	trils	15	11	0.28768207245178085	lakok/lakom	NA	trilsVk	trilsiK	trilsVm
+trincseg	trinčeg	3	23	-1.791759469228055	hotelban/hotelben	ban	trinčegban	trinčeg	trinčegben
+trírzik / trírozik	trírz	14	15	-0.06453852113757118	cselekszenek/cselekednek	ünk	trírzVnk	trírziK	trírozVnk
+trismél	trišmél	3	23	-1.791759469228055	hotelban/hotelben	nak	trišmélnak	trišmél	trišmélnek
+trivakszik / trivakodik	trivaks	13	13	0	cselekszenek/cselekednek	ünk	trivaksVnk	trivaksiK	trivakodVnk
+trodély	trodéj	22	5	1.3437347467010947	hotelban/hotelben	ban	trodéjban	trodéj	trodéjben
+trugoklik / trugokozik	trugokl	14	12	0.14310084364067324	cselekszenek/cselekednek	nek	trugoklVnVk	trugokliK	trugokoznVk
+trugzik / trugozik	trugz	11	18	-0.4595323293784402	cselekszenek/cselekednek	nek	trugzVnVk	trugziK	trugoznVk
+trukszik / trukodik	truks	14	13	0.06899287148695142	cselekszenek/cselekednek	tek	truksVtVk	truksiK	trukodtVk
+trűnylik / trűnyözik	trűṉl	13	13	0	cselekszenek/cselekednek	nek	trűṉlVnVk	trűṉliK	trűṉöznVk
+tuboklik	tubokl	16	10	0.4353180712578455	lakok/lakom	NA	tuboklVk	tubokliK	tuboklVm
+tűgzik / tűgözik	tűgz	14	12	0.14310084364067324	cselekszenek/cselekednek	tek	tűgzVtVk	tűgziK	tűgöztVk
+tumély	tuméj	10	19	-0.5978370007556204	hotelban/hotelben	nál	tuméjnál	tuméj	tuméjnél
+vanylik	vaṉl	21	6	1.1451323043030026	lakok/lakom	NA	vaṉlVk	vaṉliK	vaṉlVm
+vehékszik / vehékedik	vehéks	18	8	0.7472144018302211	cselekszenek/cselekednek	ünk	vehéksVnk	vehéksiK	vehékedVnk
+vihapszik / vihapodik	vihaps	17	10	0.49247648509779424	cselekszenek/cselekednek	ünk	vihapsVnk	vihapsiK	vihapodVnk
+vihepszik	viheps	8	18	-0.7472144018302211	lakok/lakom	NA	vihepsVk	vihepsiK	vihepsVm
+vilakszik	vilaks	8	19	-0.7985076962177716	lakok/lakom	NA	vilaksVk	vilaksiK	vilaksVm
+vileslik / vilesezik	vilešl	13	13	0	cselekszenek/cselekednek	ünk	vilešlVnk	vilešliK	vilešezVnk
+virzik / virozik	virz	13	13	0	cselekszenek/cselekednek	nek	virzVnVk	virziK	viroznVk
+vismer	višmer	0	27	-3.332204510175204	hotelban/hotelben	nál	višmernál	višmer	višmernél
+vobzik / vobozik	vobz	11	15	-0.2876820724517809	cselekszenek/cselekednek	tek	vobzVtVk	vobziK	voboztVk
+vodec	vodec	6	20	-1.0986122886681098	hotelban/hotelben	nál	vodecnál	vodec	vodecnél
+vodép	vodép	8	19	-0.7985076962177716	hotelban/hotelben	nak	vodépnak	vodép	vodépnek
+vorszen	vorsen	4	25	-1.6486586255873816	hotelban/hotelben	nál	vorsennál	vorsen	vorsennél
+vublet	vublet	6	20	-1.0986122886681098	hotelban/hotelben	nál	vubletnál	vublet	vubletnél
+vűjlik	vűjl	20	6	1.0986122886681098	lakok/lakom	NA	vűjlVk	vűjliK	vűjlVm
+vülődzik	vülődz	14	13	0.06899287148695142	lakok/lakom	NA	vülődzVk	vülődziK	vülődzVm
+vurnel	vurnel	5	21	-1.2992829841302609	hotelban/hotelben	nak	vurnelnak	vurnel	vurnelnek
+zábény	zábéṉ	8	18	-0.7472144018302211	hotelban/hotelben	nak	zábéṉnak	zábéṉ	zábéṉnek
+zarcég	zarcég	7	22	-1.0560526742493137	hotelban/hotelben	nál	zarcégnál	zarcég	zarcégnél
+zatéj	zatéj	12	14	-0.1431008436406733	hotelban/hotelben	nál	zatéjnál	zatéj	zatéjnél
+zihenc	zihenc	1	28	-2.6741486494265287	hotelban/hotelben	nak	zihencnak	zihenc	zihencnek
+zined	zined	1	25	-2.5649493574615367	hotelban/hotelben	nak	zinednak	zined	zinednek
+zödlik	zödl	18	8	0.7472144018302211	lakok/lakom	NA	zödlVk	zödliK	zödlVm
+zopély	zopéj	16	11	0.3483066942682158	hotelban/hotelben	nál	zopéjnál	zopéj	zopéjnél
+zsáder	žáder	11	15	-0.2876820724517809	hotelban/hotelben	ban	žáderban	žáder	žáderben
+zsádév	žádév	14	12	0.14310084364067324	hotelban/hotelben	nak	žádévnak	žádév	žádévnek
+zsalrén	žalrén	13	14	-0.06899287148695143	hotelban/hotelben	nak	žalrénnak	žalrén	žalrénnek
+zsigén	žigén	3	26	-1.9095425048844383	hotelban/hotelben	nál	žigénnál	žigén	žigénnél
+zsopéd	žopéd	20	7	0.965080896043587	hotelban/hotelben	ban	žopédban	žopéd	žopédben
+zsúdel	žúdel	6	21	-1.1451323043030026	hotelban/hotelben	nak	žúdelnak	žúdel	žúdelnek
+zuten	zuten	6	23	-1.2321436812926323	hotelban/hotelben	nál	zutennál	zuten	zutennél
