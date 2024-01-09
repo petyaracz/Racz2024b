@@ -234,7 +234,7 @@ compareContextsC = function(c1,c2){
 # take rule1, rule2, and the original rules and words table
 # for superset rule1 and its subset rule2 find residue reliability of rule1 for positions where rule2 doesn't apply
 # basically we go back to the rules and words table and then use it to find the setdiff of rule1 and rule2 and count rows
-getResidueRelability = function(rule1,rule2,rules_and_words){
+getResidueReliability = function(rule1,rule2,rules_and_words){
   
   # this is the larger rule's scope
   r1_scope = rules_and_words |> 
@@ -292,7 +292,8 @@ impugnRules = function(all_rules_stats,rules_and_words){
     dplyr::filter(
       # do the two rules do the same thing?
       A == A_2, # same thing turns into...
-      B == B_2, # same other thing
+      B == B_2, # same other thing,
+      rule != rule_2, # but it's not the same rule!
       nchar(context) == min(nchar(context)) | nchar(context) < nchar(context_2), # we want the broader rules on the left. so we keep smaller string contexts (smaller context = applies to more forms) or the "everything context"*
       nchar(context_2) != min(nchar(context_2))
     ) |> 
@@ -313,11 +314,11 @@ impugnRules = function(all_rules_stats,rules_and_words){
   # now we calc residue reliability
   rule_cross = rule_cross |>
     dplyr::mutate(
-      adjusted_residue_reliability = purrr::map2_dbl(rule, rule_2, ~ getResidueRelability(.x,.y,rules_and_words))
+      adjusted_residue_reliability = purrr::map2_dbl(rule, rule_2, ~ getResidueReliability(.x,.y,rules_and_words))
     )
   
   # the residue rule also has conf limits (where we imagine that it applies to infinite n forms)
-  rules = rule_cross |> 
+  big_rules = rule_cross |> 
     dplyr::mutate(
       # we calc the UPPER confidence limit for the residue rule
       upper_residue_confidence_limit = adjusted_residue_reliability + t_upper * sample_variance,
@@ -331,7 +332,15 @@ impugnRules = function(all_rules_stats,rules_and_words){
     # all we get from this is the impugned_Lower_conf_limit, which is the final confidence of the rule
     dplyr::distinct(A,B,C,D,rule,scope,hits,reliability,adjusted_reliability,lower_confidence_limit,impugned_lower_confidence_limit)
   
-  return(rules)
+  # we now have the big rules. we take the original rules, drop the big rules, add an upper_res_conf_lim (which, for these, will be the same as the lower_conf) and then bind rows
+  # we keep both the bigger rule and the smaller rule, we don't prune rules
+  new_rules = all_rules_stats |>
+  dplyr::filter(!rule %in% big_rules$rule) |>
+  dplyr::mutate(impugned_lower_confidence_limit = lower_confidence_limit) |>
+  dplyr::select(A,B,C,D,rule,scope,hits,reliability,adjusted_reliability,lower_confidence_limit,impugned_lower_confidence_limit) |>
+  dplyr::bind_rows(big_rules)
+
+  return(new_rules)
 }
 
 # add examples and exceptions
