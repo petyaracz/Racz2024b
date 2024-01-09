@@ -14,7 +14,7 @@ setwd('~/Github/Racz2024b')
 
 source('code/tof.R')
 
-flag = T
+flag = F
 
 # -- fun -- #
 
@@ -187,10 +187,22 @@ best_tofs %<>%
   select(variation,suffix,alpha_upper,alpha_lower,tof) %>%
   unnest(tof)
 
-# for csel,lak, we don't worry about n words too much (low alpha_lower) and don't worry about residue rule coverage too much (low alpha_upper)
-# for hotel, rule impugnment does a lot of work.
+predictions = master %>% 
+  inner_join(results) %>% 
+  select(variation,score) %>% 
+  unnest(score)
+
+predictions %>% 
+  group_by(variation) %>% 
+  ggplot(aes(tof_score, log_odds)) +
+  geom_point() +
+  geom_smooth(method = mgcv::gam) +
+  theme_bw() +
+  facet_wrap( ~ variation, scales = 'free')
+  
 
 # -- write -- #
 
+write_tsv(predictions, 'dat/tof/best_tof_predictions.tsv')
 write_tsv(best_tofs, 'dat/tof/best_tofs.tsv')
 save(results, file = 'dat/tof/tof_results.rda')
