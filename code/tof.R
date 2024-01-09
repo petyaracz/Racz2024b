@@ -282,13 +282,13 @@ impugnRules = function(all_rules_stats,rules_and_words){
     dplyr::mutate(
       context = glue::glue('{C}__{D}')
     )
-  
+
   # we compare every rule to every rule, again!
   all_rules_stats_2 = all_rules_stats |> 
     dplyr::rename_all(~ glue::glue('{.}_2'))
-  
+
   # we cross rules with rules
-  rule_cross = tidyr::crossing(all_rules_stats,all_rules_stats_2) |>
+  rule_cross = tidyr::crossing(all_rules_stats,all_rules_stats_2) |> 
     dplyr::filter(
       # do the two rules do the same thing?
       A == A_2, # same thing turns into...
@@ -304,19 +304,19 @@ impugnRules = function(all_rules_stats,rules_and_words){
       keep = compareContextsC(C_2, C)
     ) |> 
     dplyr::filter(keep)
-  
+
   # *if like a rule 1 is a -> b / cd_e and rule 2 is a -> b / d_e then rule 2 will apply everywhere where rule 1 applies, since words ending in 'cd' is a subset of words ending in 'd'
-  
+
   # rule 1 is always the bigger rule, since context 'a$' will always superset context 'ba$'
   # now I need to go back to rb and calc the rel(C1-C2) = (hits(C1) - hits(C2))/ (scope(C1) - scope(C2))
   # for that I need to grab hits and scope words for C1 and C2 from all rules w/ words
-  
+
   # now we calc residue reliability
   rule_cross = rule_cross |>
     dplyr::mutate(
       adjusted_residue_reliability = purrr::map2_dbl(rule, rule_2, ~ getResidueReliability(.x,.y,rules_and_words))
     )
-  
+
   # the residue rule also has conf limits (where we imagine that it applies to infinite n forms)
   big_rules = rule_cross |> 
     dplyr::mutate(
@@ -331,16 +331,24 @@ impugnRules = function(all_rules_stats,rules_and_words){
     ) |> 
     # all we get from this is the impugned_Lower_conf_limit, which is the final confidence of the rule
     dplyr::distinct(A,B,C,D,rule,scope,hits,reliability,adjusted_reliability,lower_confidence_limit,impugned_lower_confidence_limit)
-  
-  # we now have the big rules. we take the original rules, drop the big rules, add an upper_res_conf_lim (which, for these, will be the same as the lower_conf) and then bind rows
-  # we keep both the bigger rule and the smaller rule, we don't prune rules
-  new_rules = all_rules_stats |>
-  dplyr::filter(!rule %in% big_rules$rule) |>
-  dplyr::mutate(impugned_lower_confidence_limit = lower_confidence_limit) |>
-  dplyr::select(A,B,C,D,rule,scope,hits,reliability,adjusted_reliability,lower_confidence_limit,impugned_lower_confidence_limit) |>
-  dplyr::bind_rows(big_rules)
 
-  return(new_rules)
+  # listen to this! a big rule might have SEVERAL subrules doing its dirty work for it.
+  # we want to adjust its impugned limit to the worst possible one!
+  big_rules = big_rules |>
+    dplyr::group_by(rule) |>
+    dplyr::arrange(impugned_lower_confidence_limit) |>
+    dplyr::slice(1) |>
+    dplyr::ungroup()
+
+  # we now have the big rules. we take the original rules, drop the big rules, add an upper_res_conf_lim (which, for these, will be the same as the lower_conf, I THINK) and then bind rows
+  # we keep both the bigger rule and the smaller rule, we don't prune rules
+  other_rules = all_rules_stats |>
+    dplyr::filter(!rule %in% big_rules$rule) |>
+    dplyr::mutate(impugned_lower_confidence_limit = lower_confidence_limit) |>
+    dplyr::select(A,B,C,D,rule,scope,hits,reliability,adjusted_reliability,lower_confidence_limit,impugned_lower_confidence_limit)
+
+  new_rules = dplyr::bind_rows(big_rules,other_rules)
+
 }
 
 # add examples and exceptions

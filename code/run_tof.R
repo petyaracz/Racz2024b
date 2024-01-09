@@ -14,7 +14,7 @@ setwd('~/Github/Racz2024b')
 
 source('code/tof.R')
 
-flag = F
+flag = T
 
 # -- fun -- #
 
@@ -149,42 +149,42 @@ trainings %<>%
   )
 
 # we keep the var, suff, settings, scores
-master = trainings %>% 
+master = trainings %>%
   select(variation,suffix,alpha_upper,alpha_lower,score)
 
 # we unnest score and then nest again because we want to get total scores for var, not var + suff. suff fit separately to put our finger on the scale for the tof so it has a fighting chance against the much simpler knn and gcm.
-results = master %>% 
-  unnest(score) %>% 
-  group_by(variation,alpha_upper,alpha_lower) %>% 
+results = master %>%
+  unnest(score) %>%
+  group_by(variation,alpha_upper,alpha_lower) %>%
   nest() %>%
   # how well did the tof do? we use the same method as for the gcm and knn, fit a glm to predict response counts for var1 / var2 using tof_score (how much does this test form like var1 according to the tof)
   mutate(
     # fit glm on each nested table
-    glm = map(data, ~ 
+    glm = map(data, ~
                 glm(cbind(resp1,resp2) ~ tof_score, data = ., family = binomial)
                 ),
     # get glm summary
     glm_summary = map(glm, ~ broom::tidy(.))
-  ) %>% 
-  select(-data) %>% 
+  ) %>%
+  select(-data) %>%
   # keep summary and unnest it
-  unnest(glm_summary) %>% 
-  filter(term == 'tof_score') %>% 
-  group_by(variation) %>% 
+  unnest(glm_summary) %>%
+  filter(term == 'tof_score') %>%
+  group_by(variation) %>%
   # get highest abs t value for each var
-  arrange(-abs(statistic)) %>% 
+  arrange(-abs(statistic)) %>%
   slice(1)
 
 results
 # https://media1.tenor.com/m/pWZZ9gzx_p0AAAAC/face-melting-indiana-jones.gif
 
 # here are the best models
-best_tofs = results %>% 
-  select(variation,alpha_upper,alpha_lower) %>% 
+best_tofs = results %>%
+  select(variation,alpha_upper,alpha_lower) %>%
   left_join(trainings)
 
-best_tofs %<>% 
-  select(variation,suffix,alpha_upper,alpha_lower,tof) %>% 
+best_tofs %<>%
+  select(variation,suffix,alpha_upper,alpha_lower,tof) %>%
   unnest(tof)
 
 # for csel,lak, we don't worry about n words too much (low alpha_lower) and don't worry about residue rule coverage too much (low alpha_upper)

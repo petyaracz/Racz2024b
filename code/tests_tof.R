@@ -18,7 +18,7 @@ training = tibble(
     'pocx',
     'necx',
     'penicx',
-    'glonabcx',
+    'trumabcx',
     'flanabcx',
     'binabcx',
     'frobbcx',
@@ -34,7 +34,7 @@ training = tibble(
     'pocy',
     'necz',
     'penicz',
-    'glonabcy',
+    'trumabcy',
     'flanabcy',
     'binabcz',
     'frobbcz',
@@ -48,15 +48,21 @@ training = tibble(
 
 d = formatTraining(training)
 
+d
+
 flag1 = all(d$a == 'x')
 flag2 = all(d$b %in% c('y','z'))
 
 d2 = findLargerRules(d)
 
+d2
+
 flag3 = all(str_detect(d2$rule, '(y|z) \\/'))
 flag4 = all(str_detect(d2$rule, '^x'))
 
 d3 = getRulesAndWords(d,d2)
+
+d3
 
 flag5 = all(str_detect(d3$c, glue('{d3$C}$')))
 flag6 = all(str_detect(d3$output, glue('{d3$b}#$')))
@@ -86,12 +92,13 @@ alphas %>%
   theme_bw() +
   scale_colour_viridis_d()
 
-# this looks about right
+# this looks about right. the farther lower confidence is pushed out, the worse small rules are doing.
 
 alpha11 = impugnRules(alpha1, d3)
 alpha91 = impugnRules(alpha9, d3)
 
-flag8 = (setdiff(alpha1$rule,alpha11$rule) == 0)
+flag8 = all(sort(alpha1$rule)==sort(alpha11$rule))
+flag9 = all(sort(alpha1$rule)==sort(alpha91$rule))
 
 alphas2 = alphas %>% 
   # filter(alpha_lower == .1) %>% 
@@ -104,7 +111,10 @@ alphas2rows = alphas2 %>%
     nd4 = map(d4, ~ nrow(.)),
     nd5 = map(d5, ~ nrow(.))
   ) %>% 
-  select(-d4,-d5)
+  select(-d4,-d5) %>% 
+  unnest(c(nd4,nd5))
+
+flag9 = all(alphas2rows$nd4 == alphas2rows$nd5)
 
 alphas2 %>% 
   unnest(d5) %>% 
@@ -119,11 +129,12 @@ alphas2 %>%
   scale_colour_viridis_d() +
   facet_wrap( ~ alpha_lower)
 
-# ho hum
+# lgtm
 
-alpha2 = alphas2$d5[[1]]
-alpha3 = alphas2$d5[[2]]
-alpha4 = alphas2$d5[[3]]
+flags = c(flag1,flag2,flag3,flag4,flag5,flag6,flag7,flag8,flag9)
 
-# only big rules remain. fixed
-# one rule gets duplicated somehow.
+if (all(flags)) {
+  print('all tests passed')
+} else {
+  print('some tests failed')
+}
