@@ -15,6 +15,7 @@ knitr::opts_knit$set(root.dir = '~/Github/Racz2024b')
 setwd('~/Github/Racz2024b')
 
 set.seed(1337)
+options(knitr.kable.NA = "")
 
 library(tidyverse)
 library(glue)
@@ -90,14 +91,35 @@ testAccuracy = function(dat){
 }
 ```
 
-In this readme, we go through a way of measuring distance between words based on natural classes that are, in turn, based on segmental similarity. Then we use this in two categorisation models to predict what people do in a Wug task with three variable patterns of Hungarian morphology.
+In this readme, we go through a way of measuring distance between words based on natural classes that are, in turn, based on segmental similarity. Then we use this and other distances in three categorisation models to predict what people do in a Wug task with three variable patterns of Hungarian morphology.
+
+There are three patterns of variation (see References for details):
+
+- verb variation between `-k` and `-m` in the 1sg.indef of verbs
+- verb variation between `CC.V+suffix` and `CVC.suffix` in a range of verbs, here focussing on the pl.indef
+- noun variation between front vowel and back vowel suffixes in bisyllabic noun stems with a semi-transparent second vowel (`[e]` or `[é]`)
+
+There are three models:
+
+- K Nearest Neighbours
+- the Generalised Context Model
+- the Tiny Overlap Finder, an R-based algorithm extremely heaviy influenced by the Minimal Generalisation Learner. (I don't call this RMGL or something like that because the models work slightly differently)
+
+There are three word distance measures:
+
+- Levenshtein distance / edit distance
+- Phonological distance, based on segmental distance across aligned word forms
+- Jaccard distance
+
+The Tiny Overlap Finder uses edit distance between strings and generally works very differently from the other two.
 
 ## TOC
 
 1. Generate natural classes from a language's phonological feature matrix
 2. Generate segment-distances from the natural classes
 3. Generate word-distances from the segment-distances using a word aligner
-4. Generate categories from the word distances and an algo
+4. Generate categories from the word distances and an algorithm in the training data and apply these to test data
+5. Generate generalised overlaps/rules from the words in the training data and see how these rules predict the test data
 
 ```{r preload}
 # features
@@ -114,6 +136,23 @@ training = read_tsv('dat/training_sets/training_set.tsv')
 # alignments_cselekszenek = read_tsv('dat/alignments/alignments_cselekszenek.tsv')
 # alignments_hotelban = read_tsv('dat/alignments/alignments_hotelban.tsv')
 word_distance = read_tsv('dat/alignments/word_distances.tsv')
+
+# tiny overlap finder things
+
+# training files
+training_tof = read_tsv('dat/training_sets/training_mgl.tsv')
+# test files
+test_tof = read_tsv('dat/training_sets/test_mgl.tsv')
+# best rule sets
+tof = read_tsv('dat/tof/best_tofs.tsv')
+# predictions of said best rule sets
+tof_pred = read_tsv('dat/tof/best_tof_predictions.tsv')
+# models on tof predictions
+load('dat/tof/tof_results.rda')
+# illustrations for uh illustrative purposes
+i_lakok_score = read_tsv('dat/tof/i_lakok_score.tsv')
+i_lakok_pred = read_tsv('dat/tof/i_lakok_pred.tsv')
+
 
 # this has to be done each time this is loaded
 lookup_h %<>% mutate(across(-dist, ~ ifelse(is.na(.x), " ", .x)))
@@ -152,6 +191,10 @@ KNNwrapper(test = test, training = training, feature_matrix = fm, my_distance = 
 
 # you can use the wrapper function to use some other distance and skip the whole alignment bit:
 KNNwrapper(test = test, training = training, feature_matrix = fm, my_distance = 'jaccard', my_s = .1, my_k = 3, my_p = 1)
+
+# you can also use the wrapper function to use the TOF (see code/run_tof.r):
+tof(training, alpha_upper = .75, alpha_lower = .75)
+# this gives you rules and then you can use them to predict the test data
 
 ```
 
@@ -291,6 +334,7 @@ c. declensional: vowel harmony: hotelban/hotelben ("in the hotel")
 Training data look like this:
 
 ```{r training_data_1}
+# see code/training_preprocessing.r for details
 training %>% 
   group_by(variation,category) %>% 
   sample_n(2) %>% 
@@ -310,6 +354,7 @@ Training data was restricted to exclude less frequent forms and very long forms.
 Test data look like this:
 
 ```{r test_data}
+# see code/training_preprocessing.r for details
 test %>% 
   group_by(variation) %>% 
   select(base,variation,variant1,variant2,resp1,resp2,string) %>% 
@@ -326,6 +371,7 @@ For each variation, you pair test and training words and calc word distance. For
 
 ```{r word_distances_3, echo = T, eval = F}
 # this legitimately takes a while.
+# for stand-alone code go to code/run_alignment.r
 
 # set up test and training data
 testl = filter(test, variation == 'lakok/lakom')
@@ -427,7 +473,7 @@ word_distance %>%
   
 ```
 
-## 4. Model!
+## 4. Modelling
 
 The nonce words got variable A or B responses in the Wug task and have a specific similarity to existing words in two categories: A and B. A and B are different for each word type ('cselekszenek', 'hotelban', 'lakok'). We want to see whether similarity to existing words predicts variable responses. 
 
@@ -633,7 +679,150 @@ my_gcms2 %>%
 
 Checking on the best model for all distance types we can see that using jaccard distance gives you a massive but very noisy estimate. For 'hotelban', however, the noise is much smaller and so jaccard wins.
 
-__What are the best models today?__
+## 5. The Tiny Overlap Finder
+
+The tiny overlap finder looks for overlapping alternations in the training data and tries to generalise these. It was written in R following the steps in Albright and Hayes (2003) and, where they refer to it, Mikheev (1997). The tiny overlap finder looks for input-output alternations of the format `A -> B` in context `C _ D` and then tries to generalise these.
+
+|no |input  |output   |rule     |context |
+|:--|:------|:--------|:--------|:-------|
+| 1 |abc__x__   |abc__y__     | x -> y  | abc _  |
+| 2 |bbc__x__   |bbc__y__     | x -> y  | bbc _  |
+| 3 |adc__x__   |adc__y__     | x -> y  | adc _  |
+| 4 |aec__x__   |aec__z__     | x -> z  | aec _  |
+
+For the input-output pairs in the table above, we observe `x` turning into `y` word-finally. We can consolidate examples 1-2 to rule (i): `x -> y / bc _` and example 1-3 to rule (ii): `x -> y / c _`. Note that rule (ii) should also apply to example 4 but it doesn't. So rule (i) has a scope of 2 examples and matches 2 of these, while rule (ii) has a scope of 4 and matches 2. Rule (i) is more _reliable_ than rule (ii) as it applies to more of its context examples but rule (ii) has more forms in its context altogether.
+
+We can adjust the reliability of our rules based on how many forms they apply to (adjusting for the fact that rule (ii) applies to the same amount of forms as rule (i) even if its reliability is worse) and based on whether some rules do the work of other rules. In our example, rule (ii) is redundant in examples 1-2 where rule (i) does all its work. We can reflect this by adjusting down how much we confide in rule (ii).
+
+The Minimal Generalisation Learner can use phonological distance to create generalised contexts. The tiny overlap finder only looks for segment-to-segment matches. The reason we use it is that a lot of derivational suffixes really like one or the other variant in our Hungarian variable patterns and the tiny overlap finder is good at finding these.
+
+---
+
+The tiny overlap finder notably doesn't give the same results on the same data as the java implementation of the minimal generalisation learner, for reasons I couldn't ascertain using either the MGL code or documentation. Further work is needed to bring the two in line. The tiny overlap finder clearly works, so it is included in this discussion.
+
+---
+
+First, we hard-wire phonological variation in our dataset because we want the tiny overlap finder to focus on the morphology (-k/-m, CC/CVC, -front/-back) instead of the phonology. (The KNN and the GCM models only had to pick between two variants, and the tiny overlap finder shouldn't have a much harder time than these.)
+
+Here are the transformed input-output pairs in the training sets:
+
+```{r tof1}
+training_tof %>% 
+  group_by(variation,suffix,category) %>% 
+  sample_n(1) %>% 
+  select(-output1) %>% 
+  kable(caption = 'Table: Training data, tiny overlap finder')
+
+```
+
+For 'lakok' and 'cselekszenek', vowel harmony is not relevant, so we remove the final stem vowel and the linking vowel and the suffix vowel and replace it with V. For 'hotelban', the suffix vowel is precisely the point, so we keep it.
+
+We transform test data the same way. We assign categories the same way we did for the KNN and GCM training sets: if a test form does A a lot, we assign it to A. If it does B a lot, we assign it to B.
+
+```{r tof2}
+test_tof %>% 
+  rename(output = output2) %>% 
+  mutate(
+    suffix = ifelse(variation == 'lakok/lakom', '3sg', suffix),
+    category = ifelse(log_odds > mean(log_odds), 'high', 'low')
+    ) %>% 
+  group_by(variation,suffix,category) %>% 
+  slice(1) %>% 
+  select(base,variation,suffix,category,input,output) %>% 
+  kable(caption = 'Table: Test data, tiny overlap finder')
+
+```
+
+We fit the model separately on every suffix type so it doesn't need to distinguish those either. Finally, the tiny overlap finder has two parameters, one penalising rules that cover fewer versus more input-output pairs in the training (as in i-ii in the examples above) and one penalising rules that have subrules that do most of the work for them (also as in i versus ii in the examples above). We try [.25,.5,.75,.9] for both of these parameters (for details see code/run_tof.r and code/tof.r and code/test_tof.r). We fit the tiny overlap finder on the suffix sets and then merge the rules for each variation pattern. Here are ten random rules for 'lakok', with no guidance:
+
+```{r tof3}
+tof %>% 
+  filter(variation == 'lakok/lakom') %>% 
+  mutate(
+    some_examples = stringr::word(examples,1,5) %>% str_replace(',$', ''),
+    some_exceptions = stringr::word(exceptions,1,5) %>% str_replace(',$', '')
+  ) %>% 
+  select(rule,scope,hits,reliability,alpha_lower,lower_confidence_limit,alpha_upper,impugned_lower_confidence_limit,some_examples,some_exceptions) %>% 
+  sample_n(10) %>% 
+  kable(caption = 'Table: Some rules for lakok/lakom', digits = 2)
+```
+
+Each rule is in the "input ending -> output ending / context" format. Scope is the number of words in the training data that match the context of the rule. Hits is the number of words that actually obey the rule. Reliability is hits / scope. To put it very simply, the lower confidence limit is the lower limit of our confidence of how well the rule would work for many forms, adjusted by our alpha value for the lower confidence limit. Impugned lower confidence limit is one of two things: if, given an arbitrary alpha value for the upper confidence limit, the rule does substantially more work than its sub-rules, it is the rule's own lower confidence limit. If the sub-rules do too much work, it's the best sub-rules upper confidence limit.
+
+Here are ten rules for 'cselekszenek':
+
+```{r tof4}
+tof %>% 
+  filter(variation == 'cselekszenek/cselekednek') %>% 
+  mutate(
+    some_examples = stringr::word(examples,1,5) %>% str_replace(',$', ''),
+    some_exceptions = stringr::word(exceptions,1,5) %>% str_replace(',$', '')
+  ) %>% 
+  select(rule,scope,hits,reliability,alpha_lower,lower_confidence_limit,alpha_upper,impugned_lower_confidence_limit,some_examples,some_exceptions) %>% 
+  sample_n(10) %>% 
+  kable(caption = 'Table: Some rules for lakok/lakom', digits = 2)
+```
+
+Here are ten rules for 'hotelban':
+
+```{r tof5}
+tof %>% 
+  filter(variation == 'hotelban/hotelben') %>% 
+  mutate(
+    some_examples = stringr::word(examples,1,5) %>% str_replace(',$', ''),
+    some_exceptions = stringr::word(exceptions,1,5) %>% str_replace(',$', '')
+  ) %>% 
+  select(rule,scope,hits,reliability,alpha_lower,lower_confidence_limit,alpha_upper,impugned_lower_confidence_limit,some_examples,some_exceptions) %>% 
+  sample_n(10) %>% 
+  kable(caption = 'Table: Some rules for lakok/lakom', digits = 2)
+```
+
+We choose the two parameters, alpha_upper and alpha_lower, using grid search. Models are evaluated the following way. First, we match the rules to the test words. For each test word, we have two outputs in the forced choice task. We match each of these to rules generated by the tiny overlap learner and find the best rule for each output, based on the impugned lower confidence limit, as seen in the table below. 
+
+```{r tof6}
+i_lakok_pred %>% 
+  arrange(base) %>% 
+  arrange(base,variant,-impugned_lower_confidence_limit) %>% 
+  mutate(
+    some_examples = stringr::word(examples,1,5) %>% str_replace(',$', ''),
+    some_exceptions = stringr::word(exceptions,1,5) %>% str_replace(',$', '')
+  ) %>% 
+  select(base,input,variant,output,rule,impugned_lower_confidence_limit,some_examples,some_exceptions) %>% 
+  slice(1:10) %>% 
+  kable(caption = 'Table: Some predictions for lakok/lakom', digits = 2)
+```
+
+We then take the best rule for each output and get an overall score by dividing the impugned lower confidence of the rule for output 1 with the sum of the impugned lower confidence of the rules for output 1 and 2. If the tiny overlap finder finds no rule for output 1 for a test word, the score will be 0 and vice versa. We can compare this score with the responses given by the participants.
+
+```{r tof7}
+i_lakok_score %>% 
+  arrange(base) %>% 
+  slice(1:10) %>% 
+  select(base,resp1,resp2,log_odds,tof_score) %>% 
+  kable(caption = 'Table: Some scores for lakok/lakom', digits = 2)
+```
+
+We use a generalised linear model predicting `cbind(resp1,resp2)` from the model score to find the best model for each variable pattern. The best model has the strongest predictor for score. This is the same as what we did for the KNN and the GCM.
+
+```{r tof8}
+results %>% 
+  mutate(
+    sig = case_when(
+      p.value < .001 ~ '***',
+      p.value < .01 ~ '**',
+      p.value < .05 ~ '*',
+      p.value >= .05 ~ 'ns.'
+      )
+  ) %>% 
+  select(-glm,-term,-p.value) %>% 
+  kable(caption = 'Table: Best tiny overlap finder models for each variable pattern', digits = 2)
+```
+
+The tiny overlap finder is able to predict participant behaviour to some extent for all three patterns.
+
+## The best overall model
+
+So what is the best at predicting what people will do with morphological variation in a forced-choice task using nonce forms?
 
 ```{r best_models}
 my_knns3 = my_knns2 %>% 
@@ -644,74 +833,138 @@ my_gcms3 = my_gcms2 %>%
   select(distance_type,var_s,var_p,variation,estimate,std.error,statistic,sig) %>% 
   mutate(model = 'GCM')
 
-bind_rows(my_gcms3,my_knns3) %>% 
-  relocate(model, .before = distance_type) %>% 
-  relocate(var_k, .after = var_p) %>% 
+my_tofs3 = results %>% 
+  mutate(
+    sig = case_when(
+      p.value < .001 ~ '***',
+      p.value < .01 ~ '**',
+      p.value < .05 ~ '*',
+      p.value >= .05 ~ 'ns.'
+      ),
+    model = 'TOF',
+    distance_type = 'edit'
+  ) %>% 
+  select(model,distance_type,alpha_upper,alpha_lower,variation,estimate,std.error,statistic,sig) 
+
+best_of_the_worst = bind_rows(my_gcms3,my_knns3,my_tofs3) %>% 
+  select(variation,model,estimate,std.error,statistic,sig,distance_type,var_s,var_p,alpha_lower,alpha_upper) %>% 
   group_by(variation,model) %>%
   arrange(-statistic) %>%
-  slice(1) %>% 
-  kable(digits = 2, caption = 'Table: Best KNN and GCM model for each variation.')
+  slice(1)
+
+best_of_the_worst %>% 
+  kable(digits = 2, caption = 'Table: Best KNN, GCM, and TOF model for each variation.')
 ```
 
-The GCM beats the KNN model for all three variation types, with a solid margin. 
+A lot is going on in this table. The table lists the best GCM, KNN, and TOF model for the three types of variation and also lists model parameters: distance tpye (this is always edit distance for the tiny overlap finder or TOF), s and p (only applicable to the distance calculations of the KNN and the GCM), and the alphas for the lower and upper confidence intervals (only applicable to the rule generalisations of the tiny overlap finder). The table also lists the estimates, standard errors, and statistics that express the predictive power of each model for participant responses.
 
-Let's visualise the best model for each variation type.
+For 'cselekszenek', the best model is the GCM, which uses similarity to all training forms across categories. This model calculates word distance using edit distance rather than aligned phonological dissimilarity. 
 
-```{r categorisation9gcm, fig.width = 9, fig.height = 5}
-best_params2 = my_gcms2 %>% 
-  ungroup() %>% 
-  group_by(variation) %>% 
-  arrange(-statistic) %>% 
-  slice(1) 
+For 'hotelban', the best model is the GCM, using jaccard distance. 
 
-gcmplots = my_gcms %>% 
-  inner_join(best_params2) %>% 
-  mutate(parameters = glue('{variation},\ns = {var_s},\np = {var_p}, \ndist = {distance_type}')) %>%
-  select(parameters,gcm2) %>% 
-  mutate(
-    plot = map2(gcm2,parameters, ~
-                {
-           ggplot(.x, aes(category_high,log_odds)) +
-            geom_point() +
-            theme_bw() +
-            geom_smooth(method = 'lm', se = F) +
-            xlab('weight of "high" category') +
-            ylab('log odds of "high/low" category answers in test') +
-            ggtitle(.y) +
-            geom_rug() +
-            ylim(-3.5,3.5)
-            
-                }
-              )  
-  )
+For 'lakok', the best model is the tiny overlap finder, which by default uses segment-level similarity or edit distance to find overlapping contexts across training words.
 
-# plot list using patchwork
+An equally important question is whether the models individually contribute to explaining variation in the test data. To find out, we fit three generalised linear models, each predicting the odds of resp1 and resp2 in the three variable sets, using the best tiny overlap finder, generalised context model, and k-nearest neighbour model predictions together. We check for collinearity.
 
-p1 = gcmplots$plot[[2]]
-p2 = gcmplots$plot[[1]] + 
-  # no y axis ticks or labels or title
-  theme(axis.title.y = element_blank(),
-        axis.text.y = element_blank(),
-        axis.ticks.y = element_blank())
-p3 = gcmplots$plot[[3]] + 
-  # no y axis ticks or labels or title
-  theme(axis.title.y = element_blank(),
-        axis.text.y = element_blank(),
-        axis.ticks.y = element_blank())
+```{r best_models2}
+tof_pred2 = tof_pred %>% 
+  select(base,tof_score) %>% 
+  rename(tof = tof_score)
   
-p1 + p2 + p3 + plot_annotation(title = 'Figure: GCM models of Wug test')
-  
+knn_pred = my_knns %>% 
+  inner_join(best_of_the_worst) %>% 
+  select(knn2) %>% 
+  unnest(knn2) %>% 
+  rename(knn = category_high, string = test) %>% 
+  select(string, knn)
+
+gcm_pred = my_gcms %>% 
+  inner_join(best_of_the_worst) %>% 
+  filter(model == 'GCM') %>% 
+  select(gcm2) %>% 
+  unnest(gcm2) %>% 
+  rename(gcm = category_high, string = test) %>% 
+  select(string, gcm)
+
+test2 = test %>% 
+  left_join(tof_pred2) %>% 
+  left_join(knn_pred) %>% 
+  left_join(gcm_pred)
+
+test2cs = test2 %>% 
+  filter(variation == 'cselekszenek/cselekednek')
+test2h = test2 %>% 
+  filter(variation == 'hotelban/hotelben')
+test2l = test2 %>% 
+  filter(variation == 'lakok/lakom')
+
+glmcs = glm(cbind(resp1,resp2) ~ tof + knn + gcm, data = test2cs, family = binomial(link = 'logit'))
+glmh = glm(cbind(resp1,resp2) ~ tof + knn + gcm, data = test2h, family = binomial(link = 'logit'))
+glml = glm(cbind(resp1,resp2) ~ tof + knn + gcm, data = test2l, family = binomial(link = 'logit'))
+
+# performance::check_collinearity(glmcs)
+# performance::check_collinearity(glmh)
+# performance::check_collinearity(glml)
+broom::tidy(glmcs) %>% 
+  kable(digits = 2, caption = 'Table: Model coefficients for the joint predictions, "cselekszenek".')
+
+broom::tidy(glmh) %>%
+  kable(digits = 2, caption = 'Table: Model coefficients for the joint predictions, "hotelban".')
+
+broom::tidy(glml) %>%
+  kable(digits = 2, caption = 'Table: Model coefficients for the joint predictions, "lakok".')
+
 ```
 
-For the two verb patterns (left and right), we see a largely normal distribution of both GCM category weights (x axis) and test answers (y axis). They are correlated, not that much for 'cselekszenek' (left) and a bit better for 'lakok' (right). For the noun pattern (middle), the two categories are much more neatly delineated both in the answers and the GCM weights and the two match relatively well. One exception is a set of verbs in the bottom-right corner that the model sees as relatively "high" but the test answers see as relatively "low".
+For 'cselekszenek' and 'lakok', the two verbal inflection patterns, both the generalised context model and the tiny overlap finder contribute to explaining variation in the test data. The k-nearest neighbour model does not contribute much. This is probably because the GCM is more-or-less the proper superset of the KNN model -- in a way, the GCM model is not impugned by the KNN model, to borrow from Minimal Generalisation Model parlance.
+
+For 'hotelban', only the GCM does anything. This is likely because the verbal variation patterns are strongly sensitive to derivational and pseudo-derivational endings, and the tiny overlap finder can find these. There are no similar buttresses for the nouns, and so the overlap finder can't contribute much.
+
+We can calculate McFadden's pseudo R squared (1 - deviance / null deviance) for each model.
+
+```{r best_models3}
+# mcfadden's r squared
+glmcsr = with(summary(glmcs), 1 - deviance/null.deviance)
+glmhr = with(summary(glmh), 1 - deviance/null.deviance)
+glmlr = with(summary(glml), 1 - deviance/null.deviance)
+
+tibble(
+  variation = c('cselekszenek/cselekednek','hotelban/hotelben','lakok/lakom'),
+  `mcfadden's r` = c(glmcsr,glmhr,glmlr)
+) %>% 
+  kable(digits = 2, caption = 'Table: McFadden\'s pseudo R squared for the GLMs with the joint predictions.')
+
+```
+
+The 'cselekszenek' pattern is hard. Many different words vary in many different ways in the lexicon and participants generalise this in a very noisy way. For 'hotelban', form-based similarity is a reasonable measure to differentiate words that prefer back or front vowel suffixes.
+
+For 'lakok', we get a remarkably good result, for the cognitive sciences. Here, both overall similarity and the derivational and pseudo-derivational endings found by the tiny overlap finder are useful. It also helps that this pattern is restricted to one paradigm slot, 1sg.indef and varies across many verbs consistently.
+
+## Visualisations
+
+The best model for each model type and variation. Scales are free so distributions can be compared.
+
+```{r viz, fig.width = 9, fig.height = 9}
+test2 %>% 
+  mutate(base2 = str_extract(base, '^[^ ]+(?=( |$))')) %>%
+  select(variation,base2,log_odds,tof,knn,gcm) %>% 
+  pivot_longer(cols = c(tof,knn,gcm), names_to = 'model', values_to = 'weight') %>% 
+  ggplot(aes(x = weight, y = log_odds)) +
+  geom_point() +
+  theme_bw() +
+  geom_smooth(method = mgcv::gam) +
+  facet_wrap(~ variation + model, scales = 'free', nrow = 3)
+```
 
 ## Discussion
 
-For the verbs, we get the best results by using overall similarity to everything, more or less. The 'cselekszenek' pattern is noisier than the 'lakok' pattern. This is probably because the former is pretty complicated on its own: some verbs never delete the last vowel, some always do, some do it in some exponents, some pairs differ in meaning, and some verbs actually vary in the same exponent with the same meaning. The test nonce verbs were like these. For the latter, the pattern is much simpler: it only happens in one exponent and a large number of verbs vary.
+People very clearly rely on the ambient language in making their wug task judgements on these three variable patterns. We can tell because the decisions they make for test words are partly based on the corpus distributions of existing words that the test words look like. The corpus is our best guess on the distributions in the ambient language. This is all of course in line with the existing literature.
 
-For 'cselekszenek', the best model uses edit distance, for 'lakok', phonological distance. Note, however, that there is no massive difference in the accuracy of the phonology-based and the edit-distance based model for either variable pattern.
+It is not the case that people compare training words to one or two nearest neighbours and make their choices based on that. The best KNN models use far more neighbours and even these are beaten by more general models. Either all participants in the sample have a different nearest neighbour in mind for each test word, which seems unlikely, or they aggregate over a larger similarity space.
 
-For the noun pattern, people in the Wug task seem to have a pretty clear idea of what nouns are supposed to be doing, which they probably picked up from the ambient language -- in the corpus, nouns also seem to have a clear idea what they are supposed to be doing! A very specific subset of nonce verbs have prediction error on them, meaning that people don't treat them as they should based on their similarity to existing verbs. This merits further investigation but shouldn't be blamed on the categorisation model.
+Phonological similarity is useful in the models, but it does not necessarily beat other measures of similarity when calculating how much a given test word looks like our training categories. 
+
+For verbs, the tiny overlap finder is useful. This is because the verbal inflection patterns are sensitive to derivational and pseudo-derivational endings. The overlap finder can find these.
 
 ## References
 
@@ -743,8 +996,44 @@ GCM, KNN:
 - Nosofsky, Robert M. "The generalized context model: An exemplar model of classification." Formal approaches in categorization (2011): 18-39.
 - Peterson, Leif E. "K-nearest neighbor." Scholarpedia 4, no. 2 (2009): 1883.
 
+MGL:
+
+- Albright, Adam, and Bruce Hayes. "Modeling English past tense intuitions with minimal generalization." In Proceedings of the ACL-02 workshop on Morphological and phonological learning, pp. 58-69. 2002.
+- Mikheev, Andrei. "Automatic rule induction for unknown-word guessing." Computational Linguistics 23, no. 3 (1997): 405-423.
+
 The three variable patterns:
 
 - 'cselekszenek/cselekednek': Rácz, Péter, Péter Rebrus, and Miklós Törkenczy. "Attractors of variation in Hungarian inflectional morphology." Corpus Linguistics and Linguistic Theory 17, no. 2 (2021): 287-317.
 - 'hotelban/hotelben': Hayes, Bruce, Péter Siptár, Kie Zuraw, and Zsuzsa Londe. "Natural and unnatural constraints in Hungarian vowel harmony." Language (2009): 822-863.
 - 'lakok/lakom': Rácz, Péter. "Frequency and prototypicality determine variation in the Hungarian verbal 1 SG. INDEF." Acta Linguistica Academica. An International Journal of Linguistics (Until 2016 Acta Linguistica Hungarica) 66, no. 4 (2019): 601-620.
+
+## Appendix
+
+Predictions with test word labels:
+
+```{r viz2, fig.width = 6, fig.height = 54}
+plots = test2 %>% 
+  mutate(base2 = str_extract(base, '^[^ ]+(?=( |$))')) %>%
+  select(variation,base2,log_odds,tof,knn,gcm) %>% 
+  pivot_longer(cols = c(tof,knn,gcm), names_to = 'model', values_to = 'weight') %>% 
+  group_by(variation,model) %>% 
+  nest() %>% 
+  mutate(
+    title = glue('{variation}: best {model}'),
+    plot = map2(title, data, ~ 
+           {
+             .y %>% 
+               ggplot(aes(x = weight, y = log_odds, label = base2)) +
+                  geom_text() +
+                  theme_bw() +
+                  geom_smooth(method = mgcv::gam) +
+                  ggtitle(.x)
+               }
+           )
+  )
+
+# plots from list
+wrap_plots(plots$plot, ncol = 1)
+
+  
+```

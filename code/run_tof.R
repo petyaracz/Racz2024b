@@ -200,9 +200,25 @@ predictions %>%
   theme_bw() +
   facet_wrap( ~ variation, scales = 'free')
   
+# -- illustrations for the readme -- #
+
+i_lakok_pred = trainings %>% 
+  filter(alpha_upper == .25, alpha_lower == .25, variation == 'lakok/lakom') %>% 
+  select(prediction) %>% 
+  unnest(prediction) %>% 
+  arrange(base)
+
+i_lakok_score = trainings %>% 
+  filter(alpha_upper == .25, alpha_lower == .25, variation == 'lakok/lakom') %>% 
+  select(score) %>% 
+  unnest(score) %>% 
+  arrange(base)
 
 # -- write -- #
 
 write_tsv(predictions, 'dat/tof/best_tof_predictions.tsv')
 write_tsv(best_tofs, 'dat/tof/best_tofs.tsv')
+write_tsv(i_lakok_score, 'dat/tof/i_lakok_score.tsv')
+write_tsv(i_lakok_pred, 'dat/tof/i_lakok_pred.tsv')
 save(results, file = 'dat/tof/tof_results.rda')
+save(trainings, file = 'dat/tof/all_trainings.rda')

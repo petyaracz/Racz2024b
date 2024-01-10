@@ -1,0 +1,77 @@
+No.	A	->	B		C		D	Left side feats	Right side feats	Scope	Hits	Reliability	Confidence	Examples	Exceptions
+89	d	->	t	/	X ɛn	__		[]	[]	4	2	0.5	0.31	spɛnd, sɛnd	ɛnd, tɛnd
+108	d	->	t	/	X 	__		[]	[]	21	3	0.143	0.104	spɛnd, sɛnd, bɪld	fYnd, nid, stænd, hold, rid, lid, ʌndɚstænd, prəvYd, dɪsYd, æd, ɛnd, fid, tɛnd, ɪnklud, sWnd, əvOd, əkord, rɪgard
+17	ʌ	->	e	/	X k	__	m	[]	[]	2	2	1.0	0.57	kʌm, bɪkʌm	
+264	e	->	o	/	X 	__	r	[]	[]	5	2	0.4	0.254	wer, ber	ker, ster, ʃer
+197	e	->	ʊ	/	X 	__	k	[]	[]	3	2	0.667	0.396	tek, ʃek	brek
+69		->		/	X ɛt	__		[]	[]	4	2	0.5	0.31	lɛt, sɛt	gɛt, fɚgɛt
+49		->		/	X t	__		[]	[]	24	4	0.167	0.127	pʊt, lɛt, sɛt, kʌt	gɛt, wɔnt, sɪt, rYt, start, wet, it, ɪkspɛkt, mit, səgʤɛst, əksɛpt, fɚgɛt, kriet, fYt, ɪgzɪst, pOnt, ækt, səport, vɪzət
+269	il	->	ɛlt	/	X 	__		[]	[]	2	2	1.0	0.57	fil, dil	
+138	Y	->	o	/	r	__	 Y	[]	[]	2	2	1.0	0.57	rYt, rYz	
+125	Y	->	o	/	X r	__	 Y	[]	[]	8	3	0.375	0.267	rYt, drYv, rYz	trY, ərYv, dɪskrYb, krY, strYk
+205	ip	->	ɛpt	/	X 	__		[]	[]	2	2	1.0	0.57	kip, slip	
+84	æn	->	ʊ	/	X st	__	d	[]	[]	2	2	1.0	0.57	stænd, ʌndɚstænd	
+105		->	t	/	X s	__		[]	[]	9	9	1.0	0.898	pæs, prədus, ɪnkris, fors, fes, notɪs, dɪskʌs, rɪdus, ɪksprɛs	
+220		->	t	/	X ʃ	__		[]	[]	4	4	1.0	0.786	wɪʃ, fɪnɪʃ, pʊʃ, ɪstæblɪʃ	
+213		->	t	/	X ɪʃ	__		[]	[]	3	3	1.0	0.718	wɪʃ, fɪnɪʃ, ɪstæblɪʃ	
+72		->	t	/	X ɔk	__		[]	[]	2	2	1.0	0.57	tɔk, wɔk	
+180		->	t	/	X ap	__		[]	[]	2	2	1.0	0.57	stap, drap	
+244		->	t	/	X dus	__		[]	[]	2	2	1.0	0.57	prədus, rɪdus	
+65		->	t	/	X p	__		[]	[]	7	5	0.714	0.561	hɛlp, stap, dɪvɛləp, hop, drap	kip, slip
+101		->	t	/	X ʧ	__		[]	[]	5	3	0.6	0.42	riʧ, waʧ, tʌʧ	kæʧ, tiʧ
+19		->	t	/	X k	__		[]	[]	16	8	0.5	0.414	lʊk, æsk, wɚk, tɔk, lYk, wɔk, pɪk, θæŋk	θɪŋk, tek, spik, brek, ʃek, drɪŋk, sik, strYk
+55		->	t	/	X 	__		[]	[]	200	31	0.155	0.139	lʊk, æsk, wɚk, tɔk, hɛlp, stap, lYk, wɔk, lɚn, pæs, riʧ, dɪvɛləp, waʧ, prədus, ɪnkris, hop, pɪk, wɪʃ, læf	du, se, go, gɛt, no, si, θɪŋk, kʌm, tek, gɪv, wɔnt, fYnd, tɛl, sim, fil, bɪkʌm, pʊt, juz, liv
+80	i	->	ɛ	/	X 	__	d	[]	[]	4	3	0.75	0.526	rid, lid, fid	nid
+166	o	->	u	/	X r	__		[]	[]	2	2	1.0	0.57	gro, θro	
+62	o	->	u	/	X 	__		[]	[]	6	3	0.5	0.351	no, gro, θro	go, ʃo, falo
+158	ɛ	->	a	/	X g	__	t	[]	[]	2	2	1.0	0.57	gɛt, fɚgɛt	
+247		->	əd	/	X rt	__		[]	[]	3	3	1.0	0.718	start, səport, rɪport	
+103		->	əd	/	X Yd	__		[]	[]	2	2	1.0	0.57	prəvYd, dɪsYd	
+164		->	əd	/	X et	__		[]	[]	2	2	1.0	0.57	wet, kriet	
+193		->	əd	/	X st	__		[]	[]	2	2	1.0	0.57	səgʤɛst, ɪgzɪst	
+195		->	əd	/	X nt	__		[]	[]	2	2	1.0	0.57	wɔnt, pOnt	
+225		->	əd	/	X kt	__		[]	[]	2	2	1.0	0.57	ɪkspɛkt, ækt	
+266		->	əd	/	X port	__		[]	[]	2	2	1.0	0.57	səport, rɪport	
+275		->	əd	/	X rd	__		[]	[]	2	2	1.0	0.57	əkord, rɪgard	
+44		->	əd	/	X t	__		[]	[]	24	13	0.542	0.471	wɔnt, start, wet, ɪkspɛkt, səgʤɛst, əksɛpt, kriet, ɪgzɪst, pOnt, ækt, səport, vɪzət, rɪport	gɛt, pʊt, sɪt, rYt, lɛt, sɛt, it, mit, kʌt, fɚgɛt, fYt
+95		->	əd	/	X d	__		[]	[]	21	11	0.524	0.448	nid, prəvYd, dɪsYd, æd, ɛnd, tɛnd, ɪnklud, sWnd, əvOd, əkord, rɪgard	fYnd, stænd, hold, rid, lid, ʌndɚstænd, spɛnd, sɛnd, bɪld, fid
+199		->	əd	/	X ɛnd	__		[]	[]	4	2	0.5	0.31	ɛnd, tɛnd	spɛnd, sɛnd
+217		->	əd	/	X nd	__		[]	[]	8	3	0.375	0.267	ɛnd, tɛnd, sWnd	fYnd, stænd, ʌndɚstænd, spɛnd, sɛnd
+31		->	əd	/	X 	__		[]	[]	200	24	0.12	0.106	wɔnt, nid, start, wet, ɪkspɛkt, prəvYd, dɪsYd, æd, səgʤɛst, əksɛpt, kriet, ɛnd, ɪgzɪst, pOnt, tɛnd, ɪnklud, sWnd, ækt, səport	du, se, go, gɛt, no, si, θɪŋk, kʌm, tek, lʊk, gɪv, fYnd, tɛl, sim, fil, bɪkʌm, æsk, pʊt, juz
+131		->	d	/	X ɚ	__		[]	[]	11	11	1.0	0.916	rɪmɛmbɚ, kənsɪdɚ, ɔfɚ, rɪkwYɚ, kʌvɚ, wʌndɚ, ænsɚ, dɪskʌvɚ, ɛntɚ, əkɚ, sʌfɚ	
+150		->	d	/	X ən	__		[]	[]	5	5	1.0	0.825	hæpən, opən, lɪsən, ɪmæʤən, mɛnʧən	
+136		->	d	/	X en	__		[]	[]	3	3	1.0	0.718	rɪmen, ɪksplen, kənten	
+141		->	d	/	X ri	__		[]	[]	3	3	1.0	0.718	keri, əgri, meri	
+171		->	d	/	X uv	__		[]	[]	3	3	1.0	0.718	muv, pruv, rɪmuv	
+207		->	d	/	X ʤ	__		[]	[]	3	3	1.0	0.718	ʧennʤ, mænɪʤ, ɪnkɚɪʤ	
+51		->	d	/	X v	__		[]	[]	15	12	0.8	0.708	lɪv, muv, bəliv, lʌv, ɪnvalv, ərYv, rɪsiv, pruv, sɚv, sev, əʧiv, rɪmuv	gɪv, liv, drYv
+47		->	d	/	X n	__		[]	[]	18	13	0.722	0.637	tɚn, hæpən, lɚn, rɪmen, opən, rɪtɚn, ɪksplen, lɪsən, plæn, ʤOn, kənten, ɪmæʤən, mɛnʧən	min, bɪgɪn, rʌn, lɚn, wɪn
+121		->	d	/	X z	__		[]	[]	11	8	0.727	0.612	juz, səpoz, riəlYz, rez, kɔz, rɛkəgnYz, kloz, rɪfjuz	luz, rYz, ʧuz
+60		->	d	/	X e	__		[]	[]	5	4	0.8	0.607	ple, pe, ste, le	se
+250		->	d	/	X i	__		[]	[]	5	4	0.8	0.607	keri, əgri, meri, stʌdi	si
+116		->	d	/	X pən	__		[]	[]	2	2	1.0	0.57	hæpən, opən	
+123		->	d	/	X tɚn	__		[]	[]	2	2	1.0	0.57	tɚn, rɪtɚn	
+153		->	d	/	X dɚ	__		[]	[]	2	2	1.0	0.57	kənsɪdɚ, wʌndɚ	
+185		->	d	/	X kʌvɚ	__		[]	[]	2	2	1.0	0.57	kʌvɚ, dɪskʌvɚ	
+189		->	d	/	X ɪl	__		[]	[]	2	2	1.0	0.57	kɪl, fɪl	
+215		->	d	/	X eri	__		[]	[]	2	2	1.0	0.57	keri, meri	
+232		->	d	/	X le	__		[]	[]	2	2	1.0	0.57	ple, le	
+234		->	d	/	X rY	__		[]	[]	2	2	1.0	0.57	trY, krY	
+236		->	d	/	X oz	__		[]	[]	2	2	1.0	0.57	səpoz, kloz	
+238		->	d	/	X fɚ	__		[]	[]	2	2	1.0	0.57	ɔfɚ, sʌfɚ	
+242		->	d	/	X ju	__		[]	[]	2	2	1.0	0.57	kəntɪnju, argju	
+254		->	d	/	X juz	__		[]	[]	2	2	1.0	0.57	juz, rɪfjuz	
+262		->	d	/	X ɪʤ	__		[]	[]	2	2	1.0	0.57	mænɪʤ, ɪnkɚɪʤ	
+271		->	d	/	X muv	__		[]	[]	2	2	1.0	0.57	muv, rɪmuv	
+273		->	d	/	X O	__		[]	[]	2	2	1.0	0.57	ɪnʤO, dɪstrO	
+74		->	d	/	X ɚn	__		[]	[]	4	3	0.75	0.526	tɚn, lɚn, rɪtɚn	lɚn
+168		->	d	/	X iv	__		[]	[]	4	3	0.75	0.526	bəliv, rɪsiv, əʧiv	liv
+110		->	d	/	X Y	__		[]	[]	6	4	0.667	0.5	trY, dY, krY, əplY	lY, bY
+129		->	d	/	X l	__		[]	[]	11	6	0.545	0.437	kɔl, kɪl, pʊl, smYl, fel, fɪl	tɛl, fil, fɔl, sɛl, dil
+228		->	d	/	X r	__		[]	[]	7	4	0.571	0.428	əpir, ker, ster, ʃer	hir, wer, ber
+211		->	d	/	X m	__		[]	[]	5	3	0.6	0.42	sim, form, əsum	kʌm, bɪkʌm
+230		->	d	/	X er	__		[]	[]	5	3	0.6	0.42	ker, ster, ʃer	wer, ber
+187		->	d	/	X Yz	__		[]	[]	3	2	0.667	0.396	riəlYz, rɛkəgnYz	rYz
+22		->	d	/	X 	__		[]	[]	200	80	0.4	0.377	sim, juz, trY, kɔl, tɚn, lɪv, ʃo, ʧennʤ, hæpən, muv, bəliv, ple, rɪmɛmbɚ, pe, keri, lɚn, falo, əpir, əlW	du, se, go, gɛt, no, si, θɪŋk, kʌm, tek, lʊk, gɪv, wɔnt, fYnd, tɛl, fil, bɪkʌm, æsk, pʊt, liv
+78		->	d	/	X o	__		[]	[]	6	2	0.333	0.214	ʃo, falo	go, no, gro, θro
+176	ɛl	->	old	/	X 	__		[]	[]	2	2	1.0	0.57	tɛl, sɛl	
