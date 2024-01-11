@@ -1,0 +1,6 @@
+form	pattern	form1		form2		A		B	Change		Pres	Pfeat	P		Q	Qfeat	Qres	scope	hits	reliability	confidence	related forms	exceptions
+1	1	blacx	->	blacz	by	x	->	z	x/z/0	/	X		c	___				14	6	0.42857142857142855	0.2545427535239613	necx, penicx, binabcx, frobbcx, knebbcx, kribbcx	vacx, gucx, pocx, trumabcx, flanabcx, klubcx, flobcx, blibcx			
+1	2	blacx	->	blacy	by	x	->	y	x/y/0	/	X		c	___				14	8	0.5714285714285714	0.3878760868572946	vacx, gucx, pocx, trumabcx, flanabcx, klubcx, flobcx, blibcx	necx, penicx, binabcx, frobbcx, knebbcx, kribbcx			
+2	0	fradv	->
+3	1	gricx	->	gricz	by	x	->	z	x/z/0	/	X		c	___				14	6	0.42857142857142855	0.2545427535239613	necx, penicx, binabcx, frobbcx, knebbcx, kribbcx	vacx, gucx, pocx, trumabcx, flanabcx, klubcx, flobcx, blibcx			
+3	2	gricx	->	gricy	by	x	->	y	x/y/0	/	X		c	___				14	8	0.5714285714285714	0.3878760868572946	vacx, gucx, pocx, trumabcx, flanabcx, klubcx, flobcx, blibcx	necx, penicx, binabcx, frobbcx, knebbcx, kribbcx			

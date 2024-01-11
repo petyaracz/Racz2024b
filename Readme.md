@@ -1,7 +1,8 @@
-Phonological categorisation models for Hungarian morphological patterns
+Bagging phonological categorisation models for Hungarian morphological
+patterns
 ================
 Rácz, Péter
-2024-01-10
+2024-01-11
 
 In this readme, we go through a way of measuring distance between words
 based on natural classes that are, in turn, based on segmental
@@ -22,10 +23,10 @@ There are three models:
 
 - K Nearest Neighbours
 - the Generalised Context Model
-- the Tiny Overlap Finder, an R-based algorithm extremely heaviy
-  influenced by the Minimal Generalisation Learner. (I don’t call this
-  RMGL or something like that because the models work slightly
-  differently)
+- the Tiny Overlap Finder, an R-based algorithm under development,
+  extremely heavily influenced by the Minimal Generalisation Learner. (I
+  don’t call this RMGL or something like that because the models do not
+  give the same output)
 
 There are three word distance measures:
 
@@ -35,9 +36,12 @@ There are three word distance measures:
 - Jaccard distance
 
 The Tiny Overlap Finder uses edit distance between strings and generally
-works very differently from the other two.
+works very differently from the Generalised Context Model and the
+K-nearest Neighbours Model.
 
-## TOC
+## Table of contents
+
+In this readme, we will:
 
 1.  Generate natural classes from a language’s phonological feature
     matrix
@@ -138,10 +142,10 @@ Table: Sample of the natural classes
 
 ## 2. Generate segment-distances from the natural classes
 
-We use the natural classes to calculate segment distances and also add
-edit distances for the sake of completeness: Any segment vs any other
-segment has a distance of 0-1, any segment vs nothing has a distance of
-1.
+We use the natural classes to calculate phonological distances between
+segments and also add edit distances for the sake of completeness: Any
+segment vs any other segment has a phonological distance of 0-1, any
+segment vs nothing has a phonological distance of 1.
 
 ``` r
 lookup_h = buildDistTable(h, nch) |>
@@ -185,7 +189,8 @@ and shows consonants in a continuum from labial and dorsal to coronal.
 
 We want to find the alignment between word 1 and word 2 where the
 pairwise comparison of their segments yields the smallest total
-distance. We can skip slots. This is a good alignment:
+distance. We can skip segment slots. This is a good alignment between
+“asztrál” \[astra:l\] (astral) and “osztály” \[osta:j\] (class):
 
     a s t r á l
     o s t   á j 
@@ -201,8 +206,8 @@ alignment. This process is resource intensive. To run it, we need the
 two words and the lookup table generated in step 2. The resulting table
 shows the two strings in their bestalignment (col 1 and 2), the
 distances between the segments (dist, this is 0 for identical segments
-and 1 for deletion / insertion) and the total distance (sum of dist,
-which is the same value for the whole aignment).
+and 1 for deletion / insertion) and the total phonological distance
+(which is the same value for the whole alignment).
 
 ``` r
 alignWords('astrál', 'ostáj', lookup_h) %>% 
@@ -244,7 +249,7 @@ Apparently comparing the final `ka$` to the final `ál$` is a better
 bargain than skipping 1 segment and gaining a penalty of 1 and then
 comparing `ka $` to `ál$`.
 
-This is based on Albrighty and Hayes (2003) and Dawdy-Hesterberg and
+This is based on Albright and Hayes (2003) and Dawdy-Hesterberg and
 Pierrehumbert (2014).
 
 ## 4. Generate categories from the word distances and an algorithm
@@ -259,9 +264,9 @@ Hungarian. See the preprint for details.
 - training data come from Hungarian webcorpus 2.
 - test data come from a wug task where people responded to prompts in a
   forced-choice format. about 30 people responded to each prompt. they
-  came from a student pool. See the preprint for details. (The preprint
-  only talks about 1 and 2 right now, but it covers methods and ethics
-  for 3 as well.)
+  came from a student pool. See the Rácz & Lukács preprint for details.
+  (The preprint only talks about 1 and 2 right now, but it covers
+  methods and ethics for 3 as well.)
 
 Training data look like this:
 
@@ -289,14 +294,15 @@ category and verbs that end in `CVCik$` are the “low” category. (This is
 slightly more complicated: some `CVCik$` verbs act like `CCik$` verbs
 with vowel-initial suffixes and these were put in the `CCik$` category.)
 
-For ‘hotelban/hotelben’, the two variants are back or front vowel in the
-suffix – but these vary across a range of suffixes, the suffixes
-themselves have different total frequencies, so I fit a mixed model
-predicting `cbind(freq1,freq2)` in the corpus with a stem and suffix
-intercept. I then extracted the stem random effects and split the
-distribution across the median. This is the “high” and “low” category.
-Nouns that prefer back suffixes are in the “high” category and nouns
-that prefer front suffixes are in the “low” category.
+For ‘hotelban/hotelben’, the two variants are back or front vowel
+variants of the same suffix (e.g. “ban/ben”, “in”) – but these vary
+across a range of suffixes, the suffixes themselves have different total
+frequencies, so I fit a mixed model predicting `cbind(freq1,freq2)` in
+the corpus with a stem and suffix intercept. I then extracted the stem
+random effects and split the distribution across the median. This is the
+“high” and “low” category. Nouns that prefer back suffixes are in the
+“high” category and nouns that prefer front suffixes are in the “low”
+category.
 
 For ‘lakok/lakom’, there is one exponent that varies and you can count
 the two forms (lakok, lakom) per verb and calculate log odds, then split
@@ -404,7 +410,9 @@ Example alignments
 
 What we actually need is the total phonological distances.
 
-The final result looks like this:
+The final result looks like this. We have total phonological distance,
+based on best alignment, between each test word and each training word
+in each variation pattern.
 
 | test    | training  | variation                | phon_dist |
 |:--------|:----------|:-------------------------|----------:|
@@ -413,10 +421,10 @@ The final result looks like this:
 | brešl   | gombášod  | cselekszenek/cselekednek |      6.11 |
 | metégs  | danolás   | cselekszenek/cselekednek |      5.05 |
 | špökl   | vonagl    | cselekszenek/cselekednek |      4.14 |
-| jalréɲ  | kóter     | hotelban/hotelben        |      4.92 |
+| jalréṉ  | kóter     | hotelban/hotelben        |      4.92 |
 | hivép   | puffer    | hotelban/hotelben        |      4.67 |
 | čodeg   | popper    | hotelban/hotelben        |      3.53 |
-| ɲítem   | hotel     | hotelban/hotelben        |      2.70 |
+| ṉítem   | hotel     | hotelban/hotelben        |      2.70 |
 | fupét   | kašper    | hotelban/hotelben        |      4.00 |
 | narádz  | bábáškod  | lakok/lakom              |      5.84 |
 | zödl    | gondolkod | lakok/lakom              |      6.44 |
@@ -458,20 +466,20 @@ training words and responses to test words and training word category.
 | cselekszenek/cselekednek | sztritlik / sztritozik | vetekszik      | high     |      4.63 |
 | cselekszenek/cselekednek | nyádlik / nyádozik     | kőrözik        | low      |      4.27 |
 | cselekszenek/cselekednek | nyizlik / nyizozik     | rajzolódik     | low      |      5.62 |
-| hotelban/hotelben        | spicet                 | brúder         | high     |      4.16 |
+| hotelban/hotelben        | pazév                  | brúder         | high     |      4.41 |
 | hotelban/hotelben        | bingéj                 | mutter         | high     |      3.89 |
-| hotelban/hotelben        | hosét                  | raszter        | low      |      4.25 |
-| hotelban/hotelben        | gábéd                  | szoftver       | low      |      5.87 |
-| lakok/lakom              | flagánylik             | leselkedik     | high     |      6.87 |
-| lakok/lakom              | huroslik               | hiszik         | high     |      4.20 |
-| lakok/lakom              | vűjlik                 | ágaskodik      | low      |      6.28 |
-| lakok/lakom              | lörűdzik               | várakozik      | low      |      4.50 |
+| hotelban/hotelben        | gicéj                  | raszter        | low      |      3.93 |
+| hotelban/hotelben        | brágéd                 | sóher          | low      |      4.59 |
+| lakok/lakom              | gilárzik               | főzőcskézik    | high     |      6.07 |
+| lakok/lakom              | sojzik                 | lökdösődik     | high     |      6.59 |
+| lakok/lakom              | préleglik              | gondoskodik    | low      |      7.67 |
+| lakok/lakom              | pratánylik             | nyugszik       | low      |      6.03 |
 
 Table: Word distances for nonce words in the Wug task and their aligned
 training words, with training word category and test word response log
 odds (large log odds: lot of “high” responses).
 
-### KNN
+### K-Nearest Neighbour
 
 We categorise test words based on similarity with training words using a
 K-Nearest Neighbours algorithm. The algorithm calculates word distance
@@ -537,28 +545,29 @@ my_knns2 = my_knns %>%
 | var_p | var_k | var_s | distance_type | variation                | estimate | std.error | statistic | sig    |
 |------:|------:|------:|:--------------|:-------------------------|---------:|----------:|----------:|:-------|
 |     1 |    15 |   0.1 | phon          | cselekszenek/cselekednek |     0.61 |      0.14 |      4.29 | \*\*\* |
-|     1 |    15 |   0.1 | jaccard       | hotelban/hotelben        |     2.76 |      0.20 |     13.84 | \*\*\* |
+|     1 |    15 |   0.1 | jaccard       | hotelban/hotelben        |     2.81 |      0.19 |     14.91 | \*\*\* |
 |     1 |     7 |   0.1 | edit          | lakok/lakom              |     1.23 |      0.13 |      9.20 | \*\*\* |
 
 Table: Best KNN model for each variation.
 
-For ‘cselekszenek’, the best model isn’t very good, but it does
-something. It uses phonological distance and the largest k, k=15. For
-‘hotelban’, the best model is decent. It also uses the largest k and
-jaccard distance. For ‘lakok’, the best model uses k=7 and edit
-distance. All three best models have an s = .1 which relatively
-penalises more distant neighbours over closer neighbours.
+All three models can explain some variation in the test data. The
+‘cselekszenek’ model uses phonological distance and the largest k, k=15.
+For ‘hotelban’, the best model also uses the largest k and jaccard
+distance. For ‘lakok’, the best model uses k=7 and edit distance. All
+three best models have an s = .1 which relatively penalises more distant
+neighbours over closer neighbours.
 
-We can look at the best model for each distance type and variation.
+We can look at the best model for each segment distance type and
+variation.
 
 | var_p | var_k | var_s | distance_type | variation                | term          | estimate | std.error | statistic | sig    |
 |------:|------:|------:|:--------------|:-------------------------|:--------------|---------:|----------:|----------:|:-------|
 |     1 |     7 |   0.1 | edit          | cselekszenek/cselekednek | category_high |     0.41 |      0.12 |      3.36 | \*\*\* |
 |     1 |     2 |   0.1 | jaccard       | cselekszenek/cselekednek | category_high |     0.31 |      0.08 |      3.92 | \*\*\* |
 |     1 |    15 |   0.1 | phon          | cselekszenek/cselekednek | category_high |     0.61 |      0.14 |      4.29 | \*\*\* |
-|     1 |    15 |   0.1 | edit          | hotelban/hotelben        | category_high |     2.91 |      0.22 |     13.20 | \*\*\* |
-|     1 |    15 |   0.1 | jaccard       | hotelban/hotelben        | category_high |     2.76 |      0.20 |     13.84 | \*\*\* |
-|     1 |    15 |   0.1 | phon          | hotelban/hotelben        | category_high |     2.80 |      0.21 |     13.28 | \*\*\* |
+|     1 |    15 |   0.1 | edit          | hotelban/hotelben        | category_high |     3.03 |      0.21 |     14.37 | \*\*\* |
+|     1 |    15 |   0.1 | jaccard       | hotelban/hotelben        | category_high |     2.81 |      0.19 |     14.91 | \*\*\* |
+|     1 |    15 |   0.1 | phon          | hotelban/hotelben        | category_high |     2.67 |      0.20 |     13.67 | \*\*\* |
 |     1 |     7 |   0.1 | edit          | lakok/lakom              | category_high |     1.23 |      0.13 |      9.20 | \*\*\* |
 |     1 |    15 |   0.1 | jaccard       | lakok/lakom              | category_high |     0.80 |      0.22 |      3.60 | \*\*\* |
 |     1 |    15 |   0.1 | phon          | lakok/lakom              | category_high |     1.44 |      0.17 |      8.31 | \*\*\* |
@@ -567,14 +576,14 @@ Table: Best KNN model for each variation and distance type.
 
 For ‘cselekszenek’ and ‘hotelban’, the models don’t differ much in
 accuracy depending on distance. For ‘lakok’, jaccard distance is
-markedly more terrible than the others. Phonological distance always
-helps a little bit over edit distance.
+markedly more terrible than the others. A K nearest-neighbour model
+based on phonological distance between test and training words is nearly
+on par with one based on edit distance, despite the extra information
+available to the former: the edit distance between \[f\] and \[p\] is
+the same as between \[f\] and \[u\], even though the former pair share
+more natural classes and so have a smaller phonological distance.
 
-Let’s visualise the best KNN model for each variation type.
-
-![](figures/categorisation9-1.png)<!-- -->
-
-### GCM
+### Generalised Context Model
 
 We categorise test words based on similarity with training words using
 the Generalised Context Model. We try `p = [1,2]`,
@@ -619,12 +628,13 @@ my_gcms2 = my_gcms %>%
 | var_p | var_s | distance_type | variation                | term          | estimate | std.error | statistic | sig    |
 |------:|------:|:--------------|:-------------------------|:--------------|---------:|----------:|----------:|:-------|
 |     2 |   0.3 | edit          | cselekszenek/cselekednek | category_high |    36.23 |      6.23 |      5.81 | \*\*\* |
-|     1 |   0.9 | jaccard       | hotelban/hotelben        | category_high |    80.46 |      4.62 |     17.43 | \*\*\* |
+|     2 |   0.3 | jaccard       | hotelban/hotelben        | category_high |   499.57 |     26.32 |     18.98 | \*\*\* |
 |     2 |   0.9 | phon          | lakok/lakom              | category_high |    27.97 |      2.40 |     11.66 | \*\*\* |
 
 Table: Best GCM model for each variation.
 
-The GCM models are all pretty good. For ‘cselekszenek’, the best model
+Again, the categorisation models account for some variation across test
+words in all three variable patterns. For ‘cselekszenek’, the best model
 uses edit distance and an exponential distance metric. For ‘lakok’, the
 best model uses phonological distance and the exponential metric. For
 ‘hotelban’ it, again, uses jaccard distance.
@@ -634,18 +644,14 @@ best model uses phonological distance and the exponential metric. For
 |     2 |   0.3 | edit          | cselekszenek/cselekednek | category_high |    36.23 |      6.23 |      5.81 | \*\*\* |
 |     1 |   0.9 | jaccard       | cselekszenek/cselekednek | category_high |    44.52 |      9.53 |      4.67 | \*\*\* |
 |     1 |   0.9 | phon          | cselekszenek/cselekednek | category_high |     3.56 |      0.68 |      5.22 | \*\*\* |
-|     1 |   0.3 | edit          | hotelban/hotelben        | category_high |    27.97 |      1.62 |     17.21 | \*\*\* |
-|     1 |   0.9 | jaccard       | hotelban/hotelben        | category_high |    80.46 |      4.62 |     17.43 | \*\*\* |
-|     1 |   0.7 | phon          | hotelban/hotelben        | category_high |    15.76 |      0.96 |     16.37 | \*\*\* |
+|     2 |   0.7 | edit          | hotelban/hotelben        | category_high |    24.14 |      1.31 |     18.48 | \*\*\* |
+|     2 |   0.3 | jaccard       | hotelban/hotelben        | category_high |   499.57 |     26.32 |     18.98 | \*\*\* |
+|     1 |   0.9 | phon          | hotelban/hotelben        | category_high |    12.00 |      0.70 |     17.21 | \*\*\* |
 |     1 |   0.9 | edit          | lakok/lakom              | category_high |     7.71 |      0.73 |     10.62 | \*\*\* |
 |     2 |   0.1 | jaccard       | lakok/lakom              | category_high |   856.03 |    147.10 |      5.82 | \*\*\* |
 |     2 |   0.9 | phon          | lakok/lakom              | category_high |    27.97 |      2.40 |     11.66 | \*\*\* |
 
 Table: Best GCM model for each variation and distance type.
-
-Checking on the best model for all distance types we can see that using
-jaccard distance gives you a massive but very noisy estimate. For
-‘hotelban’, however, the noise is much smaller and so jaccard wins.
 
 ## 5. The Tiny Overlap Finder
 
@@ -664,27 +670,28 @@ generalise these.
 | 4   | aec\_\_x\_\_ | aec\_\_z\_\_ | x -\> z | aec \_  |
 
 For the input-output pairs in the table above, we observe `x` turning
-into `y` word-finally. We can consolidate examples 1-2 to rule (i):
-`x -> y / bc _` and example 1-3 to rule (ii): `x -> y / c _`. Note that
-rule (ii) should also apply to example 4 but it doesn’t. So rule (i) has
-a scope of 2 examples and matches 2 of these, while rule (ii) has a
-scope of 4 and matches 2. Rule (i) is more *reliable* than rule (ii) as
-it applies to more of its context examples but rule (ii) has more forms
-in its context altogether.
+into `y` or `z` word-finally. We can consolidate examples 1-2 to rule
+(i): `x -> y / bc _` and example 1-3 to rule (ii): `x -> y / c _`. Note
+that example (4) matches the structural description of rule (ii) but the
+rule does not apply to it. So rule (i) has a scope of 2 examples and
+matches 2 of these, while rule (ii) has a scope of 4 and matches 3. Rule
+(i) is more *reliable* than rule (ii) as it applies to more of its
+context examples but rule (ii) has more examples in its context
+altogether.
 
 We can adjust the reliability of our rules based on how many forms they
-apply to (adjusting for the fact that rule (ii) applies to the same
-amount of forms as rule (i) even if its reliability is worse) and based
-on whether some rules do the work of other rules. In our example, rule
-(ii) is redundant in examples 1-2 where rule (i) does all its work. We
-can reflect this by adjusting down how much we confide in rule (ii).
+apply to. This will express the notion that rule (i) is more reliable
+but more limited than rule (ii). We can also adjust rule reliability
+based on whether some rules do the work of other rules. In our example,
+rule (ii) is redundant in examples 1-2 where rule (i) does all its work.
+We can reflect this by adjusting down how much we confide in rule (ii).
 
 The Minimal Generalisation Learner can use phonological distance to
 create generalised contexts. The tiny overlap finder only looks for
-segment-to-segment matches. The reason we use it is that a lot of
-derivational suffixes really like one or the other variant in our
-Hungarian variable patterns and the tiny overlap finder is good at
-finding these.
+segment-to-segment matches. Hungarian verbs tend to have strong
+templatic effects with many derivational and pseudo-derivational
+endings. These can have predictive effects on inflectional variation.
+The Tiny Overlap Finder can find these.
 
 ------------------------------------------------------------------------
 
@@ -698,35 +705,36 @@ overlap finder clearly works, so it is included in this discussion.
 
 First, we hard-wire phonological variation in our dataset because we
 want the tiny overlap finder to focus on the morphology (-k/-m, CC/CVC,
--front/-back) instead of the phonology. (The KNN and the GCM models only
-had to pick between two variants, and the tiny overlap finder shouldn’t
-have a much harder time than these.)
+-front/-back) instead of the phonology. (The K-nearest neighbour model
+and the generalised context model only had to pick between two variants,
+and the tiny overlap finder shouldn’t have a much harder time than
+these.)
 
 Here are the transformed input-output pairs in the training sets:
 
-| variation                | base       | category | suffix | input     | output     |
-|:-------------------------|:-----------|:---------|:-------|:----------|:-----------|
-| cselekszenek/cselekednek | morajlik   | high     | nek    | morajliK  | morajlVnVk |
-| cselekszenek/cselekednek | táborozik  | low      | nek    | táboroziK | táboroznVk |
-| cselekszenek/cselekednek | fekszik    | high     | tek    | feksiK    | feksVtVk   |
-| cselekszenek/cselekednek | fázik      | low      | tek    | fáziK     | fáztVk     |
-| cselekszenek/cselekednek | viharzik   | high     | ünk    | viharziK  | viharzVnk  |
-| cselekszenek/cselekednek | ügyfelezik | low      | ünk    | üḏfeleziK | üḏfelezVnk |
-| hotelban/hotelben        | kolesz     | high     | ban    | koles     | kolesban   |
-| hotelban/hotelben        | dzsungel   | low      | ban    | džungel   | džungelben |
-| hotelban/hotelben        | oszét      | high     | nak    | osét      | osétnak    |
-| hotelban/hotelben        | háttér     | low      | nak    | háttér    | háttérnek  |
-| hotelban/hotelben        | haver      | high     | nál    | haver     | havernál   |
-| hotelban/hotelben        | szoftver   | low      | nál    | softver   | softvernél |
-| lakok/lakom              | cipekszik  | high     | 3sg    | cipeksiK  | cipeksVk   |
-| lakok/lakom              | törődik    | low      | 3sg    | törődiK   | törődVm    |
+| variation                | base       | category | suffix | input      | output       |
+|:-------------------------|:-----------|:---------|:-------|:-----------|:-------------|
+| cselekszenek/cselekednek | romlik     | high     | nek    | romliK     | romolnVk     |
+| cselekszenek/cselekednek | szóbelizik | low      | nek    | sóbeliziK  | sóbeliznVk   |
+| cselekszenek/cselekednek | örvénylik  | high     | tek    | örvéṉliK   | örvéṉlVtVk   |
+| cselekszenek/cselekednek | árnyalódik | low      | tek    | árṉalódiK  | árṉalódtVk   |
+| cselekszenek/cselekednek | hajlik     | high     | ünk    | hajliK     | hajlVnk      |
+| cselekszenek/cselekednek | faggatózik | low      | ünk    | faggatóziK | faggatódzVnk |
+| hotelban/hotelben        | panel      | high     | ban    | panel      | panelban     |
+| hotelban/hotelben        | zsáner     | low      | ban    | žáner      | žánerben     |
+| hotelban/hotelben        | máért      | high     | nak    | máért      | máértnak     |
+| hotelban/hotelben        | rapper     | low      | nak    | rapper     | rappernek    |
+| hotelban/hotelben        | ankét      | high     | nál    | ankét      | ankétnál     |
+| hotelban/hotelben        | korrekt    | low      | nál    | korrekt    | korrektnél   |
+| lakok/lakom              | teszik     | high     | 3sg    | tesiK      | tesVk        |
+| lakok/lakom              | fiatalodik | low      | 3sg    | fiatalodiK | fiatalodVm   |
 
 Table: Training data, tiny overlap finder
 
 For ‘lakok’ and ‘cselekszenek’, vowel harmony is not relevant, so we
 remove the final stem vowel and the linking vowel and the suffix vowel
-and replace it with V. For ‘hotelban’, the suffix vowel is precisely the
-point, so we keep it.
+and replace these with V. For ‘hotelban’, the suffix vowel is precisely
+the point, so we keep it.
 
 We transform test data the same way. We assign categories the same way
 we did for the KNN and GCM training sets: if a test form does A a lot,
@@ -751,30 +759,26 @@ we assign it to A. If it does B a lot, we assign it to B.
 
 Table: Test data, tiny overlap finder
 
-We fit the model separately on every suffix type so it doesn’t need to
-distinguish those either. Finally, the tiny overlap finder has two
-parameters, one penalising rules that cover fewer versus more
-input-output pairs in the training (as in i-ii in the examples above)
-and one penalising rules that have subrules that do most of the work for
-them (also as in i versus ii in the examples above). We try
-\[.25,.5,.75,.9\] for both of these parameters (for details see
-code/run_tof.r and code/tof.r and code/test_tof.r). We fit the tiny
-overlap finder on the suffix sets and then merge the rules for each
-variation pattern. Here are ten random rules for ‘lakok’, with no
-guidance:
+We fit the model separately on every variable suffix type so it doesn’t
+need to distinguish those either. There are three variable suffixes for
+‘cselekszenek’ and ‘hotelban’ and only one for ‘lakok’. As noted
+earlier, the tiny overlap finder has two parameters, one penalising
+rules that cover fewer versus more input-output pairs in the training
+(as in i-ii in the examples above) and one penalising rules that have
+subrules that do most of the work for them (also as in i versus ii in
+the examples above). We try \[.25,.5,.75,.9\] for both of these
+parameters (for details see code/run_tof.r and code/tof.r and
+code/test_tof.r). We fit the tiny overlap finder on the suffix sets and
+then combine all rules for each variation pattern. Here are ten random
+rules for ‘lakok’, with no guidance:
 
-| rule                 | scope | hits | reliability | alpha_lower | lower_confidence_limit | alpha_upper | impugned_lower_confidence_limit | some_examples                                                    | some_exceptions                                             |
-|:---------------------|------:|-----:|------------:|------------:|-----------------------:|------------:|--------------------------------:|:-----------------------------------------------------------------|:------------------------------------------------------------|
-| iK → Vm / lkoz\_\_#  |    12 |   11 |        0.92 |        0.25 |                   0.85 |        0.25 |                            0.78 | ajánlkozik, csodálkozik, foglalkozik, gondolkozik, próbálkozik   |                                                             |
-| iK → Vk / z\_\_#     |   229 |  115 |        0.50 |        0.25 |                   0.49 |        0.25 |                            0.47 | adakozik, autókázik, bakizik, balhézik, botladozik               | ajánlkozik, alkudozik, autózik, avatkozik, barátkozik       |
-| iK → Vm / ölőd\_\_#  |     3 |    2 |        0.67 |        0.25 |                   0.52 |        0.25 |                            0.52 |                                                                  |                                                             |
-| iK → Vk / lőd\_\_#   |    25 |   17 |        0.68 |        0.25 |                   0.64 |        0.25 |                            0.70 | bíbelődik, döglődik, fejlődik, fészkelődik, készülődik           | képzelődik, művelődik, préselődik, sínylődik, tépelődik     |
-| iK → Vm / \_\_#      |   602 |  302 |        0.50 |        0.25 |                   0.50 |        0.25 |                            0.48 | aggódik, ajánlkozik, akaszkodik, alkudozik, alkuszik             | adakozik, adaptálódik, adódik, adósodik, alkudik            |
-| iK → Vm / egs\_\_#   |     3 |    3 |        1.00 |        0.25 |                   0.81 |        0.25 |                            0.81 |                                                                  |                                                             |
-| iK → Vm / olód\_\_#  |    13 |    2 |        0.15 |        0.25 |                   0.14 |        0.25 |                            0.14 |                                                                  | bonyolódik, csiszolódik, forgolódik, gúnyolódik, hangolódik |
-| iK → Vm / askod\_\_# |     7 |    7 |        1.00 |        0.25 |                   0.91 |        0.25 |                            0.97 | akaszkodik, csimpaszkodik, kapaszkodik, panaszkodik, ragaszkodik |                                                             |
-| iK → Vk / edez\_\_#  |     3 |    2 |        0.67 |        0.25 |                   0.52 |        0.25 |                            0.52 |                                                                  |                                                             |
-| iK → Vm / akoz\_\_#  |    11 |    9 |        0.82 |        0.25 |                   0.75 |        0.25 |                            0.83 | csatlakozik, hadakozik, kajakozik, lakozik, szánakozik           |                                                             |
+| rule                | scope | hits | reliability | alpha_lower | lower_confidence_limit | alpha_upper | impugned_lower_confidence_limit | some_examples                                          | some_exceptions                                         |
+|:--------------------|------:|-----:|------------:|------------:|-----------------------:|------------:|--------------------------------:|:-------------------------------------------------------|:--------------------------------------------------------|
+| iK → Vk / z\_\_#    |   229 |  115 |        0.50 |        0.25 |                   0.49 |        0.25 |                            0.47 | adakozik, autókázik, bakizik, balhézik, botladozik     | ajánlkozik, alkudozik, autózik, avatkozik, barátkozik   |
+| iK → Vm / ölőd\_\_# |     3 |    2 |        0.67 |        0.25 |                   0.52 |        0.25 |                            0.52 |                                                        |                                                         |
+| iK → Vk / lőd\_\_#  |    25 |   17 |        0.68 |        0.25 |                   0.64 |        0.25 |                            0.70 | bíbelődik, döglődik, fejlődik, fészkelődik, készülődik | képzelődik, művelődik, préselődik, sínylődik, tépelődik |
+| iK → Vm / \_\_#     |   602 |  302 |        0.50 |        0.25 |                   0.50 |        0.25 |                            0.48 | aggódik, ajánlkozik, akaszkodik, alkudozik, alkuszik   | adakozik, adaptálódik, adódik, adósodik, alkudik        |
+| iK → Vm / egs\_\_#  |     3 |    3 |        1.00 |        0.25 |                   0.81 |        0.25 |                            0.81 |                                                        |                                                         |
 
 Table: Some rules for lakok/lakom
 
@@ -792,35 +796,25 @@ best sub-rules upper confidence limit.
 
 Here are ten rules for ‘cselekszenek’:
 
-| rule                     | scope | hits | reliability | alpha_lower | lower_confidence_limit | alpha_upper | impugned_lower_confidence_limit | some_examples                                  | some_exceptions                                      |
-|:-------------------------|------:|-----:|------------:|------------:|-----------------------:|------------:|--------------------------------:|:-----------------------------------------------|:-----------------------------------------------------|
-| ziK → dzVnk / akaró\_\_# |     3 |    3 |        1.00 |         0.9 |                   0.32 |        0.25 |                            0.32 |                                                |                                                      |
-| iK → nVk / alkod\_\_#    |     5 |    4 |        0.80 |         0.9 |                   0.34 |        0.25 |                            0.82 |                                                |                                                      |
-| iK → tVk / ároz\_\_#     |     2 |    2 |        1.00 |         0.9 |                  -0.83 |        0.25 |                           -0.83 |                                                |                                                      |
-| iK → nVk / vatkoz\_\_#   |     4 |    4 |        1.00 |         0.9 |                   0.55 |        0.25 |                            0.55 |                                                |                                                      |
-| iK → Vnk / sešed\_\_#    |     2 |    2 |        1.00 |         0.9 |                  -0.83 |        0.25 |                           -0.83 |                                                |                                                      |
-| ziK → eztVk / \_\_#      |    11 |    2 |        0.18 |         0.9 |                  -0.01 |        0.25 |                           -0.01 |                                                | akarózik, dobálózik, dohányzik, faggatózik, hiányzik |
-| iK → nVk / tatkoz\_\_#   |     4 |    4 |        1.00 |         0.9 |                   0.55 |        0.25 |                            0.55 |                                                |                                                      |
-| iK → tVk / lálkod\_\_#   |     2 |    2 |        1.00 |         0.9 |                  -0.83 |        0.25 |                           -0.83 |                                                |                                                      |
-| iK → tVk / gáz\_\_#      |     5 |    5 |        1.00 |         0.9 |                   0.65 |        0.25 |                            0.96 | bringázik, igázik, ingázik, jógázik, vizsgázik |                                                      |
-| iK → Vnk / arakod\_\_#   |     2 |    2 |        1.00 |         0.9 |                  -0.83 |        0.25 |                           -0.83 |                                                |                                                      |
+| rule                     | scope | hits | reliability | alpha_lower | lower_confidence_limit | alpha_upper | impugned_lower_confidence_limit | some_examples                                       | some_exceptions |
+|:-------------------------|------:|-----:|------------:|------------:|-----------------------:|------------:|--------------------------------:|:----------------------------------------------------|:----------------|
+| iK → tVk / ez\_\_#       |    48 |   48 |         1.0 |         0.9 |                   0.97 |        0.25 |                            0.99 | bridzsezik, cselezik, düledezik, egyezik, emlékezik |                 |
+| iK → Vnk / klőd\_\_#     |     2 |    2 |         1.0 |         0.9 |                  -0.83 |        0.25 |                           -0.83 |                                                     |                 |
+| ziK → dzVnk / akaró\_\_# |     3 |    3 |         1.0 |         0.9 |                   0.32 |        0.25 |                            0.32 |                                                     |                 |
+| iK → nVk / alkod\_\_#    |     5 |    4 |         0.8 |         0.9 |                   0.34 |        0.25 |                            0.82 |                                                     |                 |
+| iK → tVk / ároz\_\_#     |     2 |    2 |         1.0 |         0.9 |                  -0.83 |        0.25 |                           -0.83 |                                                     |                 |
 
 Table: Some rules for lakok/lakom
 
 Here are ten rules for ‘hotelban’:
 
-| rule               | scope | hits | reliability | alpha_lower | lower_confidence_limit | alpha_upper | impugned_lower_confidence_limit | some_examples                           | some_exceptions                       |
-|:-------------------|------:|-----:|------------:|------------:|-----------------------:|------------:|--------------------------------:|:----------------------------------------|:--------------------------------------|
-| → ben / akett\_\_# |     4 |    4 |        1.00 |        0.25 |                   0.85 |        0.25 |                            0.85 |                                         |                                       |
-| → nál / s\_\_#     |     8 |    6 |        0.75 |        0.25 |                   0.67 |        0.25 |                            0.43 | kolesz, macesz, notesz, pajesz, samesz  |                                       |
-| → ben / ráter\_\_# |     2 |    2 |        1.00 |        0.25 |                   0.72 |        0.25 |                            0.72 |                                         |                                       |
-| → nak / ék\_\_#    |     6 |    5 |        0.83 |        0.25 |                   0.73 |        0.25 |                            0.73 | bobbyék, játék, pótlék, szándék, árnyék |                                       |
-| → nak / ótér\_\_#  |     2 |    2 |        1.00 |        0.25 |                   0.72 |        0.25 |                            0.72 |                                         |                                       |
-| → nek / ner\_\_#   |     2 |    2 |        1.00 |        0.25 |                   0.72 |        0.25 |                            0.72 |                                         |                                       |
-| → nek / unker\_\_# |     2 |    2 |        1.00 |        0.25 |                   0.72 |        0.25 |                            0.72 |                                         |                                       |
-| → nek / otel\_\_#  |     3 |    2 |        0.67 |        0.25 |                   0.52 |        0.25 |                            0.52 |                                         |                                       |
-| → nak / él\_\_#    |     4 |    4 |        1.00 |        0.25 |                   0.85 |        0.25 |                            0.85 |                                         |                                       |
-| → ban / er\_\_#    |    43 |   20 |        0.47 |        0.25 |                   0.44 |        0.25 |                            0.49 | bakter, farmer, fater, gukker, haver    | amper, barter, bojler, bunker, fráter |
+| rule                | scope | hits | reliability | alpha_lower | lower_confidence_limit | alpha_upper | impugned_lower_confidence_limit | some_examples | some_exceptions |
+|:--------------------|------:|-----:|------------:|------------:|-----------------------:|------------:|--------------------------------:|:--------------|:----------------|
+| → nál / ek\_\_#     |     2 |    2 |         1.0 |        0.25 |                   0.72 |        0.25 |                            0.72 |               |                 |
+| → nél / per\_\_#    |     2 |    2 |         1.0 |        0.25 |                   0.72 |        0.25 |                            0.72 |               |                 |
+| → nak / tér\_\_#    |     5 |    3 |         0.6 |        0.25 |                   0.51 |        0.25 |                            0.45 |               |                 |
+| → nek / rapper\_\_# |     2 |    2 |         1.0 |        0.25 |                   0.72 |        0.25 |                            0.72 |               |                 |
+| → nél / š\_\_#      |     2 |    2 |         1.0 |        0.25 |                   0.72 |        0.25 |                            0.72 |               |                 |
 
 Table: Some rules for lakok/lakom
 
@@ -871,7 +865,8 @@ Table: Some scores for lakok/lakom
 We use a generalised linear model predicting `cbind(resp1,resp2)` from
 the model score to find the best model for each variable pattern. The
 best model has the strongest predictor for score. This is the same as
-what we did for the KNN and the GCM.
+what we did for the K-Nearest Neighbours Model and the Generalised
+Context Model.
 
 | variation                | alpha_upper | alpha_lower | estimate | std.error | statistic | sig    |
 |:-------------------------|------------:|------------:|---------:|----------:|----------:|:-------|
@@ -884,28 +879,32 @@ Table: Best tiny overlap finder models for each variable pattern
 The tiny overlap finder is able to predict participant behaviour to some
 extent for all three patterns.
 
-## The best overall model
+## The best model
 
 So what is the best at predicting what people will do with morphological
-variation in a forced-choice task using nonce forms?
+variation in a forced-choice task using nonce forms? The K-Nearest
+Neighbours model, the Generalised Context Model, or the tiny overlap
+finder?
 
 | variation                | model | estimate | std.error | statistic | sig    | distance_type | var_s | var_p | alpha_lower | alpha_upper |
 |:-------------------------|:------|---------:|----------:|----------:|:-------|:--------------|------:|------:|------------:|------------:|
 | cselekszenek/cselekednek | GCM   |    36.23 |      6.23 |      5.81 | \*\*\* | edit          |   0.3 |     2 |             |             |
 | cselekszenek/cselekednek | KNN   |     0.61 |      0.14 |      4.29 | \*\*\* | phon          |   0.1 |     1 |             |             |
 | cselekszenek/cselekednek | TOF   |     6.51 |      1.32 |      4.92 | \*\*\* | edit          |       |       |        0.90 |        0.25 |
-| hotelban/hotelben        | GCM   |    80.46 |      4.62 |     17.43 | \*\*\* | jaccard       |   0.9 |     1 |             |             |
-| hotelban/hotelben        | KNN   |     2.76 |      0.20 |     13.84 | \*\*\* | jaccard       |   0.1 |     1 |             |             |
+| hotelban/hotelben        | GCM   |   499.57 |     26.32 |     18.98 | \*\*\* | jaccard       |   0.3 |     2 |             |             |
+| hotelban/hotelben        | KNN   |     2.81 |      0.19 |     14.91 | \*\*\* | jaccard       |   0.1 |     1 |             |             |
 | hotelban/hotelben        | TOF   |     2.49 |      0.47 |      5.28 | \*\*\* | edit          |       |       |        0.25 |        0.25 |
 | lakok/lakom              | GCM   |    27.97 |      2.40 |     11.66 | \*\*\* | phon          |   0.9 |     2 |             |             |
 | lakok/lakom              | KNN   |     1.23 |      0.13 |      9.20 | \*\*\* | edit          |   0.1 |     1 |             |             |
 | lakok/lakom              | TOF   |     4.18 |      0.27 |     15.31 | \*\*\* | edit          |       |       |        0.25 |        0.25 |
 
-Table: Best KNN, GCM, and TOF model for each variation.
+Table: Best best Generalised Context Model (GCM), K-nearest neighbours
+model (KNN), and tiny overlap finder (TOF) model for each variation.
 
-A lot is going on in this table. The table lists the best GCM, KNN, and
-TOF model for the three types of variation and also lists model
-parameters: distance tpye (this is always edit distance for the tiny
+A lot is going on in this table. The table lists the best Generalised
+Context Model (GCM), K-nearest neighbours model (KNN), and tiny overlap
+finder (TOF) model for the three types of variation and also lists model
+parameters: distance type (this is always edit distance for the tiny
 overlap finder or TOF), s and p (only applicable to the distance
 calculations of the KNN and the GCM), and the alphas for the lower and
 upper confidence intervals (only applicable to the rule generalisations
@@ -913,12 +912,13 @@ of the tiny overlap finder). The table also lists the estimates,
 standard errors, and statistics that express the predictive power of
 each model for participant responses.
 
-For ‘cselekszenek’, the best model is the GCM, which uses similarity to
-all training forms across categories. This model calculates word
-distance using edit distance rather than aligned phonological
-dissimilarity.
+For ‘cselekszenek’, the best model is the generalised context model,
+which uses similarity to all training forms across categories. This
+model calculates word distance using edit distance rather than aligned
+phonological dissimilarity.
 
-For ‘hotelban’, the best model is the GCM, using jaccard distance.
+For ‘hotelban’, the best model is the generalised context model, using
+jaccard distance.
 
 For ‘lakok’, the best model is the tiny overlap finder, which by default
 uses segment-level similarity or edit distance to find overlapping
@@ -933,44 +933,45 @@ together. We check for collinearity.
 
 | term        | estimate | std.error | statistic | p.value |
 |:------------|---------:|----------:|----------:|--------:|
-| (Intercept) |    -5.05 |      0.24 |    -21.09 |    0.00 |
-| tof         |     3.80 |      0.43 |      8.87 |    0.00 |
-| knn         |    -0.05 |      0.03 |     -1.82 |    0.07 |
-| gcm         |    29.50 |      2.16 |     13.66 |    0.00 |
+| (Intercept) |    -5.30 |      1.08 |     -4.93 |    0.00 |
+| tof         |     3.88 |      1.49 |      2.60 |    0.01 |
+| knn         |    -0.12 |      0.22 |     -0.53 |    0.60 |
+| gcm         |    31.78 |      9.88 |      3.22 |    0.00 |
 
 Table: Model coefficients for the joint predictions, “cselekszenek”.
 
 | term        | estimate | std.error | statistic | p.value |
 |:------------|---------:|----------:|----------:|--------:|
-| (Intercept) |   -40.94 |      0.82 |    -49.93 |    0.00 |
-| tof         |    -0.39 |      0.16 |     -2.49 |    0.01 |
-| knn         |    -0.01 |      0.04 |     -0.26 |    0.80 |
-| gcm         |    81.72 |      1.71 |     47.82 |    0.00 |
+| (Intercept) |  -256.72 |     21.38 |    -12.01 |    0.00 |
+| tof         |    -0.30 |      0.53 |     -0.57 |    0.57 |
+| knn         |    -0.14 |      0.31 |     -0.45 |    0.65 |
+| gcm         |   519.21 |     43.70 |     11.88 |    0.00 |
 
 Table: Model coefficients for the joint predictions, “hotelban”.
 
 | term        | estimate | std.error | statistic | p.value |
 |:------------|---------:|----------:|----------:|--------:|
-| (Intercept) |    -8.94 |      0.41 |    -21.94 |       0 |
-| tof         |     3.53 |      0.09 |     38.22 |       0 |
-| knn         |    -0.09 |      0.03 |     -2.82 |       0 |
-| gcm         |    14.16 |      0.84 |     16.94 |       0 |
+| (Intercept) |    -9.45 |      1.53 |     -6.18 |    0.00 |
+| tof         |     3.59 |      0.33 |     11.00 |    0.00 |
+| knn         |    -0.21 |      0.18 |     -1.19 |    0.24 |
+| gcm         |    15.23 |      3.14 |      4.84 |    0.00 |
 
 Table: Model coefficients for the joint predictions, “lakok”.
 
 For ‘cselekszenek’ and ‘lakok’, the two verbal inflection patterns, both
 the generalised context model and the tiny overlap finder contribute to
 explaining variation in the test data. The k-nearest neighbour model
-does not contribute much. This is probably because the GCM is
-more-or-less the proper superset of the KNN model – in a way, the GCM
-model is not impugned by the KNN model, to borrow from Minimal
+does not contribute much. This is probably because the generalised
+context model is more-or-less the proper superset of the k-nearest
+neighbours model – in a way, the generalised context model is not
+impugned by the k-nearest neighbours model, to borrow from Minimal
 Generalisation Model parlance.
 
-For ‘hotelban’, only the GCM does anything. This is likely because the
-verbal variation patterns are strongly sensitive to derivational and
-pseudo-derivational endings, and the tiny overlap finder can find these.
-There are no similar buttresses for the nouns, and so the overlap finder
-can’t contribute much.
+For ‘hotelban’, only the generalised context model does anything. This
+is likely because the verbal variation patterns are strongly sensitive
+to derivational and pseudo-derivational endings, and the tiny overlap
+finder can find these. There are no similar buttresses for the nouns,
+and so the overlap finder can’t contribute much.
 
 We can calculate McFadden’s pseudo R squared (1 - deviance / null
 deviance) for each model.
@@ -978,7 +979,7 @@ deviance) for each model.
 | variation                | mcfadden’s r |
 |:-------------------------|-------------:|
 | cselekszenek/cselekednek |         0.15 |
-| hotelban/hotelben        |         0.34 |
+| hotelban/hotelben        |         0.35 |
 | lakok/lakom              |         0.44 |
 
 Table: McFadden’s pseudo R squared for the GLMs with the joint

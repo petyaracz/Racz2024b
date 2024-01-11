@@ -1,0 +1,7 @@
+No.	A	->	B		C		D	Left side feats	Right side feats	Scope	Hits	Reliability	Confidence	Examples	Exceptions
+14	x	->	z	/	X bbc	__		[]	[]	3	3	1.0	0.514	frobbcx, knebbcx, kribbcx	
+6	x	->	z	/	X c	__		[]	[]	14	6	0.429	0.255	necx, penicx, binabcx, frobbcx, knebbcx, kribbcx	vacx, gucx, pocx, trumabcx, flanabcx, klubcx, flobcx, blibcx
+12	x	->	z	/	X bc	__		[]	[]	9	4	0.444	0.218	binabcx, frobbcx, knebbcx, kribbcx	trumabcx, flanabcx, klubcx, flobcx, blibcx
+2	x	->	y	/	X c	__		[]	[]	14	8	0.571	0.388	vacx, gucx, pocx, trumabcx, flanabcx, klubcx, flobcx, blibcx	necx, penicx, binabcx, frobbcx, knebbcx, kribbcx
+17	x	->	y	/	X bc	__		[]	[]	9	5	0.556	0.318	trumabcx, flanabcx, klubcx, flobcx, blibcx	binabcx, frobbcx, knebbcx, kribbcx
+9	x	->	y	/	X abc	__		[]	[]	3	2	0.667	0.097	trumabcx, flanabcx	binabcx

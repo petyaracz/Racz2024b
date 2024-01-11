@@ -2,6 +2,7 @@ setwd('~/Github/Racz2024b')
 
 library(tidyverse)
 library(viridis)
+library(glue)
 
 source('code/tof.R')
 
@@ -10,6 +11,7 @@ source('code/tof.R')
 # ii. x -> y / bc _
 # iii. x -> y / abc _
 # iv. x -> z / bbc _
+# v. v -> w / d _
 
 training = tibble(
   input = c(
@@ -26,7 +28,8 @@ training = tibble(
     'kribbcx',
     'klubcx',
     'flobcx',
-    'blibcx'
+    'blibcx',
+    'kladv'
   ),
   output = c(
     'vacy',
@@ -42,9 +45,12 @@ training = tibble(
     'kribbcz',
     'klubcy',
     'flobcy',
-    'blibcy'
+    'blibcy',
+    'kladw'
   )
 )
+
+write_tsv(training, 'dat/tof/test_set.in')
 
 d = formatTraining(training)
 
@@ -76,7 +82,7 @@ alphas = crossing(
     )
 
 alpha1 = alphas[alphas$alpha_upper == .1,]$d4[[1]]
-alpha9 = alphas[alphas$alpha_upper == .9,]$d4[[1]]
+alpha9 = alphas[alphas$alpha_upper == .9,]$d4[[9]]
 
 flag7 = all(alpha1$lower_confidence_limit <= alpha1$reliability)
 
@@ -96,6 +102,10 @@ alphas %>%
 
 alpha11 = impugnRules(alpha1, d3)
 alpha91 = impugnRules(alpha9, d3)
+
+# mgl run w/ same pars
+mgl_alpha91 = read_tsv('dat/tof/test_set.rules')
+
 
 flag8 = all(sort(alpha1$rule)==sort(alpha11$rule))
 flag9 = all(sort(alpha1$rule)==sort(alpha91$rule))
