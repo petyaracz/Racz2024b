@@ -483,9 +483,11 @@ odds (large log odds: lot of “high” responses).
 
 We categorise test words based on similarity with training words using a
 K-Nearest Neighbours algorithm. The algorithm calculates word distance
-using the formula `exp ( - dist / s ) ^ p`.
+using the formula `exp ( - dist / s ) ^ p`. The parameter
+`s' is not relevant here as the number of comparisons is controlled by`k’,
+reducing the formula to `exp ( - dist ) ^ p`.
 
-We try `k = [1,3,5,7,15]`, `p = [1,2]`, and `s = [.1,.3,.5,.7,.9]` and
+We try `k = [1,3,5,7,15]`, `p = [1,2]` and
 `dist = [edit distance, jaccard distance, phonological distance]`. Edit
 distance tallies up the number of edits needed to get from Word A to
 Word B. Jaccard distance is the set size of the intersect of segments in
@@ -511,12 +513,13 @@ which favours the least noise over the largest effect.
 my_parameters_1 = crossing(
   var_p = c(1,2),
   var_k = c(1,2,3,5,7,15),
-  var_s = c(.1,.3,.5,.7,.9),
+  # var_s = c(.1,.3,.5,.7,.9),
+  var_s = 1,
   distance_type = c('edit','jaccard','phon'),
   variation = c('lakok/lakom','hotelban/hotelben','cselekszenek/cselekednek')
 )
 
-# run 540 models, parallelised, add prediction tibbles to each model
+# run 108 models, parallelised, add prediction tibbles to each model
 my_knns = my_parameters_1 %>% 
   mutate(
     knn = furrr::future_pmap(list(variation,distance_type,var_p,var_s,var_k), ~ wrapKNN(
@@ -544,35 +547,19 @@ my_knns2 = my_knns %>%
 
 | var_p | var_k | var_s | distance_type | variation                | estimate | std.error | statistic | sig    |
 |------:|------:|------:|:--------------|:-------------------------|---------:|----------:|----------:|:-------|
-|     1 |    15 |   0.1 | phon          | cselekszenek/cselekednek |     0.61 |      0.14 |      4.29 | \*\*\* |
-|     1 |    15 |   0.1 | jaccard       | hotelban/hotelben        |     2.81 |      0.19 |     14.91 | \*\*\* |
-|     1 |     7 |   0.1 | edit          | lakok/lakom              |     1.23 |      0.13 |      9.20 | \*\*\* |
+|     1 |    15 |     1 | phon          | cselekszenek/cselekednek |     0.61 |      0.14 |      4.29 | \*\*\* |
+|     1 |    15 |     1 | jaccard       | hotelban/hotelben        |     2.81 |      0.19 |     14.91 | \*\*\* |
+|     1 |     7 |     1 | edit          | lakok/lakom              |     1.23 |      0.13 |      9.20 | \*\*\* |
 
 Table: Best KNN model for each variation.
 
 All three models can explain some variation in the test data. The
 ‘cselekszenek’ model uses phonological distance and the largest k, k=15.
 For ‘hotelban’, the best model also uses the largest k and jaccard
-distance. For ‘lakok’, the best model uses k=7 and edit distance. All
-three best models have an s = .1 which relatively penalises more distant
-neighbours over closer neighbours.
+distance. For ‘lakok’, the best model uses k=7 and edit distance.
 
 We can look at the best model for each segment distance type and
 variation.
-
-| var_p | var_k | var_s | distance_type | variation                | term          | estimate | std.error | statistic | sig    |
-|------:|------:|------:|:--------------|:-------------------------|:--------------|---------:|----------:|----------:|:-------|
-|     1 |     7 |   0.1 | edit          | cselekszenek/cselekednek | category_high |     0.41 |      0.12 |      3.36 | \*\*\* |
-|     1 |     2 |   0.1 | jaccard       | cselekszenek/cselekednek | category_high |     0.31 |      0.08 |      3.92 | \*\*\* |
-|     1 |    15 |   0.1 | phon          | cselekszenek/cselekednek | category_high |     0.61 |      0.14 |      4.29 | \*\*\* |
-|     1 |    15 |   0.1 | edit          | hotelban/hotelben        | category_high |     3.03 |      0.21 |     14.37 | \*\*\* |
-|     1 |    15 |   0.1 | jaccard       | hotelban/hotelben        | category_high |     2.81 |      0.19 |     14.91 | \*\*\* |
-|     1 |    15 |   0.1 | phon          | hotelban/hotelben        | category_high |     2.67 |      0.20 |     13.67 | \*\*\* |
-|     1 |     7 |   0.1 | edit          | lakok/lakom              | category_high |     1.23 |      0.13 |      9.20 | \*\*\* |
-|     1 |    15 |   0.1 | jaccard       | lakok/lakom              | category_high |     0.80 |      0.22 |      3.60 | \*\*\* |
-|     1 |    15 |   0.1 | phon          | lakok/lakom              | category_high |     1.44 |      0.17 |      8.31 | \*\*\* |
-
-Table: Best KNN model for each variation and distance type.
 
 For ‘cselekszenek’ and ‘hotelban’, the models don’t differ much in
 accuracy depending on distance. For ‘lakok’, jaccard distance is
@@ -868,14 +855,6 @@ best model has the strongest predictor for score. This is the same as
 what we did for the K-Nearest Neighbours Model and the Generalised
 Context Model.
 
-| variation                | alpha_upper | alpha_lower | estimate | std.error | statistic | sig    |
-|:-------------------------|------------:|------------:|---------:|----------:|----------:|:-------|
-| cselekszenek/cselekednek |        0.25 |        0.90 |     6.51 |      1.32 |      4.92 | \*\*\* |
-| hotelban/hotelben        |        0.25 |        0.25 |     2.49 |      0.47 |      5.28 | \*\*\* |
-| lakok/lakom              |        0.25 |        0.25 |     4.18 |      0.27 |     15.31 | \*\*\* |
-
-Table: Best tiny overlap finder models for each variable pattern
-
 The tiny overlap finder is able to predict participant behaviour to some
 extent for all three patterns.
 
@@ -889,13 +868,13 @@ finder?
 | variation                | model | estimate | std.error | statistic | sig    | distance_type | var_s | var_p | alpha_lower | alpha_upper |
 |:-------------------------|:------|---------:|----------:|----------:|:-------|:--------------|------:|------:|------------:|------------:|
 | cselekszenek/cselekednek | GCM   |    36.23 |      6.23 |      5.81 | \*\*\* | edit          |   0.3 |     2 |             |             |
-| cselekszenek/cselekednek | KNN   |     0.61 |      0.14 |      4.29 | \*\*\* | phon          |   0.1 |     1 |             |             |
+| cselekszenek/cselekednek | KNN   |     0.61 |      0.14 |      4.29 | \*\*\* | phon          |   1.0 |     1 |             |             |
 | cselekszenek/cselekednek | TOF   |     6.51 |      1.32 |      4.92 | \*\*\* | edit          |       |       |        0.90 |        0.25 |
 | hotelban/hotelben        | GCM   |   499.57 |     26.32 |     18.98 | \*\*\* | jaccard       |   0.3 |     2 |             |             |
-| hotelban/hotelben        | KNN   |     2.81 |      0.19 |     14.91 | \*\*\* | jaccard       |   0.1 |     1 |             |             |
+| hotelban/hotelben        | KNN   |     2.81 |      0.19 |     14.91 | \*\*\* | jaccard       |   1.0 |     1 |             |             |
 | hotelban/hotelben        | TOF   |     2.49 |      0.47 |      5.28 | \*\*\* | edit          |       |       |        0.25 |        0.25 |
 | lakok/lakom              | GCM   |    27.97 |      2.40 |     11.66 | \*\*\* | phon          |   0.9 |     2 |             |             |
-| lakok/lakom              | KNN   |     1.23 |      0.13 |      9.20 | \*\*\* | edit          |   0.1 |     1 |             |             |
+| lakok/lakom              | KNN   |     1.23 |      0.13 |      9.20 | \*\*\* | edit          |   1.0 |     1 |             |             |
 | lakok/lakom              | TOF   |     4.18 |      0.27 |     15.31 | \*\*\* | edit          |       |       |        0.25 |        0.25 |
 
 Table: Best best Generalised Context Model (GCM), K-nearest neighbours
@@ -931,20 +910,20 @@ resp2 in the three variable sets, using the best tiny overlap finder,
 generalised context model, and k-nearest neighbour model predictions
 together. We scale predictors and check for collinearity.
 
-| variation                | term        | estimate | std.error | statistic | p.value |
-|:-------------------------|:------------|---------:|----------:|----------:|--------:|
-| cselekszenek/cselekednek | (Intercept) |    -0.38 |      0.09 |     -4.45 |    0.00 |
-| cselekszenek/cselekednek | tof         |     0.36 |      0.14 |      2.60 |    0.01 |
-| cselekszenek/cselekednek | knn         |    -0.11 |      0.21 |     -0.53 |    0.60 |
-| cselekszenek/cselekednek | gcm         |     0.69 |      0.22 |      3.22 |    0.00 |
-| hotelban/hotelben        | (Intercept) |    -2.26 |      0.12 |    -19.48 |    0.00 |
-| hotelban/hotelben        | tof         |    -0.08 |      0.15 |     -0.57 |    0.57 |
-| hotelban/hotelben        | knn         |    -0.12 |      0.26 |     -0.45 |    0.65 |
-| hotelban/hotelben        | gcm         |     2.93 |      0.25 |     11.88 |    0.00 |
-| lakok/lakom              | (Intercept) |    -1.04 |      0.10 |    -10.35 |    0.00 |
-| lakok/lakom              | tof         |     1.20 |      0.11 |     11.00 |    0.00 |
-| lakok/lakom              | knn         |    -0.21 |      0.18 |     -1.19 |    0.24 |
-| lakok/lakom              | gcm         |     0.97 |      0.20 |      4.84 |    0.00 |
+| variation                | term        | estimate | std.error | statistic | conf.low | conf.high |
+|:-------------------------|:------------|---------:|----------:|----------:|---------:|----------:|
+| cselekszenek/cselekednek | (Intercept) |    -0.38 |      0.09 |     -4.45 |    -0.55 |     -0.22 |
+| cselekszenek/cselekednek | tof         |     0.36 |      0.14 |      2.60 |     0.09 |      0.64 |
+| cselekszenek/cselekednek | knn         |    -0.11 |      0.21 |     -0.53 |    -0.52 |      0.30 |
+| cselekszenek/cselekednek | gcm         |     0.69 |      0.22 |      3.22 |     0.27 |      1.12 |
+| hotelban/hotelben        | (Intercept) |    -2.26 |      0.12 |    -19.48 |    -2.49 |     -2.04 |
+| hotelban/hotelben        | tof         |    -0.08 |      0.15 |     -0.57 |    -0.38 |      0.21 |
+| hotelban/hotelben        | knn         |    -0.12 |      0.26 |     -0.45 |    -0.64 |      0.40 |
+| hotelban/hotelben        | gcm         |     2.93 |      0.25 |     11.88 |     2.45 |      3.42 |
+| lakok/lakom              | (Intercept) |    -1.04 |      0.10 |    -10.35 |    -1.24 |     -0.85 |
+| lakok/lakom              | tof         |     1.20 |      0.11 |     11.00 |     0.99 |      1.42 |
+| lakok/lakom              | knn         |    -0.21 |      0.18 |     -1.19 |    -0.57 |      0.14 |
+| lakok/lakom              | gcm         |     0.97 |      0.20 |      4.84 |     0.58 |      1.36 |
 
 Ensemble model estimates for the three variable patterns.
 
@@ -1007,8 +986,8 @@ It also helps that this pattern is restricted to one paradigm slot,
 
 ## Visualisations
 
-The best model for each model type and variation. Scales are free so
-distributions can be compared.
+The best model for each model type and variation. Model scores are
+rescaled for each variation.
 
 ![](figures/viz-1.png)<!-- -->
 
