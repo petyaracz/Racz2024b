@@ -1,8 +1,8 @@
-Bagging phonological categorisation models for Hungarian morphological
-patterns
+Evaluating an ensemble model of phonological categorisation on three
+variable morphological patterns in Hungarian
 ================
 Rácz, Péter
-2024-01-11
+2024-01-12
 
 In this readme, we go through a way of measuring distance between words
 based on natural classes that are, in turn, based on segmental
@@ -879,7 +879,7 @@ Table: Best tiny overlap finder models for each variable pattern
 The tiny overlap finder is able to predict participant behaviour to some
 extent for all three patterns.
 
-## The best model
+## The ensemble model
 
 So what is the best at predicting what people will do with morphological
 variation in a forced-choice task using nonce forms? The K-Nearest
@@ -929,49 +929,58 @@ contribute to explaining variation in the test data. To find out, we fit
 three generalised linear models, each predicting the odds of resp1 and
 resp2 in the three variable sets, using the best tiny overlap finder,
 generalised context model, and k-nearest neighbour model predictions
-together. We check for collinearity.
+together. We scale predictors and check for collinearity.
 
-| term        | estimate | std.error | statistic | p.value |
-|:------------|---------:|----------:|----------:|--------:|
-| (Intercept) |    -5.30 |      1.08 |     -4.93 |    0.00 |
-| tof         |     3.88 |      1.49 |      2.60 |    0.01 |
-| knn         |    -0.12 |      0.22 |     -0.53 |    0.60 |
-| gcm         |    31.78 |      9.88 |      3.22 |    0.00 |
+| variation                | term        | estimate | std.error | statistic | p.value |
+|:-------------------------|:------------|---------:|----------:|----------:|--------:|
+| cselekszenek/cselekednek | (Intercept) |    -0.38 |      0.09 |     -4.45 |    0.00 |
+| cselekszenek/cselekednek | tof         |     0.36 |      0.14 |      2.60 |    0.01 |
+| cselekszenek/cselekednek | knn         |    -0.11 |      0.21 |     -0.53 |    0.60 |
+| cselekszenek/cselekednek | gcm         |     0.69 |      0.22 |      3.22 |    0.00 |
+| hotelban/hotelben        | (Intercept) |    -2.26 |      0.12 |    -19.48 |    0.00 |
+| hotelban/hotelben        | tof         |    -0.08 |      0.15 |     -0.57 |    0.57 |
+| hotelban/hotelben        | knn         |    -0.12 |      0.26 |     -0.45 |    0.65 |
+| hotelban/hotelben        | gcm         |     2.93 |      0.25 |     11.88 |    0.00 |
+| lakok/lakom              | (Intercept) |    -1.04 |      0.10 |    -10.35 |    0.00 |
+| lakok/lakom              | tof         |     1.20 |      0.11 |     11.00 |    0.00 |
+| lakok/lakom              | knn         |    -0.21 |      0.18 |     -1.19 |    0.24 |
+| lakok/lakom              | gcm         |     0.97 |      0.20 |      4.84 |    0.00 |
 
-Table: Model coefficients for the joint predictions, “cselekszenek”.
+Ensemble model estimates for the three variable patterns.
 
-| term        | estimate | std.error | statistic | p.value |
-|:------------|---------:|----------:|----------:|--------:|
-| (Intercept) |  -256.72 |     21.38 |    -12.01 |    0.00 |
-| tof         |    -0.30 |      0.53 |     -0.57 |    0.57 |
-| knn         |    -0.14 |      0.31 |     -0.45 |    0.65 |
-| gcm         |   519.21 |     43.70 |     11.88 |    0.00 |
+The term estimates for generalised linear models predicting test
+responses from the tiny overlap finder, k-nearest neighbour, and
+generalised context model scores across the three variable patterns are
+above.
 
-Table: Model coefficients for the joint predictions, “hotelban”.
+The k-nearest neighbour model does not explain model variation in any of
+the three models. The rules identified by the tiny overlap finder
+contribute to variation in the two verbal patterns, ‘cselekszenek’ and
+‘lakok’. For the latter, it is the most important predictor. For the
+noun pattern, ‘hotelban’, the only relevant predictor is the generalised
+context model.
 
-| term        | estimate | std.error | statistic | p.value |
-|:------------|---------:|----------:|----------:|--------:|
-| (Intercept) |    -9.45 |      1.53 |     -6.18 |    0.00 |
-| tof         |     3.59 |      0.33 |     11.00 |    0.00 |
-| knn         |    -0.21 |      0.18 |     -1.19 |    0.24 |
-| gcm         |    15.23 |      3.14 |      4.84 |    0.00 |
+We use a chi-square test of goodness of fit to check whether dropping
+each term from each model significantly reduces model fit. The results
+can be seen below.
 
-Table: Model coefficients for the joint predictions, “lakok”.
+| variation                | name |   Chi2 |    p |
+|:-------------------------|:-----|-------:|-----:|
+| cselekszenek/cselekednek | gcm  |  10.39 | 0.00 |
+| cselekszenek/cselekednek | knn  |   0.28 | 0.60 |
+| cselekszenek/cselekednek | tof  |   6.77 | 0.01 |
+| hotelban/hotelben        | gcm  | 149.49 | 0.00 |
+| hotelban/hotelben        | knn  |   0.20 | 0.65 |
+| hotelban/hotelben        | tof  |   0.32 | 0.57 |
+| lakok/lakom              | gcm  |  23.56 | 0.00 |
+| lakok/lakom              | knn  |   1.41 | 0.24 |
+| lakok/lakom              | tof  | 123.60 | 0.00 |
 
-For ‘cselekszenek’ and ‘lakok’, the two verbal inflection patterns, both
-the generalised context model and the tiny overlap finder contribute to
-explaining variation in the test data. The k-nearest neighbour model
-does not contribute much. This is probably because the generalised
-context model is more-or-less the proper superset of the k-nearest
-neighbours model – in a way, the generalised context model is not
-impugned by the k-nearest neighbours model, to borrow from Minimal
-Generalisation Model parlance.
+Likelihood tests for terms in the ensemble models.
 
-For ‘hotelban’, only the generalised context model does anything. This
-is likely because the verbal variation patterns are strongly sensitive
-to derivational and pseudo-derivational endings, and the tiny overlap
-finder can find these. There are no similar buttresses for the nouns,
-and so the overlap finder can’t contribute much.
+This test supports the results above. The k-nearest neighbour model has
+nothing to add. For the noun pattern, only the generalised context model
+is relevant.
 
 We can calculate McFadden’s pseudo R squared (1 - deviance / null
 deviance) for each model.

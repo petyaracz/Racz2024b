@@ -1,5 +1,5 @@
 ---
-title: "Bagging phonological categorisation models for Hungarian morphological patterns"
+title: "Evaluating an ensemble model of phonological categorisation on three variable morphological patterns in Hungarian"
 author: "Rácz, Péter"
 date: "`r Sys.Date()`"
 output: github_document
@@ -799,7 +799,7 @@ results %>%
 
 The tiny overlap finder is able to predict participant behaviour to some extent for all three patterns.
 
-## The best model
+## The ensemble model
 
 So what is the best at predicting what people will do with morphological variation in a forced-choice task using nonce forms? The K-Nearest Neighbours model, the Generalised Context Model, or the tiny overlap finder?
 
@@ -843,7 +843,7 @@ For 'hotelban', the best model is the generalised context model, using jaccard d
 
 For 'lakok', the best model is the tiny overlap finder, which by default uses segment-level similarity or edit distance to find overlapping contexts across training words.
 
-An equally important question is whether the models individually contribute to explaining variation in the test data. To find out, we fit three generalised linear models, each predicting the odds of resp1 and resp2 in the three variable sets, using the best tiny overlap finder, generalised context model, and k-nearest neighbour model predictions together. We check for collinearity.
+An equally important question is whether the models individually contribute to explaining variation in the test data. To find out, we fit three generalised linear models, each predicting the odds of resp1 and resp2 in the three variable sets, using the best tiny overlap finder, generalised context model, and k-nearest neighbour model predictions together. We scale predictors and check for collinearity.
 
 ```{r best_models2}
 tof_pred2 = tof_pred %>% 
@@ -864,52 +864,81 @@ gcm_pred = my_gcms %>%
   rename(gcm = category_high, string = test) %>% 
   select(string, gcm)
 
-test2 = test %>% 
+tests = test %>% 
   left_join(tof_pred2) %>% 
   left_join(knn_pred) %>% 
-  left_join(gcm_pred)
+  left_join(gcm_pred) %>% 
+  group_by(variation) %>% 
+  mutate(
+    tof = scales::rescale(tof),
+    gcm = scales::rescale(gcm),
+    knn = scales::rescale(knn),
+  ) %>% 
+  ungroup()
 
-test2cs = test2 %>% 
-  filter(variation == 'cselekszenek/cselekednek')
-test2h = test2 %>% 
-  filter(variation == 'hotelban/hotelben')
-test2l = test2 %>% 
-  filter(variation == 'lakok/lakom')
+terms = tibble(terms = c(
+  'tof + knn + gcm',
+  'tof + gcm',
+  'tof + knn',
+  'gcm + knn'
+  ))
 
-glmcs = glm(cbind(resp1,resp2) ~ tof + knn + gcm, data = test2cs, family = binomial(link = 'logit'))
-glmh = glm(cbind(resp1,resp2) ~ tof + knn + gcm, data = test2h, family = binomial(link = 'logit'))
-glml = glm(cbind(resp1,resp2) ~ tof + knn + gcm, data = test2l, family = binomial(link = 'logit'))
+tests2 = tests %>% 
+  group_by(variation) %>% 
+  nest() %>% 
+  crossing(terms) %>% 
+  mutate(
+    formula = glue('cbind(resp1,resp2) ~ 1 + {terms}'),
+    glm = map2(formula, data, ~ glm(formula = as.formula(.x), data = .y, family = binomial))
+  ) %>% 
+  select(variation,terms,glm) %>% 
+  pivot_wider(names_from = terms, values_from = glm) %>% 
+  mutate(
+    gcm = map2(`tof + knn + gcm`, `tof + knn`, ~ performance::test_likelihoodratio(.x,.y)),
+    knn = map2(`tof + knn + gcm`, `tof + gcm`, ~ performance::test_likelihoodratio(.x,.y)),
+    tof = map2(`tof + knn + gcm`, `gcm + knn`, ~ performance::test_likelihoodratio(.x,.y))
+  )
 
-# performance::check_collinearity(glmcs)
-# performance::check_collinearity(glmh)
-# performance::check_collinearity(glml)
-broom::tidy(glmcs) %>% 
-  kable(digits = 2, caption = 'Table: Model coefficients for the joint predictions, "cselekszenek".')
-
-broom::tidy(glmh) %>%
-  kable(digits = 2, caption = 'Table: Model coefficients for the joint predictions, "hotelban".')
-
-broom::tidy(glml) %>%
-  kable(digits = 2, caption = 'Table: Model coefficients for the joint predictions, "lakok".')
+tests2 %>% 
+  mutate(
+    sum = map(`tof + knn + gcm`, ~ broom::tidy(.))
+  ) %>% 
+  select(variation,sum) %>% 
+  unnest(sum) %>% 
+  kable(digits = 2, caption = 'Ensemble model estimates for the three variable patterns.')
 
 ```
 
-For 'cselekszenek' and 'lakok', the two verbal inflection patterns, both the generalised context model and the tiny overlap finder contribute to explaining variation in the test data. The k-nearest neighbour model does not contribute much. This is probably because the generalised context model is more-or-less the proper superset of the k-nearest neighbours model -- in a way, the generalised context model is not impugned by the k-nearest neighbours model, to borrow from Minimal Generalisation Model parlance.
+The term estimates for generalised linear models predicting test responses from the tiny overlap finder, k-nearest neighbour, and generalised context model scores across the three variable patterns are above. 
 
-For 'hotelban', only the generalised context model does anything. This is likely because the verbal variation patterns are strongly sensitive to derivational and pseudo-derivational endings, and the tiny overlap finder can find these. There are no similar buttresses for the nouns, and so the overlap finder can't contribute much.
+The k-nearest neighbour model does not explain model variation in any of the three models. The rules identified by the tiny overlap finder contribute to variation in the two verbal patterns, 'cselekszenek' and 'lakok'. For the latter, it is the most important predictor. For the noun pattern, 'hotelban', the only relevant predictor is the generalised context model.
+
+We use a chi-square test of goodness of fit to check whether dropping each term from each model significantly reduces model fit. The results can be seen below.
+
+```{r best_models3}
+
+tests2 %>% 
+  select(variation,gcm,knn,tof) %>% 
+  pivot_longer(-variation) %>% 
+  unnest(value) %>% 
+  filter(Name == ".y") %>% 
+  select(variation,name,Chi2,p) %>% 
+  kable(digits = 2, caption = 'Likelihood tests for terms in the ensemble models.')
+
+```
+
+This test supports the results above. The k-nearest neighbour model has nothing to add. For the noun pattern, only the generalised context model is relevant.
 
 We can calculate McFadden's pseudo R squared (1 - deviance / null deviance) for each model.
 
-```{r best_models3}
+```{r best_models4}
 # mcfadden's r squared
-glmcsr = with(summary(glmcs), 1 - deviance/null.deviance)
-glmhr = with(summary(glmh), 1 - deviance/null.deviance)
-glmlr = with(summary(glml), 1 - deviance/null.deviance)
-
-tibble(
-  variation = c('cselekszenek/cselekednek','hotelban/hotelben','lakok/lakom'),
-  `mcfadden's r` = c(glmcsr,glmhr,glmlr)
-) %>% 
+tests2 %>% 
+  mutate(
+    `mcfadden's r` = map(`tof + knn + gcm`, ~ with(summary(.), 1 - deviance/null.deviance))
+  ) %>% 
+  select(variation,`mcfadden's r`) %>% 
+  unnest(`mcfadden's r`) %>% 
   kable(digits = 2, caption = 'Table: McFadden\'s pseudo R squared for the GLMs with the joint predictions.')
 
 ```
@@ -920,10 +949,11 @@ For 'lakok', we get a remarkably good result, for the cognitive sciences. Here, 
 
 ## Visualisations
 
-The best model for each model type and variation. Scales are free so distributions can be compared.
+The best model for each model type and variation. Model scores are rescaled for each variation.
 
 ```{r viz, fig.width = 9, fig.height = 9}
-test2 %>% 
+
+tests %>% 
   mutate(base2 = str_extract(base, '^[^ ]+(?=( |$))')) %>%
   select(variation,base2,log_odds,tof,knn,gcm) %>% 
   pivot_longer(cols = c(tof,knn,gcm), names_to = 'model', values_to = 'weight') %>% 
@@ -989,8 +1019,8 @@ The three variable patterns:
 
 Predictions with test word labels:
 
-```{r viz2, fig.width = 6, fig.height = 54}
-plots = test2 %>% 
+```{r viz2, fig.width = 10, fig.height = 54}
+plots = tests %>% 
   mutate(base2 = str_extract(base, '^[^ ]+(?=( |$))')) %>%
   select(variation,base2,log_odds,tof,knn,gcm) %>% 
   pivot_longer(cols = c(tof,knn,gcm), names_to = 'model', values_to = 'weight') %>% 
@@ -1002,7 +1032,7 @@ plots = test2 %>%
            {
              .y %>% 
                ggplot(aes(x = weight, y = log_odds, label = base2)) +
-                  ggrepel::geom_label_repel() +
+                  ggrepel::geom_label_repel(max.overlaps = 50) +
                   theme_bw() +
                   geom_smooth(method = mgcv::gam) +
                   ggtitle(.x)
