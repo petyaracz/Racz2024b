@@ -513,9 +513,9 @@ word_distance %>%
 
 ### K-Nearest Neighbour
 
-We categorise test words based on similarity with training words using a K-Nearest Neighbours algorithm. The algorithm calculates word distance using the formula `exp ( - dist / s ) ^ p`.
+We categorise test words based on similarity with training words using a K-Nearest Neighbours algorithm. The algorithm calculates word distance using the formula `exp ( - dist / s ) ^ p`. The parameter `s' is not relevant here as the number of comparisons is controlled by `k', reducing the formula to `exp ( - dist ) ^ p`.
 
-We try `k = [1,3,5,7,15]`, `p = [1,2]`, and `s = [.1,.3,.5,.7,.9]` and `dist = [edit distance, jaccard distance, phonological distance]`. Edit distance tallies up the number of edits needed to get from Word A to Word B. Jaccard distance is the set size of the intersect of segments in Word A and Word B divided by the set size of the union of segments in Word A and Word B. Phonological distance is the whole setup above.
+We try `k = [1,3,5,7,15]`, `p = [1,2]` and `dist = [edit distance, jaccard distance, phonological distance]`. Edit distance tallies up the number of edits needed to get from Word A to Word B. Jaccard distance is the set size of the intersect of segments in Word A and Word B divided by the set size of the union of segments in Word A and Word B. Phonological distance is the whole setup above.
 
 A regular old KNN compares the target word to the nearest n words and counts category labels. So if this is 3 words and they are "high", "high", "low", the target word is categorised as "high". My KNN outputs the mean category label, which, in the example, would be .66.
 
@@ -527,12 +527,13 @@ For each test word, we get a KNN prediction for each parameter combination. Then
 my_parameters_1 = crossing(
   var_p = c(1,2),
   var_k = c(1,2,3,5,7,15),
-  var_s = c(.1,.3,.5,.7,.9),
+  # var_s = c(.1,.3,.5,.7,.9),
+  var_s = 1,
   distance_type = c('edit','jaccard','phon'),
   variation = c('lakok/lakom','hotelban/hotelben','cselekszenek/cselekednek')
 )
 
-# run 540 models, parallelised, add prediction tibbles to each model
+# run 108 models, parallelised, add prediction tibbles to each model
 my_knns = my_parameters_1 %>% 
   mutate(
     knn = furrr::future_pmap(list(variation,distance_type,var_p,var_s,var_k), ~ wrapKNN(
@@ -573,7 +574,7 @@ my_knns3 %>%
   kable(digits = 2, caption = 'Table: Best KNN model for each variation.')
 ```
 
-All three models can explain some variation in the test data. The 'cselekszenek' model uses phonological distance and the largest k, k=15. For 'hotelban', the best model also uses the largest k and jaccard distance. For 'lakok', the best model uses k=7 and edit distance. All three best models have an s = .1 which relatively penalises more distant neighbours over closer neighbours.
+All three models can explain some variation in the test data. The 'cselekszenek' model uses phonological distance and the largest k, k=15. For 'hotelban', the best model also uses the largest k and jaccard distance. For 'lakok', the best model uses k=7 and edit distance.
 
 We can look at the best model for each segment distance type and variation.
 
@@ -583,9 +584,9 @@ my_knns2 %>%
   group_by(variation,distance_type) %>% 
   # filter(sim == 'phon') %>% 
   arrange(-statistic) %>% 
-  select(-p.value) %>% 
+  select(-p.value,-var_s) %>% 
   slice(1) %>% 
-  kable(digits = 2, caption = 'Table: Best KNN model for each variation and distance type.')
+  kable('latex', digits = 2, caption = 'Table: Best KNN model for each variation and distance type.')
 
 ```
 
@@ -794,7 +795,7 @@ results %>%
       )
   ) %>% 
   select(-glm,-term,-p.value) %>% 
-  kable(caption = 'Table: Best tiny overlap finder models for each variable pattern', digits = 2)
+  kable('latex', caption = 'Table: Best tiny overlap finder models for each variable pattern', digits = 2)
 ```
 
 The tiny overlap finder is able to predict participant behaviour to some extent for all three patterns.
@@ -901,10 +902,11 @@ tests2 = tests %>%
 
 tests2 %>% 
   mutate(
-    sum = map(`tof + knn + gcm`, ~ broom::tidy(.))
+    sum = map(`tof + knn + gcm`, ~ broom::tidy(., conf.int = T))
   ) %>% 
   select(variation,sum) %>% 
   unnest(sum) %>% 
+  select(variation,term,estimate,std.error,statistic,conf.low,conf.high) %>% 
   kable(digits = 2, caption = 'Ensemble model estimates for the three variable patterns.')
 
 ```
@@ -962,6 +964,88 @@ tests %>%
   theme_bw() +
   geom_smooth(method = mgcv::gam) +
   facet_wrap(~ variation + model, scales = 'free', nrow = 3)
+```
+
+```{r viz_paper, echo = F, eval = F}
+plots_a = tests %>% 
+  mutate(
+    base2 = str_extract(base, '^[^ ]+(?=( |$))'),
+    variation2 = case_when(
+      variation == 'cselekszenek/cselekednek' ~ '3pl',
+      variation == 'lakok/lakom' ~ '1sg',
+      variation == 'hotelban/hotelben' ~ 'case'
+    )
+         ) %>%
+  select(variation2,base2,log_odds,tof,knn,gcm) %>% 
+  pivot_longer(cols = c(tof,knn,gcm), names_to = 'model', values_to = 'weight') %>% 
+  group_by(variation2,model) %>% 
+  nest() %>% 
+  mutate(
+    model2 = case_when(
+      model == 'tof' ~ 'Tiny Overlap Finder',
+      model == 'gcm' ~ 'Generalized Context Model',
+      model == 'knn' ~ 'K-Nearest Neighbors'
+    ),
+    title = glue('"{variation2}": {model2}'),
+    plot = map2(title, data, ~ 
+           {
+             .y %>% 
+               ggplot(aes(x = weight, y = log_odds)) +
+                  geom_point() +
+                  theme_bw() +
+                  geom_smooth(method = mgcv::gam) +
+                  ggtitle(.x) +
+                  xlab('scaled learner weight') +
+                  ylab('response log odds')
+               }
+           )
+  ) %>% 
+  pull(plot)
+
+modelz = tests2 %>% 
+  rename(ensemble_model = `tof + knn + gcm`) %>% 
+  select(variation,ensemble_model)
+
+testz = tests %>% 
+  group_by(variation) %>% 
+  nest()
+
+plots_b = testz %>% 
+  left_join(modelz) %>% 
+  mutate(
+    variation2 = case_when(
+      variation == 'cselekszenek/cselekednek' ~ '3pl',
+      variation == 'lakok/lakom' ~ '1sg',
+      variation == 'hotelban/hotelben' ~ 'case'
+    ),
+    predz = map2(ensemble_model, data, ~ predict(.x,.y)),
+    data2 = map2(data, predz, ~ {.x %>% mutate(pred = .y)}),
+    title = glue('"{variation2}": ensemble model'),
+    plot = map2(title, data2, ~ 
+           {
+             .y %>% 
+               ggplot(aes(x = pred, y = log_odds)) +
+                  geom_point() +
+                  theme_bw() +
+                  geom_smooth(method = mgcv::gam) +
+                  ggtitle(.x) +
+                  xlab('model prediction') +
+                  ylab('response log odds')
+               }
+           )
+  ) %>% 
+  pull(plot)
+
+plotz = c(plots_a,plots_b)
+
+# this is the sound of me giving up:
+wrap_plots(
+plotz[[2]],plotz[[3]],plotz[[1]],plotz[[10]],
+plotz[[5]],plotz[[6]],plotz[[4]],plotz[[11]],
+plotz[[8]],plotz[[9]],plotz[[7]],plotz[[12]]
+)
+ggsave('figures/cogsci_figure.pdf', width = 14, height = 9)
+
 ```
 
 ## Discussion
