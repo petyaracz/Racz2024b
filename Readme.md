@@ -2,7 +2,7 @@ Evaluating an ensemble model of phonological categorisation on three
 variable morphological patterns in Hungarian
 ================
 Rácz, Péter
-2024-01-12
+2024-01-13
 
 In this readme, we go through a way of measuring distance between words
 based on natural classes that are, in turn, based on segmental
@@ -12,12 +12,13 @@ patterns of Hungarian morphology.
 
 There are three patterns of variation (see References for details):
 
-- verb variation between `-k` and `-m` in the 1sg.indef of verbs
-- verb variation between `CC.V+suffix` and `CVC.suffix` in a range of
-  verbs, here focussing on the pl.indef
-- noun variation between front vowel and back vowel suffixes in
-  bisyllabic noun stems with a semi-transparent second vowel (`[e]` or
-  `[é]`)
+- *leveling*: verb variation between `-k` and `-m` in the 1sg.indef of
+  verbs
+- *vowel deletion*: verb variation between `CC.V+suffix` and
+  `CVC.suffix` in a range of verbs, here focussing on the pl.indef
+- *vowel harmony*: noun variation between front vowel and back vowel
+  suffixes in bisyllabic noun stems with a semi-transparent second vowel
+  (`[e]` or `[é]`)
 
 There are three models:
 
@@ -25,8 +26,8 @@ There are three models:
 - the Generalised Context Model
 - the Tiny Overlap Finder, an R-based algorithm under development,
   extremely heavily influenced by the Minimal Generalisation Learner. (I
-  don’t call this RMGL or something like that because the models do not
-  give the same output)
+  don’t call this RMGL or something like that because it gives a
+  different output from the java MGL)
 
 There are three word distance measures:
 
@@ -100,16 +101,16 @@ feature matrix.
 
 | segment | cons | son | cont | labial | coronal | anterior | dorsal | lateral | voice | delrel | seg | long | open1 | open2 |
 |:--------|:-----|:----|:-----|:-------|:--------|:---------|:-------|:--------|:------|:-------|:----|:-----|:------|:------|
-| ő       | \-   |     | \+   | \+     | \+      |          | \-     |         |       |        | \+  | \+   | \-    | \+    |
-| m       | \+   | \+  | \-   | \+     |         |          |        |         | \+    |        | \+  |      |       |       |
-| b       | \+   | \-  | \-   | \+     |         |          |        |         | \+    |        | \+  |      |       |       |
-| v       | \+   |     | \+   | \+     |         |          |        |         | \+    |        | \+  |      |       |       |
-| c       | \+   | \-  | \-   |        | \+      | \+       |        |         | \-    | \+     | \+  |      |       |       |
+| s       | \+   | \-  | \+   |        | \+      | \+       |        |         | \-    |        | \+  |      |       |       |
+| ḏ       | \+   | \-  | \-   |        | \+      | \-       |        |         | \+    |        | \+  |      |       |       |
+| k       | \+   | \-  | \-   |        |         |          | \+     |         | \-    |        | \+  |      |       |       |
+| z       | \+   | \-  | \+   |        | \+      | \+       |        |         | \+    |        | \+  |      |       |       |
+| á       | \-   |     | \+   | \-     | \-      |          | \+     |         |       |        | \+  | \+   | \+    | \+    |
 | ṉ       | \+   | \+  | \-   |        | \+      | \-       |        |         | \+    |        | \+  |      |       |       |
-| g       | \+   | \-  | \-   |        |         |          | \+     |         | \+    |        | \+  |      |       |       |
-| é       | \-   |     | \+   | \-     | \+      |          | \-     |         |       |        | \+  | \+   | \+    | \+    |
-| ṯ       | \+   | \-  | \-   |        | \+      | \+       |        |         | \-    |        | \+  |      |       |       |
-| i       | \-   |     | \+   | \-     | \+      |          | \-     |         |       |        | \+  | \-   | \-    | \-    |
+| n       | \+   | \+  | \-   |        | \+      | \+       |        |         | \+    |        | \+  |      |       |       |
+| ú       | \-   |     | \+   | \+     | \-      |          | \+     |         |       |        | \+  | \+   | \-    | \-    |
+| o       | \-   |     | \+   | \+     | \-      |          | \+     |         |       |        | \+  | \-   | \-    | \+    |
+| e       | \-   |     | \+   | \-     | \+      |          | \-     |         |       |        | \+  | \-   | \+    | \+    |
 
 Table: Sample of the phonological feature matrix
 
@@ -127,16 +128,16 @@ Here’s a sample of what the output looks like.
 
 | feature_bundle                       | segments                                                            |
 |:-------------------------------------|:--------------------------------------------------------------------|
+| \[+cont, +anterior\]                 | s, z, l, r                                                          |
+| \[+son, -cont\]                      | m, n, ṉ                                                             |
+| \[+labial, -coronal, +open2\]        | o, ó                                                                |
 | \[+cons\]                            | p, b, f, v, m, t, d, s, z, c, n, l, r, ṯ, ḏ, š, ž, č, ṉ, j, k, g, h |
-| \[+labial, -voice\]                  | p, f                                                                |
-| \[-cont, +coronal, -voice\]          | t, c, ṯ, č                                                          |
-| \[-son, -anterior\]                  | ḏ, š, ž, č                                                          |
-| \[+labial, +coronal, +long, -open2\] | ű                                                                   |
-| \[+coronal, +long, -open+\]          | í, ő, ű                                                             |
-| \[-cont, +anterior, -voice\]         | t, c, ṯ                                                             |
-| \[+coronal, -long, -open+\]          | i, ö, ü                                                             |
-| \[+dorsal, +voice\]                  | g                                                                   |
-| \[-son, +cont, +voice\]              | z, ž                                                                |
+| \[+labial, +coronal, -long, +open2\] | ö                                                                   |
+| \[+labial, +coronal, -long, -open2\] | ü                                                                   |
+| \[+open2\]                           | a, á, e, é, o, ó, ö, ő                                              |
+| \[+labial, -coronal\]                | o, ó, u, ú                                                          |
+| \[+voice, -delrel\]                  | d                                                                   |
+| \[+anterior\]                        | t, d, s, z, c, n, l, r, ṯ                                           |
 
 Table: Sample of the natural classes
 
@@ -158,16 +159,16 @@ Here’s a sample of what the output looks like.
 
 | segment1 | segment2 | dist |
 |:---------|:---------|-----:|
-| á        | ú        | 0.77 |
-| í        | v        | 0.94 |
-| ž        | r        | 0.76 |
-| n        | í        | 0.95 |
-| i        | ö        | 0.67 |
-| ṯ        | ő        | 0.95 |
-| o        | í        | 0.90 |
-| ő        | s        | 0.91 |
-| ü        | h        | 0.93 |
-| ú        | c        | 0.98 |
+| š        | í        | 0.90 |
+| ú        | ű        | 0.58 |
+| č        | d        | 0.74 |
+| ḏ        | p        | 0.86 |
+| d        | ṉ        | 0.73 |
+| i        | ú        | 0.87 |
+| b        | h        | 0.85 |
+| i        | é        | 0.76 |
+| l        | ṉ        | 0.80 |
+| e        | i        | 0.60 |
 
 Table: Sample of the segmental distances
 
@@ -257,9 +258,13 @@ Pierrehumbert (2014).
 I have some training and test data for three variable patterns in
 Hungarian. See the preprint for details.
 
-1.  inflectional: 1sg.indef variation: lakok/lakom (“I live”)
-2.  inflectional: vowel deletion: cselekszenek/cselekednek (“they act”)
-3.  declensional: vowel harmony: hotelban/hotelben (“in the hotel”)
+1.  ‘lakok/lakom’ or *leveling* (inflectional): 1sg.indef variation:
+    lakok/lakom (“I live”)
+2.  ‘cselekszenek/cselekednek’ or *vowel deletion* (inflectional): in
+    various verbal paradigm slots, including the 1/2/3pl.indef:
+    cselekszenek/cselekednek (“they act”)
+3.  ‘hotelban/hotelben’ or *vowel harmony* (declensional): in back
+    vowel + \[eé\] stems: hotelban/hotelben (“in the hotel”)
 
 - training data come from Hungarian webcorpus 2.
 - test data come from a wug task where people responded to prompts in a
@@ -270,20 +275,20 @@ Hungarian. See the preprint for details.
 
 Training data look like this:
 
-| base        | variation                | lemma_freq_corrected | string   | category |
-|:------------|:-------------------------|---------------------:|:---------|:---------|
-| romlik      | cselekszenek/cselekednek |               195968 | roml     | high     |
-| áramlik     | cselekszenek/cselekednek |                85538 | áraml    | high     |
-| törölközik  | cselekszenek/cselekednek |                 1292 | törölköz | low      |
-| bicajozik   | cselekszenek/cselekednek |                 3866 | bicajoz  | low      |
-| lóden       | hotelban/hotelben        |                  235 | lóden    | high     |
-| bobbyék     | hotelban/hotelben        |                   12 | bobbyék  | high     |
-| trapper     | hotelban/hotelben        |                  958 | trapper  | low      |
-| kókler      | hotelban/hotelben        |                 7297 | kókler   | low      |
-| terelődik   | lakok/lakom              |                17677 | terelőd  | high     |
-| hajózik     | lakok/lakom              |                33540 | hajóz    | high     |
-| tetszik     | lakok/lakom              |              1498478 | tets     | low      |
-| csalatkozik | lakok/lakom              |                 4769 | čalatkoz | low      |
+| variation      | base       | lemma_freq_corrected | string   | category |
+|:---------------|:-----------|---------------------:|:---------|:---------|
+| leveling       | pereskedik |                 7520 | perešked | high     |
+| leveling       | kerekezik  |                 7868 | kerekez  | high     |
+| leveling       | lelkesedik |                33550 | lelkešed | low      |
+| leveling       | tornázik   |                32996 | tornáz   | low      |
+| vowel deletion | hibádzik   |                 5785 | hibádz   | high     |
+| vowel deletion | sejlik     |                 8848 | šejl     | high     |
+| vowel deletion | merevedik  |                 5585 | mereved  | low      |
+| vowel deletion | házasodik  |                48749 | házašod  | low      |
+| vowel harmony  | szlovén    |               111340 | slovén   | high     |
+| vowel harmony  | alélt      |                 2710 | alélt    | high     |
+| vowel harmony  | charter    |                 9782 | charter  | low      |
+| vowel harmony  | csapszék   |                 1650 | čapsék   | low      |
 
 Table: Sample of the training data
 
@@ -313,23 +318,23 @@ long forms. This is fairly arbitrary.
 
 Test data look like this:
 
-| base                   | variation                | variant1    | variant2    | resp1 | resp2 | string  |
-|:-----------------------|:-------------------------|:------------|:------------|------:|------:|:--------|
-| küslik / küsözik       | cselekszenek/cselekednek | küslünk     | küsözünk    |    18 |     9 | küšl    |
-| prögzik / prögözik     | cselekszenek/cselekednek | prögzötök   | prögöztök   |     9 |    18 | prögz   |
-| flűgzik / flűgözik     | cselekszenek/cselekednek | flűgzünk    | flűgözünk   |    17 |    12 | flűgz   |
-| klarágzik / klarágozik | cselekszenek/cselekednek | klarágzotok | klarágoztok |     7 |    19 | klarágz |
-| nágapszik / nágapodik  | cselekszenek/cselekednek | nágapszanak | nágapodnak  |    15 |    11 | nágaps  |
-| ronszek                | hotelban/hotelben        | ronszekban  | ronszekben  |     6 |    20 | ronsek  |
-| humék                  | hotelban/hotelben        | huméknak    | huméknek    |    13 |    13 | humék   |
-| lorzens                | hotelban/hotelben        | lorzensnál  | lorzensnél  |     5 |    22 | lorzenš |
-| pítend                 | hotelban/hotelben        | pítendban   | pítendben   |     3 |    26 | pítend  |
-| jukél                  | hotelban/hotelben        | jukélnál    | jukélnél    |    12 |    15 | jukél   |
-| tínylik                | lakok/lakom              | tínylok     | tínylom     |    16 |    10 | tíṉl    |
-| spibádzik              | lakok/lakom              | spibádzok   | spibádzom   |    12 |    15 | špibádz |
-| sztruglik              | lakok/lakom              | sztruglok   | sztruglom   |    16 |    10 | strugl  |
-| hűgzik                 | lakok/lakom              | hűgzök      | hűgzöm      |    13 |    13 | hűgz    |
-| spülöklik              | lakok/lakom              | spülöklök   | spülöklöm   |    15 |    11 | špülökl |
+| variation      | base                   | variant1    | variant2    | resp1 | resp2 | string  |
+|:---------------|:-----------------------|:------------|:------------|------:|------:|:--------|
+| leveling       | tínylik                | tínylok     | tínylom     |    16 |    10 | tíṉl    |
+| leveling       | plágadzik              | plágadzok   | plágadzom   |    10 |    16 | plágadz |
+| leveling       | ruslik                 | ruslok      | ruslom      |    21 |     8 | rušl    |
+| leveling       | flátszik               | flátszok    | flátszom    |    11 |    18 | fláts   |
+| leveling       | frilegszik             | frilegszek  | frilegszem  |    11 |    15 | frilegs |
+| vowel deletion | gyihegzik / gyihegezik | gyihegzetek | gyihegeztek |    12 |    17 | ḏihegz  |
+| vowel deletion | dirlik / dirozik       | dirlotok    | diroztok    |    13 |    13 | dirl    |
+| vowel deletion | dabzik / dabozik       | dabzotok    | daboztok    |    13 |    16 | dabz    |
+| vowel deletion | lájzik / lájozik       | lájzotok    | lájoztok    |    16 |    10 | lájz    |
+| vowel deletion | brálamlik / brálamozik | brálamlanak | brálamoznak |    16 |    10 | brálaml |
+| vowel harmony  | klajrén                | klajrénnak  | klajrénnek  |    17 |    12 | klajrén |
+| vowel harmony  | nuhét                  | nuhétnál    | nuhétnél    |    12 |    15 | nuhét   |
+| vowel harmony  | tarhéz                 | tarhézban   | tarhézben   |    21 |     6 | tarhéz  |
+| vowel harmony  | kliszer                | kliszernál  | kliszernél  |     3 |    24 | kliser  |
+| vowel harmony  | jutély                 | jutélynál   | jutélynél   |    19 |     8 | jutéj   |
 
 Table: Sample of the test data
 
@@ -414,23 +419,23 @@ The final result looks like this. We have total phonological distance,
 based on best alignment, between each test word and each training word
 in each variation pattern.
 
-| test    | training  | variation                | phon_dist |
-|:--------|:----------|:-------------------------|----------:|
-| klégl   | izmošod   | cselekszenek/cselekednek |      6.29 |
-| frivaml | dogoz     | cselekszenek/cselekednek |      5.87 |
-| brešl   | gombášod  | cselekszenek/cselekednek |      6.11 |
-| metégs  | danolás   | cselekszenek/cselekednek |      5.05 |
-| špökl   | vonagl    | cselekszenek/cselekednek |      4.14 |
-| jalréṉ  | kóter     | hotelban/hotelben        |      4.92 |
-| hivép   | puffer    | hotelban/hotelben        |      4.67 |
-| čodeg   | popper    | hotelban/hotelben        |      3.53 |
-| ṉítem   | hotel     | hotelban/hotelben        |      2.70 |
-| fupét   | kašper    | hotelban/hotelben        |      4.00 |
-| narádz  | bábáškod  | lakok/lakom              |      5.84 |
-| zödl    | gondolkod | lakok/lakom              |      6.44 |
-| špüsl   | faḏoškod  | lakok/lakom              |      6.62 |
-| hurošl  | záród     | lakok/lakom              |      4.03 |
-| špülűdz | futballoz | lakok/lakom              |      6.02 |
+| variation      | test    | training  | phon_dist |
+|:---------------|:--------|:----------|----------:|
+| leveling       | špilágz | sándékoz  |      5.38 |
+| leveling       | frodl   | hüledez   |      4.23 |
+| leveling       | livakl  | diétáz    |      4.37 |
+| leveling       | trádl   | perešked  |      6.28 |
+| leveling       | pribags | kertésked |      6.80 |
+| vowel deletion | špibegl | hazudoz   |      6.12 |
+| vowel deletion | frakl   | vágtáz    |      4.84 |
+| vowel deletion | bejz    | töpöröd   |      5.25 |
+| vowel deletion | döjl    | taṉáz     |      3.78 |
+| vowel deletion | špoṉl   | lakmároz  |      6.35 |
+| vowel harmony  | trodéj  | korvett   |      5.38 |
+| vowel harmony  | hivép   | honvéd    |      2.71 |
+| vowel harmony  | klošét  | šábes     |      4.68 |
+| vowel harmony  | gúden   | šakter    |      4.02 |
+| vowel harmony  | tranék  | notes     |      4.53 |
 
 Table: Word distances for nonce words in the Wug task and their aligned
 training words.
@@ -445,13 +450,13 @@ variable responses.
 
 Training categories are:
 
-- cselekszenek/cselekednek: stable `CCik$` verbs are high, stable
-  `CVCik$` verbs are low
-- lakok/lakom: variable verbs above the median log odds of k/m in the
-  corpus are high, others are low
-- hotelban/hotelben: we aggregated over multiple suffixed variants to
-  have a random intercept for each stem, those over the median of random
-  intercepts are high, others low
+- lakok/lakom or *leveling*: variable verbs above the median log odds of
+  k/m in the corpus are high, others are low
+- cselekszenek/cselekednek or *vowel deletion*: stable `CCik$` verbs are
+  high, stable `CVCik$` verbs are low
+- hotelban/hotelben or *vowel harmony*: we aggregated over multiple
+  suffixed variants to have a random intercept for each stem, those over
+  the median of random intercepts are high, others low
 
 Training sets were also slightly culled to include only more frequent
 verbs and shorter verbs. (see preprint and `training_preprocessor.R` for
@@ -460,20 +465,20 @@ details).
 The end result looks like this. This is distances between test words and
 training words and responses to test words and training word category.
 
-| variation                | test_label             | training_label | category | phon_dist |
-|:-------------------------|:-----------------------|:---------------|:---------|----------:|
-| cselekszenek/cselekednek | frivamlik / frivamozik | siklik         | high     |      4.57 |
-| cselekszenek/cselekednek | sztritlik / sztritozik | vetekszik      | high     |      4.63 |
-| cselekszenek/cselekednek | nyádlik / nyádozik     | kőrözik        | low      |      4.27 |
-| cselekszenek/cselekednek | nyizlik / nyizozik     | rajzolódik     | low      |      5.62 |
-| hotelban/hotelben        | pazév                  | brúder         | high     |      4.41 |
-| hotelban/hotelben        | bingéj                 | mutter         | high     |      3.89 |
-| hotelban/hotelben        | gicéj                  | raszter        | low      |      3.93 |
-| hotelban/hotelben        | brágéd                 | sóher          | low      |      4.59 |
-| lakok/lakom              | gilárzik               | főzőcskézik    | high     |      6.07 |
-| lakok/lakom              | sojzik                 | lökdösődik     | high     |      6.59 |
-| lakok/lakom              | préleglik              | gondoskodik    | low      |      7.67 |
-| lakok/lakom              | pratánylik             | nyugszik       | low      |      6.03 |
+| variation      | test_label             | training_label | category | phon_dist |
+|:---------------|:-----------------------|:---------------|:---------|----------:|
+| leveling       | flagánylik             | vitorlázik     | high     |      6.56 |
+| leveling       | narjárzik              | távolodik      | high     |      5.64 |
+| leveling       | hűgzik                 | szomorkodik    | low      |      6.73 |
+| leveling       | sztremlik              | kardoskodik    | low      |      7.39 |
+| vowel deletion | pilégszik / pilégedik  | gyülemlik      | high     |      3.32 |
+| vowel deletion | fröjzik / fröjözik     | alszik         | high     |      3.53 |
+| vowel deletion | gyihegzik / gyihegezik | hamarkodik     | low      |      6.39 |
+| vowel deletion | klihaslik / klihasozik | fogadkozik     | low      |      6.99 |
+| vowel harmony  | narem                  | ankét          | high     |      4.19 |
+| vowel harmony  | ítens                  | másként        | high     |      4.89 |
+| vowel harmony  | vodec                  | popper         | low      |      3.53 |
+| vowel harmony  | zopély                 | bagett         | low      |      4.70 |
 
 Table: Word distances for nonce words in the Wug task and their aligned
 training words, with training word category and test word response log
@@ -482,12 +487,11 @@ odds (large log odds: lot of “high” responses).
 ### K-Nearest Neighbour
 
 We categorise test words based on similarity with training words using a
-K-Nearest Neighbours algorithm. The algorithm calculates word distance
-using the formula `exp ( - dist / s ) ^ p`. The parameter
-`s' is not relevant here as the number of comparisons is controlled by`k’,
-reducing the formula to `exp ( - dist ) ^ p`.
+K-Nearest Neighbours algorithm. The algorithm uses a pre-specified
+distance measure and calculates similarity as `exp(d)`, mostly to be in
+line with the GCM, though this makes little practical difference.
 
-We try `k = [1,3,5,7,15]`, `p = [1,2]` and
+We try `k = [1,3,5,7,15]` and
 `dist = [edit distance, jaccard distance, phonological distance]`. Edit
 distance tallies up the number of edits needed to get from Word A to
 Word B. Jaccard distance is the set size of the intersect of segments in
@@ -511,15 +515,14 @@ which favours the least noise over the largest effect.
 ``` r
 # set up parameters
 my_parameters_1 = crossing(
-  var_p = c(1,2),
+  var_p = 1,
   var_k = c(1,2,3,5,7,15),
-  # var_s = c(.1,.3,.5,.7,.9),
   var_s = 1,
   distance_type = c('edit','jaccard','phon'),
   variation = c('lakok/lakom','hotelban/hotelben','cselekszenek/cselekednek')
 )
 
-# run 108 models, parallelised, add prediction tibbles to each model
+# run 54 models, parallelised, add prediction tibbles to each model
 my_knns = my_parameters_1 %>% 
   mutate(
     knn = furrr::future_pmap(list(variation,distance_type,var_p,var_s,var_k), ~ wrapKNN(
@@ -545,21 +548,37 @@ my_knns2 = my_knns %>%
   unnest(accuracy)
 ```
 
-| var_p | var_k | var_s | distance_type | variation                | estimate | std.error | statistic | sig    |
-|------:|------:|------:|:--------------|:-------------------------|---------:|----------:|----------:|:-------|
-|     1 |    15 |     1 | phon          | cselekszenek/cselekednek |     0.61 |      0.14 |      4.29 | \*\*\* |
-|     1 |    15 |     1 | jaccard       | hotelban/hotelben        |     2.81 |      0.19 |     14.91 | \*\*\* |
-|     1 |     7 |     1 | edit          | lakok/lakom              |     1.23 |      0.13 |      9.20 | \*\*\* |
+![](figures/categorisation7-1.png)<!-- -->
+
+| variation      | var_k | distance_type | estimate | std.error | statistic | sig    |
+|:---------------|------:|:--------------|---------:|----------:|----------:|:-------|
+| vowel deletion |    15 | phon          |     0.61 |      0.14 |      4.29 | \*\*\* |
+| vowel harmony  |    15 | jaccard       |     2.81 |      0.19 |     14.91 | \*\*\* |
+| leveling       |     7 | edit          |     1.23 |      0.13 |      9.20 | \*\*\* |
 
 Table: Best KNN model for each variation.
 
-All three models can explain some variation in the test data. The
-‘cselekszenek’ model uses phonological distance and the largest k, k=15.
-For ‘hotelban’, the best model also uses the largest k and jaccard
-distance. For ‘lakok’, the best model uses k=7 and edit distance.
+All three models can explain some variation in the test data. The ‘vowel
+deletion’ model uses phonological distance and the largest k, k=15. For
+‘vowel harmony’, the best model also uses the largest k and jaccard
+distance. For ‘leveling’, the best model uses k=7 and edit distance.
 
 We can look at the best model for each segment distance type and
 variation.
+
+| variation      | var_k | distance_type | estimate | std.error | statistic | sig    |
+|:---------------|------:|:--------------|---------:|----------:|----------:|:-------|
+| leveling       |     7 | edit          |     1.23 |      0.13 |      9.20 | \*\*\* |
+| leveling       |    15 | jaccard       |     0.80 |      0.22 |      3.60 | \*\*\* |
+| leveling       |    15 | phon          |     1.44 |      0.17 |      8.31 | \*\*\* |
+| vowel deletion |     7 | edit          |     0.41 |      0.12 |      3.36 | \*\*\* |
+| vowel deletion |     2 | jaccard       |     0.31 |      0.08 |      3.92 | \*\*\* |
+| vowel deletion |    15 | phon          |     0.61 |      0.14 |      4.29 | \*\*\* |
+| vowel harmony  |    15 | edit          |     3.03 |      0.21 |     14.37 | \*\*\* |
+| vowel harmony  |    15 | jaccard       |     2.81 |      0.19 |     14.91 | \*\*\* |
+| vowel harmony  |    15 | phon          |     2.67 |      0.20 |     13.67 | \*\*\* |
+
+Table: Best KNN model for each variation and distance type.
 
 For ‘cselekszenek’ and ‘hotelban’, the models don’t differ much in
 accuracy depending on distance. For ‘lakok’, jaccard distance is
@@ -571,6 +590,15 @@ the same as between \[f\] and \[u\], even though the former pair share
 more natural classes and so have a smaller phonological distance.
 
 ### Generalised Context Model
+
+The GCM calculates pairwise distances between the test word and target
+words in each category (here A and B) using the formula
+`$exp( - d / s )^p$` where s controls the trade-off between the number
+of comparisons and test-training similarity, whereas p controls whether
+we see an exponential decay (for p==1) or Gaussian decay (p==2) in the
+similarity distance. Similarity to a training category is calculated by
+getting the total similarity to the category and then dividing it by the
+total similarity to all training forms.
 
 We categorise test words based on similarity with training words using
 the Generalised Context Model. We try `p = [1,2]`,
@@ -612,31 +640,37 @@ my_gcms2 = my_gcms %>%
   unnest(accuracy)
 ```
 
-| var_p | var_s | distance_type | variation                | term          | estimate | std.error | statistic | sig    |
-|------:|------:|:--------------|:-------------------------|:--------------|---------:|----------:|----------:|:-------|
-|     2 |   0.3 | edit          | cselekszenek/cselekednek | category_high |    36.23 |      6.23 |      5.81 | \*\*\* |
-|     2 |   0.3 | jaccard       | hotelban/hotelben        | category_high |   499.57 |     26.32 |     18.98 | \*\*\* |
-|     2 |   0.9 | phon          | lakok/lakom              | category_high |    27.97 |      2.40 |     11.66 | \*\*\* |
+![](figures/categorisation7gcm-1.png)<!-- -->
+
+| variation      | var_p | var_s | distance_type | estimate | std.error | statistic | sig    |
+|:---------------|------:|------:|:--------------|---------:|----------:|----------:|:-------|
+| vowel deletion |     2 |   0.3 | edit          |    36.23 |      6.23 |      5.81 | \*\*\* |
+| vowel harmony  |     2 |   0.3 | jaccard       |   499.57 |     26.32 |     18.98 | \*\*\* |
+| leveling       |     2 |   0.9 | phon          |    27.97 |      2.40 |     11.66 | \*\*\* |
 
 Table: Best GCM model for each variation.
 
 Again, the categorisation models account for some variation across test
-words in all three variable patterns. For ‘cselekszenek’, the best model
-uses edit distance and an exponential distance metric. For ‘lakok’, the
-best model uses phonological distance and the exponential metric. For
-‘hotelban’ it, again, uses jaccard distance.
+words in all three variable patterns. For ‘vowel deletion’, the best
+model uses edit distance and an exponential distance metric. For
+‘leveling’, the best model uses phonological distance and the
+exponential metric. For ‘vowel haromy’ it, again, uses jaccard distance.
+Note that if the GCM uses Jaccard distance, the s parameter does
+nothing. This is likely because Jaccard distances are distributed
+completely differently than either Levenshtein or phonological
+distances.
 
-| var_p | var_s | distance_type | variation                | term          | estimate | std.error | statistic | sig    |
-|------:|------:|:--------------|:-------------------------|:--------------|---------:|----------:|----------:|:-------|
-|     2 |   0.3 | edit          | cselekszenek/cselekednek | category_high |    36.23 |      6.23 |      5.81 | \*\*\* |
-|     1 |   0.9 | jaccard       | cselekszenek/cselekednek | category_high |    44.52 |      9.53 |      4.67 | \*\*\* |
-|     1 |   0.9 | phon          | cselekszenek/cselekednek | category_high |     3.56 |      0.68 |      5.22 | \*\*\* |
-|     2 |   0.7 | edit          | hotelban/hotelben        | category_high |    24.14 |      1.31 |     18.48 | \*\*\* |
-|     2 |   0.3 | jaccard       | hotelban/hotelben        | category_high |   499.57 |     26.32 |     18.98 | \*\*\* |
-|     1 |   0.9 | phon          | hotelban/hotelben        | category_high |    12.00 |      0.70 |     17.21 | \*\*\* |
-|     1 |   0.9 | edit          | lakok/lakom              | category_high |     7.71 |      0.73 |     10.62 | \*\*\* |
-|     2 |   0.1 | jaccard       | lakok/lakom              | category_high |   856.03 |    147.10 |      5.82 | \*\*\* |
-|     2 |   0.9 | phon          | lakok/lakom              | category_high |    27.97 |      2.40 |     11.66 | \*\*\* |
+| variation      | var_p | var_s | distance_type | estimate | std.error | statistic | sig    |
+|:---------------|------:|------:|:--------------|---------:|----------:|----------:|:-------|
+| leveling       |     1 |   0.9 | edit          |     7.71 |      0.73 |     10.62 | \*\*\* |
+| leveling       |     2 |   0.1 | jaccard       |   856.03 |    147.10 |      5.82 | \*\*\* |
+| leveling       |     2 |   0.9 | phon          |    27.97 |      2.40 |     11.66 | \*\*\* |
+| vowel deletion |     2 |   0.3 | edit          |    36.23 |      6.23 |      5.81 | \*\*\* |
+| vowel deletion |     1 |   0.9 | jaccard       |    44.52 |      9.53 |      4.67 | \*\*\* |
+| vowel deletion |     1 |   0.9 | phon          |     3.56 |      0.68 |      5.22 | \*\*\* |
+| vowel harmony  |     2 |   0.7 | edit          |    24.14 |      1.31 |     18.48 | \*\*\* |
+| vowel harmony  |     2 |   0.3 | jaccard       |   499.57 |     26.32 |     18.98 | \*\*\* |
+| vowel harmony  |     1 |   0.9 | phon          |    12.00 |      0.70 |     17.21 | \*\*\* |
 
 Table: Best GCM model for each variation and distance type.
 
@@ -699,22 +733,22 @@ these.)
 
 Here are the transformed input-output pairs in the training sets:
 
-| variation                | base       | category | suffix | input      | output       |
-|:-------------------------|:-----------|:---------|:-------|:-----------|:-------------|
-| cselekszenek/cselekednek | romlik     | high     | nek    | romliK     | romolnVk     |
-| cselekszenek/cselekednek | szóbelizik | low      | nek    | sóbeliziK  | sóbeliznVk   |
-| cselekszenek/cselekednek | örvénylik  | high     | tek    | örvéṉliK   | örvéṉlVtVk   |
-| cselekszenek/cselekednek | árnyalódik | low      | tek    | árṉalódiK  | árṉalódtVk   |
-| cselekszenek/cselekednek | hajlik     | high     | ünk    | hajliK     | hajlVnk      |
-| cselekszenek/cselekednek | faggatózik | low      | ünk    | faggatóziK | faggatódzVnk |
-| hotelban/hotelben        | panel      | high     | ban    | panel      | panelban     |
-| hotelban/hotelben        | zsáner     | low      | ban    | žáner      | žánerben     |
-| hotelban/hotelben        | máért      | high     | nak    | máért      | máértnak     |
-| hotelban/hotelben        | rapper     | low      | nak    | rapper     | rappernek    |
-| hotelban/hotelben        | ankét      | high     | nál    | ankét      | ankétnál     |
-| hotelban/hotelben        | korrekt    | low      | nál    | korrekt    | korrektnél   |
-| lakok/lakom              | teszik     | high     | 3sg    | tesiK      | tesVk        |
-| lakok/lakom              | fiatalodik | low      | 3sg    | fiatalodiK | fiatalodVm   |
+| variation      | base       | category | suffix | input      | output      |
+|:---------------|:-----------|:---------|:-------|:-----------|:------------|
+| leveling       | szarakodik | high     | 3sg    | sarakodiK  | sarakodVk   |
+| leveling       | préselődik | low      | 3sg    | préšelődiK | préšelődVm  |
+| vowel deletion | bomlik     | high     | nek    | bomliK     | bomolnVk    |
+| vowel deletion | pirosodik  | low      | nek    | pirošodiK  | pirošodnVk  |
+| vowel deletion | hajlik     | high     | tek    | hajliK     | hajlVtVk    |
+| vowel deletion | ringatózik | low      | tek    | ringatóziK | ringatóztVk |
+| vowel deletion | borsódzik  | high     | ünk    | boršódziK  | boršódzVnk  |
+| vowel deletion | tízóraizik | low      | ünk    | tízóraiziK | tízóraizVnk |
+| vowel harmony  | klozet     | high     | ban    | klozet     | klozetban   |
+| vowel harmony  | nonszensz  | low      | ban    | nonsens    | nonsensben  |
+| vowel harmony  | sóder      | high     | nak    | šóder      | šódernak    |
+| vowel harmony  | modell     | low      | nak    | modell     | modellnek   |
+| vowel harmony  | borbély    | high     | nál    | borbéj     | borbéjnál   |
+| vowel harmony  | makett     | low      | nál    | makett     | makettnél   |
 
 Table: Training data, tiny overlap finder
 
@@ -727,22 +761,22 @@ We transform test data the same way. We assign categories the same way
 we did for the KNN and GCM training sets: if a test form does A a lot,
 we assign it to A. If it does B a lot, we assign it to B.
 
-| base                    | variation                | suffix | category | input     | output      |
-|:------------------------|:-------------------------|:-------|:---------|:----------|:------------|
-| brálamlik / brálamozik  | cselekszenek/cselekednek | nek    | high     | brálamliK | brálamoznVk |
-| bratárzik / bratározik  | cselekszenek/cselekednek | nek    | low      | bratárziK | bratároznVk |
-| brözlik / brözözik      | cselekszenek/cselekednek | tek    | high     | brözliK   | brözöztVk   |
-| bribékszik / bribékedik | cselekszenek/cselekednek | tek    | low      | bribéksiK | bribékedtVk |
-| bejzik / bejezik        | cselekszenek/cselekednek | ünk    | high     | bejziK    | bejezVnk    |
-| drilarzik / drilarozik  | cselekszenek/cselekednek | ünk    | low      | drilarziK | drilarozVnk |
-| brotes                  | hotelban/hotelben        | ban    | high     | broteš    | brotešben   |
-| bidem                   | hotelban/hotelben        | ban    | low      | bidem     | bidemben    |
-| brágéd                  | hotelban/hotelben        | nak    | high     | brágéd    | brágédnek   |
-| bingéj                  | hotelban/hotelben        | nak    | low      | bingéj    | bingéjnek   |
-| brukész                 | hotelban/hotelben        | nál    | high     | brukés    | brukésnél   |
-| braszenc                | hotelban/hotelben        | nál    | low      | brasenc   | brasencnél  |
-| bihánylik               | lakok/lakom              | 3sg    | high     | biháṉliK  | biháṉlVm    |
-| aglik                   | lakok/lakom              | 3sg    | low      | agliK     | aglVm       |
+| variation      | base                    | suffix | category | input     | output      |
+|:---------------|:------------------------|:-------|:---------|:----------|:------------|
+| leveling       | bihánylik               |        | high     | biháṉliK  | biháṉlVm    |
+| leveling       | aglik                   |        | low      | agliK     | aglVm       |
+| vowel deletion | brálamlik / brálamozik  | nek    | high     | brálamliK | brálamoznVk |
+| vowel deletion | bratárzik / bratározik  | nek    | low      | bratárziK | bratároznVk |
+| vowel deletion | brözlik / brözözik      | tek    | high     | brözliK   | brözöztVk   |
+| vowel deletion | bribékszik / bribékedik | tek    | low      | bribéksiK | bribékedtVk |
+| vowel deletion | bejzik / bejezik        | ünk    | high     | bejziK    | bejezVnk    |
+| vowel deletion | drilarzik / drilarozik  | ünk    | low      | drilarziK | drilarozVnk |
+| vowel harmony  | brotes                  | ban    | high     | broteš    | brotešben   |
+| vowel harmony  | bidem                   | ban    | low      | bidem     | bidemben    |
+| vowel harmony  | brágéd                  | nak    | high     | brágéd    | brágédnek   |
+| vowel harmony  | bingéj                  | nak    | low      | bingéj    | bingéjnek   |
+| vowel harmony  | brukész                 | nál    | high     | brukés    | brukésnél   |
+| vowel harmony  | braszenc                | nál    | low      | brasenc   | brasencnél  |
 
 Table: Test data, tiny overlap finder
 
@@ -757,17 +791,17 @@ the examples above). We try \[.25,.5,.75,.9\] for both of these
 parameters (for details see code/run_tof.r and code/tof.r and
 code/test_tof.r). We fit the tiny overlap finder on the suffix sets and
 then combine all rules for each variation pattern. Here are ten random
-rules for ‘lakok’, with no guidance:
+rules for ‘leveling’, with no guidance:
 
-| rule                | scope | hits | reliability | alpha_lower | lower_confidence_limit | alpha_upper | impugned_lower_confidence_limit | some_examples                                          | some_exceptions                                         |
-|:--------------------|------:|-----:|------------:|------------:|-----------------------:|------------:|--------------------------------:|:-------------------------------------------------------|:--------------------------------------------------------|
-| iK → Vk / z\_\_#    |   229 |  115 |        0.50 |        0.25 |                   0.49 |        0.25 |                            0.47 | adakozik, autókázik, bakizik, balhézik, botladozik     | ajánlkozik, alkudozik, autózik, avatkozik, barátkozik   |
-| iK → Vm / ölőd\_\_# |     3 |    2 |        0.67 |        0.25 |                   0.52 |        0.25 |                            0.52 |                                                        |                                                         |
-| iK → Vk / lőd\_\_#  |    25 |   17 |        0.68 |        0.25 |                   0.64 |        0.25 |                            0.70 | bíbelődik, döglődik, fejlődik, fészkelődik, készülődik | képzelődik, művelődik, préselődik, sínylődik, tépelődik |
-| iK → Vm / \_\_#     |   602 |  302 |        0.50 |        0.25 |                   0.50 |        0.25 |                            0.48 | aggódik, ajánlkozik, akaszkodik, alkudozik, alkuszik   | adakozik, adaptálódik, adódik, adósodik, alkudik        |
-| iK → Vm / egs\_\_#  |     3 |    3 |        1.00 |        0.25 |                   0.81 |        0.25 |                            0.81 |                                                        |                                                         |
+| rule                 | scope | hits | reliability | alpha_lower | lower_confidence_limit | alpha_upper | impugned_lower_confidence_limit | some_examples                                                 | some_exceptions                                             |
+|:---------------------|------:|-----:|------------:|------------:|-----------------------:|------------:|--------------------------------:|:--------------------------------------------------------------|:------------------------------------------------------------|
+| iK → Vk / kod\_\_#   |    68 |   17 |        0.25 |        0.25 |                   0.24 |        0.25 |                            0.27 | bohóckodik, bámészkodik, finomkodik, hangoskodik, haverkodik  | akaszkodik, bizakodik, bosszankodik, bábáskodik, bátorkodik |
+| iK → Vm / étkez\_\_# |     2 |    2 |        1.00 |        0.25 |                   0.72 |        0.25 |                            0.72 |                                                               |                                                             |
+| iK → Vm / kez\_\_#   |    28 |   16 |        0.57 |        0.25 |                   0.54 |        0.25 |                            0.45 | felejtkezik, jelentkezik, következik, rendelkezik, segédkezik | cikkezik, ellenkezik, emlékezik, fegyverkezik, feledkezik   |
+| iK → Vm / őšöd\_\_#  |     2 |    2 |        1.00 |        0.25 |                   0.72 |        0.25 |                            0.72 |                                                               |                                                             |
+| iK → Vk / porod\_\_# |     2 |    2 |        1.00 |        0.25 |                   0.72 |        0.25 |                            0.72 |                                                               |                                                             |
 
-Table: Some rules for lakok/lakom
+Table: Some rules for leveling
 
 Each rule is in the “input ending -\> output ending / context” format.
 Scope is the number of words in the training data that match the context
@@ -781,29 +815,29 @@ rule does substantially more work than its sub-rules, it is the rule’s
 own lower confidence limit. If the sub-rules do too much work, it’s the
 best sub-rules upper confidence limit.
 
-Here are ten rules for ‘cselekszenek’:
+Here are ten rules for ‘vowel deletion’:
 
-| rule                     | scope | hits | reliability | alpha_lower | lower_confidence_limit | alpha_upper | impugned_lower_confidence_limit | some_examples                                       | some_exceptions |
-|:-------------------------|------:|-----:|------------:|------------:|-----------------------:|------------:|--------------------------------:|:----------------------------------------------------|:----------------|
-| iK → tVk / ez\_\_#       |    48 |   48 |         1.0 |         0.9 |                   0.97 |        0.25 |                            0.99 | bridzsezik, cselezik, düledezik, egyezik, emlékezik |                 |
-| iK → Vnk / klőd\_\_#     |     2 |    2 |         1.0 |         0.9 |                  -0.83 |        0.25 |                           -0.83 |                                                     |                 |
-| ziK → dzVnk / akaró\_\_# |     3 |    3 |         1.0 |         0.9 |                   0.32 |        0.25 |                            0.32 |                                                     |                 |
-| iK → nVk / alkod\_\_#    |     5 |    4 |         0.8 |         0.9 |                   0.34 |        0.25 |                            0.82 |                                                     |                 |
-| iK → tVk / ároz\_\_#     |     2 |    2 |         1.0 |         0.9 |                  -0.83 |        0.25 |                           -0.83 |                                                     |                 |
+| rule                 | scope | hits | reliability | alpha_lower | lower_confidence_limit | alpha_upper | impugned_lower_confidence_limit | some_examples                                     | some_exceptions |
+|:---------------------|------:|-----:|------------:|------------:|-----------------------:|------------:|--------------------------------:|:--------------------------------------------------|:----------------|
+| iK → nVk / jod\_\_#  |     3 |    3 |           1 |         0.9 |                   0.32 |        0.25 |                            0.94 |                                                   |                 |
+| iK → Vnk / áml\_\_#  |     2 |    2 |           1 |         0.9 |                  -0.83 |        0.25 |                           -0.83 |                                                   |                 |
+| iK → nVk / ogóz\_\_# |     2 |    2 |           1 |         0.9 |                  -0.83 |        0.25 |                           -0.83 |                                                   |                 |
+| iK → tVk / moz\_\_#  |     6 |    6 |           1 |         0.9 |                   0.72 |        0.25 |                            0.96 | fórumozik, hullámozik, hámozik, izmozik, malmozik |                 |
+| iK → tVk / íz\_\_#   |     3 |    3 |           1 |         0.9 |                   0.32 |        0.25 |                            0.32 |                                                   |                 |
 
-Table: Some rules for lakok/lakom
+Table: Some rules for vowel deletion
 
-Here are ten rules for ‘hotelban’:
+Here are ten rules for ‘vowel harmony’:
 
-| rule                | scope | hits | reliability | alpha_lower | lower_confidence_limit | alpha_upper | impugned_lower_confidence_limit | some_examples | some_exceptions |
-|:--------------------|------:|-----:|------------:|------------:|-----------------------:|------------:|--------------------------------:|:--------------|:----------------|
-| → nál / ek\_\_#     |     2 |    2 |         1.0 |        0.25 |                   0.72 |        0.25 |                            0.72 |               |                 |
-| → nél / per\_\_#    |     2 |    2 |         1.0 |        0.25 |                   0.72 |        0.25 |                            0.72 |               |                 |
-| → nak / tér\_\_#    |     5 |    3 |         0.6 |        0.25 |                   0.51 |        0.25 |                            0.45 |               |                 |
-| → nek / rapper\_\_# |     2 |    2 |         1.0 |        0.25 |                   0.72 |        0.25 |                            0.72 |               |                 |
-| → nél / š\_\_#      |     2 |    2 |         1.0 |        0.25 |                   0.72 |        0.25 |                            0.72 |               |                 |
+| rule              | scope | hits | reliability | alpha_lower | lower_confidence_limit | alpha_upper | impugned_lower_confidence_limit | some_examples                          | some_exceptions                   |
+|:------------------|------:|-----:|------------:|------------:|-----------------------:|------------:|--------------------------------:|:---------------------------------------|:----------------------------------|
+| → ban / ér\_\_#   |     5 |    2 |        0.40 |        0.25 |                   0.34 |        0.25 |                            0.34 |                                        |                                   |
+| → nak / et\_\_#   |     3 |    2 |        0.67 |        0.25 |                   0.52 |        0.25 |                            0.52 |                                        |                                   |
+| → nak / ért\_\_#  |     2 |    2 |        1.00 |        0.25 |                   0.72 |        0.25 |                            0.72 |                                        |                                   |
+| → ben / otel\_\_# |     3 |    2 |        0.67 |        0.25 |                   0.52 |        0.25 |                            0.52 |                                        |                                   |
+| → nél / \_\_#     |    85 |   41 |        0.48 |        0.25 |                   0.47 |        0.25 |                            0.50 | amper, bankett, bojler, bróker, bunker | acél, allél, ankét, arzén, bakter |
 
-Table: Some rules for lakok/lakom
+Table: Some rules for vowel harmony
 
 We choose the two parameters, alpha_upper and alpha_lower, using grid
 search. Models are evaluated the following way. First, we match the
@@ -825,7 +859,7 @@ the impugned lower confidence limit, as seen in the table below.
 | brarlik   | \#brarliK#  | output1 | \#brarlVk#  | iK → Vk / l\_\_#  |                            0.96 | botlik, csuklik, haldoklik, hanyatlik, telik          |                                                      |
 | brarlik   | \#brarliK#  | output2 | \#brarlVm#  | iK → Vm / \_\_#   |                            0.48 | aggódik, ajánlkozik, akaszkodik, alkudozik, alkuszik  | adakozik, adaptálódik, adódik, adósodik, alkudik     |
 
-Table: Some predictions for lakok/lakom
+Table: Some predictions for leveling
 
 We then take the best rule for each output and get an overall score by
 dividing the impugned lower confidence of the rule for output 1 with the
@@ -847,7 +881,7 @@ responses given by the participants.
 | brágaklik |    12 |    17 |    -0.33 |      0.67 |
 | brüjlik   |    18 |     8 |     0.75 |      0.67 |
 
-Table: Some scores for lakok/lakom
+Table: Some scores for leveling
 
 We use a generalised linear model predicting `cbind(resp1,resp2)` from
 the model score to find the best model for each variable pattern. The
@@ -855,6 +889,7 @@ best model has the strongest predictor for score. This is the same as
 what we did for the K-Nearest Neighbours Model and the Generalised
 Context Model.
 
+![](figures/tof8-1.png)<!-- -->
 The tiny overlap finder is able to predict participant behaviour to some
 extent for all three patterns.
 
@@ -865,17 +900,17 @@ variation in a forced-choice task using nonce forms? The K-Nearest
 Neighbours model, the Generalised Context Model, or the tiny overlap
 finder?
 
-| variation                | model | estimate | std.error | statistic | sig    | distance_type | var_s | var_p | alpha_lower | alpha_upper |
-|:-------------------------|:------|---------:|----------:|----------:|:-------|:--------------|------:|------:|------------:|------------:|
-| cselekszenek/cselekednek | GCM   |    36.23 |      6.23 |      5.81 | \*\*\* | edit          |   0.3 |     2 |             |             |
-| cselekszenek/cselekednek | KNN   |     0.61 |      0.14 |      4.29 | \*\*\* | phon          |   1.0 |     1 |             |             |
-| cselekszenek/cselekednek | TOF   |     6.51 |      1.32 |      4.92 | \*\*\* | edit          |       |       |        0.90 |        0.25 |
-| hotelban/hotelben        | GCM   |   499.57 |     26.32 |     18.98 | \*\*\* | jaccard       |   0.3 |     2 |             |             |
-| hotelban/hotelben        | KNN   |     2.81 |      0.19 |     14.91 | \*\*\* | jaccard       |   1.0 |     1 |             |             |
-| hotelban/hotelben        | TOF   |     2.49 |      0.47 |      5.28 | \*\*\* | edit          |       |       |        0.25 |        0.25 |
-| lakok/lakom              | GCM   |    27.97 |      2.40 |     11.66 | \*\*\* | phon          |   0.9 |     2 |             |             |
-| lakok/lakom              | KNN   |     1.23 |      0.13 |      9.20 | \*\*\* | edit          |   1.0 |     1 |             |             |
-| lakok/lakom              | TOF   |     4.18 |      0.27 |     15.31 | \*\*\* | edit          |       |       |        0.25 |        0.25 |
+| variation      | model | estimate | std.error | statistic | sig    | distance_type | var_s | var_p | alpha_lower | alpha_upper |
+|:---------------|:------|---------:|----------:|----------:|:-------|:--------------|------:|------:|------------:|------------:|
+| vowel deletion | GCM   |    36.23 |      6.23 |      5.81 | \*\*\* | edit          |   0.3 |     2 |             |             |
+| vowel deletion | KNN   |     0.61 |      0.14 |      4.29 | \*\*\* | phon          |   1.0 |     1 |             |             |
+| vowel deletion | TOF   |     6.51 |      1.32 |      4.92 | \*\*\* | edit          |       |       |        0.90 |        0.25 |
+| vowel harmony  | GCM   |   499.57 |     26.32 |     18.98 | \*\*\* | jaccard       |   0.3 |     2 |             |             |
+| vowel harmony  | KNN   |     2.81 |      0.19 |     14.91 | \*\*\* | jaccard       |   1.0 |     1 |             |             |
+| vowel harmony  | TOF   |     2.49 |      0.47 |      5.28 | \*\*\* | edit          |       |       |        0.25 |        0.25 |
+| leveling       | GCM   |    27.97 |      2.40 |     11.66 | \*\*\* | phon          |   0.9 |     2 |             |             |
+| leveling       | KNN   |     1.23 |      0.13 |      9.20 | \*\*\* | edit          |   1.0 |     1 |             |             |
+| leveling       | TOF   |     4.18 |      0.27 |     15.31 | \*\*\* | edit          |       |       |        0.25 |        0.25 |
 
 Table: Best best Generalised Context Model (GCM), K-nearest neighbours
 model (KNN), and tiny overlap finder (TOF) model for each variation.
@@ -891,17 +926,17 @@ of the tiny overlap finder). The table also lists the estimates,
 standard errors, and statistics that express the predictive power of
 each model for participant responses.
 
-For ‘cselekszenek’, the best model is the generalised context model,
+For ‘vowel deletion’, the best model is the generalised context model,
 which uses similarity to all training forms across categories. This
 model calculates word distance using edit distance rather than aligned
 phonological dissimilarity.
 
-For ‘hotelban’, the best model is the generalised context model, using
-jaccard distance.
+For ‘vowel harmony’, the best model is the generalised context model,
+using jaccard distance.
 
-For ‘lakok’, the best model is the tiny overlap finder, which by default
-uses segment-level similarity or edit distance to find overlapping
-contexts across training words.
+For ‘leveling’, the best model is the tiny overlap finder, which by
+default uses segment-level similarity or edit distance to find
+overlapping contexts across training words.
 
 An equally important question is whether the models individually
 contribute to explaining variation in the test data. To find out, we fit
@@ -910,20 +945,20 @@ resp2 in the three variable sets, using the best tiny overlap finder,
 generalised context model, and k-nearest neighbour model predictions
 together. We scale predictors and check for collinearity.
 
-| variation                | term        | estimate | std.error | statistic | conf.low | conf.high |
-|:-------------------------|:------------|---------:|----------:|----------:|---------:|----------:|
-| cselekszenek/cselekednek | (Intercept) |    -0.38 |      0.09 |     -4.45 |    -0.55 |     -0.22 |
-| cselekszenek/cselekednek | tof         |     0.36 |      0.14 |      2.60 |     0.09 |      0.64 |
-| cselekszenek/cselekednek | knn         |    -0.11 |      0.21 |     -0.53 |    -0.52 |      0.30 |
-| cselekszenek/cselekednek | gcm         |     0.69 |      0.22 |      3.22 |     0.27 |      1.12 |
-| hotelban/hotelben        | (Intercept) |    -2.26 |      0.12 |    -19.48 |    -2.49 |     -2.04 |
-| hotelban/hotelben        | tof         |    -0.08 |      0.15 |     -0.57 |    -0.38 |      0.21 |
-| hotelban/hotelben        | knn         |    -0.12 |      0.26 |     -0.45 |    -0.64 |      0.40 |
-| hotelban/hotelben        | gcm         |     2.93 |      0.25 |     11.88 |     2.45 |      3.42 |
-| lakok/lakom              | (Intercept) |    -1.04 |      0.10 |    -10.35 |    -1.24 |     -0.85 |
-| lakok/lakom              | tof         |     1.20 |      0.11 |     11.00 |     0.99 |      1.42 |
-| lakok/lakom              | knn         |    -0.21 |      0.18 |     -1.19 |    -0.57 |      0.14 |
-| lakok/lakom              | gcm         |     0.97 |      0.20 |      4.84 |     0.58 |      1.36 |
+| variation      | term        | estimate | std.error | statistic | conf.low | conf.high |
+|:---------------|:------------|---------:|----------:|----------:|---------:|----------:|
+| vowel deletion | (Intercept) |    -0.38 |      0.09 |     -4.45 |    -0.55 |     -0.22 |
+| vowel deletion | tof         |     0.36 |      0.14 |      2.60 |     0.09 |      0.64 |
+| vowel deletion | knn         |    -0.11 |      0.21 |     -0.53 |    -0.52 |      0.30 |
+| vowel deletion | gcm         |     0.69 |      0.22 |      3.22 |     0.27 |      1.12 |
+| vowel harmony  | (Intercept) |    -2.26 |      0.12 |    -19.48 |    -2.49 |     -2.04 |
+| vowel harmony  | tof         |    -0.08 |      0.15 |     -0.57 |    -0.38 |      0.21 |
+| vowel harmony  | knn         |    -0.12 |      0.26 |     -0.45 |    -0.64 |      0.40 |
+| vowel harmony  | gcm         |     2.93 |      0.25 |     11.88 |     2.45 |      3.42 |
+| leveling       | (Intercept) |    -1.04 |      0.10 |    -10.35 |    -1.24 |     -0.85 |
+| leveling       | tof         |     1.20 |      0.11 |     11.00 |     0.99 |      1.42 |
+| leveling       | knn         |    -0.21 |      0.18 |     -1.19 |    -0.57 |      0.14 |
+| leveling       | gcm         |     0.97 |      0.20 |      4.84 |     0.58 |      1.36 |
 
 Ensemble model estimates for the three variable patterns.
 
@@ -943,17 +978,17 @@ We use a chi-square test of goodness of fit to check whether dropping
 each term from each model significantly reduces model fit. The results
 can be seen below.
 
-| variation                | name |   Chi2 |    p |
-|:-------------------------|:-----|-------:|-----:|
-| cselekszenek/cselekednek | gcm  |  10.39 | 0.00 |
-| cselekszenek/cselekednek | knn  |   0.28 | 0.60 |
-| cselekszenek/cselekednek | tof  |   6.77 | 0.01 |
-| hotelban/hotelben        | gcm  | 149.49 | 0.00 |
-| hotelban/hotelben        | knn  |   0.20 | 0.65 |
-| hotelban/hotelben        | tof  |   0.32 | 0.57 |
-| lakok/lakom              | gcm  |  23.56 | 0.00 |
-| lakok/lakom              | knn  |   1.41 | 0.24 |
-| lakok/lakom              | tof  | 123.60 | 0.00 |
+| variation      | name |   Chi2 |    p |
+|:---------------|:-----|-------:|-----:|
+| vowel deletion | gcm  |  10.39 | 0.00 |
+| vowel deletion | knn  |   0.28 | 0.60 |
+| vowel deletion | tof  |   6.77 | 0.01 |
+| vowel harmony  | gcm  | 149.49 | 0.00 |
+| vowel harmony  | knn  |   0.20 | 0.65 |
+| vowel harmony  | tof  |   0.32 | 0.57 |
+| leveling       | gcm  |  23.56 | 0.00 |
+| leveling       | knn  |   1.41 | 0.24 |
+| leveling       | tof  | 123.60 | 0.00 |
 
 Likelihood tests for terms in the ensemble models.
 
@@ -964,11 +999,11 @@ is relevant.
 We can calculate McFadden’s pseudo R squared (1 - deviance / null
 deviance) for each model.
 
-| variation                | mcfadden’s r |
-|:-------------------------|-------------:|
-| cselekszenek/cselekednek |         0.15 |
-| hotelban/hotelben        |         0.35 |
-| lakok/lakom              |         0.44 |
+| variation      | mcfadden’s r |
+|:---------------|-------------:|
+| vowel deletion |         0.15 |
+| vowel harmony  |         0.35 |
+| leveling       |         0.44 |
 
 Table: McFadden’s pseudo R squared for the GLMs with the joint
 predictions.

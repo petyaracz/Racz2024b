@@ -14,7 +14,7 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, error = FALSE, message = FA
 knitr::opts_knit$set(root.dir = '~/Github/Racz2024b')
 setwd('~/Github/Racz2024b')
 
-set.seed(1337)
+set.seed(1338)
 options(knitr.kable.NA = "")
 
 library(tidyverse)
@@ -37,6 +37,16 @@ source('code/helper.R')
 # other functions
 
 # -- fun -- #
+
+# reader-friendly varnames
+HRV = . %>% 
+  mutate(
+    variation = case_when(
+      variation == 'lakok/lakom' ~ 'leveling',
+      variation == 'cselekszenek/cselekednek' ~ 'vowel deletion',
+      variation == 'hotelban/hotelben' ~ 'vowel harmony'
+    )
+  )
 
 # build 3d mds from dist table
 makeDistMDS = function(dat){
@@ -95,15 +105,15 @@ In this readme, we go through a way of measuring distance between words based on
 
 There are three patterns of variation (see References for details):
 
-- verb variation between `-k` and `-m` in the 1sg.indef of verbs
-- verb variation between `CC.V+suffix` and `CVC.suffix` in a range of verbs, here focussing on the pl.indef
-- noun variation between front vowel and back vowel suffixes in bisyllabic noun stems with a semi-transparent second vowel (`[e]` or `[é]`)
+- _leveling_: verb variation between `-k` and `-m` in the 1sg.indef of verbs
+- _vowel deletion_: verb variation between `CC.V+suffix` and `CVC.suffix` in a range of verbs, here focussing on the pl.indef
+- _vowel harmony_: noun variation between front vowel and back vowel suffixes in bisyllabic noun stems with a semi-transparent second vowel (`[e]` or `[é]`)
 
 There are three models:
 
 - K Nearest Neighbours
 - the Generalised Context Model
-- the Tiny Overlap Finder, an R-based algorithm under development, extremely heavily influenced by the Minimal Generalisation Learner. (I don't call this RMGL or something like that because the models do not give the same output)
+- the Tiny Overlap Finder, an R-based algorithm under development, extremely heavily influenced by the Minimal Generalisation Learner. (I don't call this RMGL or something like that because it gives a different output from the java MGL)
 
 There are three word distance measures:
 
@@ -151,6 +161,8 @@ tof = read_tsv('dat/tof/best_tofs.tsv')
 tof_pred = read_tsv('dat/tof/best_tof_predictions.tsv')
 # models on tof predictions
 load('dat/tof/tof_results.rda')
+# tof predictions with stats
+tof_stats = read_tsv('dat/tof/tof_stats.tsv')
 # illustrations for uh illustrative purposes
 i_lakok_score = read_tsv('dat/tof/i_lakok_score.tsv')
 i_lakok_pred = read_tsv('dat/tof/i_lakok_pred.tsv')
@@ -325,9 +337,9 @@ This is based on Albright and Hayes (2003) and Dawdy-Hesterberg and Pierrehumber
 
 I have some training and test data for three variable patterns in Hungarian. See the preprint for details.
 
-a. inflectional: 1sg.indef variation: lakok/lakom ("I live")
-b. inflectional: vowel deletion: cselekszenek/cselekednek ("they act")
-c. declensional: vowel harmony: hotelban/hotelben ("in the hotel")
+a. 'lakok/lakom' or _leveling_ (inflectional): 1sg.indef variation: lakok/lakom ("I live")
+b. 'cselekszenek/cselekednek' or _vowel deletion_ (inflectional): in various verbal paradigm slots, including the 1/2/3pl.indef: cselekszenek/cselekednek ("they act")
+c. 'hotelban/hotelben' or _vowel harmony_ (declensional): in back vowel + [eé] stems: hotelban/hotelben ("in the hotel")
 
 - training data come from Hungarian webcorpus 2.
 - test data come from a wug task where people responded to prompts in a forced-choice format. about 30 people responded to each prompt. they came from a student pool. See the Rácz & Lukács preprint for details. (The preprint only talks about 1 and 2 right now, but it covers methods and ethics for 3 as well.)
@@ -337,8 +349,10 @@ Training data look like this:
 ```{r training_data_1}
 # see code/training_preprocessing.r for details
 training %>% 
+  HRV %>% 
   group_by(variation,category) %>% 
   sample_n(2) %>% 
+  select(variation,base,lemma_freq_corrected,string,category) %>% 
   kable(digits = 2, caption = 'Table: Sample of the training data')
 ```
 
@@ -357,8 +371,9 @@ Test data look like this:
 ```{r test_data}
 # see code/training_preprocessing.r for details
 test %>% 
+  HRV %>% 
   group_by(variation) %>% 
-  select(base,variation,variant1,variant2,resp1,resp2,string) %>% 
+  select(variation,base,variant1,variant2,resp1,resp2,string) %>% 
   sample_n(5) %>% 
   kable(digits = 2, caption = 'Table: Sample of the test data')
 
@@ -467,9 +482,10 @@ The final result looks like this. We have total phonological distance, based on 
 ```{r word_distances_5}
 
 word_distance %>% 
+  HRV %>% 
   group_by(variation) %>% 
   sample_n(5) %>%
-  select(test,training,variation,phon_dist) %>% 
+  select(variation,test,training,phon_dist) %>% 
   kable(digits = 2, caption = 'Table: Word distances for nonce words in the Wug task and their aligned training words.')
   
 ```
@@ -480,9 +496,9 @@ The nonce words got variable A or B responses in the Wug task and have a specifi
 
 Training categories are:
 
-- cselekszenek/cselekednek: stable `CCik$` verbs are high, stable `CVCik$` verbs are low
-- lakok/lakom: variable verbs above the median log odds of k/m in the corpus are high, others are low
-- hotelban/hotelben: we aggregated over multiple suffixed variants to have a random intercept for each stem, those over the median of random intercepts are high, others low
+- lakok/lakom or _leveling_: variable verbs above the median log odds of k/m in the corpus are high, others are low
+- cselekszenek/cselekednek or _vowel deletion_: stable `CCik$` verbs are high, stable `CVCik$` verbs are low
+- hotelban/hotelben or _vowel harmony_: we aggregated over multiple suffixed variants to have a random intercept for each stem, those over the median of random intercepts are high, others low
 
 Training sets were also slightly culled to include only more frequent verbs and shorter verbs. (see preprint and `training_preprocessor.R` for details).
 
@@ -504,18 +520,19 @@ The end result looks like this. This is distances between test words and trainin
 
 ```{r categorisation3}
 word_distance %>% 
+  HRV %>% 
   group_by(variation,category) %>%
   sample_n(2) %>%
-  select(test_label,training_label,category,phon_dist) %>% 
+  select(variation,test_label,training_label,category,phon_dist) %>% 
   kable(digits = 2, caption = 'Table: Word distances for nonce words in the Wug task and their aligned training words, with training word category and test word response log odds (large log odds: lot of "high" responses).')
 
 ```
 
 ### K-Nearest Neighbour
 
-We categorise test words based on similarity with training words using a K-Nearest Neighbours algorithm. The algorithm calculates word distance using the formula `exp ( - dist / s ) ^ p`. The parameter `s' is not relevant here as the number of comparisons is controlled by `k', reducing the formula to `exp ( - dist ) ^ p`.
+We categorise test words based on similarity with training words using a K-Nearest Neighbours algorithm. The algorithm uses a pre-specified distance measure and calculates similarity as `exp(d)`, mostly to be in line with the GCM, though this makes little practical difference.
 
-We try `k = [1,3,5,7,15]`, `p = [1,2]` and `dist = [edit distance, jaccard distance, phonological distance]`. Edit distance tallies up the number of edits needed to get from Word A to Word B. Jaccard distance is the set size of the intersect of segments in Word A and Word B divided by the set size of the union of segments in Word A and Word B. Phonological distance is the whole setup above.
+We try `k = [1,3,5,7,15]` and `dist = [edit distance, jaccard distance, phonological distance]`. Edit distance tallies up the number of edits needed to get from Word A to Word B. Jaccard distance is the set size of the intersect of segments in Word A and Word B divided by the set size of the union of segments in Word A and Word B. Phonological distance is the whole setup above.
 
 A regular old KNN compares the target word to the nearest n words and counts category labels. So if this is 3 words and they are "high", "high", "low", the target word is categorised as "high". My KNN outputs the mean category label, which, in the example, would be .66.
 
@@ -525,15 +542,14 @@ For each test word, we get a KNN prediction for each parameter combination. Then
 
 # set up parameters
 my_parameters_1 = crossing(
-  var_p = c(1,2),
+  var_p = 1,
   var_k = c(1,2,3,5,7,15),
-  # var_s = c(.1,.3,.5,.7,.9),
   var_s = 1,
   distance_type = c('edit','jaccard','phon'),
   variation = c('lakok/lakom','hotelban/hotelben','cselekszenek/cselekednek')
 )
 
-# run 108 models, parallelised, add prediction tibbles to each model
+# run 54 models, parallelised, add prediction tibbles to each model
 my_knns = my_parameters_1 %>% 
   mutate(
     knn = furrr::future_pmap(list(variation,distance_type,var_p,var_s,var_k), ~ wrapKNN(
@@ -560,8 +576,17 @@ my_knns2 = my_knns %>%
 
 ```
 
-```{r categorisation7}
+```{r categorisation7, fig.width = 10, fig.height = 3}
+
 # get best model for each var
+my_knns2 %>% 
+  HRV %>%
+  ggplot(aes(var_k,statistic,colour = variation)) +
+  geom_line() +
+  theme_bw() +
+  scale_colour_colorblind() +
+  facet_wrap( ~ distance_type) +
+  ggtitle('Parameter settings and accuracy, KNN')
 
 my_knns3 = my_knns2 %>% 
   ungroup() %>% 
@@ -570,29 +595,33 @@ my_knns3 = my_knns2 %>%
   slice(1)
 
 my_knns3 %>% 
-  select(-term,-p.value) %>% 
+  HRV %>% 
+  select(variation,var_k,distance_type,estimate,std.error,statistic,sig) %>% 
   kable(digits = 2, caption = 'Table: Best KNN model for each variation.')
 ```
 
-All three models can explain some variation in the test data. The 'cselekszenek' model uses phonological distance and the largest k, k=15. For 'hotelban', the best model also uses the largest k and jaccard distance. For 'lakok', the best model uses k=7 and edit distance.
+All three models can explain some variation in the test data. The 'vowel deletion' model uses phonological distance and the largest k, k=15. For 'vowel harmony', the best model also uses the largest k and jaccard distance. For 'leveling', the best model uses k=7 and edit distance.
 
 We can look at the best model for each segment distance type and variation.
 
 ```{r categorisation8}
 my_knns2 %>% 
   ungroup() %>% 
+  HRV %>% 
   group_by(variation,distance_type) %>% 
   # filter(sim == 'phon') %>% 
   arrange(-statistic) %>% 
-  select(-p.value,-var_s) %>% 
+  select(variation,var_k,distance_type,estimate,std.error,statistic,sig) %>% 
   slice(1) %>% 
-  kable('latex', digits = 2, caption = 'Table: Best KNN model for each variation and distance type.')
+  kable(digits = 2, caption = 'Table: Best KNN model for each variation and distance type.')
 
 ```
 
 For 'cselekszenek' and 'hotelban', the models don't differ much in accuracy depending on distance. For 'lakok', jaccard distance is markedly more terrible than the others. A K nearest-neighbour model based on phonological distance between test and training words is nearly on par with one based on edit distance, despite the extra information available to the former: the edit distance between [f] and [p] is the same as between [f] and [u], even though the former pair share more natural classes and so have a smaller phonological distance.
 
 ### Generalised Context Model
+
+The GCM calculates pairwise distances between the test word and target words in each category (here A and B) using the formula `$exp( - d / s )^p$` where s controls the trade-off between the number of comparisons and test-training similarity, whereas p controls whether we see an exponential decay (for p==1) or Gaussian decay (p==2) in the similarity distance. Similarity to a training category is calculated by getting the total similarity to the category and then dividing it by the total similarity to all training forms.
 
 We categorise test words based on similarity with training words using the Generalised Context Model. We try `p = [1,2]`, `s = [.1,.3,.5,.7,.9]` and edit distance, jaccard distance, and phonological distance.
 
@@ -631,8 +660,17 @@ my_gcms2 = my_gcms %>%
   unnest(accuracy)
 ```
 
-```{r categorisation7gcm}
+```{r categorisation7gcm, fig.width = 10, fig.height = 3}
+
 # get best model for each var
+my_gcms2 %>% 
+  HRV %>% 
+  ggplot(aes(var_s,statistic,colour = variation, lty = as.character(var_p))) +
+  geom_line() +
+  theme_bw() +
+  scale_colour_colorblind() +
+  facet_wrap( ~ distance_type) +
+  ggtitle('Parameter settings and accuracy, GCM')
 
 my_gcms3 = my_gcms2 %>% 
   ungroup() %>% 
@@ -642,19 +680,23 @@ my_gcms3 = my_gcms2 %>%
   slice(1)
 
 my_gcms3 %>% 
+  HRV %>% 
+  select(variation,var_p,var_s,distance_type,estimate,std.error,statistic,sig) %>% 
   kable(digits = 2, caption = 'Table: Best GCM model for each variation.')
 ```
 
-Again, the categorisation models account for some variation across test words in all three variable patterns. For 'cselekszenek', the best model uses edit distance and an exponential distance metric. For 'lakok', the best model uses phonological distance and the exponential metric. For 'hotelban' it, again, uses jaccard distance.
+Again, the categorisation models account for some variation across test words in all three variable patterns. For 'vowel deletion', the best model uses edit distance and an exponential distance metric. For 'leveling', the best model uses phonological distance and the exponential metric. For 'vowel haromy' it, again, uses jaccard distance. Note that if the GCM uses Jaccard distance, the s parameter does nothing. This is likely because Jaccard distances are distributed completely differently than either Levenshtein or phonological distances.
 
 ```{r categorisation8gcm}
 my_gcms2 %>% 
+  HRV %>% 
   ungroup() %>% 
   group_by(variation,distance_type) %>% 
   # filter(sim == 'phon') %>% 
   arrange(-statistic) %>% 
   select(-p.value) %>% 
   slice(1) %>% 
+  select(variation,var_p,var_s,distance_type,estimate,std.error,statistic,sig) %>% 
   kable(digits = 2, caption = 'Table: Best GCM model for each variation and distance type.')
 
 ```
@@ -688,6 +730,7 @@ Here are the transformed input-output pairs in the training sets:
 
 ```{r tof1}
 training_tof %>% 
+  HRV %>% 
   group_by(variation,suffix,category) %>% 
   sample_n(1) %>% 
   select(-output1) %>% 
@@ -701,6 +744,7 @@ We transform test data the same way. We assign categories the same way we did fo
 
 ```{r tof2}
 test_tof %>% 
+  HRV %>% 
   rename(output = output2) %>% 
   mutate(
     suffix = ifelse(variation == 'lakok/lakom', '3sg', suffix),
@@ -708,12 +752,12 @@ test_tof %>%
     ) %>% 
   group_by(variation,suffix,category) %>% 
   slice(1) %>% 
-  select(base,variation,suffix,category,input,output) %>% 
+  select(variation,base,suffix,category,input,output) %>% 
   kable(caption = 'Table: Test data, tiny overlap finder')
 
 ```
 
-We fit the model separately on every variable suffix type so it doesn't need to distinguish those either. There are three variable suffixes for 'cselekszenek' and 'hotelban' and only one for 'lakok'. As noted earlier, the tiny overlap finder has two parameters, one penalising rules that cover fewer versus more input-output pairs in the training (as in i-ii in the examples above) and one penalising rules that have subrules that do most of the work for them (also as in i versus ii in the examples above). We try [.25,.5,.75,.9] for both of these parameters (for details see code/run_tof.r and code/tof.r and code/test_tof.r). We fit the tiny overlap finder on the suffix sets and then combine all rules for each variation pattern. Here are ten random rules for 'lakok', with no guidance:
+We fit the model separately on every variable suffix type so it doesn't need to distinguish those either. There are three variable suffixes for 'cselekszenek' and 'hotelban' and only one for 'lakok'. As noted earlier, the tiny overlap finder has two parameters, one penalising rules that cover fewer versus more input-output pairs in the training (as in i-ii in the examples above) and one penalising rules that have subrules that do most of the work for them (also as in i versus ii in the examples above). We try [.25,.5,.75,.9] for both of these parameters (for details see code/run_tof.r and code/tof.r and code/test_tof.r). We fit the tiny overlap finder on the suffix sets and then combine all rules for each variation pattern. Here are ten random rules for 'leveling', with no guidance:
 
 ```{r tof3}
 tof %>% 
@@ -724,12 +768,12 @@ tof %>%
   ) %>% 
   select(rule,scope,hits,reliability,alpha_lower,lower_confidence_limit,alpha_upper,impugned_lower_confidence_limit,some_examples,some_exceptions) %>% 
   sample_n(5) %>% 
-  kable(caption = 'Table: Some rules for lakok/lakom', digits = 2)
+  kable(caption = 'Table: Some rules for leveling', digits = 2)
 ```
 
 Each rule is in the "input ending -> output ending / context" format. Scope is the number of words in the training data that match the context of the rule. Hits is the number of words that actually obey the rule. Reliability is hits / scope. To put it very simply, the lower confidence limit is the lower limit of our confidence of how well the rule would work for many forms, adjusted by our alpha value for the lower confidence limit. Impugned lower confidence limit is one of two things: if, given an arbitrary alpha value for the upper confidence limit, the rule does substantially more work than its sub-rules, it is the rule's own lower confidence limit. If the sub-rules do too much work, it's the best sub-rules upper confidence limit.
 
-Here are ten rules for 'cselekszenek':
+Here are ten rules for 'vowel deletion':
 
 ```{r tof4}
 tof %>% 
@@ -740,10 +784,10 @@ tof %>%
   ) %>% 
   select(rule,scope,hits,reliability,alpha_lower,lower_confidence_limit,alpha_upper,impugned_lower_confidence_limit,some_examples,some_exceptions) %>% 
   sample_n(5) %>% 
-  kable(caption = 'Table: Some rules for lakok/lakom', digits = 2)
+  kable(caption = 'Table: Some rules for vowel deletion', digits = 2)
 ```
 
-Here are ten rules for 'hotelban':
+Here are ten rules for 'vowel harmony':
 
 ```{r tof5}
 tof %>% 
@@ -754,7 +798,7 @@ tof %>%
   ) %>% 
   select(rule,scope,hits,reliability,alpha_lower,lower_confidence_limit,alpha_upper,impugned_lower_confidence_limit,some_examples,some_exceptions) %>% 
   sample_n(5) %>% 
-  kable(caption = 'Table: Some rules for lakok/lakom', digits = 2)
+  kable(caption = 'Table: Some rules for vowel harmony', digits = 2)
 ```
 
 We choose the two parameters, alpha_upper and alpha_lower, using grid search. Models are evaluated the following way. First, we match the rules to the test words. For each test word, we have two outputs in the forced choice task. We match each of these to rules generated by the tiny overlap learner and find the best rule for each output, based on the impugned lower confidence limit, as seen in the table below. 
@@ -769,7 +813,7 @@ i_lakok_pred %>%
   ) %>% 
   select(base,input,variant,output,rule,impugned_lower_confidence_limit,some_examples,some_exceptions) %>% 
   slice(1:10) %>% 
-  kable(caption = 'Table: Some predictions for lakok/lakom', digits = 2)
+  kable(caption = 'Table: Some predictions for leveling', digits = 2)
 ```
 
 We then take the best rule for each output and get an overall score by dividing the impugned lower confidence of the rule for output 1 with the sum of the impugned lower confidence of the rules for output 1 and 2. If the tiny overlap finder finds no rule for output 1 for a test word, the score will be 0 and vice versa. We can compare this score with the responses given by the participants.
@@ -779,13 +823,23 @@ i_lakok_score %>%
   arrange(base) %>% 
   slice(1:10) %>% 
   select(base,resp1,resp2,log_odds,tof_score) %>% 
-  kable(caption = 'Table: Some scores for lakok/lakom', digits = 2)
+  kable(caption = 'Table: Some scores for leveling', digits = 2)
 ```
 
 We use a generalised linear model predicting `cbind(resp1,resp2)` from the model score to find the best model for each variable pattern. The best model has the strongest predictor for score. This is the same as what we did for the K-Nearest Neighbours Model and the Generalised Context Model.
 
-```{r tof8}
+```{r tof8, fig.width = 10, fig.height = 3}
+tof_stats %>% 
+  HRV %>% 
+  ggplot(aes(alpha_lower,statistic,colour = as.character(alpha_upper))) +
+  geom_line() +
+  theme_bw() +
+  scale_colour_colorblind() +
+  labs(colour = 'alpha upper') +
+  facet_wrap( ~ variation)
+
 results %>% 
+  HRV %>% 
   mutate(
     sig = case_when(
       p.value < .001 ~ '***',
@@ -833,16 +887,17 @@ best_of_the_worst = bind_rows(my_gcms4,my_knns4,my_tofs4) %>%
   slice(1)
 
 best_of_the_worst %>% 
+  HRV %>% 
   kable(digits = 2, caption = 'Table: Best best Generalised Context Model (GCM), K-nearest neighbours model (KNN), and tiny overlap finder (TOF) model for each variation.')
 ```
 
 A lot is going on in this table. The table lists the best Generalised Context Model (GCM), K-nearest neighbours model (KNN), and tiny overlap finder (TOF) model for the three types of variation and also lists model parameters: distance type (this is always edit distance for the tiny overlap finder or TOF), s and p (only applicable to the distance calculations of the KNN and the GCM), and the alphas for the lower and upper confidence intervals (only applicable to the rule generalisations of the tiny overlap finder). The table also lists the estimates, standard errors, and statistics that express the predictive power of each model for participant responses.
 
-For 'cselekszenek', the best model is the generalised context model, which uses similarity to all training forms across categories. This model calculates word distance using edit distance rather than aligned phonological dissimilarity. 
+For 'vowel deletion', the best model is the generalised context model, which uses similarity to all training forms across categories. This model calculates word distance using edit distance rather than aligned phonological dissimilarity. 
 
-For 'hotelban', the best model is the generalised context model, using jaccard distance. 
+For 'vowel harmony', the best model is the generalised context model, using jaccard distance. 
 
-For 'lakok', the best model is the tiny overlap finder, which by default uses segment-level similarity or edit distance to find overlapping contexts across training words.
+For 'leveling', the best model is the tiny overlap finder, which by default uses segment-level similarity or edit distance to find overlapping contexts across training words.
 
 An equally important question is whether the models individually contribute to explaining variation in the test data. To find out, we fit three generalised linear models, each predicting the odds of resp1 and resp2 in the three variable sets, using the best tiny overlap finder, generalised context model, and k-nearest neighbour model predictions together. We scale predictors and check for collinearity.
 
@@ -904,6 +959,7 @@ tests2 %>%
   mutate(
     sum = map(`tof + knn + gcm`, ~ broom::tidy(., conf.int = T))
   ) %>% 
+  HRV %>% 
   select(variation,sum) %>% 
   unnest(sum) %>% 
   select(variation,term,estimate,std.error,statistic,conf.low,conf.high) %>% 
@@ -924,6 +980,7 @@ tests2 %>%
   pivot_longer(-variation) %>% 
   unnest(value) %>% 
   filter(Name == ".y") %>% 
+  HRV %>% 
   select(variation,name,Chi2,p) %>% 
   kable(digits = 2, caption = 'Likelihood tests for terms in the ensemble models.')
 
@@ -939,6 +996,7 @@ tests2 %>%
   mutate(
     `mcfadden's r` = map(`tof + knn + gcm`, ~ with(summary(.), 1 - deviance/null.deviance))
   ) %>% 
+  HRV %>% 
   select(variation,`mcfadden's r`) %>% 
   unnest(`mcfadden's r`) %>% 
   kable(digits = 2, caption = 'Table: McFadden\'s pseudo R squared for the GLMs with the joint predictions.')
@@ -957,6 +1015,7 @@ The best model for each model type and variation. Model scores are rescaled for 
 
 tests %>% 
   mutate(base2 = str_extract(base, '^[^ ]+(?=( |$))')) %>%
+  HRV %>% 
   select(variation,base2,log_odds,tof,knn,gcm) %>% 
   pivot_longer(cols = c(tof,knn,gcm), names_to = 'model', values_to = 'weight') %>% 
   ggplot(aes(x = weight, y = log_odds)) +
@@ -968,17 +1027,13 @@ tests %>%
 
 ```{r viz_paper, echo = F, eval = F}
 plots_a = tests %>% 
+  HRV %>% 
   mutate(
-    base2 = str_extract(base, '^[^ ]+(?=( |$))'),
-    variation2 = case_when(
-      variation == 'cselekszenek/cselekednek' ~ '3pl',
-      variation == 'lakok/lakom' ~ '1sg',
-      variation == 'hotelban/hotelben' ~ 'case'
-    )
+    base2 = str_extract(base, '^[^ ]+(?=( |$))')
          ) %>%
-  select(variation2,base2,log_odds,tof,knn,gcm) %>% 
+  select(variation,base2,log_odds,tof,knn,gcm) %>% 
   pivot_longer(cols = c(tof,knn,gcm), names_to = 'model', values_to = 'weight') %>% 
-  group_by(variation2,model) %>% 
+  group_by(variation,model) %>% 
   nest() %>% 
   mutate(
     model2 = case_when(
@@ -986,7 +1041,7 @@ plots_a = tests %>%
       model == 'gcm' ~ 'Generalized Context Model',
       model == 'knn' ~ 'K-Nearest Neighbors'
     ),
-    title = glue('"{variation2}": {model2}'),
+    title = glue('"{variation}": {model2}'),
     plot = map2(title, data, ~ 
            {
              .y %>% 
@@ -1011,16 +1066,12 @@ testz = tests %>%
   nest()
 
 plots_b = testz %>% 
-  left_join(modelz) %>% 
+  left_join(modelz) %>%
+  HRV %>% 
   mutate(
-    variation2 = case_when(
-      variation == 'cselekszenek/cselekednek' ~ '3pl',
-      variation == 'lakok/lakom' ~ '1sg',
-      variation == 'hotelban/hotelben' ~ 'case'
-    ),
     predz = map2(ensemble_model, data, ~ predict(.x,.y)),
     data2 = map2(data, predz, ~ {.x %>% mutate(pred = .y)}),
-    title = glue('"{variation2}": ensemble model'),
+    title = glue('"{variation}": ensemble model'),
     plot = map2(title, data2, ~ 
            {
              .y %>% 
@@ -1106,6 +1157,7 @@ Predictions with test word labels:
 ```{r viz2, fig.width = 10, fig.height = 54}
 plots = tests %>% 
   mutate(base2 = str_extract(base, '^[^ ]+(?=( |$))')) %>%
+  HRV %>% 
   select(variation,base2,log_odds,tof,knn,gcm) %>% 
   pivot_longer(cols = c(tof,knn,gcm), names_to = 'model', values_to = 'weight') %>% 
   group_by(variation,model) %>% 

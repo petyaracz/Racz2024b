@@ -153,7 +153,7 @@ master = trainings %>%
   select(variation,suffix,alpha_upper,alpha_lower,score)
 
 # we unnest score and then nest again because we want to get total scores for var, not var + suff. suff fit separately to put our finger on the scale for the tof so it has a fighting chance against the much simpler knn and gcm.
-results = master %>%
+results_a = master %>%
   unnest(score) %>%
   group_by(variation,alpha_upper,alpha_lower) %>%
   nest() %>%
@@ -169,7 +169,9 @@ results = master %>%
   select(-data) %>%
   # keep summary and unnest it
   unnest(glm_summary) %>%
-  filter(term == 'tof_score') %>%
+  filter(term == 'tof_score')
+
+results = results_a %>%
   group_by(variation) %>%
   # get highest abs t value for each var
   arrange(-abs(statistic)) %>%
@@ -216,6 +218,7 @@ i_lakok_score = trainings %>%
 
 # -- write -- #
 
+write_tsv(results_a, 'dat/tof/tof_stats.tsv')
 write_tsv(predictions, 'dat/tof/best_tof_predictions.tsv')
 write_tsv(best_tofs, 'dat/tof/best_tofs.tsv')
 write_tsv(i_lakok_score, 'dat/tof/i_lakok_score.tsv')
