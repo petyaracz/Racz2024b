@@ -1037,9 +1037,9 @@ plots_a = tests %>%
   nest() %>% 
   mutate(
     model2 = case_when(
-      model == 'tof' ~ 'Tiny Overlap Finder',
-      model == 'gcm' ~ 'Generalized Context Model',
-      model == 'knn' ~ 'K-Nearest Neighbors'
+      model == 'tof' ~ 'TOF',
+      model == 'gcm' ~ 'GCM',
+      model == 'knn' ~ 'KNN'
     ),
     title = glue('"{variation}": {model2}'),
     plot = map2(title, data, ~ 
