@@ -4,7 +4,7 @@ library(tidyverse)
 library(viridis)
 library(glue)
 
-source('code/tof.R')
+source('code/mgl.R')
 
 # let's make up some rules
 # i. x -> y / c _
@@ -50,7 +50,7 @@ training = tibble(
   )
 )
 
-write_tsv(training, 'dat/tof/test_set.in')
+write_tsv(training, 'dat/mgl/test_set.in')
 
 d = formatTraining(training)
 
@@ -104,7 +104,7 @@ alpha11 = impugnRules(alpha1, d3)
 alpha91 = impugnRules(alpha9, d3)
 
 # mgl run w/ same pars
-mgl_alpha91 = read_tsv('dat/tof/test_set.rules')
+mgl_alpha91 = read_tsv('dat/mgl/test_set.rules')
 
 
 flag8 = all(sort(alpha1$rule)==sort(alpha11$rule))

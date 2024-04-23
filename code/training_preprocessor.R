@@ -28,8 +28,6 @@ SetupInputOutput = . %>% mutate(
         )
 )
 
-
-
 # -- read -- #
 
 training_ik = read_tsv('~/Github/Racz2024/resource/real_words/ik_verbs/ikes_pairs_webcorpus2.tsv')

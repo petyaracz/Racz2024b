@@ -1,4 +1,4 @@
-variation	base	resp1	resp2	log_odds	tof_score
+variation	base	resp1	resp2	log_odds	mgl_score
 cselekszenek/cselekednek	branylik / branyozik	17	12	0.32542240043462795	0.5250009318721677
 cselekszenek/cselekednek	bratárzik / bratározik	5	21	-1.2992829841302609	0.4684882918106936
 cselekszenek/cselekednek	breslik / bresezik	14	13	0.06899287148695142	0.5147974993094492

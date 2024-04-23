@@ -31,7 +31,7 @@ pairsIntoT = function(dat){
       category == 'high' ~ transcribeIPA(form_1, 'single'),
       category == 'low' ~ transcribeIPA(form_2, 'single')
     ),
-    # add TOF boundary markers
+    # add mgl boundary markers
     output = glue::glue('#{output}#'),
     input = glue::glue('#{input}#')
   ) |> 
@@ -101,7 +101,7 @@ formatTraining = function(dat){
   dat |>
   dplyr::rowwise() |>
   dplyr::mutate(
-    # set up TOF boundary markers
+    # set up mgl boundary markers
     input = glue::glue('#{input}#'),
     output = glue::glue('#{output}#'),
     # find left overlap (C)
@@ -386,7 +386,7 @@ addWordsToRules = function(rules,rules_and_words){
 # the ahem tiny overlap finder needs a training set and two alpha values
 # I interpersed the code with quotes from the original papers.
 # it's all Albright and Hayes except the bit where they refer the reader to Mikheev
-tof = function(training,alpha_lower,alpha_upper){
+mgl = function(training,alpha_lower,alpha_upper){
   
   # check for input column in training
   if(!'input' %in% colnames(training)){

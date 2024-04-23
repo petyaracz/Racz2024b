@@ -2,7 +2,7 @@ Evaluating an ensemble model of phonological categorisation on three
 variable morphological patterns in Hungarian
 ================
 Rácz, Péter
-2024-01-13
+2024-04-22
 
 In this readme, we go through a way of measuring distance between words
 based on natural classes that are, in turn, based on segmental
@@ -24,10 +24,8 @@ There are three models:
 
 - K Nearest Neighbours
 - the Generalised Context Model
-- the Tiny Overlap Finder, an R-based algorithm under development,
-  extremely heavily influenced by the Minimal Generalisation Learner. (I
-  don’t call this RMGL or something like that because it gives a
-  different output from the java MGL)
+- an R-based, specific implementation of the Minimal Generalisation
+  Learner
 
 There are three word distance measures:
 
@@ -36,9 +34,9 @@ There are three word distance measures:
   forms
 - Jaccard distance
 
-The Tiny Overlap Finder uses edit distance between strings and generally
-works very differently from the Generalised Context Model and the
-K-nearest Neighbours Model.
+The Minimal Generalisation Learner uses edit distance between strings
+and generally works very differently from the Generalised Context Model
+and the K-nearest Neighbours Model.
 
 ## Table of contents
 
@@ -88,8 +86,8 @@ KNNwrapper(test = test, training = training, feature_matrix = fm, my_distance = 
 # you can use the wrapper function to use some other distance and skip the whole alignment bit:
 KNNwrapper(test = test, training = training, feature_matrix = fm, my_distance = 'jaccard', my_s = .1, my_k = 3, my_p = 1)
 
-# you can also use the wrapper function to use the TOF (see code/run_tof.r):
-tof(training, alpha_upper = .75, alpha_lower = .75)
+# you can also use the wrapper function to use the mgl (see code/run_mgl.r):
+mgl(training, alpha_upper = .75, alpha_lower = .75)
 # this gives you rules and then you can use them to predict the test data
 ```
 
@@ -292,7 +290,7 @@ Training data look like this:
 
 Table: Sample of the training data
 
-The category labels are pretty arbitrary.
+The category labels are engineered.
 
 For ‘cselekszenek/cselekednek’, verbs that end in `CCik$` are the “high”
 category and verbs that end in `CVCik$` are the “low” category. (This is
@@ -314,7 +312,7 @@ the two forms (lakok, lakom) per verb and calculate log odds, then split
 the distribution across the median.
 
 Training data was restricted to exclude less frequent forms and very
-long forms. This is fairly arbitrary.
+long forms.
 
 Test data look like this:
 
@@ -674,14 +672,14 @@ distances.
 
 Table: Best GCM model for each variation and distance type.
 
-## 5. The Tiny Overlap Finder
+## 5. The Minimal Generalisation Learner
 
-The tiny overlap finder looks for overlapping alternations in the
-training data and tries to generalise these. It was written in R
+The Minimal Generalisation Learner looks for overlapping alternations in
+the training data and tries to generalise these. It was written in R
 following the steps in Albright and Hayes (2003) and, where they refer
-to it, Mikheev (1997). The tiny overlap finder looks for input-output
-alternations of the format `A -> B` in context `C _ D` and then tries to
-generalise these.
+to it, Mikheev (1997). The Minimal Generalisation Learner looks for
+input-output alternations of the format `A -> B` in context `C _ D` and
+then tries to generalise these.
 
 | no  | input        | output       | rule    | context |
 |:----|:-------------|:-------------|:--------|:--------|
@@ -707,29 +705,19 @@ based on whether some rules do the work of other rules. In our example,
 rule (ii) is redundant in examples 1-2 where rule (i) does all its work.
 We can reflect this by adjusting down how much we confide in rule (ii).
 
-The Minimal Generalisation Learner can use phonological distance to
-create generalised contexts. The tiny overlap finder only looks for
-segment-to-segment matches. Hungarian verbs tend to have strong
-templatic effects with many derivational and pseudo-derivational
-endings. These can have predictive effects on inflectional variation.
-The Tiny Overlap Finder can find these.
-
-------------------------------------------------------------------------
-
-The tiny overlap finder notably doesn’t give the same results on the
-same data as the java implementation of the minimal generalisation
-learner, for reasons I couldn’t ascertain using either the MGL code or
-documentation. Further work is needed to bring the two in line. The tiny
-overlap finder clearly works, so it is included in this discussion.
-
-------------------------------------------------------------------------
+The original implementation of the Minimal Generalisation Learner can
+use phonological distance to create generalised contexts. The present
+implementation only looks for segment-to-segment matches. Hungarian
+verbs tend to have strong templatic effects with many derivational and
+pseudo-derivational endings. These can have predictive effects on
+inflectional variation. The current implementation can find these.
 
 First, we hard-wire phonological variation in our dataset because we
-want the tiny overlap finder to focus on the morphology (-k/-m, CC/CVC,
--front/-back) instead of the phonology. (The K-nearest neighbour model
-and the generalised context model only had to pick between two variants,
-and the tiny overlap finder shouldn’t have a much harder time than
-these.)
+want the minimal generalisation learner to focus on the morphology
+(-k/-m, CC/CVC, -front/-back) instead of the phonology. (The K-nearest
+neighbour model and the generalised context model only had to pick
+between two variants, and the minimal generalisation learnerr shouldn’t
+have a much harder time than these.)
 
 Here are the transformed input-output pairs in the training sets:
 
@@ -750,7 +738,7 @@ Here are the transformed input-output pairs in the training sets:
 | vowel harmony  | borbély    | high     | nál    | borbéj     | borbéjnál   |
 | vowel harmony  | makett     | low      | nál    | makett     | makettnél   |
 
-Table: Training data, tiny overlap finder
+Table: Training data, minimal generalisation learner
 
 For ‘lakok’ and ‘cselekszenek’, vowel harmony is not relevant, so we
 remove the final stem vowel and the linking vowel and the suffix vowel
@@ -778,20 +766,20 @@ we assign it to A. If it does B a lot, we assign it to B.
 | vowel harmony  | brukész                 | nál    | high     | brukés    | brukésnél   |
 | vowel harmony  | braszenc                | nál    | low      | brasenc   | brasencnél  |
 
-Table: Test data, tiny overlap finder
+Table: Test data, minimal generalisation learner
 
 We fit the model separately on every variable suffix type so it doesn’t
 need to distinguish those either. There are three variable suffixes for
 ‘cselekszenek’ and ‘hotelban’ and only one for ‘lakok’. As noted
-earlier, the tiny overlap finder has two parameters, one penalising
-rules that cover fewer versus more input-output pairs in the training
-(as in i-ii in the examples above) and one penalising rules that have
-subrules that do most of the work for them (also as in i versus ii in
-the examples above). We try \[.25,.5,.75,.9\] for both of these
-parameters (for details see code/run_tof.r and code/tof.r and
-code/test_tof.r). We fit the tiny overlap finder on the suffix sets and
-then combine all rules for each variation pattern. Here are ten random
-rules for ‘leveling’, with no guidance:
+earlier, the minimal generalisation learner has two parameters, one
+penalising rules that cover fewer versus more input-output pairs in the
+training (as in i-ii in the examples above) and one penalising rules
+that have subrules that do most of the work for them (also as in i
+versus ii in the examples above). We try \[.25,.5,.75,.9\] for both of
+these parameters (for details see code/run_mgl.r and code/mgl.r and
+code/test_mgl.r). We fit the minimal generalisation learner on the
+suffix sets and then combine all rules for each variation pattern. Here
+are ten random rules for ‘leveling’, with no guidance:
 
 | rule                 | scope | hits | reliability | alpha_lower | lower_confidence_limit | alpha_upper | impugned_lower_confidence_limit | some_examples                                                 | some_exceptions                                             |
 |:---------------------|------:|-----:|------------:|------------:|-----------------------:|------------:|--------------------------------:|:--------------------------------------------------------------|:------------------------------------------------------------|
@@ -843,8 +831,9 @@ We choose the two parameters, alpha_upper and alpha_lower, using grid
 search. Models are evaluated the following way. First, we match the
 rules to the test words. For each test word, we have two outputs in the
 forced choice task. We match each of these to rules generated by the
-tiny overlap learner and find the best rule for each output, based on
-the impugned lower confidence limit, as seen in the table below.
+minimal generalisation learner and find the best rule for each output,
+based on the impugned lower confidence limit, as seen in the table
+below.
 
 | base      | input       | variant | output      | rule              | impugned_lower_confidence_limit | some_examples                                         | some_exceptions                                      |
 |:----------|:------------|:--------|:------------|:------------------|--------------------------------:|:------------------------------------------------------|:-----------------------------------------------------|
@@ -864,11 +853,11 @@ Table: Some predictions for leveling
 We then take the best rule for each output and get an overall score by
 dividing the impugned lower confidence of the rule for output 1 with the
 sum of the impugned lower confidence of the rules for output 1 and 2. If
-the tiny overlap finder finds no rule for output 1 for a test word, the
-score will be 0 and vice versa. We can compare this score with the
-responses given by the participants.
+the Minimal Generalisation Learner finds no rule for output 1 for a test
+word, the score will be 0 and vice versa. We can compare this score with
+the responses given by the participants.
 
-| base      | resp1 | resp2 | log_odds | tof_score |
+| base      | resp1 | resp2 | log_odds | mgl_score |
 |:----------|------:|------:|---------:|----------:|
 | aglik     |    12 |    15 |    -0.21 |      0.67 |
 | bihánylik |    21 |     5 |     1.30 |      0.67 |
@@ -889,42 +878,42 @@ best model has the strongest predictor for score. This is the same as
 what we did for the K-Nearest Neighbours Model and the Generalised
 Context Model.
 
-![](figures/tof8-1.png)<!-- -->
-The tiny overlap finder is able to predict participant behaviour to some
-extent for all three patterns.
+![](figures/mgl8-1.png)<!-- -->
+The Minimal Generalisation Learner is able to predict participant
+behaviour to some extent for all three patterns.
 
 ## The ensemble model
 
 So what is the best at predicting what people will do with morphological
 variation in a forced-choice task using nonce forms? The K-Nearest
-Neighbours model, the Generalised Context Model, or the tiny overlap
-finder?
+Neighbours model, the Generalised Context Model, or the Minimal
+Generalisation Learner?
 
 | variation      | model | estimate | std.error | statistic | sig    | distance_type | var_s | var_p | alpha_lower | alpha_upper |
 |:---------------|:------|---------:|----------:|----------:|:-------|:--------------|------:|------:|------------:|------------:|
 | vowel deletion | GCM   |    36.23 |      6.23 |      5.81 | \*\*\* | edit          |   0.3 |     2 |             |             |
 | vowel deletion | KNN   |     0.61 |      0.14 |      4.29 | \*\*\* | phon          |   1.0 |     1 |             |             |
-| vowel deletion | TOF   |     6.51 |      1.32 |      4.92 | \*\*\* | edit          |       |       |        0.90 |        0.25 |
+| vowel deletion | mgl   |     6.51 |      1.32 |      4.92 | \*\*\* | edit          |       |       |        0.90 |        0.25 |
 | vowel harmony  | GCM   |   499.57 |     26.32 |     18.98 | \*\*\* | jaccard       |   0.3 |     2 |             |             |
 | vowel harmony  | KNN   |     2.81 |      0.19 |     14.91 | \*\*\* | jaccard       |   1.0 |     1 |             |             |
-| vowel harmony  | TOF   |     2.49 |      0.47 |      5.28 | \*\*\* | edit          |       |       |        0.25 |        0.25 |
+| vowel harmony  | mgl   |     2.49 |      0.47 |      5.28 | \*\*\* | edit          |       |       |        0.25 |        0.25 |
 | leveling       | GCM   |    27.97 |      2.40 |     11.66 | \*\*\* | phon          |   0.9 |     2 |             |             |
 | leveling       | KNN   |     1.23 |      0.13 |      9.20 | \*\*\* | edit          |   1.0 |     1 |             |             |
-| leveling       | TOF   |     4.18 |      0.27 |     15.31 | \*\*\* | edit          |       |       |        0.25 |        0.25 |
+| leveling       | mgl   |     4.18 |      0.27 |     15.31 | \*\*\* | edit          |       |       |        0.25 |        0.25 |
 
 Table: Best best Generalised Context Model (GCM), K-nearest neighbours
-model (KNN), and tiny overlap finder (TOF) model for each variation.
+model (KNN), and Minimal Generalisation Learner (MGL) model for each
+variation.
 
 A lot is going on in this table. The table lists the best Generalised
-Context Model (GCM), K-nearest neighbours model (KNN), and tiny overlap
-finder (TOF) model for the three types of variation and also lists model
-parameters: distance type (this is always edit distance for the tiny
-overlap finder or TOF), s and p (only applicable to the distance
-calculations of the KNN and the GCM), and the alphas for the lower and
-upper confidence intervals (only applicable to the rule generalisations
-of the tiny overlap finder). The table also lists the estimates,
-standard errors, and statistics that express the predictive power of
-each model for participant responses.
+Context Model (GCM), K-nearest neighbours model (KNN), and Minimal
+Generalisation Learner (MGL) model for the three types of variation and
+also lists model parameters: distance type (this is always edit distance
+for the MGL), s and p (only applicable to the distance calculations of
+the KNN and the GCM), and the alphas for the lower and upper confidence
+intervals (only applicable to the rule generalisations of the MGL). The
+table also lists the estimates, standard errors, and statistics that
+express the predictive power of each model for participant responses.
 
 For ‘vowel deletion’, the best model is the generalised context model,
 which uses similarity to all training forms across categories. This
@@ -934,45 +923,45 @@ phonological dissimilarity.
 For ‘vowel harmony’, the best model is the generalised context model,
 using jaccard distance.
 
-For ‘leveling’, the best model is the tiny overlap finder, which by
-default uses segment-level similarity or edit distance to find
+For ‘leveling’, the best model is the minimal generalisation learner,
+which by default uses segment-level similarity or edit distance to find
 overlapping contexts across training words.
 
 An equally important question is whether the models individually
 contribute to explaining variation in the test data. To find out, we fit
 three generalised linear models, each predicting the odds of resp1 and
-resp2 in the three variable sets, using the best tiny overlap finder,
-generalised context model, and k-nearest neighbour model predictions
-together. We scale predictors and check for collinearity.
+resp2 in the three variable sets, using the best minimal generalisation
+learner, generalised context model, and k-nearest neighbour model
+predictions together. We scale predictors and check for collinearity.
 
 | variation      | term        | estimate | std.error | statistic | conf.low | conf.high |
 |:---------------|:------------|---------:|----------:|----------:|---------:|----------:|
 | vowel deletion | (Intercept) |    -0.38 |      0.09 |     -4.45 |    -0.55 |     -0.22 |
-| vowel deletion | tof         |     0.36 |      0.14 |      2.60 |     0.09 |      0.64 |
+| vowel deletion | mgl         |     0.36 |      0.14 |      2.60 |     0.09 |      0.64 |
 | vowel deletion | knn         |    -0.11 |      0.21 |     -0.53 |    -0.52 |      0.30 |
 | vowel deletion | gcm         |     0.69 |      0.22 |      3.22 |     0.27 |      1.12 |
 | vowel harmony  | (Intercept) |    -2.26 |      0.12 |    -19.48 |    -2.49 |     -2.04 |
-| vowel harmony  | tof         |    -0.08 |      0.15 |     -0.57 |    -0.38 |      0.21 |
+| vowel harmony  | mgl         |    -0.08 |      0.15 |     -0.57 |    -0.38 |      0.21 |
 | vowel harmony  | knn         |    -0.12 |      0.26 |     -0.45 |    -0.64 |      0.40 |
 | vowel harmony  | gcm         |     2.93 |      0.25 |     11.88 |     2.45 |      3.42 |
 | leveling       | (Intercept) |    -1.04 |      0.10 |    -10.35 |    -1.24 |     -0.85 |
-| leveling       | tof         |     1.20 |      0.11 |     11.00 |     0.99 |      1.42 |
+| leveling       | mgl         |     1.20 |      0.11 |     11.00 |     0.99 |      1.42 |
 | leveling       | knn         |    -0.21 |      0.18 |     -1.19 |    -0.57 |      0.14 |
 | leveling       | gcm         |     0.97 |      0.20 |      4.84 |     0.58 |      1.36 |
 
 Ensemble model estimates for the three variable patterns.
 
 The term estimates for generalised linear models predicting test
-responses from the tiny overlap finder, k-nearest neighbour, and
-generalised context model scores across the three variable patterns are
-above.
+responses from the minimal generalisation learner, k-nearest neighbour,
+and generalised context model scores across the three variable patterns
+are above.
 
 The k-nearest neighbour model does not explain model variation in any of
-the three models. The rules identified by the tiny overlap finder
-contribute to variation in the two verbal patterns, ‘cselekszenek’ and
-‘lakok’. For the latter, it is the most important predictor. For the
-noun pattern, ‘hotelban’, the only relevant predictor is the generalised
-context model.
+the three models. The rules identified by the minimal generalisation
+learner contribute to variation in the two verbal patterns,
+‘cselekszenek’ and ‘lakok’. For the latter, it is the most important
+predictor. For the noun pattern, ‘hotelban’, the only relevant predictor
+is the generalised context model.
 
 We use a chi-square test of goodness of fit to check whether dropping
 each term from each model significantly reduces model fit. The results
@@ -982,13 +971,13 @@ can be seen below.
 |:---------------|:-----|-------:|-----:|
 | vowel deletion | gcm  |  10.39 | 0.00 |
 | vowel deletion | knn  |   0.28 | 0.60 |
-| vowel deletion | tof  |   6.77 | 0.01 |
+| vowel deletion | mgl  |   6.77 | 0.01 |
 | vowel harmony  | gcm  | 149.49 | 0.00 |
 | vowel harmony  | knn  |   0.20 | 0.65 |
-| vowel harmony  | tof  |   0.32 | 0.57 |
+| vowel harmony  | mgl  |   0.32 | 0.57 |
 | leveling       | gcm  |  23.56 | 0.00 |
 | leveling       | knn  |   1.41 | 0.24 |
-| leveling       | tof  | 123.60 | 0.00 |
+| leveling       | mgl  | 123.60 | 0.00 |
 
 Likelihood tests for terms in the ensemble models.
 
@@ -1015,9 +1004,9 @@ to differentiate words that prefer back or front vowel suffixes.
 
 For ‘lakok’, we get a remarkably good result, for the cognitive
 sciences. Here, both overall similarity and the derivational and
-pseudo-derivational endings found by the tiny overlap finder are useful.
-It also helps that this pattern is restricted to one paradigm slot,
-1sg.indef and varies across many verbs consistently.
+pseudo-derivational endings found by the minimal generalisation learner
+are useful. It also helps that this pattern is restricted to one
+paradigm slot, 1sg.indef and varies across many verbs consistently.
 
 ## Visualisations
 
@@ -1046,8 +1035,8 @@ Phonological similarity is useful in the models, but it does not
 necessarily beat other measures of similarity when calculating how much
 a given test word looks like our training categories.
 
-For verbs, the tiny overlap finder is useful. This is because the verbal
-inflection patterns are sensitive to derivational and
+For verbs, the minimal generalisation learner is useful. This is because
+the verbal inflection patterns are sensitive to derivational and
 pseudo-derivational endings. The overlap finder can find these.
 
 ## References

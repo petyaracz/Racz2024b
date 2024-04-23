@@ -1,5 +1,5 @@
 ########################################################
-# Running the Tiny Overlap Finder (tof) on our Hungarian data
+# Running the Tiny Overlap Finder (mgl) on our Hungarian data
 ########################################################
 
 # -- head -- #
@@ -12,7 +12,7 @@ library(tictoc)
 
 setwd('~/Github/Racz2024b')
 
-source('code/tof.R')
+source('code/mgl.R')
 
 flag = F
 
@@ -53,14 +53,14 @@ getPredictions = function(test, rules){
 }
 
 # okay we have the best rule for each test input and its both existing output variants.
-# we want to get a TOF score that expresses the confidence of these two rules, following Rácz Beckner Hay Pierrehumbert 2020.
-# in principle, if there's no rule for one of the variants then the tof confidence in the other variant is 1.
+# we want to get a mgl score that expresses the confidence of these two rules, following Rácz Beckner Hay Pierrehumbert 2020.
+# in principle, if there's no rule for one of the variants then the mgl confidence in the other variant is 1.
 # if there's no rule for either that's bad
 getScores = . %>% 
   select(base,resp1,resp2,log_odds,variant,impugned_lower_confidence_limit) %>% 
   pivot_wider(names_from = variant, values_from = impugned_lower_confidence_limit) %>% 
   mutate(
-    tof_score = case_when(
+    mgl_score = case_when(
       output1 == 0 ~ 0,
       output2 == 0 ~ 1,
       output1 != 0 & output2 != 0 ~ output1 / (output1 + output2)
@@ -68,14 +68,13 @@ getScores = . %>%
   ) %>% 
   select(-output1,-output2)
 
-
 # -- read -- #
 
 # read in training and test
 # a lot of finnicking is involved in hammering the training and test sets into the appropriate format, see training_preprocessor
-# most notably, for the two variations where vowel harmony doesn't matter, all vowel harmony is pruned from the suffixes so the tof doesn't try to learn it
+# most notably, for the two variations where vowel harmony doesn't matter, all vowel harmony is pruned from the suffixes so the mgl doesn't try to learn it
 # this is fine: for cselekszenek, we want to know if there's vowel deletion or not (so doháṉz-o-tok or doháṉoz-tok) and don't care about the vowel (for now). for lakok, we want to know if the suffix is k or m (so lak-ok or lak-om) and again don't care about the vowel (for now).
-# we also split training data into suffixes because the tof shouldn't have to learn morphology proper.
+# we also split training data into suffixes because the mgl shouldn't have to learn morphology proper.
 training1 = read_tsv('dat/training_sets/training_mgl.tsv')
 test1 = read_tsv('dat/training_sets/test_mgl.tsv')
 
@@ -99,7 +98,7 @@ test1 %<>%
     )
   )
 
-# take trainings, rename base so it works with the tof() fun, nest by var and suffix (so a separate tof runs on each) cross with parameter settings (so we have one tof for each var, suff, parameter setting combo)
+# take trainings, rename base so it works with the mgl() fun, nest by var and suffix (so a separate mgl runs on each) cross with parameter settings (so we have one mgl for each var, suff, parameter setting combo)
 trainings = training1 %>% 
   rename(orth = base) %>% 
   filter(!is.na(suffix)) %>% 
@@ -110,24 +109,24 @@ trainings = training1 %>%
   nest() %>% 
   crossing(parameters) 
 
-# -- run mgl I mean tof to get rules -- #
+# -- run mgl I mean mgl to get rules -- #
 
 # this takes a while so I put it in a dummy if.
 if (flag == T){
-  # set up empty models list for the tofs
+  # set up empty models list for the mgls
   models = as.list(NULL)
   for (i in 1:nrow(trainings)) {
     tic('running current iteration: ')
-    # build each tof using data and parameters from trainings
-    models[[i]] = tof(training = trainings$data[[i]], alpha_lower = trainings$alpha_lower[[i]], alpha_upper = trainings$alpha_upper[[i]])
+    # build each mgl using data and parameters from trainings
+    models[[i]] = mgl(training = trainings$data[[i]], alpha_lower = trainings$alpha_lower[[i]], alpha_upper = trainings$alpha_upper[[i]])
     toc()
     print(i)
   }
   # save resulting models
-  save(models, file = 'dat/tof/trainings_tof_final.rda')
+  save(models, file = 'dat/mgl/trainings_mgl_final.rda')
 } else {
   # load models
-  load('dat/tof/trainings_tof_final.rda')
+  load('dat/mgl/trainings_mgl_final.rda')
 }
 
 # -- build master file -- #
@@ -136,7 +135,7 @@ if (flag == T){
 trainings %<>%
   mutate(
     # the models for each var, suff, parameter setting combo
-    tof = map(models, ~ ungroup(.)),
+    mgl = map(models, ~ ungroup(.)),
     # the relevant test set
     test = map2(variation, suffix, ~
                   {
@@ -144,7 +143,7 @@ trainings %<>%
                       filter(variation == .x, suffix == .y) # see? we filter for var and suff
                   }
                   ),
-    prediction = map2(test, tof, ~ getPredictions(.x, .y)), # best rule for each output for each input in test
+    prediction = map2(test, mgl, ~ getPredictions(.x, .y)), # best rule for each output for each input in test
     score = map(prediction, ~ getScores(.)) # aggr score from best rules for input (how output1 or output2 it is)
   )
 
@@ -152,16 +151,16 @@ trainings %<>%
 master = trainings %>%
   select(variation,suffix,alpha_upper,alpha_lower,score)
 
-# we unnest score and then nest again because we want to get total scores for var, not var + suff. suff fit separately to put our finger on the scale for the tof so it has a fighting chance against the much simpler knn and gcm.
+# we unnest score and then nest again because we want to get total scores for var, not var + suff. suff fit separately to put our finger on the scale for the mgl so it has a fighting chance against the much simpler knn and gcm.
 results_a = master %>%
   unnest(score) %>%
   group_by(variation,alpha_upper,alpha_lower) %>%
   nest() %>%
-  # how well did the tof do? we use the same method as for the gcm and knn, fit a glm to predict response counts for var1 / var2 using tof_score (how much does this test form like var1 according to the tof)
+  # how well did the mgl do? we use the same method as for the gcm and knn, fit a glm to predict response counts for var1 / var2 using mgl_score (how much does this test form like var1 according to the mgl)
   mutate(
     # fit glm on each nested table
     glm = map(data, ~
-                glm(cbind(resp1,resp2) ~ tof_score, data = ., family = binomial)
+                glm(cbind(resp1,resp2) ~ mgl_score, data = ., family = binomial)
                 ),
     # get glm summary
     glm_summary = map(glm, ~ broom::tidy(.))
@@ -169,7 +168,7 @@ results_a = master %>%
   select(-data) %>%
   # keep summary and unnest it
   unnest(glm_summary) %>%
-  filter(term == 'tof_score')
+  filter(term == 'mgl_score')
 
 results = results_a %>%
   group_by(variation) %>%
@@ -181,13 +180,13 @@ results
 # https://media1.tenor.com/m/pWZZ9gzx_p0AAAAC/face-melting-indiana-jones.gif
 
 # here are the best models
-best_tofs = results %>%
+best_mgls = results %>%
   select(variation,alpha_upper,alpha_lower) %>%
   left_join(trainings)
 
-best_tofs %<>%
-  select(variation,suffix,alpha_upper,alpha_lower,tof) %>%
-  unnest(tof)
+best_mgls %<>%
+  select(variation,suffix,alpha_upper,alpha_lower,mgl) %>%
+  unnest(mgl)
 
 predictions = master %>% 
   inner_join(results) %>% 
@@ -196,7 +195,7 @@ predictions = master %>%
 
 predictions %>% 
   group_by(variation) %>% 
-  ggplot(aes(tof_score, log_odds)) +
+  ggplot(aes(mgl_score, log_odds)) +
   geom_point() +
   geom_smooth(method = mgcv::gam) +
   theme_bw() +
@@ -218,10 +217,10 @@ i_lakok_score = trainings %>%
 
 # -- write -- #
 
-write_tsv(results_a, 'dat/tof/tof_stats.tsv')
-write_tsv(predictions, 'dat/tof/best_tof_predictions.tsv')
-write_tsv(best_tofs, 'dat/tof/best_tofs.tsv')
-write_tsv(i_lakok_score, 'dat/tof/i_lakok_score.tsv')
-write_tsv(i_lakok_pred, 'dat/tof/i_lakok_pred.tsv')
-save(results, file = 'dat/tof/tof_results.rda')
-save(trainings, file = 'dat/tof/all_trainings.rda')
+write_tsv(results_a, 'dat/mgl/mgl_stats.tsv')
+write_tsv(predictions, 'dat/mgl/best_mgl_predictions.tsv')
+write_tsv(best_mgls, 'dat/mgl/best_mgls.tsv')
+write_tsv(i_lakok_score, 'dat/mgl/i_lakok_score.tsv')
+write_tsv(i_lakok_pred, 'dat/mgl/i_lakok_pred.tsv')
+save(results, file = 'dat/mgl/mgl_results.rda')
+save(trainings, file = 'dat/mgl/all_trainings.rda')
