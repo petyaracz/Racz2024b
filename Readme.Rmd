@@ -1141,6 +1141,21 @@ ggsave('figures/cogsci_figure.pdf', width = 9, height = 6)
 
 ```
 
+How collinear are the three predictions? Not very:
+
+```{r collin}
+tests2 %>% 
+  select(variation,`mgl + knn + gcm`) %>% 
+  mutate(
+    collin = map(`mgl + knn + gcm`, performance::check_collinearity)
+  ) %>% 
+  unnest(collin) %>% 
+  group_by(variation) %>% 
+  filter(VIF == max(VIF)) %>% 
+  select(Term,VIF_CI_low,VIF,VIF_CI_high) %>% 
+  kable(digits = 2, caption = 'VIF values in the best GLMS-s with three learner weights as predictors')
+```
+
 ## Discussion
 
 People very clearly rely on the ambient language in making their wug task judgements on these three variable patterns. We can tell because the decisions they make for test words are partly based on the corpus distributions of existing words that the test words look like. The corpus is our best guess on the distributions in the ambient language. This is all of course in line with the existing literature.

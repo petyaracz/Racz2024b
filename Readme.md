@@ -2,7 +2,7 @@ Evaluating an ensemble model of phonological categorisation on three
 variable morphological patterns in Hungarian
 ================
 Rácz, Péter
-2024-04-22
+2024-04-23
 
 In this readme, we go through a way of measuring distance between words
 based on natural classes that are, in turn, based on segmental
@@ -1014,6 +1014,16 @@ The best model for each model type and variation. Model scores are
 rescaled for each variation.
 
 ![](figures/viz-1.png)<!-- -->
+
+How collinear are the three predictions? Not very:
+
+| variation                | Term | VIF_CI_low |  VIF | VIF_CI_high |
+|:-------------------------|:-----|-----------:|-----:|------------:|
+| cselekszenek/cselekednek | gcm  |       2.02 | 2.51 |        3.24 |
+| hotelban/hotelben        | gcm  |       2.20 | 2.76 |        3.57 |
+| lakok/lakom              | knn  |       1.47 | 1.77 |        2.25 |
+
+VIF values in the best GLMS-s with three learner weights as predictors
 
 ## Discussion
 
