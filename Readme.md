@@ -2,7 +2,12 @@ Evaluating an ensemble model of phonological categorisation on three
 variable morphological patterns in Hungarian
 ================
 Rácz, Péter
-2024-04-23
+2024-07-01
+
+This is the supplementary information / readme for the cogsci
+proceedings paper “Evaluating an ensemble model of linguistic
+categorization on three variable morphological patterns in Hungarian”.
+The paper is [here](https://escholarship.org/uc/item/914866s3).
 
 In this readme, we go through a way of measuring distance between words
 based on natural classes that are, in turn, based on segmental

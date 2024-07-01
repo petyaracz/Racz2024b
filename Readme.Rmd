@@ -36,6 +36,8 @@ source('code/helper.R')
 
 ```
 
+This is the supplementary information / readme for the cogsci proceedings paper "Evaluating an ensemble model of linguistic categorization on three variable morphological patterns in Hungarian". The paper is [here](https://escholarship.org/uc/item/914866s3).
+
 In this readme, we go through a way of measuring distance between words based on natural classes that are, in turn, based on segmental similarity. Then we use this and other distances in three categorisation models to predict what people do in a Wug task with three variable patterns of Hungarian morphology.
 
 There are three patterns of variation (see References for details):
