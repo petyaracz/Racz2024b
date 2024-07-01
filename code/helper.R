@@ -424,3 +424,78 @@ GCMwrapper = function(test,training,feature_matrix,my_distance,my_s,my_p){
   GCM(dat = distances, distance_type = my_distance, var_s = my_s, var_p = my_p)
   
 }
+
+# other
+
+
+# reader-friendly varnames
+HRV = . %>% 
+  mutate(
+    variation = case_when(
+      variation == 'lakok/lakom' ~ 'leveling',
+      variation == 'cselekszenek/cselekednek' ~ 'vowel deletion',
+      variation == 'hotelban/hotelben' ~ 'vowel harmony'
+    )
+  )
+
+# build 3d mds from dist table
+makeDistMDS = function(dat){
+  dat2 = dat |>
+    dplyr::filter(segment1 != ' ', segment2 != ' ')
+  dat_matrix = dat2 |>
+    tidyr::pivot_wider(names_from = segment2, values_from = dist) |> 
+    dplyr::select(-segment1) |> 
+    as.matrix()
+  dat_mds = stats::cmdscale(dat_matrix, k = 3)
+  tidyr::tibble(
+    x = dat_mds[,1],
+    y = dat_mds[,2],
+    z = dat_mds[,3],
+    label = unique(dat2$segment1)
+  ) 
+}
+
+# wrapper for KNN that filters for variation
+wrapKNN = function(dat, distance_type, my_variation, var_p, var_s, var_k){
+dat |>
+  dplyr::filter(variation == my_variation) |>
+  KNN(distance_type = distance_type, var_s = var_s, var_k = var_k, var_p = var_p)
+}
+# wrapper for GCM that filters for variation
+wrapGCM = function(dat, distance_type, my_variation, var_s, var_p){
+dat |>
+  dplyr::filter(variation == my_variation) |>
+  GCM(distance_type = distance_type, var_s = var_s, var_p = var_p)
+}
+
+# combine result tibbles with test responses
+combineWithTest = function(dat){
+  test %>% 
+  rename(test = string) %>% 
+  select(test,resp1,resp2,log_odds) %>% 
+  inner_join(dat, by = 'test')
+}
+
+# fit a model that predicts response rations from category labels and pulls the summary
+testAccuracy = function(dat){
+  fit = glm(cbind(resp1,resp2) ~ 1 + category_high, data = dat, family = binomial(link = 'logit'))
+  broom::tidy(fit) %>% 
+    filter(term == 'category_high') %>% 
+    mutate(sig = case_when(
+      p.value < .001 ~ '***',
+      p.value < .01 ~ '**',
+      p.value < .05 ~ '*',
+      p.value >= .05 ~ 'ns.'
+      )
+    )
+}
+
+# Hungarian orthography: replace characters in digraphs with their IPA equivalents or vice versa
+transcribeIPA = function(string, direction){
+  if (direction == 'single'){
+    stringr::str_replace_all(string, c(
+      'ccs' = 'cscs', 'ssz' = 'szsz', 'zzs' = 'zszs', 'tty' = 'tyty', 'ggy' = 'gygy', 'nny' = 'nyny', 'lly' = 'jj', 'cs' = 'č', 'sz' = 'ß', 'zs' = 'ž', 'ty' = 'ṯ', 'gy' = 'ḏ', 'ny' = 'ṉ', 'ly' = 'j', 's' = 'š', 'ß' = 's'))
+  } else if (direction == 'double'){
+    stringr::str_replace_all(string, c('s' = 'ß', 'š' = 's', 'ṉ' = 'ny', 'ḏ' = 'gy', 'ṯ' = 'ty', 'ž' = 'zs', 'ß' = 'sz', 'č' = 'cs'))
+  }
+}

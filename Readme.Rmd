@@ -34,71 +34,6 @@ future::plan(future::multisession, workers = no_cores)
 # source helper functions
 source('code/helper.R')
 
-# other functions
-
-# -- fun -- #
-
-# reader-friendly varnames
-HRV = . %>% 
-  mutate(
-    variation = case_when(
-      variation == 'lakok/lakom' ~ 'leveling',
-      variation == 'cselekszenek/cselekednek' ~ 'vowel deletion',
-      variation == 'hotelban/hotelben' ~ 'vowel harmony'
-    )
-  )
-
-# build 3d mds from dist table
-makeDistMDS = function(dat){
-  dat2 = dat |>
-    dplyr::filter(segment1 != ' ', segment2 != ' ')
-  dat_matrix = dat2 |>
-    tidyr::pivot_wider(names_from = segment2, values_from = dist) |> 
-    dplyr::select(-segment1) |> 
-    as.matrix()
-  dat_mds = stats::cmdscale(dat_matrix, k = 3)
-  tidyr::tibble(
-    x = dat_mds[,1],
-    y = dat_mds[,2],
-    z = dat_mds[,3],
-    label = unique(dat2$segment1)
-  ) 
-}
-
-# wrapper for KNN that filters for variation
-wrapKNN = function(dat, distance_type, my_variation, var_p, var_s, var_k){
-dat |>
-  dplyr::filter(variation == my_variation) |>
-  KNN(distance_type = distance_type, var_s = var_s, var_k = var_k, var_p = var_p)
-}
-# wrapper for GCM that filters for variation
-wrapGCM = function(dat, distance_type, my_variation, var_s, var_p){
-dat |>
-  dplyr::filter(variation == my_variation) |>
-  GCM(distance_type = distance_type, var_s = var_s, var_p = var_p)
-}
-
-# combine result tibbles with test responses
-combineWithTest = function(dat){
-  test %>% 
-  rename(test = string) %>% 
-  select(test,resp1,resp2,log_odds) %>% 
-  inner_join(dat, by = 'test')
-}
-
-# fit a model that predicts response rations from category labels and pulls the summary
-testAccuracy = function(dat){
-  fit = glm(cbind(resp1,resp2) ~ 1 + category_high, data = dat, family = binomial(link = 'logit'))
-  broom::tidy(fit) %>% 
-    filter(term == 'category_high') %>% 
-    mutate(sig = case_when(
-      p.value < .001 ~ '***',
-      p.value < .01 ~ '**',
-      p.value < .05 ~ '*',
-      p.value >= .05 ~ 'ns.'
-      )
-    )
-}
 ```
 
 In this readme, we go through a way of measuring distance between words based on natural classes that are, in turn, based on segmental similarity. Then we use this and other distances in three categorisation models to predict what people do in a Wug task with three variable patterns of Hungarian morphology.
@@ -1165,6 +1100,11 @@ It is not the case that people compare training words to one or two nearest neig
 Phonological similarity is useful in the models, but it does not necessarily beat other measures of similarity when calculating how much a given test word looks like our training categories. 
 
 For verbs, the minimal generalisation learner is useful. This is because the verbal inflection patterns are sensitive to derivational and pseudo-derivational endings. The overlap finder can find these.
+
+```{r write_out}
+tests |> 
+  write_tsv('dat/tests.tz')
+```
 
 ## References
 
